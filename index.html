@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stockton & Rogers | Functional Art</title>
+  <style>
+    :root {
+      --maroon: #7a0000;
+      --gray: #545454;
+      --lightgray: #737373;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Georgia', serif;
+      line-height: 1.6;
+      color: #222;
+      background: #f8f5f0;
+    }
+    .nav {
+      position: fixed; top: 0; width: 100%; background: rgba(248,245,240,0.95);
+      backdrop-filter: blur(10px); z-index: 100; padding: 1rem 5%;
+      display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 1px solid #ddd;
+    }
+    .logo { font-size: 1.8rem; font-weight: bold; letter-spacing: -1px; }
+    .logo span { color: var(--maroon); }
+    .nav a { margin-left: 2rem; text-decoration: none; color: #222; font-weight: 500; }
+    .hero {
+      height: 100vh; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
+      display: flex; align-items: center; justify-content: center; text-align: center; color: white;
+    }
+    .hero-content { max-width: 800px; padding: 2rem; }
+    .hero h1 { font-size: 4.5rem; margin-bottom: 0.5rem; }
+    .hero .tagline { font-size: 1.4rem; font-style: italic; margin-bottom: 2rem; }
+    .section { padding: 6rem 5%; max-width: 1200px; margin: 0 auto; }
+    .philosophy { background: #fff; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+    .gallery img { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+    .cta { text-align: center; padding: 4rem 5%; background: #222; color: white; }
+    footer { background: #f8f5f0; padding: 3rem 5%; text-align: center; font-size: 0.9rem; color: var(--gray); }
+    .svg-logo { width: 280px; height: auto; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="logo">STOCKTON <span>&</span> ROGERS</div>
+    <div>
+      <a href="#story">Our Story</a>
+      <a href="#work">Selected Work</a>
+      <a href="#connect">Connect</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+      <div style="font-size:3.5rem; font-weight:bold; letter-spacing:-2px; margin-bottom:1rem;">
+        STOCKTON <span style="color:#7a0000;">&</span> ROGERS
+      </div>
+      <p class="tagline">Fusing beauty and functionality into elegant design.</p>
+      <p style="font-size:1.1rem; max-width:500px; margin:0 auto 2rem;">Handcrafted functional art from the barn shop in Northwest Arkansas.</p>
+      <a href="#connect" style="display:inline-block; background:#7a0000; color:white; padding:0.8rem 2rem; border-radius:50px; text-decoration:none; font-weight:600;">Get in Touch</a>
+    </div>
+  </header>
+
+  <!-- STORY / PHILOSOPHY -->
+  <section id="story" class="section philosophy">
+    <h2 style="text-align:center; margin-bottom:2rem; font-size:2.2rem;">Our Philosophy</h2>
+    <p style="max-width:800px; margin:0 auto 2rem; font-size:1.15rem; text-align:center;">
+      Exceptional pieces begin with a clear understanding of the client’s needs and expectations.<br>
+      We fuse beauty and functionality to create graceful and elegant design — using local walnut, cherry, oak, and select exotics with intricate inlays and pyrography.
+    </p>
+    <p style="text-align:center; font-style:italic; color:#7a0000;">Handcrafted in Fayetteville, Arkansas.</p>
+  </section>
+
+  <!-- SELECTED WORK (teaser) -->
+  <section id="work" class="section">
+    <h2 style="text-align:center; margin-bottom:3rem; font-size:2.2rem;">Selected Work</h2>
+    <div class="gallery">
+      <img src="https://picsum.photos/id/201/600/400" alt="Custom frame example">
+      <img src="https://picsum.photos/id/160/600/400" alt="Keepsake box example">
+      <img src="https://picsum.photos/id/251/600/400" alt="Clock example">
+      <img src="https://picsum.photos/id/29/600/400" alt="Mineral stand example">
+    </div>
+    <p style="text-align:center; margin-top:2rem; font-size:1.1rem;">More pieces coming soon. Custom commissions available now.</p>
+  </section>
+
+  <!-- CONNECT -->
+  <section id="connect" class="cta">
+    <h2 style="font-size:2.5rem; margin-bottom:1rem;">Ready to create something lasting?</h2>
+    <p style="max-width:600px; margin:0 auto 2rem;">Whether it’s a custom frame, heirloom box, or full table — let’s talk.</p>
+    <a href="mailto:grogers@stocktonandrogers.com" style="background:#7a0000; color:white; padding:1rem 2.5rem; border-radius:50px; text-decoration:none; font-weight:600;">Send a Message</a>
+    <p style="margin-top:2rem; font-size:1rem;">(479) 530-1843 • grogers@stocktonandrogers.com</p>
+  </section>
+
+  <footer>
+    <p>Stockton & Rogers Functional Art • Fayetteville, Arkansas</p>
+    <p style="margin-top:1rem; font-size:0.85rem;">© 2026 • All pieces handcrafted in the barn shop</p>
+  </footer>
+
+</body>
+</html>
