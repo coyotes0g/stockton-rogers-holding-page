@@ -27,7 +27,7 @@
     .logo span { color: var(--maroon); }
     .nav a { margin-left: 2rem; text-decoration: none; color: #222; font-weight: 500; }
     .hero {
-      height: 100vh; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
+      height: 100vh; background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('fossil-monolith.jpeg') center/cover no-repeat;
       display: flex; align-items: center; justify-content: center; text-align: center; color: white;
     }
     .hero-content { max-width: 800px; padding: 2rem; }
@@ -35,11 +35,11 @@
     .hero .tagline { font-size: 1.4rem; font-style: italic; margin-bottom: 2rem; }
     .section { padding: 6rem 5%; max-width: 1200px; margin: 0 auto; }
     .philosophy { background: #fff; }
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-    .gallery img { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .gallery img { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); transition: transform 0.3s ease; }
+    .gallery img:hover { transform: scale(1.02); }
     .cta { text-align: center; padding: 4rem 5%; background: #222; color: white; }
     footer { background: #f8f5f0; padding: 3rem 5%; text-align: center; font-size: 0.9rem; color: var(--gray); }
-    .svg-logo { width: 280px; height: auto; }
   </style>
 </head>
 <body>
@@ -61,44 +61,48 @@
         STOCKTON <span style="color:#7a0000;">&</span> ROGERS
       </div>
       <p class="tagline">Fusing beauty and functionality into elegant design.</p>
-      <p style="font-size:1.1rem; max-width:500px; margin:0 auto 2rem;">Handcrafted functional art from the barn shop in Northwest Arkansas.</p>
-      <a href="#connect" style="display:inline-block; background:#7a0000; color:white; padding:0.8rem 2rem; border-radius:50px; text-decoration:none; font-weight:600;">Get in Touch</a>
+      <p style="font-size:1.1rem; max-width:520px; margin:0 auto 2rem;">Handcrafted functional art from the barn shop in Northwest Arkansas.</p>
+      <a href="#connect" style="display:inline-block; background:#7a0000; color:white; padding:0.9rem 2.2rem; border-radius:50px; text-decoration:none; font-weight:600; font-size:1.05rem;">Get in Touch</a>
     </div>
   </header>
 
   <!-- STORY / PHILOSOPHY -->
   <section id="story" class="section philosophy">
     <h2 style="text-align:center; margin-bottom:2rem; font-size:2.2rem;">Our Philosophy</h2>
-    <p style="max-width:800px; margin:0 auto 2rem; font-size:1.15rem; text-align:center;">
+    <p style="max-width:820px; margin:0 auto 2rem; font-size:1.15rem; text-align:center;">
       Exceptional pieces begin with a clear understanding of the client’s needs and expectations.<br>
       We fuse beauty and functionality to create graceful and elegant design — using local walnut, cherry, oak, and select exotics with intricate inlays and pyrography.
     </p>
-    <p style="text-align:center; font-style:italic; color:#7a0000;">Handcrafted in Fayetteville, Arkansas.</p>
+    <p style="text-align:center; font-style:italic; color:#7a0000; font-size:1.1rem;">Handcrafted in Fayetteville, Arkansas.</p>
   </section>
 
-  <!-- SELECTED WORK (teaser) -->
+  <!-- SELECTED WORK -->
   <section id="work" class="section">
     <h2 style="text-align:center; margin-bottom:3rem; font-size:2.2rem;">Selected Work</h2>
     <div class="gallery">
-      <img src="https://picsum.photos/id/201/600/400" alt="Custom frame example">
-      <img src="https://picsum.photos/id/160/600/400" alt="Keepsake box example">
-      <img src="https://picsum.photos/id/251/600/400" alt="Clock example">
-      <img src="https://picsum.photos/id/29/600/400" alt="Mineral stand example">
+      <img src="triptych-frame.jpeg" alt="Triptych frame - custom mixed hardwood">
+      <img src="modern-multi-tone-frame.jpeg" alt="Modern multi-tone picture frame">
+      <img src="zebrawood-picture-frame.jpeg" alt="Zebrawood picture frame">
+      <img src="walnut-and-alloy-frame.jpeg" alt="Walnut and alloy frame">
+      <img src="modern-grid-box.jpeg" alt="Modern grid keepsake box">
+      <img src="sculptural-wave-clock.jpeg" alt="Sculptural wave clock">
+      <img src="the-horizon-clock.jpeg" alt="The Horizon clock">
+      <img src="leopardwood-frame.jpeg" alt="Leopardwood frame detail">
     </div>
-    <p style="text-align:center; margin-top:2rem; font-size:1.1rem;">More pieces coming soon. Custom commissions available now.</p>
+    <p style="text-align:center; margin-top:2.5rem; font-size:1.1rem; color:#444;">More pieces coming soon. Custom commissions available now.</p>
   </section>
 
   <!-- CONNECT -->
   <section id="connect" class="cta">
-    <h2 style="font-size:2.5rem; margin-bottom:1rem;">Ready to create something lasting?</h2>
-    <p style="max-width:600px; margin:0 auto 2rem;">Whether it’s a custom frame, heirloom box, or full table — let’s talk.</p>
-    <a href="mailto:grogers@stocktonandrogers.com" style="background:#7a0000; color:white; padding:1rem 2.5rem; border-radius:50px; text-decoration:none; font-weight:600;">Send a Message</a>
-    <p style="margin-top:2rem; font-size:1rem;">(479) 530-1843 • grogers@stocktonandrogers.com</p>
+    <h2 style="font-size:2.6rem; margin-bottom:1rem;">Ready to create something lasting?</h2>
+    <p style="max-width:620px; margin:0 auto 2rem; font-size:1.1rem;">Whether it’s a custom frame, heirloom box, clock, or full table — let’s talk about your next piece.</p>
+    <a href="mailto:grogers@stocktonandrogers.com" style="background:#7a0000; color:white; padding:1rem 2.8rem; border-radius:50px; text-decoration:none; font-weight:600; font-size:1.1rem;">Send a Message</a>
+    <p style="margin-top:2.2rem; font-size:1.05rem;">(479) 530-1843 • grogers@stocktonandrogers.com</p>
   </section>
 
   <footer>
     <p>Stockton & Rogers Functional Art • Fayetteville, Arkansas</p>
-    <p style="margin-top:1rem; font-size:0.85rem;">© 2026 • All pieces handcrafted in the barn shop</p>
+    <p style="margin-top:1rem; font-size:0.9rem;">© 2026 • All pieces handcrafted in the barn shop</p>
   </footer>
 
 </body>
