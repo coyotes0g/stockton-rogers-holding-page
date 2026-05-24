@@ -31,7 +31,7 @@
       align-items: center; 
       border-bottom: 1px solid #ddd; 
     }
-    .logo img { height: 70px; }   /* navbar logo further reduced */
+    .logo img { height: 70px; }
     .nav a { margin-left: 2rem; text-decoration: none; color: #222; font-weight: 500; }
     .hero { height: 100vh; background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('images/fossil-monolith.jpeg') center/cover no-repeat; display: flex; align-items: center; justify-content: center; text-align: center; color: white; }
     .hero-content { max-width: 800px; padding: 2rem; }
@@ -90,7 +90,7 @@
 
   <header class="hero">
     <div class="hero-content">
-      <img src="logo.svg" alt="Stockton & Rogers" style="height: 660px; margin-bottom: 1rem;">
+      <img src="logo.svg" alt="Stockton & Rogers" style="height: 300px; margin-bottom: 1rem;">
       <p class="tagline">Fusing beauty and functionality into elegant design.</p>
       <p style="font-size:1.1rem; max-width:520px; margin:0 auto 2rem;">Handcrafted functional art from Northwest Arkansas.</p>
       <a href="#connect" style="display:inline-block; background:#7a0000; color:white; padding:0.9rem 2.2rem; border-radius:50px; text-decoration:none; font-weight:600; font-size:1.05rem;">Get in Touch</a>
@@ -128,13 +128,13 @@
   </section>
 
   <footer>
-    <img src="logo.svg" alt="Stockton & Rogers" style="height: 200px; margin-bottom: 10px;">
+    <img src="logo.svg" alt="Stockton & Rogers" style="height: 220px; margin-bottom: 10px;">
     <p style="margin-top:1rem; font-size:0.9rem;">© 2026 • All pieces handcrafted in Northwest Arkansas</p>
   </footer>
 
   <!-- Lightbox Modal -->
   <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-    <span class="close" onclick="closeLightbox(); event.stopImmediatePropagation();">×</span>
+    <span class="close" onclick="closeLightbox(); event.stopImmediatePropagation();">&times;</span>
     <img class="lightbox-content" id="lightbox-img" onclick="event.stopImmediatePropagation();">
   </div>
 
@@ -150,7 +150,6 @@
       document.getElementById('lightbox').style.display = 'none';
     }
 
-    // Add click listeners to all gallery images
     document.addEventListener('DOMContentLoaded', function() {
       const images = document.querySelectorAll('.gallery img');
       images.forEach(function(img) {
@@ -160,7 +159,6 @@
       });
     });
 
-    // Close on Escape key
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
         closeLightbox();
