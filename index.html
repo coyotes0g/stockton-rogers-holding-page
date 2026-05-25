@@ -51,12 +51,12 @@
     .hero-content { 
       max-width: 820px; 
       padding: 2rem;
-      padding-top: 95px;          /* more space below navbar */
+      padding-top: 60px;          /* less padding so logo can sit higher */
     }
     .hero-content .logo img { 
-      height: 95px; 
+      height: 108px; 
       position: relative; 
-      top: -15px;                 /* smaller lift so logo sits above stone */
+      top: -55px;                 /* lift logo higher above the stone */
       margin-bottom: 0.6rem; 
     }
     .hero .tagline { 
@@ -71,7 +71,7 @@
     }
     .hero-buttons { 
       display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; 
-      margin-top: 5.5rem; 
+      margin-top: 5rem; 
     }
     .btn-primary { 
       background: white; color: var(--charcoal); padding: 0.85rem 2.1rem; border-radius: 50px; 
@@ -143,14 +143,14 @@
     @media (max-width: 600px) {
       .nav { padding: 0.5rem 4%; }
       .nav a { font-size: 0.85rem; margin-left: 0.9rem; }
-      .nav .inquire-btn { display: none; }   /* hide long button on mobile */
+      .nav .inquire-btn { display: none; }
       .hero h1 { font-size: 2.4rem; }
       .hero .tagline { font-size: 1.15rem; }
       .section { padding: 5rem 4%; }
       .lightbox-content { max-width: 96%; max-height: 78vh; }
     }
 
-    /* v9 - 2026-05-25 logo + mobile nav fix */
+    /* v10 - 2026-05-25 lift logo higher */
   </style>
 </head>
 <body>
