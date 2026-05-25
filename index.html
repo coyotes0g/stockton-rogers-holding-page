@@ -60,7 +60,6 @@
       margin-right: auto; 
       color: #f0e9df;
     }
-    .hero-buttons { margin-top: 1.75rem; }
     .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
     .btn-primary { 
       background: white; color: var(--charcoal); padding: 0.85rem 2.1rem; border-radius: 50px; 
@@ -80,7 +79,7 @@
     }
     .gallery img { 
       width: 100%; height: auto; border-radius: 6px; 
-      box-shadow: 0 12px 28px rgba(0,0,0,0.12); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); 
+      box-shadow: 0 12px 28px rgba(0,0,0,0.12); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); cursor: pointer;
     }
     .gallery img:hover { transform: scale(1.015); }
     .cta { background: var(--charcoal); color: white; }
@@ -99,12 +98,40 @@
       background: var(--dark-gray); color: white; padding: 0.9rem 2.4rem; border: none; 
       border-radius: 50px; font-weight: 700; cursor: pointer; font-size: 1rem;
     }
+
+    /* Lightbox Styles */
+    .lightbox { 
+      display: none; position: fixed; z-index: 1000; left: 0; top: 0; 
+      width: 100%; height: 100%; background-color: rgba(0,0,0,0.92); 
+      overflow: auto; 
+    }
+    .lightbox-content { 
+      position: relative; margin: auto; display: block; 
+      max-width: 92%; max-height: 82vh; margin-top: 4%; 
+      border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+    .close { 
+      position: absolute; top: 25px; right: 35px; color: #fff; 
+      font-size: 42px; font-weight: bold; cursor: pointer; z-index: 1001;
+    }
+    .close:hover { color: #ccc; }
+
+    #lightbox-multi { 
+      display: flex; flex-direction: column; gap: 1.25rem; 
+      max-width: 92%; max-height: 82vh; margin: 4% auto 0; 
+    }
+    #lightbox-multi img { 
+      width: 100%; height: auto; border-radius: 8px; 
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+
     @media (max-width: 600px) {
       .nav { padding: 0.6rem 4%; }
       .nav a { margin-left: 1.4rem; font-size: 0.9rem; }
       .hero h1 { font-size: 2.4rem; }
       .hero .tagline { font-size: 1.15rem; }
       .section { padding: 5rem 4%; }
+      .lightbox-content { max-width: 96%; max-height: 78vh; }
     }
   </style>
 </head>
@@ -213,6 +240,7 @@
       const lightboxImg = document.getElementById('lightbox-img');
       const multiContainer = document.getElementById('lightbox-multi');
       lightbox.style.display = 'block';
+
       if (multiImages) {
         lightboxImg.style.display = 'none';
         multiContainer.style.display = 'flex';
@@ -221,20 +249,24 @@
         images.forEach(imgSrc => {
           const img = document.createElement('img');
           img.src = imgSrc.trim();
+          img.style.maxHeight = '78vh';
           multiContainer.appendChild(img);
         });
       } else {
         multiContainer.style.display = 'none';
         lightboxImg.style.display = 'block';
         lightboxImg.src = src;
+        lightboxImg.style.maxHeight = '82vh';
       }
     }
+
     function closeLightbox() {
       const lightbox = document.getElementById('lightbox');
       const multiContainer = document.getElementById('lightbox-multi');
       lightbox.style.display = 'none';
       multiContainer.innerHTML = '';
     }
+
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.gallery img').forEach(img => {
         img.addEventListener('click', () => {
@@ -247,6 +279,7 @@
         });
       });
     });
+
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
   </script>
 </body>
