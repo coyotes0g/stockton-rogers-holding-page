@@ -5,75 +5,139 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stockton & Rogers | Functional Art</title>
   <style>
-    :root { --maroon: #7a0000; --gray: #545454; }
+    :root { 
+      --charcoal: #2C2C2C; 
+      --walnut: #8B5A2B; 
+      --cream: #f9f6f0; 
+      --gray: #5A5A5A; 
+    }
     * { margin:0; padding:0; box-sizing:border-box; }
     html, body { width: 100%; overflow-x: hidden; }
     body { 
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
-      line-height: 1.6; 
-      color: #222; 
-      background: #f8f5f0; 
-      letter-spacing: -0.01em;
+      line-height: 1.7; 
+      color: var(--charcoal); 
+      background: var(--cream); 
+      letter-spacing: -0.015em;
     }
-    h1, h2, h3 { font-weight: 600; letter-spacing: -0.02em; }
-    .nav { position: fixed; top: 0; width: 100%; background: rgba(248,245,240,0.95); backdrop-filter: blur(10px); z-index: 100; padding: 0.6rem 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ddd; }
-    .logo img { height: 35px; }
-    .nav a { margin-left: 2rem; text-decoration: none; color: #222; font-weight: 500; }
-    .hero { width: 100%; height: 100vh; background: linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.28)), url('fossil-monolith.jpeg') center/cover no-repeat; display: flex; align-items: center; justify-content: center; text-align: center; color: white; }
-    .hero-content { max-width: 800px; padding: 2rem; }
-    .tagline { font-size: 1.4rem; font-style: italic; margin-bottom: 1.5rem; letter-spacing: -0.01em; }
-    .section { padding: 6rem 5%; max-width: 1200px; margin: 0 auto; }
-    .philosophy { background: #fff; }
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-    .gallery img { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); transition: transform 0.3s ease; cursor: pointer; }
-    .gallery img:hover { transform: scale(1.02); }
-    .cta { text-align: center; padding: 4rem 5%; background: #222; color: white; }
-    footer { background: #f8f5f0; padding: 3rem 5%; text-align: center; font-size: 0.9rem; color: var(--gray); }
-    .lightbox { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); overflow: auto; }
-    .lightbox-content { position: relative; margin: auto; display: block; max-width: 90%; max-height: 90%; margin-top: 5%; }
-    .close { position: absolute; top: 20px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; }
-    .close:hover { color: #bbb; }
-    #lightbox-multi { display: flex; flex-direction: column; gap: 1rem; max-width: 90%; max-height: 90%; margin: auto; margin-top: 5%; }
-    #lightbox-multi img { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+    h1, h2, h3 { 
+      font-family: Georgia, 'Times New Roman', serif; 
+      font-weight: 600; 
+      letter-spacing: -0.025em; 
+      color: var(--charcoal);
+    }
+    .nav { 
+      position: fixed; top: 0; width: 100%; 
+      background: rgba(249,246,240,0.96); 
+      backdrop-filter: blur(12px); 
+      z-index: 100; 
+      padding: 0.75rem 6%; 
+      display: flex; justify-content: space-between; align-items: center; 
+      border-bottom: 1px solid #e8e4dc;
+    }
+    .nav .logo img { height: 38px; }
+    .nav a { margin-left: 2.25rem; text-decoration: none; color: var(--charcoal); font-weight: 500; font-size: 0.95rem; }
+    .nav .inquire-btn {
+      background: var(--walnut); color: white; padding: 0.55rem 1.4rem; border-radius: 50px; 
+      text-decoration: none; font-weight: 600; font-size: 0.9rem; margin-left: 1.5rem;
+    }
+    .hero { 
+      width: 100%; height: 100vh; 
+      background: linear-gradient(rgba(44,44,44,0.32), rgba(44,44,44,0.32)), url('fossil-monolith.jpeg') center/cover no-repeat; 
+      display: flex; align-items: center; justify-content: center; text-align: center; color: white; 
+      position: relative;
+    }
+    .hero-content { max-width: 820px; padding: 2rem; }
+    .hero-content .logo { margin-bottom: 1.25rem; }
+    .hero-content .logo img { height: 68px; filter: brightness(1.1); }
+    .hero h1 { font-size: 3.1rem; line-height: 1.1; margin-bottom: 1.1rem; color: white; }
+    .hero .tagline { 
+      font-size: 1.35rem; font-style: italic; margin-bottom: 2.25rem; 
+      max-width: 620px; margin-left: auto; margin-right: auto; color: #f0e9df;
+    }
+    .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { 
+      background: white; color: var(--charcoal); padding: 0.85rem 2.1rem; border-radius: 50px; 
+      text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.2s ease;
+    }
+    .btn-primary:hover { background: #f0e9df; transform: translateY(-1px); }
+    .btn-secondary { 
+      border: 2px solid white; color: white; padding: 0.85rem 2.1rem; border-radius: 50px; 
+      text-decoration: none; font-weight: 600; font-size: 1rem;
+    }
+    .section { padding: 7rem 6%; max-width: 1280px; margin: 0 auto; }
+    .philosophy { background: white; }
+    .gallery { 
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.75rem; 
+    }
+    .gallery img { 
+      width: 100%; height: auto; border-radius: 6px; 
+      box-shadow: 0 12px 28px rgba(0,0,0,0.12); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); 
+    }
+    .gallery img:hover { transform: scale(1.015); }
+    .cta { background: var(--charcoal); color: white; }
+    .cta h2 { color: white; }
+    footer { 
+      background: #f4f0e8; padding: 3.5rem 6%; text-align: center; 
+      font-size: 0.92rem; color: var(--gray); border-top: 1px solid #e8e4dc;
+    }
+    .form { max-width: 520px; margin: 2rem auto 0; }
+    .form input, .form textarea, .form select { 
+      width: 100%; padding: 0.85rem 1rem; margin-bottom: 1rem; 
+      border: 1px solid #d4d0c8; border-radius: 6px; font-size: 1rem;
+    }
+    .form button { 
+      background: var(--walnut); color: white; padding: 0.9rem 2.4rem; border: none; 
+      border-radius: 50px; font-weight: 700; cursor: pointer; font-size: 1rem;
+    }
     @media (max-width: 600px) {
-      .nav { padding: 0.5rem 4%; }
-      .logo img { height: 30px; }
-      .nav a { margin-left: 1.2rem; font-size: 0.95rem; }
-      .hero-content { padding: 1.5rem; }
-      .tagline { font-size: 1.2rem; }
-      .hero-content img { top: -140px; }
+      .nav { padding: 0.6rem 4%; }
+      .nav a { margin-left: 1.4rem; font-size: 0.9rem; }
+      .hero h1 { font-size: 2.4rem; }
+      .hero .tagline { font-size: 1.15rem; }
+      .section { padding: 5rem 4%; }
     }
   </style>
 </head>
 <body>
 
+  <!-- NAV -->
   <nav class="nav">
     <div class="logo"><img src="logo.svg" alt="Stockton & Rogers"></div>
-    <div>
+    <div style="display: flex; align-items: center;">
       <a href="#story">Our Story</a>
       <a href="#work">Selected Work</a>
-      <a href="#connect">Connect</a>
+      <a href="#craft">Our Craft</a>
+      <a href="#connect">Custom Commissions</a>
+      <a href="#connect" class="inquire-btn">Inquire About a Commission</a>
     </div>
   </nav>
 
+  <!-- HERO -->
   <header class="hero">
     <div class="hero-content">
-      <img src="logo.svg" alt="Stockton & Rogers" style="height: 120px; position: relative; top: -180px; margin-bottom: 0.6rem;">
-      <p class="tagline">Fusing beauty with functionality to create timeless art.</p>
-      <a href="#connect" style="display:inline-block; background:#7a0000; color:white; padding:0.9rem 2.2rem; border-radius:50px; text-decoration:none; font-weight:600; font-size:1.05rem;">Get in Touch</a>
+      <div class="logo"><img src="logo.svg" alt="Stockton & Rogers"></div>
+      <h1>Stockton & Rogers</h1>
+      <p class="tagline">Fusing beauty with functionality to create timeless pieces from Northwest Arkansas hardwoods.</p>
+      <div class="hero-buttons">
+        <a href="#connect" class="btn-primary">Start a Custom Commission</a>
+        <a href="#work" class="btn-secondary">View Selected Work</a>
+      </div>
     </div>
   </header>
 
+  <!-- PHILOSOPHY -->
   <section id="story" class="section philosophy">
-    <h2 style="text-align:center; margin-bottom:2rem; font-size:2.2rem;">Our Philosophy</h2>
-    <p style="max-width:820px; margin:0 auto 2rem; font-size:1.15rem; text-align:center;">
-      Exceptional pieces begin with a clear understanding of needs and expectations.<br>
-      We fuse beauty and functionality to create graceful and elegant design — using premium local hardwoods and select exotics in Northwest Arkansas.
+    <h2 style="text-align:center; margin-bottom:2.25rem; font-size:2.35rem;">Our Philosophy</h2>
+    <p style="max-width:780px; margin:0 auto; font-size:1.18rem; text-align:center; line-height:1.75;">
+      Exceptional pieces begin with a deep understanding of needs and expectations.<br>
+      We fuse beauty and functionality to create graceful, elegant design — using premium local hardwoods and select exotics from Northwest Arkansas.
     </p>
   </section>
 
+  <!-- SELECTED WORK -->
   <section id="work" class="section">
-    <h2 style="text-align:center; margin-bottom:3rem; font-size:2.2rem;">Selected Work</h2>
+    <h2 style="text-align:center; margin-bottom:3.25rem; font-size:2.35rem;">Selected Work</h2>
     <div class="gallery">
       <img src="form-and-fossil-pair.jpeg" alt="Form and fossil pair">
       <img src="triptych-frame-2.jpeg" alt="Triptych frame">
@@ -85,19 +149,47 @@
       <img src="the-horizon-clock.jpeg" alt="The Horizon clock">
       <img src="leopardwood-frame.jpeg" alt="Leopardwood frame">
     </div>
-    <p style="text-align:center; margin-top:2.5rem; font-size:1.1rem; color:#444;">More pieces coming soon. Custom commissions available now.</p>
+    <p style="text-align:center; margin-top:2.75rem; font-size:1.05rem; color:#666;">More pieces coming soon. Custom commissions available now.</p>
   </section>
 
-  <section id="connect" class="cta">
-    <h2 style="font-size:2.6rem; margin-bottom:1rem;">Ready to create something lasting?</h2>
-    <p style="max-width:620px; margin:0 auto 2rem; font-size:1.1rem;">Whether it’s a custom frame, heirloom box, clock, or full table — let’s talk about your next piece.</p>
-    <a href="mailto:contact@stocktonandrogers.com" style="background:#7a0000; color:white; padding:1rem 2.8rem; border-radius:50px; text-decoration:none; font-weight:600; font-size:1.1rem;">Send a Message</a>
-    <p style="margin-top:2.2rem; font-size:1.05rem;">contact@stocktonandrogers.com</p>
+  <!-- OUR CRAFT (placeholder) -->
+  <section id="craft" class="section" style="background:#f4f0e8; text-align:center;">
+    <h2 style="font-size:2.35rem; margin-bottom:1.25rem;">Our Craft</h2>
+    <p style="max-width:620px; margin:0 auto; font-size:1.15rem;">
+      From responsibly sourced Northwest Arkansas hardwoods to hand-finished heirloom pieces — every step is deliberate.
+    </p>
+    <p style="margin-top:1.5rem; font-size:0.95rem; color:#777;">A dedicated process page with photography and video is coming soon.</p>
+  </section>
+
+  <!-- CONNECT / FORM -->
+  <section id="connect" class="section cta">
+    <h2 style="font-size:2.5rem; margin-bottom:1rem; color:white;">Ready to create something lasting?</h2>
+    <p style="max-width:620px; margin:0 auto 2.25rem; font-size:1.15rem; color:#ddd;">
+      Whether it’s a custom frame, heirloom box, clock, or full table — let’s talk about your next piece.
+    </p>
+
+    <form class="form" action="#" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <select name="project" required>
+        <option value="">Project Type</option>
+        <option value="Table">Custom Table</option>
+        <option value="Frame">Picture Frame / Triptych</option>
+        <option value="Box">Heirloom Box or Keepsake</option>
+        <option value="Clock">Sculptural Clock</option>
+        <option value="Other">Other / Custom Commission</option>
+      </select>
+      <textarea name="message" rows="4" placeholder="Tell us about your project..." required></textarea>
+      <button type="submit">Send Inquiry</button>
+    </form>
+
+    <p style="margin-top:2.5rem; font-size:1.05rem; color:#ccc;">contact@stocktonandrogers.com</p>
   </section>
 
   <footer>
-    <img src="logo.svg" alt="Stockton & Rogers" style="height: 75px; margin-bottom: 10px;">
-    <p style="margin-top:1rem; font-size:0.9rem;">© 2026 • All pieces handcrafted in Northwest Arkansas</p>
+    <img src="logo.svg" alt="Stockton & Rogers" style="height: 72px; margin-bottom: 12px;">
+    <p>© 2026 • All pieces handcrafted in Northwest Arkansas</p>
+    <p style="margin-top:0.6rem; font-size:0.85rem;">Premium local & exotic hardwoods • Heirloom quality • Made to last generations</p>
   </footer>
 
   <!-- Lightbox -->
