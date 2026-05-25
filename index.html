@@ -44,7 +44,7 @@
     }
     .hero { 
       width: 100%; height: 100vh; 
-      background: linear-gradient(rgba(30,30,30,0.28), rgba(30,30,30,0.28)), url('fossil-monolith.jpeg') center/cover no-repeat; 
+      background: linear-gradient(rgba(44,44,44,0.25), rgba(30,30,30,0.42)), url('fossil-monolith.jpeg') center/cover no-repeat; 
       display: flex; align-items: center; justify-content: center; text-align: center; color: white; 
       position: relative;
     }
@@ -231,7 +231,7 @@
   </footer>
 
   <!-- Lightbox -->
-  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()" style="display: none;">
     <span class="close" onclick="closeLightbox(); event.stopImmediatePropagation();">&times;</span>
     <img class="lightbox-content" id="lightbox-img" onclick="event.stopImmediatePropagation();">
     <div id="lightbox-multi"></div>
@@ -242,7 +242,7 @@
       const lightbox = document.getElementById('lightbox');
       const lightboxImg = document.getElementById('lightbox-img');
       const multiContainer = document.getElementById('lightbox-multi');
-      lightbox.style.display = 'block';
+      lightbox.style.display = 'flex';
 
       if (multiImages) {
         lightboxImg.style.display = 'none';
@@ -269,6 +269,9 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
+      // Ensure lightbox is closed on initial load
+      document.getElementById('lightbox').style.display = 'none';
+
       document.querySelectorAll('.gallery img').forEach(img => {
         img.addEventListener('click', () => {
           const multi = img.getAttribute('data-multi');
