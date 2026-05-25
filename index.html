@@ -37,10 +37,10 @@
       border-bottom: 1px solid #e0e0e0;
     }
     .nav .logo img { height: 32px; }
-    .nav a { margin-left: 2.25rem; text-decoration: none; color: var(--charcoal); font-weight: 500; font-size: 0.95rem; }
+    .nav a { margin-left: 2rem; text-decoration: none; color: var(--charcoal); font-weight: 500; font-size: 0.93rem; }
     .nav .inquire-btn {
-      background: var(--dark-gray); color: white; padding: 0.55rem 1.4rem; border-radius: 50px; 
-      text-decoration: none; font-weight: 600; font-size: 0.9rem; margin-left: 1.5rem;
+      background: var(--dark-gray); color: white; padding: 0.5rem 1.3rem; border-radius: 50px; 
+      text-decoration: none; font-weight: 600; font-size: 0.88rem; margin-left: 1.5rem;
     }
     .hero { 
       width: 100%; height: 100vh; 
@@ -49,18 +49,18 @@
       position: relative;
     }
     .hero-content { max-width: 820px; padding: 2rem; }
-    .hero-content .logo img { height: 95px; position: relative; top: -48px; margin-bottom: 0.6rem; }
+    .hero-content .logo img { height: 120px; position: relative; top: -85px; margin-bottom: 0.6rem; }
     .hero .tagline { 
       font-size: 1.35rem; 
       font-style: italic; 
       font-weight: 700; 
-      margin-bottom: 2.25rem; 
+      margin-bottom: 3rem; 
       max-width: 620px; 
       margin-left: auto; 
       margin-right: auto; 
       color: #f0e9df;
     }
-    .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
+    .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 3rem; }
     .btn-primary { 
       background: white; color: var(--charcoal); padding: 0.85rem 2.1rem; border-radius: 50px; 
       text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.2s ease;
@@ -104,7 +104,7 @@
       display: none; position: fixed; z-index: 1000; left: 0; top: 0; 
       width: 100%; height: 100%; background-color: rgba(0,0,0,0.92); 
       overflow: auto; 
-      display: flex; align-items: center; justify-content: center;
+      align-items: center; justify-content: center;
     }
     .lightbox-content { 
       position: relative; margin: 0; display: block; 
@@ -155,7 +155,7 @@
   <!-- HERO -->
   <header class="hero">
     <div class="hero-content">
-      <div class="logo"><img src="logo.svg" alt="Stockton & Rogers" style="height: 95px; position: relative; top: -48px; margin-bottom: 0.6rem;"></div>
+      <div class="logo"><img src="logo.svg" alt="Stockton & Rogers" style="height: 120px; position: relative; top: -85px; margin-bottom: 0.6rem;"></div>
       <p class="tagline">Fusing beauty with functionality to create timeless art.</p>
       <div class="hero-buttons">
         <a href="#connect" class="btn-primary">Start a Custom Commission</a>
@@ -269,7 +269,6 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      // Ensure lightbox is closed on initial load
       document.getElementById('lightbox').style.display = 'none';
 
       document.querySelectorAll('.gallery img').forEach(img => {
