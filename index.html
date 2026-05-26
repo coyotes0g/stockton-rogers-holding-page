@@ -83,6 +83,7 @@
       text-decoration: none; font-weight: 600; font-size: 1rem;
     }
     .section { padding: 7rem 6%; max-width: 1280px; margin: 0 auto; }
+    #work { background: #f0f0f0; }
     .philosophy { background: var(--charcoal); color: white; }
     .philosophy h2 { color: white; }
     .philosophy p { color: #ddd; }
@@ -142,7 +143,7 @@
       pointer-events: none;
     }
     .arrow {
-      background: rgba(255,255,255,0.35);
+      background: #555;
       color: #fff;
       font-size: 36px;
       width: 50px;
@@ -155,15 +156,28 @@
       user-select: none;
       pointer-events: auto;
       transition: background 0.2s, transform 0.1s;
-      border: 2px solid rgba(255,255,255,0.7);
+      border: 2px solid #777;
       box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     }
     .arrow:hover {
-      background: rgba(255,255,255,0.55);
+      background: #666;
       transform: scale(1.1);
     }
     .arrow:active {
       transform: scale(0.95);
+    }
+
+    #lightbox-caption {
+      position: absolute;
+      bottom: 25px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 500;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+      padding: 0 20px;
     }
 
     #lightbox-multi { 
@@ -180,6 +194,7 @@
       .lightbox-content { max-width: 96%; max-height: 78vh; }
       .lightbox-arrows { padding: 0 15px; }
       .arrow { width: 40px; height: 40px; font-size: 28px; }
+      #lightbox-caption { font-size: 0.95rem; bottom: 18px; }
     }
 
     /* Desktop-specific adjustments - higher logo on larger screens */
@@ -196,7 +211,7 @@
       }
     }
 
-    /* v18 - 2026-05-26 reorder gallery + more visible arrows */
+    /* v19 - 2026-05-26 gray arrows + captions + darker Selected Work */
   </style>
 </head>
 <body>
@@ -297,6 +312,7 @@
   <div id="lightbox" class="lightbox" onclick="closeLightbox()">
     <span class="close" onclick="closeLightbox(); event.stopImmediatePropagation();">&times;</span>
     <img class="lightbox-content" id="lightbox-img" onclick="event.stopImmediatePropagation();">
+    <div id="lightbox-caption"></div>
     <div id="lightbox-multi" style="display: none;"></div>
     <div class="lightbox-arrows" id="lightbox-arrows" style="display: none;">
       <span class="arrow prev" onclick="prevImage(); event.stopImmediatePropagation();">&#10094;</span>
@@ -306,37 +322,57 @@
 
   <script>
     let currentImages = [];
+    let currentCaptions = [];
     let currentIndex = 0;
 
     function showImage(index) {
       const lightboxImg = document.getElementById('lightbox-img');
+      const captionEl = document.getElementById('lightbox-caption');
       const arrows = document.getElementById('lightbox-arrows');
       if (currentImages.length > 0) {
         lightboxImg.src = currentImages[index];
         currentIndex = index;
+        if (captionEl && currentCaptions[index]) {
+          captionEl.textContent = currentCaptions[index];
+        }
         arrows.style.display = currentImages.length > 1 ? 'flex' : 'none';
       }
     }
 
-    function openLightbox(src, multiImages = null) {
+    function openLightbox(src, multiImages = null, clickedAlt = '') {
       const lightbox = document.getElementById('lightbox');
       const lightboxImg = document.getElementById('lightbox-img');
       const multiContainer = document.getElementById('lightbox-multi');
       const arrows = document.getElementById('lightbox-arrows');
+      const captionEl = document.getElementById('lightbox-caption');
       lightbox.style.display = 'flex';
 
       multiContainer.style.display = 'none';
 
       if (multiImages) {
-        currentImages = multiImages.split(',').map(s => s.trim());
+        const srcs = multiImages.split(',').map(s => s.trim());
+        currentImages = srcs;
+        currentCaptions = srcs.map((s, i) => {
+          if (i === 0 && clickedAlt) return clickedAlt;
+          // derive caption from filename
+          let name = s.replace(/\.(jpeg|jpg|png|gif)$/i, '');
+          name = name.replace(/[-_]/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+          return name;
+        });
         currentIndex = 0;
         lightboxImg.style.display = 'block';
+        if (captionEl) captionEl.style.display = 'block';
         showImage(0);
       } else {
         currentImages = [src];
+        currentCaptions = [clickedAlt || ''];
         currentIndex = 0;
         lightboxImg.style.display = 'block';
         lightboxImg.src = src;
+        if (captionEl) {
+          captionEl.textContent = clickedAlt || '';
+          captionEl.style.display = clickedAlt ? 'block' : 'none';
+        }
         arrows.style.display = 'none';
       }
     }
@@ -357,9 +393,12 @@
       const lightbox = document.getElementById('lightbox');
       const multiContainer = document.getElementById('lightbox-multi');
       const arrows = document.getElementById('lightbox-arrows');
+      const captionEl = document.getElementById('lightbox-caption');
       lightbox.style.display = 'none';
       multiContainer.innerHTML = '';
+      if (captionEl) captionEl.textContent = '';
       currentImages = [];
+      currentCaptions = [];
       currentIndex = 0;
       arrows.style.display = 'none';
     }
@@ -370,10 +409,11 @@
       document.querySelectorAll('.gallery img').forEach(img => {
         img.addEventListener('click', () => {
           const multi = img.getAttribute('data-multi');
+          const alt = img.getAttribute('alt') || '';
           if (multi) {
-            openLightbox(null, multi);
+            openLightbox(null, multi, alt);
           } else {
-            openLightbox(img.src);
+            openLightbox(img.src, null, alt);
           }
         });
       });
