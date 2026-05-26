@@ -150,7 +150,21 @@
       .lightbox-content { max-width: 96%; max-height: 78vh; }
     }
 
-    /* v14 - 2026-05-25 final maximum logo height */
+    /* Desktop-specific adjustments - higher logo on larger screens */
+    @media (min-width: 601px) {
+      .hero-content { 
+        padding-top: 10px;
+      }
+      .hero-content .logo img { 
+        height: 125px; 
+        top: -165px;
+      }
+      .hero-buttons {
+        margin-top: 4rem;
+      }
+    }
+
+    /* v15 - 2026-05-26 desktop logo higher */
   </style>
 </head>
 <body>
