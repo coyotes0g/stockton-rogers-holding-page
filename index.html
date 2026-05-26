@@ -211,7 +211,7 @@
       }
     }
 
-    /* v19 - 2026-05-26 gray arrows + captions + darker Selected Work */
+    /* v20 - 2026-05-26 title case captions in lightbox */
   </style>
 </head>
 <body>
@@ -325,6 +325,10 @@
     let currentCaptions = [];
     let currentIndex = 0;
 
+    function toTitleCase(str) {
+      return str.replace(/\b\w/g, l => l.toUpperCase());
+    }
+
     function showImage(index) {
       const lightboxImg = document.getElementById('lightbox-img');
       const captionEl = document.getElementById('lightbox-caption');
@@ -353,11 +357,10 @@
         const srcs = multiImages.split(',').map(s => s.trim());
         currentImages = srcs;
         currentCaptions = srcs.map((s, i) => {
-          if (i === 0 && clickedAlt) return clickedAlt;
-          // derive caption from filename
+          if (i === 0 && clickedAlt) return toTitleCase(clickedAlt);
           let name = s.replace(/\.(jpeg|jpg|png|gif)$/i, '');
-          name = name.replace(/[-_]/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
-          return name;
+          name = name.replace(/[-_]/g, ' ');
+          return toTitleCase(name);
         });
         currentIndex = 0;
         lightboxImg.style.display = 'block';
@@ -365,12 +368,12 @@
         showImage(0);
       } else {
         currentImages = [src];
-        currentCaptions = [clickedAlt || ''];
+        currentCaptions = [toTitleCase(clickedAlt || '')];
         currentIndex = 0;
         lightboxImg.style.display = 'block';
         lightboxImg.src = src;
         if (captionEl) {
-          captionEl.textContent = clickedAlt || '';
+          captionEl.textContent = toTitleCase(clickedAlt || '');
           captionEl.style.display = clickedAlt ? 'block' : 'none';
         }
         arrows.style.display = 'none';
