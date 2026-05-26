@@ -129,15 +129,44 @@
     }
     .close:hover { color: #ccc; }
 
-    #lightbox-multi { 
-      display: flex; flex-direction: row; gap: 1.25rem; 
-      max-width: 92%; max-height: 82vh; margin: 0 auto; 
-      overflow-x: auto; padding-bottom: 1rem;
-      scroll-behavior: smooth;
+    .lightbox-arrows {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 30px;
+      transform: translateY(-50%);
+      z-index: 1002;
+      pointer-events: none;
     }
-    #lightbox-multi img { 
-      width: auto; height: 78vh; border-radius: 8px; 
-      box-shadow: 0 20px 60px rgba(0,0,0,0.5); flex-shrink: 0;
+    .arrow {
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+      font-size: 36px;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      cursor: pointer;
+      user-select: none;
+      pointer-events: auto;
+      transition: background 0.2s, transform 0.1s;
+      border: 2px solid rgba(255,255,255,0.5);
+    }
+    .arrow:hover {
+      background: rgba(255,255,255,0.4);
+      transform: scale(1.1);
+    }
+    .arrow:active {
+      transform: scale(0.95);
+    }
+
+    #lightbox-multi { 
+      display: none; /* deprecated in favor of arrow navigation */
     }
 
     @media (max-width: 600px) {
@@ -148,6 +177,8 @@
       .hero .tagline { font-size: 1.15rem; }
       .section { padding: 5rem 4%; }
       .lightbox-content { max-width: 96%; max-height: 78vh; }
+      .lightbox-arrows { padding: 0 15px; }
+      .arrow { width: 40px; height: 40px; font-size: 28px; }
     }
 
     /* Desktop-specific adjustments - higher logo on larger screens */
@@ -164,7 +195,7 @@
       }
     }
 
-    /* v15 - 2026-05-26 desktop logo higher */
+    /* v16 - 2026-05-26 lightbox with arrow navigation */
   </style>
 </head>
 <body>
@@ -263,38 +294,71 @@
   <div id="lightbox" class="lightbox" onclick="closeLightbox()">
     <span class="close" onclick="closeLightbox(); event.stopImmediatePropagation();">&times;</span>
     <img class="lightbox-content" id="lightbox-img" onclick="event.stopImmediatePropagation();">
-    <div id="lightbox-multi"></div>
+    <div id="lightbox-multi" style="display: none;"></div>
+    <div class="lightbox-arrows" id="lightbox-arrows" style="display: none;">
+      <span class="arrow prev" onclick="prevImage(); event.stopImmediatePropagation();">&#10094;</span>
+      <span class="arrow next" onclick="nextImage(); event.stopImmediatePropagation();">&#10095;</span>
+    </div>
   </div>
 
   <script>
+    let currentImages = [];
+    let currentIndex = 0;
+
+    function showImage(index) {
+      const lightboxImg = document.getElementById('lightbox-img');
+      const arrows = document.getElementById('lightbox-arrows');
+      if (currentImages.length > 0) {
+        lightboxImg.src = currentImages[index];
+        currentIndex = index;
+        arrows.style.display = currentImages.length > 1 ? 'flex' : 'none';
+      }
+    }
+
     function openLightbox(src, multiImages = null) {
       const lightbox = document.getElementById('lightbox');
       const lightboxImg = document.getElementById('lightbox-img');
       const multiContainer = document.getElementById('lightbox-multi');
+      const arrows = document.getElementById('lightbox-arrows');
       lightbox.style.display = 'flex';
 
+      multiContainer.style.display = 'none';
+
       if (multiImages) {
-        lightboxImg.style.display = 'none';
-        multiContainer.style.display = 'flex';
-        multiContainer.innerHTML = '';
-        const images = multiImages.split(',');
-        images.forEach(imgSrc => {
-          const img = document.createElement('img');
-          img.src = imgSrc.trim();
-          multiContainer.appendChild(img);
-        });
+        currentImages = multiImages.split(',').map(s => s.trim());
+        currentIndex = 0;
+        lightboxImg.style.display = 'block';
+        showImage(0);
       } else {
-        multiContainer.style.display = 'none';
+        currentImages = [src];
+        currentIndex = 0;
         lightboxImg.style.display = 'block';
         lightboxImg.src = src;
+        arrows.style.display = 'none';
       }
+    }
+
+    function prevImage() {
+      if (currentImages.length === 0) return;
+      let newIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+      showImage(newIndex);
+    }
+
+    function nextImage() {
+      if (currentImages.length === 0) return;
+      let newIndex = (currentIndex + 1) % currentImages.length;
+      showImage(newIndex);
     }
 
     function closeLightbox() {
       const lightbox = document.getElementById('lightbox');
       const multiContainer = document.getElementById('lightbox-multi');
+      const arrows = document.getElementById('lightbox-arrows');
       lightbox.style.display = 'none';
       multiContainer.innerHTML = '';
+      currentImages = [];
+      currentIndex = 0;
+      arrows.style.display = 'none';
     }
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -312,7 +376,14 @@
       });
     });
 
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+      const lightboxEl = document.getElementById('lightbox');
+      if (lightboxEl && lightboxEl.style.display === 'flex') {
+        if (e.key === 'ArrowLeft') prevImage();
+        if (e.key === 'ArrowRight') nextImage();
+      }
+    });
   </script>
 </body>
 </html>
