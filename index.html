@@ -36,7 +36,11 @@
       display: flex; justify-content: space-between; align-items: center; 
       border-bottom: 1px solid #e0e0e0;
     }
-    .nav .logo img { height: 32px; }
+    .nav .logo img { 
+      height: 40px; 
+      shape-rendering: geometricPrecision;
+      image-rendering: -webkit-optimize-contrast;
+    }
     .nav a { margin-left: 2.25rem; text-decoration: none; color: var(--charcoal); font-weight: 500; font-size: 0.95rem; }
     .nav .inquire-btn {
       background: var(--dark-gray); color: white; padding: 0.55rem 1.4rem; border-radius: 50px; 
@@ -57,7 +61,9 @@
       height: 108px; 
       position: relative; 
       top: -155px;                /* lifted higher to show more of the fossil/mineral background */
-      margin-bottom: 0.6rem; 
+      margin-bottom: 0.6rem;
+      shape-rendering: geometricPrecision;
+      image-rendering: -webkit-optimize-contrast;
     }
     .hero .tagline { 
       font-size: 1.35rem; 
@@ -83,7 +89,16 @@
       text-decoration: none; font-weight: 600; font-size: 1rem;
     }
     .section { padding: 7rem 6%; max-width: 1280px; margin: 0 auto; }
-    #work { background: #f0f0f0; }
+
+    /* Full-bleed gray background for Selected Work, content stays centered */
+    #work {
+      background: #f0f0f0;
+    }
+    #work .section {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 7rem 6%;
+    }
     .philosophy { background: var(--charcoal); color: white; }
     .philosophy h2 { color: white; }
     .philosophy p { color: #ddd; }
@@ -205,13 +220,15 @@
       .hero-content .logo img { 
         height: 102px; 
         top: -180px;               /* lifted higher to reveal more of the mineral/fossil detail in the background */
+        shape-rendering: geometricPrecision;
+        image-rendering: -webkit-optimize-contrast;
       }
       .hero-buttons {
         margin-top: 2.5rem;        /* reduced to keep tagline + buttons balanced after extra lift */
       }
     }
 
-    /* v22 - 2026-05-31 desktop hero logo placed higher (less fossil overlap) */
+    /* v23 - 2026-05-31 full-width Selected Work background + improved logo SVG rendering for crispness */
   </style>
 </head>
 <body>
@@ -250,22 +267,24 @@
   </section>
 
   <!-- SELECTED WORK -->
-  <section id="work" class="section">
-    <h2 style="text-align:center; margin-bottom:3.25rem; font-size:2.35rem;">Selected Work</h2>
-    <div class="gallery">
-      <img src="form-and-fossil-pair.jpeg" alt="Form and fossil pair" data-multi="form-and-fossil-pair.jpeg,form-and-fossil-pair-2.jpeg">
-      <img src="modern-multi-tone-frame.jpeg" alt="Modern multi-tone frame" data-multi="modern-multi-tone-frame.jpeg,modern-multi-tone-frame-2.jpeg">
-      <img src="the-horizon-clock.jpeg" alt="The Horizon clock" data-multi="the-horizon-clock.jpeg,the-horizon-clock-2.jpeg">
-      <img src="triptych-frame-2.jpeg" alt="Triptych frame">
-      <img src="modern-grid-box.jpeg" alt="Modern grid keepsake box" data-multi="modern-grid-box.jpeg,modern-grid-box-2.jpg">
-      <img src="sculptural-wave-clock.jpeg" alt="Sculptural wave clock">
-      <img src="walnut-and-alloy-frame.jpeg" alt="Walnut and alloy frame">
-      <img src="zebrawood-picture-frame.jpeg" alt="Zebrawood picture frame">
-      <img src="bobcat-perch.jpeg" alt="Bobcat perch" data-multi="bobcat-perch.jpeg,bobcat-perch-2.jpeg">
-      <img src="reed-lake-reverie.jpeg" alt="Reed lake reverie">
-      <img src="leopardwood-frame.jpeg" alt="Leopardwood frame">
+  <section id="work">
+    <div class="section">
+      <h2 style="text-align:center; margin-bottom:3.25rem; font-size:2.35rem;">Selected Work</h2>
+      <div class="gallery">
+        <img src="form-and-fossil-pair.jpeg" alt="Form and fossil pair" data-multi="form-and-fossil-pair.jpeg,form-and-fossil-pair-2.jpeg">
+        <img src="modern-multi-tone-frame.jpeg" alt="Modern multi-tone frame" data-multi="modern-multi-tone-frame.jpeg,modern-multi-tone-frame-2.jpeg">
+        <img src="the-horizon-clock.jpeg" alt="The Horizon clock" data-multi="the-horizon-clock.jpeg,the-horizon-clock-2.jpeg">
+        <img src="triptych-frame-2.jpeg" alt="Triptych frame">
+        <img src="modern-grid-box.jpeg" alt="Modern grid keepsake box" data-multi="modern-grid-box.jpeg,modern-grid-box-2.jpg">
+        <img src="sculptural-wave-clock.jpeg" alt="Sculptural wave clock">
+        <img src="walnut-and-alloy-frame.jpeg" alt="Walnut and alloy frame">
+        <img src="zebrawood-picture-frame.jpeg" alt="Zebrawood picture frame">
+        <img src="bobcat-perch.jpeg" alt="Bobcat perch" data-multi="bobcat-perch.jpeg,bobcat-perch-2.jpeg">
+        <img src="reed-lake-reverie.jpeg" alt="Reed lake reverie">
+        <img src="leopardwood-frame.jpeg" alt="Leopardwood frame">
+      </div>
+      <p style="text-align:center; margin-top:2.75rem; font-size:1.05rem; color:#666;">More pieces coming soon. Custom commissions available now.</p>
     </div>
-    <p style="text-align:center; margin-top:2.75rem; font-size:1.05rem; color:#666;">More pieces coming soon. Custom commissions available now.</p>
   </section>
 
   <!-- OUR CRAFT -->
