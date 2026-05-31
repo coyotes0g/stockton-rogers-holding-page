@@ -4,6 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stockton & Rogers | Functional Art</title>
+
+  <!-- Professional metadata -->
+  <meta name="description" content="Handcrafted functional art from premium Northwest Arkansas hardwoods. Custom tables, picture frames, heirloom boxes, and sculptural clocks by Stockton & Rogers.">
+  <meta property="og:title" content="Stockton & Rogers | Functional Art">
+  <meta property="og:description" content="Exceptional pieces handcrafted from responsibly sourced hardwoods in Northwest Arkansas. Custom commissions welcome.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.stocktonandrogers.com">
+  <!-- Add a high-quality OG image later: <meta property="og:image" content="..."> -->
+
+  <!-- Favicon -->
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
   <style>
     :root { 
       --charcoal: #2C2C2C; 
@@ -21,6 +32,17 @@
       background: var(--light-gray); 
       letter-spacing: -0.015em;
     }
+
+    /* Professional focus styles for accessibility */
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+      outline: 2px solid var(--charcoal);
+      outline-offset: 2px;
+    }
+
     h1, h2, h3 { 
       font-family: Georgia, 'Times New Roman', serif; 
       font-weight: 600; 
@@ -201,7 +223,7 @@
 
     @media (max-width: 600px) {
       .nav { padding: 0.5rem 4%; }
-      .nav a { font-size: 0.85rem; margin-left: 0.9rem; }
+      .nav a { font-size: 0.82rem; margin-left: 0.75rem; }
       .nav .inquire-btn { display: none; }
       .hero h1 { font-size: 2.4rem; }
       .hero .tagline { font-size: 1.15rem; }
@@ -228,7 +250,7 @@
       }
     }
 
-    /* v23 - 2026-05-31 full-width Selected Work background + improved logo SVG rendering for crispness */
+    /* v24 - Professional refinements: meta tags, OG, favicon, working form placeholder, lazy loading, focus styles, mobile nav tweaks */
   </style>
 </head>
 <body>
@@ -271,17 +293,17 @@
     <div class="section">
       <h2 style="text-align:center; margin-bottom:3.25rem; font-size:2.35rem;">Selected Work</h2>
       <div class="gallery">
-        <img src="form-and-fossil-pair.jpeg" alt="Form and fossil pair" data-multi="form-and-fossil-pair.jpeg,form-and-fossil-pair-2.jpeg">
-        <img src="modern-multi-tone-frame.jpeg" alt="Modern multi-tone frame" data-multi="modern-multi-tone-frame.jpeg,modern-multi-tone-frame-2.jpeg">
-        <img src="the-horizon-clock.jpeg" alt="The Horizon clock" data-multi="the-horizon-clock.jpeg,the-horizon-clock-2.jpeg">
-        <img src="triptych-frame-2.jpeg" alt="Triptych frame">
-        <img src="modern-grid-box.jpeg" alt="Modern grid keepsake box" data-multi="modern-grid-box.jpeg,modern-grid-box-2.jpg">
-        <img src="sculptural-wave-clock.jpeg" alt="Sculptural wave clock">
-        <img src="walnut-and-alloy-frame.jpeg" alt="Walnut and alloy frame">
-        <img src="zebrawood-picture-frame.jpeg" alt="Zebrawood picture frame">
-        <img src="bobcat-perch.jpeg" alt="Bobcat perch" data-multi="bobcat-perch.jpeg,bobcat-perch-2.jpeg">
-        <img src="reed-lake-reverie.jpeg" alt="Reed lake reverie">
-        <img src="leopardwood-frame.jpeg" alt="Leopardwood frame">
+        <img src="form-and-fossil-pair.jpeg" alt="Form and fossil pair" data-multi="form-and-fossil-pair.jpeg,form-and-fossil-pair-2.jpeg" loading="lazy">
+        <img src="modern-multi-tone-frame.jpeg" alt="Modern multi-tone frame" data-multi="modern-multi-tone-frame.jpeg,modern-multi-tone-frame-2.jpeg" loading="lazy">
+        <img src="the-horizon-clock.jpeg" alt="The Horizon clock" data-multi="the-horizon-clock.jpeg,the-horizon-clock-2.jpeg" loading="lazy">
+        <img src="triptych-frame-2.jpeg" alt="Triptych frame" loading="lazy">
+        <img src="modern-grid-box.jpeg" alt="Modern grid keepsake box" data-multi="modern-grid-box.jpeg,modern-grid-box-2.jpg" loading="lazy">
+        <img src="sculptural-wave-clock.jpeg" alt="Sculptural wave clock" loading="lazy">
+        <img src="walnut-and-alloy-frame.jpeg" alt="Walnut and alloy frame" loading="lazy">
+        <img src="zebrawood-picture-frame.jpeg" alt="Zebrawood picture frame" loading="lazy">
+        <img src="bobcat-perch.jpeg" alt="Bobcat perch" data-multi="bobcat-perch.jpeg,bobcat-perch-2.jpeg" loading="lazy">
+        <img src="reed-lake-reverie.jpeg" alt="Reed lake reverie" loading="lazy">
+        <img src="leopardwood-frame.jpeg" alt="Leopardwood frame" loading="lazy">
       </div>
       <p style="text-align:center; margin-top:2.75rem; font-size:1.05rem; color:#666;">More pieces coming soon. Custom commissions available now.</p>
     </div>
@@ -303,7 +325,13 @@
       Whether it’s a custom frame, heirloom box, clock, or full table — let’s talk about your next piece.
     </p>
 
-    <form class="form" action="#" method="POST">
+    <!-- 
+      Professional contact form using Formspree (free for basic use).
+      1. Go to https://formspree.io and create a free account.
+      2. Create a new form and replace the action URL below with your endpoint (e.g. https://formspree.io/f/xyzwabcd).
+      3. Optionally add hidden fields like _subject or _replyto for better emails.
+    -->
+    <form class="form" action="https://formspree.io/f/your-form-id" method="POST">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Email Address" required>
       <select name="project" required>
@@ -315,6 +343,8 @@
         <option value="Other">Other / Custom Commission</option>
       </select>
       <textarea name="message" rows="4" placeholder="Tell us about your project..." required></textarea>
+      <!-- Optional: Help with spam + better email subject -->
+      <input type="hidden" name="_subject" value="New commission inquiry from stocktonandrogers.com">
       <button type="submit">Send Inquiry</button>
     </form>
 
