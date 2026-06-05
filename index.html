@@ -172,16 +172,20 @@
       border: 2px solid white; color: white; padding: 0.85rem 2.1rem; border-radius: 50px; 
       text-decoration: none; font-weight: 600; font-size: 1rem;
     }
-    .section { padding: 7rem 6%; max-width: 1280px; margin: 0 auto; }
+    .container { 
+      padding: 7rem 6%; 
+      max-width: 1280px; 
+      margin: 0 auto; 
+    }
 
-    /* Full-bleed gray background for Selected Work, content stays centered */
+    /* Full width background sections */
+    .philosophy, .craft, .cta, #work {
+      width: 100%;
+    }
+
+    /* Full-bleed gray background for Selected Work */
     #work {
       background: #f0f0f0;
-    }
-    #work .section {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 7rem 6%;
     }
     .philosophy { background: var(--charcoal); color: white; }
     .philosophy h2 { color: white; }
@@ -308,7 +312,7 @@
       .nav .inquire-btn { display: none; }
       .hero h1 { font-size: 2.4rem; }
       .hero .tagline { font-size: 1.15rem; }
-      .section { padding: 5rem 4%; }
+      .container { padding: 5rem 4%; }
       .lightbox-content { max-width: 96%; max-height: 78vh; }
       .lightbox-arrows { padding: 0 15px; }
       .arrow { width: 40px; height: 40px; font-size: 28px; }
@@ -331,7 +335,7 @@
       }
     }
 
-    /* v26 - Added new product photos and videos from Products folders: Heritage Float Display Frames (3 woods + video), extra sea jasper and modern grid variants. Extended lightbox for video support. */
+    /* v27 - Full width section backgrounds, multi-page (Home/Gallery/Shop sorted by type), phone added, process phrase removed, hero bg fossil-monolith (old), polished nav and structure */
   </style>
 </head>
 <body>
@@ -342,11 +346,11 @@
     
     <!-- Desktop nav -->
     <div class="nav-links" style="display: flex; align-items: center;">
-      <a href="#story">Our Story</a>
-      <a href="#work">Selected Work</a>
-      <a href="#craft">Our Craft</a>
-      <a href="#connect">Custom Commissions</a>
-      <a href="#connect" class="inquire-btn">Inquire About a Commission</a>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="shop.html">Shop</a>
+      <a href="#connect">Contact</a>
+      <a href="#connect" class="inquire-btn">Inquire</a>
     </div>
 
     <!-- Mobile hamburger -->
@@ -358,82 +362,70 @@
 
     <!-- Mobile menu -->
     <div class="nav-mobile">
-      <a href="#story">Our Story</a>
-      <a href="#work">Selected Work</a>
-      <a href="#craft">Our Craft</a>
-      <a href="#connect">Custom Commissions</a>
-      <a href="#connect" class="inquire-btn mobile">Inquire About a Commission</a>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="shop.html">Shop</a>
+      <a href="#connect">Contact</a>
+      <a href="#connect" class="inquire-btn mobile">Inquire</a>
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- HERO (reverted to old fossil-monolith picture) -->
   <header class="hero">
     <div class="hero-content">
       <div class="logo"><img src="logo.svg" alt="Stockton & Rogers"></div>
       <p class="tagline">Fusing beauty with functionality to create timeless art.</p>
       <div class="hero-buttons">
         <a href="#connect" class="btn-primary">Start a Custom Commission</a>
-        <a href="#work" class="btn-secondary">View Selected Work</a>
+        <a href="gallery.html" class="btn-secondary">View Gallery</a>
       </div>
     </div>
   </header>
 
-  <!-- PHILOSOPHY -->
-  <section id="story" class="section philosophy">
-    <h2 style="text-align:center; margin-bottom:2.25rem; font-size:2.35rem;">Our Philosophy</h2>
-    <p style="max-width:780px; margin:0 auto; font-size:1.18rem; text-align:center; line-height:1.75;">
-      Exceptional pieces begin with a deep understanding of needs and expectations.<br>
-      We fuse beauty and functionality to create graceful, elegant design — using premium local hardwoods and select exotics from Northwest Arkansas.
-    </p>
-  </section>
-
-  <!-- SELECTED WORK -->
-  <section id="work">
-    <div class="section">
-      <h2 style="text-align:center; margin-bottom:3.25rem; font-size:2.35rem;">Selected Work</h2>
-      <div class="gallery">
-        <img src="form-and-fossil-pair.jpeg" alt="Form and fossil pair" data-multi="form-and-fossil-pair.jpeg,form-and-fossil-pair-2.jpeg" loading="lazy">
-        <img src="modern-multi-tone-frame.jpeg" alt="Modern multi-tone frame" data-multi="modern-multi-tone-frame.jpeg,modern-multi-tone-frame-2.jpeg" loading="lazy">
-        <img src="the-horizon-clock.jpeg" alt="The Horizon clock" data-multi="the-horizon-clock.jpeg,the-horizon-clock-2.jpeg" loading="lazy">
-        <img src="triptych-frame-2.jpeg" alt="Triptych frame" loading="lazy">
-        <img src="modern-grid-box.jpeg" alt="Modern grid keepsake box" data-multi="modern-grid-box.jpeg,modern-grid-box-2.jpg" loading="lazy">
-        <img src="sculptural-wave-clock.jpeg" alt="Sculptural wave clock" loading="lazy">
-        <img src="walnut-and-alloy-frame.jpeg" alt="Walnut and alloy frame" loading="lazy">
-        <img src="zebrawood-picture-frame.jpeg" alt="Zebrawood picture frame" loading="lazy">
-        <img src="bobcat-perch.jpeg" alt="Bobcat perch" data-multi="bobcat-perch.jpeg,bobcat-perch-2.jpeg" loading="lazy">
-        <img src="reed-lake-reverie.jpeg" alt="Reed lake reverie" loading="lazy">
-        <img src="leopardwood-frame.jpeg" alt="Leopardwood frame" loading="lazy">
-
-        <!-- New Heritage Float Display Frames (available pieces) from better product photos -->
-        <img src="Products - For Sale/Heritage Float Display Frame/Cherry + Walnut/heritage-float-display-frame-cherry.jpeg" alt="Heritage Float Display Frame in Cherry and Walnut" data-multi="Products - For Sale/Heritage Float Display Frame/Cherry + Walnut/heritage-float-display-frame-cherry.jpeg,Products - For Sale/Heritage Float Display Frame/Cherry + Walnut/heritage-float-display-frame-cherry-2.jpeg,Products - For Sale/Heritage Float Display Frame/Cherry + Walnut/heritage-float-display-frame-cherry-3.jpeg" loading="lazy">
-        <img src="Products - For Sale/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut.jpeg" alt="Heritage Float Display Frame in Walnut and Maple" data-multi="Products - For Sale/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut.jpeg,Products - For Sale/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut-2.jpeg,Products - For Sale/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut-3.jpeg" loading="lazy">
-        <img src="Products - For Sale/Heritage Float Display Frame/White Oak + Walnut/heritage-float-display-frame-white-oak.jpeg" alt="Heritage Float Display Frame in White Oak and Walnut" data-multi="Products - For Sale/Heritage Float Display Frame/White Oak + Walnut/heritage-float-display-frame-white-oak.jpeg,Products - For Sale/Heritage Float Display Frame/White Oak + Walnut/heritage-float-display-frame-white-oak-2.jpeg,Products - For Sale/Heritage Float Display Frame/White Oak + Walnut/heritage-float-display-frame-white-oak-3.jpeg" loading="lazy">
-        <!-- Video showcase entry (opens video in lightbox) -->
-        <img src="Products - For Sale/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut-lifestyle-1.jpeg" alt="Heritage Float Display Frame Showcase Video - Walnut and Maple" data-video="Products - For Sale/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-showcase.MP4" loading="lazy">
-
-        <!-- Additional better shots from curated commissions folder -->
-        <img src="Products - Custom Commissions/modern-grid-box-3.jpeg" alt="Modern grid keepsake box" data-multi="Products - Custom Commissions/modern-grid-box.jpeg,Products - Custom Commissions/modern-grid-box-2.jpeg,Products - Custom Commissions/modern-grid-box-3.jpeg" loading="lazy">
-        <img src="Products - Custom Commissions/sea-jasper-fossil-stand-3.jpeg" alt="Sea Jasper Fossil Stand" data-multi="Products - Custom Commissions/sea-jasper-fossil-stand.jpeg,Products - Custom Commissions/sea-jasper-fossil-stand-2.jpeg,Products - Custom Commissions/sea-jasper-fossil-stand-3.jpeg" loading="lazy">
-      </div>
-      <p style="text-align:center; margin-top:2.75rem; font-size:1.05rem; color:#666;">Heritage Float Display Frames now available. More custom work and pieces coming soon.</p>
+  <!-- PHILOSOPHY (full width bg) -->
+  <section id="story" class="philosophy">
+    <div class="container">
+      <h2 style="text-align:center; margin-bottom:2.25rem; font-size:2.35rem;">Our Philosophy</h2>
+      <p style="max-width:780px; margin:0 auto; font-size:1.18rem; text-align:center; line-height:1.75;">
+        Exceptional pieces begin with a deep understanding of needs and expectations.<br>
+        We fuse beauty and functionality to create graceful, elegant design — using premium local hardwoods and select exotics from Northwest Arkansas.
+      </p>
     </div>
   </section>
 
-  <!-- OUR CRAFT -->
-  <section id="craft" class="section craft">
-    <h2 style="font-size:2.35rem; margin-bottom:1.25rem;">Our Craft</h2>
-    <p style="max-width:620px; margin:0 auto; font-size:1.15rem;">
-      From responsibly sourced Northwest Arkansas hardwoods to hand-finished heirloom pieces — every step is deliberate.
-    </p>
-    <p style="margin-top:1.5rem; font-size:0.95rem; color:#777;">A dedicated process page with photography and video is coming soon.</p>
+  <!-- FEATURED WORK (full width bg) -->
+  <section id="work">
+    <div class="container">
+      <h2 style="text-align:center; margin-bottom:3.25rem; font-size:2.35rem;">Featured Work</h2>
+      <div class="gallery">
+        <img src="Products - For Sale/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut.jpeg" alt="Heritage Float Display Frame in Walnut and Maple" data-multi="Products - For Sale/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut.jpeg,Products - For Sale/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut-2.jpeg,Products - For Sale/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut-3.jpeg" loading="lazy">
+        <img src="Products - For Sale/Heritage Float Display Frame/Cherry + Walnut/heritage-float-display-frame-cherry.jpeg" alt="Heritage Float Display Frame in Cherry and Walnut" data-multi="Products - For Sale/Heritage Float Display Frame/Cherry + Walnut/heritage-float-display-frame-cherry.jpeg,Products - For Sale/Heritage Float Display Frame/Cherry + Walnut/heritage-float-display-frame-cherry-2.jpeg,Products - For Sale/Heritage Float Display Frame/Cherry + Walnut/heritage-float-display-frame-cherry-3.jpeg" loading="lazy">
+        <img src="the-horizon-clock.jpeg" alt="The Horizon clock" data-multi="the-horizon-clock.jpeg,the-horizon-clock-2.jpeg" loading="lazy">
+        <img src="Products - Custom Commissions/sea-jasper-fossil-stand.jpeg" alt="Sea Jasper Fossil Stand" data-multi="Products - Custom Commissions/sea-jasper-fossil-stand.jpeg,Products - Custom Commissions/sea-jasper-fossil-stand-2.jpeg,Products - Custom Commissions/sea-jasper-fossil-stand-3.jpeg" loading="lazy">
+        <img src="modern-multi-tone-frame.jpeg" alt="Modern multi-tone frame" data-multi="modern-multi-tone-frame.jpeg,modern-multi-tone-frame-2.jpeg" loading="lazy">
+        <img src="Products - Custom Commissions/modern-grid-box-3.jpeg" alt="Modern grid keepsake box" data-multi="Products - Custom Commissions/modern-grid-box.jpeg,Products - Custom Commissions/modern-grid-box-2.jpeg,Products - Custom Commissions/modern-grid-box-3.jpeg" loading="lazy">
+      </div>
+      <p style="text-align:center; margin-top:2.75rem; font-size:1.05rem; color:#666;"><a href="gallery.html">View full Gallery</a> • <a href="shop.html">Shop available pieces</a></p>
+    </div>
   </section>
 
-  <!-- CONNECT / FORM -->
-  <section id="connect" class="section cta">
-    <h2 style="font-size:2.5rem; margin-bottom:1rem; color:white;">Ready to create something lasting?</h2>
-    <p style="max-width:620px; margin:0 auto 2.25rem; font-size:1.15rem; color:#ddd;">
-      Whether it’s a custom frame, heirloom box, clock, or full table — let’s talk about your next piece.
-    </p>
+  <!-- OUR CRAFT (full width bg, phrase removed) -->
+  <section id="craft" class="craft">
+    <div class="container">
+      <h2 style="font-size:2.35rem; margin-bottom:1.25rem;">Our Craft</h2>
+      <p style="max-width:620px; margin:0 auto; font-size:1.15rem;">
+        From responsibly sourced Northwest Arkansas hardwoods to hand-finished heirloom pieces — every step is deliberate.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONNECT / FORM (full width bg) -->
+  <section id="connect" class="cta">
+    <div class="container">
+      <h2 style="font-size:2.5rem; margin-bottom:1rem; color:white;">Ready to create something lasting?</h2>
+      <p style="max-width:620px; margin:0 auto 2.25rem; font-size:1.15rem; color:#ddd;">
+        Whether it’s a custom frame, heirloom box, clock, or full table — let’s talk about your next piece.
+      </p>
 
     <!-- 
       Professional contact form using Formspree (free for basic use).
@@ -461,15 +453,25 @@
       <p style="font-size:1.15rem; color:#2C2C2C; margin-bottom:0.5rem;">Thank you — your message has been sent.</p>
       <p style="font-size:0.95rem; color:#555;">We’ll get back to you within 1–2 business days.</p>
     </div>
+
+    <p style="margin-top:2.5rem; font-size:1.05rem; color:#ccc;">
+      <a href="mailto:contact@stocktonandrogers.com" style="color:#ccc; text-decoration:underline;">contact@stocktonandrogers.com</a><br>
+      <a href="tel:4793963935" style="color:#ccc; text-decoration:underline;">(479) 396-3935</a>
+    </p>
+  </div>
   </section>
 
   <footer>
     <img src="logo.svg" alt="Stockton & Rogers" style="height: 72px; margin-bottom: 12px;">
     <p style="margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--charcoal); font-style: italic;">Handcrafted. Timeless Design. Heirloom Quality.</p>
-    <p>© 2026 • All pieces handcrafted in Northwest Arkansas</p>
+    <p>
+      © 2026 • All pieces handcrafted in Northwest Arkansas<br>
+      <a href="tel:4793963935" style="color:inherit; text-decoration:underline;">(479) 396-3935</a> | 
+      <a href="mailto:contact@stocktonandrogers.com" style="color:inherit; text-decoration:underline;">contact@stocktonandrogers.com</a>
+    </p>
   </footer>
 
-  <!-- Lightbox (supports images and videos) -->
+  <!-- Lightbox -->
   <div id="lightbox" class="lightbox" onclick="closeLightbox()">
     <span class="close" onclick="closeLightbox(); event.stopImmediatePropagation();">&times;</span>
     <img class="lightbox-content" id="lightbox-img" onclick="event.stopImmediatePropagation();">
@@ -553,7 +555,7 @@
           captionEl.style.display = clickedAlt ? 'block' : 'none';
         }
         arrows.style.display = 'none';
-        showImage(0);  // handles image vs video display
+        showImage(0);
       }
     }
 
