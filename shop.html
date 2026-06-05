@@ -50,7 +50,6 @@
       outline: 2px solid var(--charcoal);
       outline-offset: 2px;
     }
-
     h1, h2, h3 { 
       font-family: Georgia, 'Times New Roman', serif; 
       font-weight: 600; 
@@ -77,7 +76,7 @@
       text-decoration: none; font-weight: 600; font-size: 0.9rem; margin-left: 1.5rem;
     }
 
-    /* Mobile hamburger + menu styles */
+    /* Mobile hamburger */
     .nav-toggle {
       display: none;
       flex-direction: column;
@@ -108,7 +107,7 @@
       padding: 1rem 6%;
       flex-direction: column;
       gap: 0.75rem;
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid #e0e0e0;
       box-shadow: 0 4px 12px rgba(0,0,0,0.06);
     }
     .nav-mobile a {
@@ -371,7 +370,7 @@
   </nav>
 
   <!-- PAGE INTRO -->
-  <section style="padding: 3rem 0; background: #f8f5f0;">
+  <section style="padding: 5rem 0 3rem; background: #f8f5f0; margin-top: 0;">
     <div class="container">
       <h1 style="text-align:center; font-size:2.8rem; margin-bottom:0.5rem;">Shop</h1>
       <p style="text-align:center; font-size:1.1rem; color:#555; max-width:700px; margin:0 auto;">Available pieces for purchase. The Heritage Float Display Frame collection in premium hardwood combinations.</p>
@@ -543,7 +542,7 @@
           captionEl.style.display = clickedAlt ? 'block' : 'none';
         }
         arrows.style.display = 'none';
-        showImage(0);
+        showImage(0);  // handles image vs video display
       }
     }
 
@@ -605,6 +604,7 @@
           const multi = img.getAttribute('data-multi');
           const alt = img.getAttribute('alt') || '';
           if (videoSrc) {
+            // Video support via the unified lightbox (showImage detects .mp4)
             openLightbox(videoSrc, null, alt);
           } else if (multi) {
             openLightbox(null, multi, alt);
