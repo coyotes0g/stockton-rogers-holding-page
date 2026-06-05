@@ -237,6 +237,10 @@
       max-width: 92%; max-height: 82vh; 
       border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);
     }
+    #lightbox-video {
+      background: #000;
+      display: none;
+    }
     .close { 
       position: absolute; top: 25px; right: 35px; color: #fff; 
       font-size: 42px; font-weight: bold; cursor: pointer; z-index: 1001;
@@ -327,7 +331,7 @@
       }
     }
 
-    /* v25 - Professional upgrades: mobile hamburger nav + JS, AJAX Formspree form with success state, premium gallery hovers + staggered entrance animations, complete OG + Twitter meta, OG image guidance */
+    /* v26 - Added new product photos and videos from Products folders: Heritage Float Display Frames (3 woods + video), extra sea jasper and modern grid variants. Extended lightbox for video support. */
   </style>
 </head>
 <body>
@@ -399,8 +403,19 @@
         <img src="bobcat-perch.jpeg" alt="Bobcat perch" data-multi="bobcat-perch.jpeg,bobcat-perch-2.jpeg" loading="lazy">
         <img src="reed-lake-reverie.jpeg" alt="Reed lake reverie" loading="lazy">
         <img src="leopardwood-frame.jpeg" alt="Leopardwood frame" loading="lazy">
+
+        <!-- New Heritage Float Display Frames (available pieces) from better product photos -->
+        <img src="Products - For Sale/Heritage Float Display Frame/Cherry + Walnut/heritage-float-display-frame-cherry.jpeg" alt="Heritage Float Display Frame in Cherry and Walnut" data-multi="Products - For Sale/Heritage Float Display Frame/Cherry + Walnut/heritage-float-display-frame-cherry.jpeg,Products - For Sale/Heritage Float Display Frame/Cherry + Walnut/heritage-float-display-frame-cherry-2.jpeg,Products - For Sale/Heritage Float Display Frame/Cherry + Walnut/heritage-float-display-frame-cherry-3.jpeg" loading="lazy">
+        <img src="Products - For Sale/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut.jpeg" alt="Heritage Float Display Frame in Walnut and Maple" data-multi="Products - For Sale/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut.jpeg,Products - For Sale/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut-2.jpeg,Products - For Sale/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut-3.jpeg" loading="lazy">
+        <img src="Products - For Sale/Heritage Float Display Frame/White Oak + Walnut/heritage-float-display-frame-white-oak.jpeg" alt="Heritage Float Display Frame in White Oak and Walnut" data-multi="Products - For Sale/Heritage Float Display Frame/White Oak + Walnut/heritage-float-display-frame-white-oak.jpeg,Products - For Sale/Heritage Float Display Frame/White Oak + Walnut/heritage-float-display-frame-white-oak-2.jpeg,Products - For Sale/Heritage Float Display Frame/White Oak + Walnut/heritage-float-display-frame-white-oak-3.jpeg" loading="lazy">
+        <!-- Video showcase entry (opens video in lightbox) -->
+        <img src="Products - For Sale/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut-lifestyle-1.jpeg" alt="Heritage Float Display Frame Showcase Video - Walnut and Maple" data-video="Products - For Sale/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-showcase.MP4" loading="lazy">
+
+        <!-- Additional better shots from curated commissions folder -->
+        <img src="Products - Custom Commissions/modern-grid-box-3.jpeg" alt="Modern grid keepsake box" data-multi="Products - Custom Commissions/modern-grid-box.jpeg,Products - Custom Commissions/modern-grid-box-2.jpeg,Products - Custom Commissions/modern-grid-box-3.jpeg" loading="lazy">
+        <img src="Products - Custom Commissions/sea-jasper-fossil-stand-3.jpeg" alt="Sea Jasper Fossil Stand" data-multi="Products - Custom Commissions/sea-jasper-fossil-stand.jpeg,Products - Custom Commissions/sea-jasper-fossil-stand-2.jpeg,Products - Custom Commissions/sea-jasper-fossil-stand-3.jpeg" loading="lazy">
       </div>
-      <p style="text-align:center; margin-top:2.75rem; font-size:1.05rem; color:#666;">More pieces coming soon. Custom commissions available now.</p>
+      <p style="text-align:center; margin-top:2.75rem; font-size:1.05rem; color:#666;">Heritage Float Display Frames now available. More custom work and pieces coming soon.</p>
     </div>
   </section>
 
@@ -454,10 +469,11 @@
     <p>© 2026 • All pieces handcrafted in Northwest Arkansas</p>
   </footer>
 
-  <!-- Lightbox -->
+  <!-- Lightbox (supports images and videos) -->
   <div id="lightbox" class="lightbox" onclick="closeLightbox()">
     <span class="close" onclick="closeLightbox(); event.stopImmediatePropagation();">&times;</span>
     <img class="lightbox-content" id="lightbox-img" onclick="event.stopImmediatePropagation();">
+    <video class="lightbox-content" id="lightbox-video" controls onclick="event.stopImmediatePropagation();"></video>
     <div id="lightbox-caption"></div>
     <div id="lightbox-multi" style="display: none;"></div>
     <div class="lightbox-arrows" id="lightbox-arrows" style="display: none;">
@@ -477,11 +493,27 @@
 
     function showImage(index) {
       const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxVideo = document.getElementById('lightbox-video');
       const captionEl = document.getElementById('lightbox-caption');
       const arrows = document.getElementById('lightbox-arrows');
       if (currentImages.length > 0) {
-        lightboxImg.src = currentImages[index];
+        const src = currentImages[index];
+        const isVideo = /\.(mp4|mov|webm)$/i.test(src);
         currentIndex = index;
+
+        if (isVideo) {
+          lightboxImg.style.display = 'none';
+          lightboxVideo.style.display = 'block';
+          lightboxVideo.src = src;
+          lightboxVideo.play().catch(() => {});
+        } else {
+          lightboxVideo.style.display = 'none';
+          lightboxVideo.pause();
+          lightboxVideo.src = '';
+          lightboxImg.style.display = 'block';
+          lightboxImg.src = src;
+        }
+
         if (captionEl && currentCaptions[index]) {
           captionEl.textContent = currentCaptions[index];
         }
@@ -492,6 +524,7 @@
     function openLightbox(src, multiImages = null, clickedAlt = '') {
       const lightbox = document.getElementById('lightbox');
       const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxVideo = document.getElementById('lightbox-video');
       const multiContainer = document.getElementById('lightbox-multi');
       const arrows = document.getElementById('lightbox-arrows');
       const captionEl = document.getElementById('lightbox-caption');
@@ -504,25 +537,23 @@
         currentImages = srcs;
         currentCaptions = srcs.map((s, i) => {
           if (i === 0 && clickedAlt) return toTitleCase(clickedAlt);
-          let name = s.replace(/\.(jpeg|jpg|png|gif)$/i, '');
+          let name = s.replace(/\.(jpeg|jpg|png|gif|mp4|mov|webm)$/i, '');
           name = name.replace(/[-_]/g, ' ');
           return toTitleCase(name);
         });
         currentIndex = 0;
-        lightboxImg.style.display = 'block';
         if (captionEl) captionEl.style.display = 'block';
         showImage(0);
       } else {
         currentImages = [src];
         currentCaptions = [toTitleCase(clickedAlt || '')];
         currentIndex = 0;
-        lightboxImg.style.display = 'block';
-        lightboxImg.src = src;
         if (captionEl) {
           captionEl.textContent = toTitleCase(clickedAlt || '');
           captionEl.style.display = clickedAlt ? 'block' : 'none';
         }
         arrows.style.display = 'none';
+        showImage(0);  // handles image vs video display
       }
     }
 
@@ -543,9 +574,14 @@
       const multiContainer = document.getElementById('lightbox-multi');
       const arrows = document.getElementById('lightbox-arrows');
       const captionEl = document.getElementById('lightbox-caption');
+      const lightboxVideo = document.getElementById('lightbox-video');
       lightbox.style.display = 'none';
       multiContainer.innerHTML = '';
       if (captionEl) captionEl.textContent = '';
+      if (lightboxVideo) {
+        lightboxVideo.pause();
+        lightboxVideo.src = '';
+      }
       currentImages = [];
       currentCaptions = [];
       currentIndex = 0;
@@ -611,9 +647,12 @@
 
       document.querySelectorAll('.gallery img').forEach(img => {
         img.addEventListener('click', () => {
+          const videoSrc = img.getAttribute('data-video');
           const multi = img.getAttribute('data-multi');
           const alt = img.getAttribute('alt') || '';
-          if (multi) {
+          if (videoSrc) {
+            openLightbox(videoSrc, null, alt);
+          } else if (multi) {
             openLightbox(null, multi, alt);
           } else {
             openLightbox(img.src, null, alt);
