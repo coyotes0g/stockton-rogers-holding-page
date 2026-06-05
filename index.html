@@ -11,8 +11,8 @@
   <meta property="og:description" content="Exceptional pieces handcrafted from responsibly sourced hardwoods in Northwest Arkansas. Custom commissions welcome.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.stocktonandrogers.com">
-  <!-- Recommended: Upload a beautiful 1200x630 image (use one of your best product shots) as og-image.jpg in this folder -->
-  <!-- <meta property="og:image" content="https://www.stocktonandrogers.com/og-image.jpg"> -->
+  <!-- Recommended: Upload a beautiful 1200x630 image (use one of your best product shots) as images/og-image.jpg -->
+  <!-- <meta property="og:image" content="https://www.stocktonandrogers.com/images/og-image.jpg"> -->
   <!-- <meta property="og:image:width" content="1200"> -->
   <!-- <meta property="og:image:height" content="630"> -->
 
@@ -124,14 +124,15 @@
       text-align: center;
       border-bottom: none;
     }
+
+    /* Mobile nav active states */
     .nav.open .nav-mobile { display: flex; }
     .nav.open .nav-toggle span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
     .nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
     .nav.open .nav-toggle span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
-
     .hero { 
       width: 100%; height: 100vh; 
-      background: linear-gradient(rgba(44,44,44,0.25), rgba(30,30,30,0.42)), url('fossil-monolith.jpeg') center/cover no-repeat; 
+      background: linear-gradient(rgba(44,44,44,0.25), rgba(30,30,30,0.42)), url('images/fossil-monolith.jpeg') center/cover no-repeat; 
       display: flex; align-items: center; justify-content: center; text-align: center; color: white; 
       position: relative;
     }
@@ -154,7 +155,7 @@
       font-weight: 700; 
       margin-bottom: 2.25rem; 
       max-width: 620px; 
-      margin-left: auto; 
+      margin-left: auto;
       margin-right: auto; 
       color: #f0e9df;
     }
@@ -346,7 +347,7 @@
       }
     }
 
-    /* v28 - Reverted section backgrounds to NOT stretch full width (contained centered .container only); preserved multi-page, phone, process removal, hero, nav, polish. Dark cta and subtle work bg now contained (not edge-to-edge). */
+    /* v29 - Consolidated all product photos under images/ (fixed mixed filing under Products - ... vs root/images); heritage video+variants now load; all refs normalized, local images/ populated. */
   </style>
 </head>
 <body>
@@ -409,12 +410,12 @@
     <div class="container">
       <h2 style="text-align:center; margin-bottom:3.25rem; font-size:2.35rem;">Featured Work</h2>
       <div class="gallery">
-        <img src="Products - For Sale/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut.jpeg" alt="Heritage Float Display Frame in Walnut and Maple" data-multi="Products - For Sale/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut.jpeg,Products - For Sale/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-2.jpeg,Products - For Sale/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-3.jpeg" loading="lazy">
-        <img src="Products - For Sale/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry.jpeg" alt="Heritage Float Display Frame in Cherry and Walnut" data-multi="Products - For Sale/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry.jpeg,Products - For Sale/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry-2.jpeg,Products - For Sale/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry-3.jpeg" loading="lazy">
-        <img src="the-horizon-clock.jpeg" alt="The Horizon clock" data-multi="the-horizon-clock.jpeg,the-horizon-clock-2.jpeg" loading="lazy">
-        <img src="Products - Custom Commissions/sea-jasper-fossil-stand.jpeg" alt="Sea Jasper Fossil Stand" data-multi="Products - Custom Commissions/sea-jasper-fossil-stand.jpeg,Products - Custom Commissions/sea-jasper-fossil-stand-2.jpeg,Products - Custom Commissions/sea-jasper-fossil-stand-3.jpeg" loading="lazy">
-        <img src="modern-multi-tone-frame.jpeg" alt="Modern multi-tone frame" data-multi="modern-multi-tone-frame.jpeg,modern-multi-tone-frame-2.jpeg" loading="lazy">
-        <img src="Products - Custom Commissions/modern-grid-box-3.jpeg" alt="Modern grid keepsake box" data-multi="Products - Custom Commissions/modern-grid-box.jpeg,Products - Custom Commissions/modern-grid-box-2.jpeg,Products - Custom Commissions/modern-grid-box-3.jpeg" loading="lazy">
+        <img src="images/heritage-float-display-frame-walnut.jpeg" alt="Heritage Float Display Frame in Walnut and Maple" data-multi="images/heritage-float-display-frame-walnut.jpeg,images/heritage-float-display-frame-walnut-2.jpeg,images/heritage-float-display-frame-walnut-3.jpeg" loading="lazy">
+        <img src="images/heritage-float-display-frame-cherry.jpeg" alt="Heritage Float Display Frame in Cherry and Walnut" data-multi="images/heritage-float-display-frame-cherry.jpeg,images/heritage-float-display-frame-cherry-2.jpeg,images/heritage-float-display-frame-cherry-3.jpeg" loading="lazy">
+        <img src="images/the-horizon-clock.jpeg" alt="The Horizon clock" data-multi="images/the-horizon-clock.jpeg,images/the-horizon-clock-2.jpeg" loading="lazy">
+        <img src="images/sea-jasper-fossil-stand.jpeg" alt="Sea Jasper Fossil Stand" data-multi="images/sea-jasper-fossil-stand.jpeg,images/sea-jasper-fossil-stand-2.jpeg,images/sea-jasper-fossil-stand-3.jpeg" loading="lazy">
+        <img src="images/modern-multi-tone-frame.jpeg" alt="Modern multi-tone frame" data-multi="images/modern-multi-tone-frame.jpeg,images/modern-multi-tone-frame-2.jpeg" loading="lazy">
+        <img src="images/modern-grid-box-3.jpeg" alt="Modern grid keepsake box" data-multi="images/modern-grid-box.jpeg,images/modern-grid-box-2.jpeg,images/modern-grid-box-3.jpeg" loading="lazy">
       </div>
       <p style="text-align:center; margin-top:2.75rem; font-size:1.05rem; color:#666;"><a href="gallery.html">View full Gallery</a> • <a href="shop.html">Shop available pieces</a></p>
     </div>
@@ -490,8 +491,8 @@
     <div id="lightbox-caption"></div>
     <div id="lightbox-multi" style="display: none;"></div>
     <div class="lightbox-arrows" id="lightbox-arrows" style="display: none;">
-      <span class="arrow prev" onclick="prevImage(); event.stopImmediatePropagation();">&#10094;</span>
-      <span class="arrow next" onclick="nextImage(); event.stopImmediatePropagation();">&#10095;</span>
+      <span class="arrow prev" onclick="prevImage(); event.stopImmediatePropagation();">&larr;</span>
+      <span class="arrow next" onclick="nextImage(); event.stopImmediatePropagation();">&rarr;</span>
     </div>
   </div>
 
