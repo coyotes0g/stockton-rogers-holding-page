@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop | Stockton & Rogers | Functional Art</title>
+
+  <!-- Professional metadata + Social sharing -->
+  <meta name="description" content="Handcrafted functional art from premium Northwest Arkansas hardwoods. Custom tables, picture frames, heirloom boxes, and sculptural clocks by Stockton & Rogers.">
+  <meta property="og:title" content="Stockton & Rogers | Functional Art">
+  <meta property="og:description" content="Exceptional pieces handcrafted from responsibly sourced hardwoods in Northwest Arkansas. Custom commissions welcome.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.stocktonandrogers.com">
+  <!-- Recommended: Upload a beautiful 1200x630 image (use one of your best product shots) as og-image.jpg in this folder -->
+  <!-- <meta property="og:image" content="https://www.stocktonandrogers.com/og-image.jpg"> -->
+  <!-- <meta property="og:image:width" content="1200"> -->
+  <!-- <meta property="og:image:height" content="630"> -->
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Stockton & Rogers | Functional Art">
+  <meta name="twitter:description" content="Handcrafted heirloom pieces from Northwest Arkansas hardwoods.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <style>
+    :root { 
+      --charcoal: #2C2C2C; 
+      --dark-gray: #3A3A3A; 
+      --medium-gray: #5C5C5C; 
+      --light-gray: #f5f5f5; 
+      --accent: #4A4A4A;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html, body { width: 100%; overflow-x: hidden; }
+    body { 
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+      line-height: 1.7; 
+      color: var(--charcoal); 
+      background: var(--light-gray); 
+      letter-spacing: -0.015em;
+    }
+
+    /* Professional focus styles for accessibility */
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+      outline: 2px solid var(--charcoal);
+      outline-offset: 2px;
+    }
+
+    h1, h2, h3 { 
+      font-family: Georgia, 'Times New Roman', serif; 
+      font-weight: 600; 
+      letter-spacing: -0.025em; 
+      color: var(--charcoal);
+    }
+    .nav { 
+      position: fixed; top: 0; width: 100%; 
+      background: rgba(245,245,245,0.96); 
+      backdrop-filter: blur(12px); 
+      z-index: 100; 
+      padding: 0.55rem 6%; 
+      display: flex; justify-content: space-between; align-items: center; 
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .nav .logo img { 
+      height: 40px; 
+      shape-rendering: geometricPrecision;
+      image-rendering: -webkit-optimize-contrast;
+    }
+    .nav a { margin-left: 2.25rem; text-decoration: none; color: var(--charcoal); font-weight: 500; font-size: 0.95rem; }
+    .nav .inquire-btn {
+      background: var(--dark-gray); color: white; padding: 0.55rem 1.4rem; border-radius: 50px; 
+      text-decoration: none; font-weight: 600; font-size: 0.9rem; margin-left: 1.5rem;
+    }
+
+    /* Mobile hamburger + menu styles */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 20px;
+      background: transparent;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      z-index: 110;
+    }
+    .nav-toggle span {
+      display: block;
+      height: 2px;
+      width: 100%;
+      background: var(--charcoal);
+      transition: all 0.3s ease;
+    }
+    .nav-mobile {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: rgba(245,245,245,0.98);
+      backdrop-filter: blur(12px);
+      padding: 1rem 6%;
+      flex-direction: column;
+      gap: 0.75rem;
+      border-bottom: 1px solid #eee;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    .nav-mobile a {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #eee;
+    }
+    .nav-mobile a:last-child { border-bottom: none; }
+    .nav-mobile .inquire-btn.mobile {
+      background: var(--dark-gray);
+      color: white;
+      padding: 0.7rem 1.2rem;
+      border-radius: 50px;
+      margin-top: 0.5rem;
+      text-align: center;
+      border-bottom: none;
+    }
+    .nav.open .nav-mobile { display: flex; }
+    .nav.open .nav-toggle span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
+    .nav.open .nav-toggle span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    .hero { 
+      width: 100%; height: 100vh; 
+      background: linear-gradient(rgba(44,44,44,0.25), rgba(30,30,30,0.42)), url('fossil-monolith.jpeg') center/cover no-repeat; 
+      display: flex; align-items: center; justify-content: center; text-align: center; color: white; 
+      position: relative;
+    }
+    .hero-content { 
+      max-width: 820px; 
+      padding: 2rem;
+      padding-top: 20px;          /* minimal padding */
+    }
+    .hero-content .logo img { 
+      height: 108px; 
+      position: relative; 
+      top: -155px;                /* lifted higher to show more of the fossil/mineral background */
+      margin-bottom: 0.6rem;
+      shape-rendering: geometricPrecision;
+      image-rendering: -webkit-optimize-contrast;
+    }
+    .hero .tagline { 
+      font-size: 1.35rem; 
+      font-style: italic; 
+      font-weight: 700; 
+      margin-bottom: 2.25rem; 
+      max-width: 620px; 
+      margin-left: auto; 
+      margin-right: auto; 
+      color: #f0e9df;
+    }
+    .hero-buttons { 
+      display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; 
+      margin-top: 2.25rem;        /* reduced to compensate for extra logo lift */
+    }
+    .btn-primary { 
+      background: white; color: var(--charcoal); padding: 0.85rem 2.1rem; border-radius: 50px; 
+      text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.2s ease;
+    }
+    .btn-primary:hover { background: #f0e9df; transform: translateY(-1px); }
+    .btn-secondary { 
+      border: 2px solid white; color: white; padding: 0.85rem 2.1rem; border-radius: 50px; 
+      text-decoration: none; font-weight: 600; font-size: 1rem;
+    }
+    .container { 
+      padding: 7rem 6%; 
+      max-width: 1280px; 
+      margin: 0 auto; 
+    }
+
+    /* Full width background sections */
+    .philosophy, .craft, .cta, #work {
+      width: 100%;
+    }
+
+    /* Full-bleed gray background for Selected Work */
+    #work {
+      background: #f0f0f0;
+    }
+    .philosophy { background: var(--charcoal); color: white; }
+    .philosophy h2 { color: white; }
+    .philosophy p { color: #ddd; }
+    .gallery { 
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.75rem; 
+    }
+    .gallery img { 
+      width: 100%; height: auto; border-radius: 6px; 
+      box-shadow: 0 12px 28px rgba(0,0,0,0.12); transition: transform 0.4s cubic-bezier(0.4,0,0.2,1), box-shadow 0.4s ease, filter 0.4s ease; cursor: pointer;
+    }
+    .gallery img:hover { 
+      transform: scale(1.025); 
+      box-shadow: 0 20px 45px rgba(0,0,0,0.18);
+      filter: brightness(1.04) saturate(1.05);
+    }
+
+    /* Subtle professional entrance animation for gallery */
+    @keyframes galleryFadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .gallery img.gallery-animated {
+      animation: galleryFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+    }
+
+    .cta { background: var(--charcoal); color: white; }
+    .cta h2 { color: white; }
+    .craft { background: white; }
+    footer { 
+      background: #f0f0f0; padding: 3.5rem 6%; text-align: center; 
+      font-size: 0.92rem; color: var(--medium-gray); border-top: 1px solid #e0e0e0;
+    }
+    .form { max-width: 520px; margin: 2rem auto 0; }
+    .form input, .form textarea, .form select { 
+      width: 100%; padding: 0.85rem 1rem; margin-bottom: 1rem; 
+      border: 1px solid #d4d0c8; border-radius: 6px; font-size: 1rem;
+    }
+    .form button { 
+      background: var(--dark-gray); color: white; padding: 0.9rem 2.4rem; border: none; 
+      border-radius: 50px; font-weight: 700; cursor: pointer; font-size: 1rem;
+    }
+
+    /* Lightbox Styles */
+    .lightbox { 
+      display: none; position: fixed; z-index: 1000; left: 0; top: 0; 
+      width: 100%; height: 100%; background-color: rgba(0,0,0,0.92); 
+      overflow: auto; 
+      display: flex; align-items: center; justify-content: center;
+    }
+    .lightbox-content { 
+      position: relative; margin: 0; display: block; 
+      max-width: 92%; max-height: 82vh; 
+      border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+    #lightbox-video {
+      background: #000;
+      display: none;
+    }
+    .close { 
+      position: absolute; top: 25px; right: 35px; color: #fff; 
+      font-size: 42px; font-weight: bold; cursor: pointer; z-index: 1001;
+    }
+    .close:hover { color: #ccc; }
+
+    .lightbox-arrows {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 30px;
+      transform: translateY(-50%);
+      z-index: 1002;
+      pointer-events: none;
+    }
+    .arrow {
+      background: #555;
+      color: #fff;
+      font-size: 36px;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      cursor: pointer;
+      user-select: none;
+      pointer-events: auto;
+      transition: background 0.2s, transform 0.1s;
+      border: 2px solid #777;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+    .arrow:hover {
+      background: #666;
+      transform: scale(1.1);
+    }
+    .arrow:active {
+      transform: scale(0.95);
+    }
+
+    #lightbox-caption {
+      position: absolute;
+      bottom: 25px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 500;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+      padding: 0 20px;
+    }
+
+    #lightbox-multi { 
+      display: none; /* deprecated in favor of arrow navigation */
+    }
+
+    @media (max-width: 600px) {
+      .nav { padding: 0.5rem 4%; }
+      .nav .nav-links { display: none !important; }
+      .nav-toggle { display: flex; }
+      .nav .inquire-btn { display: none; }
+      .hero h1 { font-size: 2.4rem; }
+      .hero .tagline { font-size: 1.15rem; }
+      .container { padding: 5rem 4%; }
+      .lightbox-content { max-width: 96%; max-height: 78vh; }
+      .lightbox-arrows { padding: 0 15px; }
+      .arrow { width: 40px; height: 40px; font-size: 28px; }
+      #lightbox-caption { font-size: 0.95rem; bottom: 18px; }
+    }
+
+    /* Desktop-specific adjustments - higher logo on larger screens */
+    @media (min-width: 601px) {
+      .hero-content { 
+        padding-top: 10px;
+      }
+      .hero-content .logo img { 
+        height: 102px; 
+        top: -180px;               /* lifted higher to reveal more of the mineral/fossil detail in the background */
+        shape-rendering: geometricPrecision;
+        image-rendering: -webkit-optimize-contrast;
+      }
+      .hero-buttons {
+        margin-top: 2.5rem;        /* reduced to keep tagline + buttons balanced after extra lift */
+      }
+    }
+
+    /* v27 - Shop page for Heritage Float Frames grouped by wood type, with video */
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="logo"><a href="#"><img src="logo.svg" alt="Stockton & Rogers"></a></div>
+    
+    <!-- Desktop nav -->
+    <div class="nav-links" style="display: flex; align-items: center;">
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="shop.html">Shop</a>
+      <a href="#connect">Contact</a>
+      <a href="#connect" class="inquire-btn">Inquire</a>
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Mobile menu -->
+    <div class="nav-mobile">
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="shop.html">Shop</a>
+      <a href="#connect">Contact</a>
+      <a href="#connect" class="inquire-btn mobile">Inquire</a>
+    </div>
+  </nav>
+
+  <!-- PAGE INTRO -->
+  <section style="padding: 3rem 0; background: #f8f5f0;">
+    <div class="container">
+      <h1 style="text-align:center; font-size:2.8rem; margin-bottom:0.5rem;">Shop</h1>
+      <p style="text-align:center; font-size:1.1rem; color:#555; max-width:700px; margin:0 auto;">Available pieces for purchase. The Heritage Float Display Frame collection in premium hardwood combinations.</p>
+    </div>
+  </section>
+
+  <!-- SHOP BY WOOD TYPE -->
+  <section id="work">
+    <div class="container">
+
+      <!-- Walnut + Maple -->
+      <h2 style="margin-top:1rem; font-size:1.8rem;">Walnut + Maple</h2>
+      <div class="gallery">
+        <img src="Products - For Sale/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut.jpeg" alt="Heritage Float Display Frame - Walnut + Maple" data-multi="Products - For Sale/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut.jpeg,Products - For Sale/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut-2.jpeg,Products - For Sale/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut-3.jpeg" loading="lazy">
+        <img src="Products - For Sale/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut-lifestyle-1.jpeg" alt="Lifestyle - Walnut + Maple Float Frame" data-multi="Products - For Sale/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut-lifestyle-1.jpeg,Products - For Sale/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut-lifestyle-2.jpeg" loading="lazy">
+        <img src="Products - For Sale/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut-lifestyle-2.jpeg" alt="Lifestyle detail - Walnut + Maple" data-video="Products - For Sale/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-showcase.MP4" loading="lazy">
+      </div>
+
+      <!-- Cherry + Walnut -->
+      <h2 style="margin-top:2rem; font-size:1.8rem;">Cherry + Walnut</h2>
+      <div class="gallery">
+        <img src="Products - For Sale/Heritage Float Display Frame/Cherry + Walnut/heritage-float-display-frame-cherry.jpeg" alt="Heritage Float Display Frame - Cherry + Walnut" data-multi="Products - For Sale/Heritage Float Display Frame/Cherry + Walnut/heritage-float-display-frame-cherry.jpeg,Products - For Sale/Heritage Float Display Frame/Cherry + Walnut/heritage-float-display-frame-cherry-2.jpeg,Products - For Sale/Heritage Float Display Frame/Cherry + Walnut/heritage-float-display-frame-cherry-3.jpeg" loading="lazy">
+      </div>
+
+      <!-- White Oak + Walnut -->
+      <h2 style="margin-top:2rem; font-size:1.8rem;">White Oak + Walnut</h2>
+      <div class="gallery">
+        <img src="Products - For Sale/Heritage Float Display Frame/White Oak + Walnut/heritage-float-display-frame-white-oak.jpeg" alt="Heritage Float Display Frame - White Oak + Walnut" data-multi="Products - For Sale/Heritage Float Display Frame/White Oak + Walnut/heritage-float-display-frame-white-oak.jpeg,Products - For Sale/Heritage Float Display Frame/White Oak + Walnut/heritage-float-display-frame-white-oak-2.jpeg,Products - For Sale/Heritage Float Display Frame/White Oak + Walnut/heritage-float-display-frame-white-oak-3.jpeg" loading="lazy">
+      </div>
+
+      <p style="text-align:center; margin:2rem 0; font-size:1rem; color:#666;">Each frame is handcrafted with premium hardwoods and high-quality acrylic. Inquire for availability, custom sizes, or wood options.</p>
+
+    </div>
+  </section>
+
+  <!-- CONTACT / FORM -->
+  <section id="connect" class="cta">
+    <div class="container">
+      <h2 style="font-size:2.5rem; margin-bottom:1rem; color:white;">Ready to purchase or inquire?</h2>
+      <p style="max-width:620px; margin:0 auto 2rem; font-size:1.1rem; color:#ddd;">
+        Use the form below or contact us directly.
+      </p>
+
+    <!-- 
+      Professional contact form using Formspree (free for basic use).
+      1. Go to https://formspree.io and create a free account.
+      2. Create a new form and replace the action URL below with your endpoint (e.g. https://formspree.io/f/xyzwabcd).
+    -->
+    <form id="contact-form" class="form" action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <select name="project" required>
+        <option value="">Interest</option>
+        <option value="Walnut+Maple">Walnut + Maple Frame</option>
+        <option value="Cherry+Walnut">Cherry + Walnut Frame</option>
+        <option value="WhiteOak+Walnut">White Oak + Walnut Frame</option>
+        <option value="Custom">Custom Commission</option>
+        <option value="Other">Other</option>
+      </select>
+      <textarea name="message" rows="4" placeholder="Tell us about your interest or custom request..." required></textarea>
+      <input type="hidden" name="_subject" value="Shop inquiry from stocktonandrogers.com">
+      <button type="submit" id="form-submit-btn">Send Inquiry</button>
+    </form>
+
+    <!-- Form success message -->
+    <div id="form-success" style="display:none; text-align:center; padding:2rem; background:#f0f0f0; border-radius:12px; margin-top:1.5rem;">
+      <p style="font-size:1.15rem; color:#2C2C2C; margin-bottom:0.5rem;">Thank you — your message has been sent.</p>
+      <p style="font-size:0.95rem; color:#555;">We’ll get back to you within 1–2 business days.</p>
+    </div>
+
+    <p style="margin-top:2.5rem; font-size:1.05rem; color:#ccc;">
+      <a href="mailto:contact@stocktonandrogers.com" style="color:#ccc; text-decoration:underline;">contact@stocktonandrogers.com</a><br>
+      <a href="tel:4793963935" style="color:#ccc; text-decoration:underline;">(479) 396-3935</a>
+    </p>
+  </div>
+  </section>
+
+  <footer>
+    <img src="logo.svg" alt="Stockton & Rogers" style="height: 72px; margin-bottom: 12px;">
+    <p style="margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--charcoal); font-style: italic;">Handcrafted. Timeless Design. Heirloom Quality.</p>
+    <p>
+      © 2026 • All pieces handcrafted in Northwest Arkansas<br>
+      <a href="tel:4793963935" style="color:inherit; text-decoration:underline;">(479) 396-3935</a> | 
+      <a href="mailto:contact@stocktonandrogers.com" style="color:inherit; text-decoration:underline;">contact@stocktonandrogers.com</a>
+    </p>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close" onclick="closeLightbox(); event.stopImmediatePropagation();">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" onclick="event.stopImmediatePropagation();">
+    <video class="lightbox-content" id="lightbox-video" controls onclick="event.stopImmediatePropagation();"></video>
+    <div id="lightbox-caption"></div>
+    <div id="lightbox-multi" style="display: none;"></div>
+    <div class="lightbox-arrows" id="lightbox-arrows" style="display: none;">
+      <span class="arrow prev" onclick="prevImage(); event.stopImmediatePropagation();">&#10094;</span>
+      <span class="arrow next" onclick="nextImage(); event.stopImmediatePropagation();">&#10095;</span>
+    </div>
+  </div>
+
+  <script>
+    let currentImages = [];
+    let currentCaptions = [];
+    let currentIndex = 0;
+
+    function toTitleCase(str) {
+      return str.replace(/\b\w/g, l => l.toUpperCase());
+    }
+
+    function showImage(index) {
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxVideo = document.getElementById('lightbox-video');
+      const captionEl = document.getElementById('lightbox-caption');
+      const arrows = document.getElementById('lightbox-arrows');
+      if (currentImages.length > 0) {
+        const src = currentImages[index];
+        const isVideo = /\.(mp4|mov|webm)$/i.test(src);
+        currentIndex = index;
+
+        if (isVideo) {
+          lightboxImg.style.display = 'none';
+          lightboxVideo.style.display = 'block';
+          lightboxVideo.src = src;
+          lightboxVideo.play().catch(() => {});
+        } else {
+          lightboxVideo.style.display = 'none';
+          lightboxVideo.pause();
+          lightboxVideo.src = '';
+          lightboxImg.style.display = 'block';
+          lightboxImg.src = src;
+        }
+
+        if (captionEl && currentCaptions[index]) {
+          captionEl.textContent = currentCaptions[index];
+        }
+        arrows.style.display = currentImages.length > 1 ? 'flex' : 'none';
+      }
+    }
+
+    function openLightbox(src, multiImages = null, clickedAlt = '') {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxVideo = document.getElementById('lightbox-video');
+      const multiContainer = document.getElementById('lightbox-multi');
+      const arrows = document.getElementById('lightbox-arrows');
+      const captionEl = document.getElementById('lightbox-caption');
+      lightbox.style.display = 'flex';
+
+      multiContainer.style.display = 'none';
+
+      if (multiImages) {
+        const srcs = multiImages.split(',').map(s => s.trim());
+        currentImages = srcs;
+        currentCaptions = srcs.map((s, i) => {
+          if (i === 0 && clickedAlt) return toTitleCase(clickedAlt);
+          let name = s.replace(/\.(jpeg|jpg|png|gif|mp4|mov|webm)$/i, '');
+          name = name.replace(/[-_]/g, ' ');
+          return toTitleCase(name);
+        });
+        currentIndex = 0;
+        if (captionEl) captionEl.style.display = 'block';
+        showImage(0);
+      } else {
+        currentImages = [src];
+        currentCaptions = [toTitleCase(clickedAlt || '')];
+        currentIndex = 0;
+        if (captionEl) {
+          captionEl.textContent = toTitleCase(clickedAlt || '');
+          captionEl.style.display = clickedAlt ? 'block' : 'none';
+        }
+        arrows.style.display = 'none';
+        showImage(0);
+      }
+    }
+
+    function prevImage() {
+      if (currentImages.length === 0) return;
+      let newIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+      showImage(newIndex);
+    }
+
+    function nextImage() {
+      if (currentImages.length === 0) return;
+      let newIndex = (currentIndex + 1) % currentImages.length;
+      showImage(newIndex);
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      const multiContainer = document.getElementById('lightbox-multi');
+      const arrows = document.getElementById('lightbox-arrows');
+      const captionEl = document.getElementById('lightbox-caption');
+      const lightboxVideo = document.getElementById('lightbox-video');
+      lightbox.style.display = 'none';
+      multiContainer.innerHTML = '';
+      if (captionEl) captionEl.textContent = '';
+      if (lightboxVideo) {
+        lightboxVideo.pause();
+        lightboxVideo.src = '';
+      }
+      currentImages = [];
+      currentCaptions = [];
+      currentIndex = 0;
+      arrows.style.display = 'none';
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('lightbox').style.display = 'none';
+
+      // Mobile nav toggle
+      const nav = document.querySelector('.nav');
+      const toggle = document.querySelector('.nav-toggle');
+      if (toggle) {
+        toggle.addEventListener('click', () => {
+          const isOpen = nav.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', isOpen);
+        });
+      }
+
+      // Close mobile menu when clicking a link
+      document.querySelectorAll('.nav-mobile a').forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('open');
+          if (toggle) toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      document.querySelectorAll('.gallery img').forEach(img => {
+        img.addEventListener('click', () => {
+          const videoSrc = img.getAttribute('data-video');
+          const multi = img.getAttribute('data-multi');
+          const alt = img.getAttribute('alt') || '';
+          if (videoSrc) {
+            openLightbox(videoSrc, null, alt);
+          } else if (multi) {
+            openLightbox(null, multi, alt);
+          } else {
+            openLightbox(img.src, null, alt);
+          }
+        });
+      });
+
+      initContactForm();
+
+      // Staggered entrance animation for gallery (professional touch)
+      const galleryImages = document.querySelectorAll('#work .gallery img');
+      galleryImages.forEach((img, index) => {
+        img.style.animationDelay = `${80 + (index * 45)}ms`;
+        img.classList.add('gallery-animated');
+      });
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+      const lightboxEl = document.getElementById('lightbox');
+      if (lightboxEl && lightboxEl.style.display === 'flex') {
+        if (e.key === 'ArrowLeft') prevImage();
+        if (e.key === 'ArrowRight') nextImage();
+      }
+    });
+  </script>
+</body>
+</html>
