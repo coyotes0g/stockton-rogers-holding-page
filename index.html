@@ -417,9 +417,9 @@
       </p>
 
     <form id="contact-form" class="form" action="https://formspree.io/f/your-form-id" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Email Address" required>
-      <select name="project" required>
+      <input type="text" name="name" placeholder="Your Name" autocomplete="name" required>
+      <input type="email" name="email" placeholder="Email Address" autocomplete="email" required>
+      <select name="project" autocomplete="off" required>
         <option value="">Project Type</option>
         <option value="Table">Custom Table</option>
         <option value="Frame">Picture Frame / Triptych</option>
@@ -427,7 +427,7 @@
         <option value="Clock">Sculptural Clock</option>
         <option value="Other">Other / Custom Commission</option>
       </select>
-      <textarea name="message" rows="4" placeholder="Tell us about your project..." required></textarea>
+      <textarea name="message" rows="4" placeholder="Tell us about your project..." autocomplete="off" required></textarea>
       <input type="hidden" name="_subject" value="New commission inquiry from stocktonandrogers.com">
       <button type="submit" id="form-submit-btn">Send Inquiry</button>
     </form>
