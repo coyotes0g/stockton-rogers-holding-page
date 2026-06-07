@@ -400,9 +400,9 @@
       </p>
 
     <form id="contact-form" class="form" action="https://formspree.io/f/your-form-id" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Email Address" required>
-      <select name="project" required>
+      <input type="text" name="name" placeholder="Your Name" autocomplete="name" required>
+      <input type="email" name="email" placeholder="Email Address" autocomplete="email" required>
+      <select name="project" autocomplete="off" required>
         <option value="">Interest</option>
         <option value="Walnut+Maple">Walnut + Maple Frame</option>
         <option value="Cherry+Walnut">Cherry + Walnut Frame</option>
@@ -410,7 +410,7 @@
         <option value="Custom">Custom Commission</option>
         <option value="Other">Other</option>
       </select>
-      <textarea name="message" rows="4" placeholder="Tell us about your interest or custom request..." required></textarea>
+      <textarea name="message" rows="4" placeholder="Tell us about your interest or custom request..." autocomplete="off" required></textarea>
       <input type="hidden" name="_subject" value="Shop inquiry from stocktonandrogers.com">
       <button type="submit" id="form-submit-btn">Send Inquiry</button>
     </form>
