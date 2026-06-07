@@ -155,7 +155,7 @@
       font-weight: 700; 
       margin-bottom: 2.25rem; 
       max-width: 620px; 
-      margin-left: auto; 
+      margin-left: auto;
       margin-right: auto; 
       color: #f0e9df;
     }
@@ -347,7 +347,7 @@
       }
     }
 
-    /* v33 - Aligned to exact repo filenames (no -1 suffixes; primaries use base names like heritage-float-display-frame-walnut.jpeg). See tool-confirmed tree. */
+    /* v37 - force fresh alias cb0fe8f test 2026-06-07 */
   </style>
 </head>
 <body>
@@ -470,7 +470,6 @@
     </p>
   </footer>
 
-  <!-- Lightbox -->
   <div id="lightbox" class="lightbox" onclick="closeLightbox()">
     <span class="close" onclick="closeLightbox(); event.stopImmediatePropagation();">&times;</span>
     <img class="lightbox-content" id="lightbox-img" onclick="event.stopImmediatePropagation();">
@@ -554,7 +553,7 @@
           captionEl.style.display = clickedAlt ? 'block' : 'none';
         }
         arrows.style.display = 'none';
-        showImage(0);  // handles image vs video display
+        showImage(0);
       }
     }
 
@@ -589,10 +588,44 @@
       arrows.style.display = 'none';
     }
 
+    function initContactForm() {
+      const form = document.getElementById('contact-form');
+      const success = document.getElementById('form-success');
+      if (!form || !success) return;
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = document.getElementById('form-submit-btn');
+        const originalText = btn.textContent;
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
+
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (response.ok) {
+            form.style.display = 'none';
+            success.style.display = 'block';
+          } else {
+            alert('Something went wrong. Please try emailing us directly at contact@stocktonandrogers.com');
+            btn.textContent = originalText;
+            btn.disabled = false;
+          }
+        } catch (err) {
+          alert('Network error. Please email us at contact@stocktonandrogers.com');
+          btn.textContent = originalText;
+          btn.disabled = false;
+        }
+      });
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('lightbox').style.display = 'none';
 
-      // Mobile nav toggle
       const nav = document.querySelector('.nav');
       const toggle = document.querySelector('.nav-toggle');
       if (toggle) {
@@ -602,7 +635,6 @@
         });
       }
 
-      // Close mobile menu when clicking a link
       document.querySelectorAll('.nav-mobile a').forEach(link => {
         link.addEventListener('click', () => {
           nav.classList.remove('open');
@@ -616,7 +648,6 @@
           const multi = img.getAttribute('data-multi');
           const alt = img.getAttribute('alt') || '';
           if (videoSrc) {
-            // Video support via the unified lightbox (showImage detects .mp4)
             openLightbox(videoSrc, null, alt);
           } else if (multi) {
             openLightbox(null, multi, alt);
@@ -626,7 +657,8 @@
         });
       });
 
-      // Staggered entrance animation for gallery (professional touch)
+      initContactForm();
+
       const galleryImages = document.querySelectorAll('#work .gallery img');
       galleryImages.forEach((img, index) => {
         img.style.animationDelay = `${80 + (index * 45)}ms`;
@@ -643,12 +675,5 @@
       }
     });
   </script>
-
-  <!-- Formspree AJAX integration (Vanilla JS) -->
-  <script>
-    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-    formspree('initForm', { formElement: '#contact-form', formId: 'mzdqejng' });
-  </script>
-  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
