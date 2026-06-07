@@ -180,7 +180,7 @@
       border-radius: 10px;
     }
     .gallery { 
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.75rem; 
+      display: grid; grid:template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.75rem; 
     }
     .gallery img { 
       width: 100%; height: auto; border-radius: 6px; 
@@ -199,6 +199,8 @@
     .gallery img.gallery-animated {
       animation: galleryFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
     }
+    /* .cta and .craft no longer force full-width or page-level bgs (reverted). 
+       The contact teaser uses contained dark treatment via #connect .container. */
     footer { 
       background: #f0f0f0; padding: 3.5rem 6%; text-align: center; 
       font-size: 0.92rem; color: var(--medium-gray); border-top: 1px solid #e0e0e0;
@@ -213,6 +215,7 @@
       border-radius: 50px; font-weight: 700; cursor: pointer; font-size: 1rem;
     }
 
+    /* Lightbox Styles */
     .lightbox { 
       display: none; position: fixed; z-index: 1000; left: 0; top: 0; 
       width: 100%; height: 100%; background-color: rgba(0,0,0,0.92); 
@@ -308,16 +311,16 @@
       }
       .hero-content .logo img { 
         height: 102px; 
-        top: -180px;
+        top: -180px;               /* lifted higher to reveal more of the mineral/fossil detail in the background */
         shape-rendering: geometricPrecision;
         image-rendering: -webkit-optimize-contrast;
       }
       .hero-buttons {
-        margin-top: 2.5rem;
+        margin-top: 2.5rem;        /* reduced to keep tagline + buttons balanced after extra lift */
       }
     }
 
-    /* v34 - Paths verified against live repo tree: Walnut + Alloy Frame uses walnut-and-alloy-frame.jpeg (single file), Form + Fossil Pair uses form-and-fossil-pair.jpeg + -2. New deploy. */ 
+    /* v38 - force fresh alias 2026-06-07 cb0fe8f test */
   </style>
 </head>
 <body>
@@ -348,6 +351,7 @@
     </div>
   </nav>
 
+  <!-- PAGE INTRO -->
   <section style="padding: 5rem 0 3rem; background: #f8f5f0; margin-top: 0;">
     <div class="container">
       <h1 style="text-align:center; font-size:2.8rem; margin-bottom:0.5rem;">Gallery</h1>
@@ -355,15 +359,18 @@
     </div>
   </section>
 
+  <!-- GROUPED GALLERY CONTENT (full width via #work + inner container for max-width content) -->
   <section id="work">
     <div class="container">
 
+      <!-- Clocks -->
       <h2 style="margin-top:2.5rem; font-size:1.8rem; border-bottom:1px solid #ddd; padding-bottom:0.5rem;">Clocks</h2>
       <div class="gallery">
         <img src="images/Gallery - Custom Commissions/The Horizon Clock/the-horizon-clock.jpeg" alt="The Horizon Clock" data-multi="images/Gallery - Custom Commissions/The Horizon Clock/the-horizon-clock.jpeg,images/Gallery - Custom Commissions/The Horizon Clock/the-horizon-clock-2.jpeg" loading="lazy">
         <img src="images/Gallery - Custom Commissions/Sculptural Wave Clock/sculptural-wave-clock.jpeg" alt="Sculptural Wave Clock" loading="lazy">
       </div>
 
+      <!-- Picture Frames & Triptychs -->
       <h2 style="margin-top:2.5rem; font-size:1.8rem; border-bottom:1px solid #ddd; padding-bottom:0.5rem;">Picture Frames & Triptychs</h2>
       <div class="gallery">
         <img src="images/Gallery - Custom Commissions/Leopardwood Picture Frame/leopardwood-frame.jpeg" alt="Leopardwood Picture Frame" loading="lazy">
@@ -373,6 +380,7 @@
         <img src="images/Gallery - Custom Commissions/Modern Multi-Tone Frame/modern-multi-tone-frame.jpeg" alt="Modern Multi-Tone Frame" data-multi="images/Gallery - Custom Commissions/Modern Multi-Tone Frame/modern-multi-tone-frame.jpeg,images/Gallery - Custom Commissions/Modern Multi-Tone Frame/modern-multi-tone-frame-2.jpeg" loading="lazy">
       </div>
 
+      <!-- Keepsake Boxes & Stands -->
       <h2 style="margin-top:2.5rem; font-size:1.8rem; border-bottom:1px solid #ddd; padding-bottom:0.5rem;">Keepsake Boxes & Stands</h2>
       <div class="gallery">
         <img src="images/Gallery - Custom Commissions/Modern Grid Box/modern-grid-box.jpeg" alt="Modern Grid Box" data-multi="images/Gallery - Custom Commissions/Modern Grid Box/modern-grid-box.jpeg,images/Gallery - Custom Commissions/Modern Grid Box/modern-grid-box-2.jpeg,images/Gallery - Custom Commissions/Modern Grid Box/modern-grid-box-3.jpeg,images/Gallery - Custom Commissions/Modern Grid Box/modern-grid-box-4.jpeg,images/Gallery - Custom Commissions/Modern Grid Box/modern-grid-box-5.jpeg" loading="lazy">
@@ -380,6 +388,7 @@
         <img src="images/Gallery - Custom Commissions/Sea Jasper Fossil Stand/sea-jasper-fossil-stand.jpeg" alt="Sea Jasper Fossil Stand" data-multi="images/Gallery - Custom Commissions/Sea Jasper Fossil Stand/sea-jasper-fossil-stand.jpeg,images/Gallery - Custom Commissions/Sea Jasper Fossil Stand/sea-jasper-fossil-stand-2.jpeg" loading="lazy">
       </div>
 
+      <!-- Sculptural Pieces -->
       <h2 style="margin-top:2.5rem; font-size:1.8rem; border-bottom:1px solid #ddd; padding-bottom:0.5rem;">Sculptural Pieces</h2>
       <div class="gallery">
         <img src="images/Gallery - Custom Commissions/Bobcat Perch/bobcat-perch.jpeg" alt="Bobcat Perch" data-multi="images/Gallery - Custom Commissions/Bobcat Perch/bobcat-perch.jpeg,images/Gallery - Custom Commissions/Bobcat Perch/bobcat-perch-2.jpeg" loading="lazy">
@@ -389,6 +398,7 @@
     </div>
   </section>
 
+  <!-- CONTACT TEASER -->
   <section id="connect" class="cta">
     <div class="container">
       <h2 style="font-size:2rem; margin-bottom:1rem; color:white;">Interested in a piece?</h2>
@@ -413,6 +423,7 @@
     </p>
   </footer>
 
+  <!-- Lightbox -->
   <div id="lightbox" class="lightbox" onclick="closeLightbox()">
     <span class="close" onclick="closeLightbox(); event.stopImmediatePropagation();">&times;</span>
     <img class="lightbox-content" id="lightbox-img" onclick="event.stopImmediatePropagation();">
@@ -496,7 +507,7 @@
           captionEl.style.display = clickedAlt ? 'block' : 'none';
         }
         arrows.style.display = 'none';
-        showImage(0);
+        showImage(0);  // handles image vs video display
       }
     }
 
@@ -531,6 +542,7 @@
       arrows.style.display = 'none';
     }
 
+    // Professional AJAX form handler (Formspree)
     function initContactForm() {
       const form = document.getElementById('contact-form');
       const success = document.getElementById('form-success');
@@ -569,6 +581,7 @@
     document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('lightbox').style.display = 'none';
 
+      // Mobile nav toggle
       const nav = document.querySelector('.nav');
       const toggle = document.querySelector('.nav-toggle');
       if (toggle) {
@@ -578,6 +591,7 @@
         });
       }
 
+      // Close mobile menu when clicking a link
       document.querySelectorAll('.nav-mobile a').forEach(link => {
         link.addEventListener('click', () => {
           nav.classList.remove('open');
@@ -591,6 +605,7 @@
           const multi = img.getAttribute('data-multi');
           const alt = img.getAttribute('alt') || '';
           if (videoSrc) {
+            // Video support via the unified lightbox (showImage detects .mp4)
             openLightbox(videoSrc, null, alt);
           } else if (multi) {
             openLightbox(null, multi, alt);
@@ -602,6 +617,7 @@
 
       initContactForm();
 
+      // Staggered entrance animation for gallery (professional touch)
       const galleryImages = document.querySelectorAll('#work .gallery img');
       galleryImages.forEach((img, index) => {
         img.style.animationDelay = `${80 + (index * 45)}ms`;
