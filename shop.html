@@ -55,7 +55,9 @@
       font-weight: 600; 
       letter-spacing: -0.025em; 
       color: var(--charcoal);
+      text-align: center;
     }
+
     .nav { 
       position: fixed; top: 0; width: 100%; 
       background: rgba(245,245,245,0.96); 
@@ -132,7 +134,7 @@
     .nav.open .nav-toggle span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
     .hero { 
       width: 100%; height: 100vh; 
-      background: linear-gradient(rgba(44,44,44,0.25), rgba(30,30,30,0.42)), url('images/Gallery - Custom Commissions/fossil-monolith-hero.jpeg') center/cover no-repeat; 
+      background: linear-gradient(rgba(44,44,44,0.25), rgba(30,30,30,0.42)), url('images/Gallery/Custom Commissions/Fossil Monolith/fossil-monolith-hero.jpeg') center/cover no-repeat; 
       display: flex; align-items: center; justify-content: center; text-align: center; color: white; 
       position: relative;
     }
@@ -347,18 +349,65 @@
       }
     }
 
-    /* v38 - force fresh alias 2026-06-07 cb0fe8f test */
+    /* Professional polish: improved readability for long content sections */
+    .container p {
+      max-width: 70ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Horizontal format for varieties - balanced scaling, card polish, proper label size */
+    .varieties {
+      display: flex;
+      flex-direction: row;
+      gap: 1.5rem;
+      overflow-x: auto;
+      padding-bottom: 0.75rem;
+      -webkit-overflow-scrolling: touch;
+    }
+    .variety {
+      flex: 0 0 auto;
+      text-align: left;
+      min-width: 240px;
+      background: #fff;
+      border-radius: 8px;
+      padding: 0.65rem 0.65rem 0.85rem;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+    }
+    .variety h2 {
+      font-size: 1.05rem;
+      margin: 0 0 0.55rem 0;
+      line-height: 1.2;
+      font-weight: 600;
+    }
+    .variety .gallery {
+      display: block;
+    }
+    .variety .gallery img {
+      width: 240px;
+      height: auto;
+      border-radius: 6px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      display: block;
+    }
+    .variety .gallery img:hover {
+      transform: scale(1.015);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.13);
+    }
+
+    /* v39 - shop varieties scaling fix (240px images + white cards + 1.05rem labels; removed 1.8rem inline h2s) */
   </style>
 </head>
 <body>
 
   <!-- NAV -->
   <nav class="nav">
-    <div class="logo"><a href="#"><img src="logo.svg" alt="Stockton & Rogers"></a></div>
+    <div class="logo"><a href="index.html"><img src="logo.svg" alt="Stockton & Rogers"></a></div>
     
     <!-- Desktop nav -->
     <div class="nav-links" style="display: flex; align-items: center;">
       <a href="index.html">Home</a>
+      <a href="about.html">About</a>
       <a href="gallery.html">Gallery</a>
       <a href="shop.html">Shop</a>
       <a href="#connect">Contact</a>
@@ -375,6 +424,7 @@
     <!-- Mobile menu -->
     <div class="nav-mobile">
       <a href="index.html">Home</a>
+      <a href="about.html">About</a>
       <a href="gallery.html">Gallery</a>
       <a href="shop.html">Shop</a>
       <a href="#connect">Contact</a>
@@ -386,32 +436,46 @@
   <section style="padding: 5rem 0 3rem; background: #f8f5f0; margin-top: 0;">
     <div class="container">
       <h1 style="text-align:center; font-size:2.8rem; margin-bottom:0.5rem;">Shop</h1>
-      <p style="text-align:center; font-size:1.1rem; color:#555; max-width:700px; margin:0 auto;">Available pieces for purchase. The Heritage Float Display Frame collection in premium hardwood combinations.</p>
+      <p style="text-align:center; font-size:1.1rem; color:#555; max-width:700px; margin:0 auto;">Our signature Heritage Float Display Frame, available in premium hardwood combinations.</p>
     </div>
   </section>
 
-  <!-- SHOP BY WOOD TYPE -->
+  <!-- HERITAGE FLOAT DISPLAY FRAME -->
   <section id="work">
     <div class="container">
 
-      <!-- Walnut + Maple -->
-      <h2 style="margin-top:1rem; font-size:1.8rem;">Walnut + Maple</h2>
-      <div class="gallery">
-        <img src="images/Shop - Products For Sale/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut.jpeg" alt="Heritage Float Display Frame - Walnut + Maple" data-multi="images/Shop - Products For Sale/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut.jpeg,images/Shop - Products For Sale/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut-2.jpeg,images/Shop - Products For Sale/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut-3.jpeg" loading="lazy">
-        <img src="images/Shop - Products For Sale/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut-lifestyle-1.jpeg" alt="Lifestyle - Walnut + Maple Float Frame" data-multi="images/Shop - Products For Sale/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut-lifestyle-1.jpeg,images/Shop - Products For Sale/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut-lifestyle-2.jpeg" loading="lazy">
-        <img src="images/Shop - Products For Sale/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut-lifestyle-2.jpeg" alt="Lifestyle detail - Walnut + Maple" data-video="images/Shop - Products For Sale/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-showcase.MP4" loading="lazy">
-      </div>
+      <h2 style="margin-top:1rem; font-size:1.8rem; text-align: center;">Heritage Float Display Frame</h2>
+      <p style="text-align:center; margin-bottom: 1.5rem; font-size:1rem; color:#666;">Our signature piece, available in these premium hardwood combinations.</p>
 
-      <!-- Cherry + Walnut -->
-      <h2 style="margin-top:2rem; font-size:1.8rem;">Cherry + Walnut</h2>
-      <div class="gallery">
-        <img src="images/Shop - Products For Sale/Heritage Float Display Frame/Cherry + Walnut/heritage-float-display-frame-cherry.jpeg" alt="Heritage Float Display Frame - Cherry + Walnut" data-multi="images/Shop - Products For Sale/Heritage Float Display Frame/Cherry + Walnut/heritage-float-display-frame-cherry.jpeg,images/Shop - Products For Sale/Heritage Float Display Frame/Cherry + Walnut/heritage-float-display-frame-cherry-2.jpeg,images/Shop - Products For Sale/Heritage Float Display Frame/Cherry + Walnut/heritage-float-display-frame-cherry-3.jpeg" loading="lazy">
-      </div>
-
-      <!-- White Oak + Walnut -->
-      <h2 style="margin-top:2rem; font-size:1.8rem;">White Oak + Walnut</h2>
-      <div class="gallery">
-        <img src="images/Shop - Products For Sale/Heritage Float Display Frame/White Oak + Walnut/heritage-float-display-frame-white-oak.jpeg" alt="Heritage Float Display Frame - White Oak + Walnut" data-multi="images/Shop - Products For Sale/Heritage Float Display Frame/White Oak + Walnut/heritage-float-display-frame-white-oak.jpeg,images/Shop - Products For Sale/Heritage Float Display Frame/White Oak + Walnut/heritage-float-display-frame-white-oak-2.jpeg,images/Shop - Products For Sale/Heritage Float Display Frame/White Oak + Walnut/heritage-float-display-frame-white-oak-3.jpeg" loading="lazy">
+      <div class="varieties">
+        <div class="variety">
+          <!-- Walnut + Maple -->
+          <h2>Walnut + Maple</h2>
+          <div class="gallery">
+            <img src="images/Shop/Products/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut.jpeg" alt="Walnut + Maple" data-multi="images/Shop/Products/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut-2.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut-3.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut-4.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-walnut-5.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut + Maple/heritage-float-display-frame-showcase.MP4" loading="lazy">
+          </div>
+        </div>
+        <div class="variety">
+          <!-- Cherry + Walnut -->
+          <h2>Cherry + Walnut</h2>
+          <div class="gallery">
+            <img src="images/Shop/Products/Heritage Float Display Frame/Cherry + Walnut/heritage-float-display-frame-cherry.jpeg" alt="Cherry + Walnut" data-multi="images/Shop/Products/Heritage Float Display Frame/Cherry + Walnut/heritage-float-display-frame-cherry.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry + Walnut/heritage-float-display-frame-cherry-2.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry + Walnut/heritage-float-display-frame-cherry-3.jpeg" loading="lazy">
+          </div>
+        </div>
+        <div class="variety">
+          <!-- Cherry + Maple -->
+          <h2>Cherry + Maple</h2>
+          <div class="gallery">
+            <img src="images/Shop/Products/Heritage Float Display Frame/Cherry + Maple/heritage-float-display-frame-cherry-maple.jpeg" alt="Cherry + Maple" data-multi="images/Shop/Products/Heritage Float Display Frame/Cherry + Maple/heritage-float-display-frame-cherry-maple.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry + Maple/heritage-float-display-frame-cherry-maple-2.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry + Maple/heritage-float-display-frame-cherry-maple-3.jpeg" loading="lazy">
+          </div>
+        </div>
+        <div class="variety">
+          <!-- White Oak + Walnut -->
+          <h2>White Oak + Walnut</h2>
+          <div class="gallery">
+            <img src="images/Shop/Products/Heritage Float Display Frame/White Oak + Walnut/heritage-float-display-frame-white-oak.jpeg" alt="White Oak + Walnut" data-multi="images/Shop/Products/Heritage Float Display Frame/White Oak + Walnut/heritage-float-display-frame-white-oak.jpeg,images/Shop/Products/Heritage Float Display Frame/White Oak + Walnut/heritage-float-display-frame-white-oak-2.jpeg,images/Shop/Products/Heritage Float Display Frame/White Oak + Walnut/heritage-float-display-frame-white-oak-3.jpeg" loading="lazy">
+          </div>
+        </div>
       </div>
 
       <p style="text-align:center; margin:2rem 0; font-size:1rem; color:#666;">Each frame is handcrafted with premium hardwoods and high-quality acrylic. Inquire for availability, custom sizes, or wood options.</p>
@@ -438,6 +502,7 @@
         <option value="">Interest</option>
         <option value="Walnut+Maple">Walnut + Maple Frame</option>
         <option value="Cherry+Walnut">Cherry + Walnut Frame</option>
+        <option value="Cherry+Maple">Cherry + Maple Frame</option>
         <option value="WhiteOak+Walnut">White Oak + Walnut Frame</option>
         <option value="Custom">Custom Commission</option>
         <option value="Other">Other</option>
@@ -537,7 +602,7 @@
         const srcs = multiImages.split(',').map(s => s.trim());
         currentImages = srcs;
         currentCaptions = srcs.map((s, i) => {
-          if (i === 0 && clickedAlt) return toTitleCase(clickedAlt);
+          if (clickedAlt) return clickedAlt;  // use the variety name for all images in this lightbox
           let name = s.replace(/\.(jpeg|jpg|png|gif|mp4|mov|webm)$/i, '');
           name = name.replace(/[-_]/g, ' ');
           return toTitleCase(name);
