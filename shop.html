@@ -356,22 +356,18 @@
       margin-right: auto;
     }
 
-    /* 2x2 grid for varieties - wider section + images fill cards for proper scale */
+    /* 2x2 grid of images only (no cards) for varieties */
     .varieties {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem 1.75rem;
+      gap: 1.5rem 2rem;
     }
     .variety {
       text-align: center;
-      background: #fff;
-      border-radius: 8px;
-      padding: 0.5rem 0.5rem 0.7rem;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.07);
     }
     .variety h2 {
       font-size: 1.05rem;
-      margin: 0 0 0.45rem 0;
+      margin: 0 0 0.5rem 0;
       line-height: 1.2;
       font-weight: 600;
     }
@@ -381,22 +377,22 @@
     .variety .gallery img {
       width: 100%;
       height: auto;
-      border-radius: 6px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       display: block;
     }
     .variety .gallery img:hover {
-      transform: scale(1.01);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.13);
+      transform: scale(1.015);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
     }
 
-    /* Widen the varieties section inside the container */
+    /* Widen the varieties section */
     #work .container {
       padding-left: 3%;
       padding-right: 3%;
     }
 
-    /* v42 - widen section + images now fill the cards (width:100%) for better scale in 2x2 */
+    /* v43 - removed cards, just the images + labels in 2x2 grid */
   </style>
 </head>
 <body>
