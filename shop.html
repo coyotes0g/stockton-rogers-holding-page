@@ -356,24 +356,14 @@
       margin-right: auto;
     }
 
-    /* Horizontal format for varieties - balanced scaling, card polish, proper label size */
+    /* 2x2 grid layout for varieties - larger primary images (no horizontal scroll) */
     .varieties {
-      display: flex;
-      flex-direction: row;
-      gap: 1.5rem;
-      overflow-x: auto;
-      padding-bottom: 0.5rem;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none; /* Firefox */
-      -ms-overflow-style: none; /* IE and Edge */
-    }
-    .varieties::-webkit-scrollbar {
-      display: none; /* Chrome, Safari, Opera */
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem 2rem;
     }
     .variety {
-      flex: 0 0 auto;
       text-align: left;
-      min-width: 240px;
       background: #fff;
       border-radius: 8px;
       padding: 0.65rem 0.65rem 0.85rem;
@@ -389,7 +379,7 @@
       display: block;
     }
     .variety .gallery img {
-      width: 240px;
+      width: 320px;
       height: auto;
       border-radius: 6px;
       box-shadow: 0 3px 10px rgba(0,0,0,0.1);
@@ -400,7 +390,7 @@
       box-shadow: 0 6px 16px rgba(0,0,0,0.13);
     }
 
-    /* v40 - hide scrollbar on .varieties (keep horizontal scroll via wheel/touch) */
+    /* v41 - 2x2 grid + increased primary images to 320px */
   </style>
 </head>
 <body>
