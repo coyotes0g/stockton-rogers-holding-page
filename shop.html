@@ -362,8 +362,13 @@
       flex-direction: row;
       gap: 1.5rem;
       overflow-x: auto;
-      padding-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
       -webkit-overflow-scrolling: touch;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE and Edge */
+    }
+    .varieties::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera */
     }
     .variety {
       flex: 0 0 auto;
@@ -395,7 +400,7 @@
       box-shadow: 0 6px 16px rgba(0,0,0,0.13);
     }
 
-    /* v39 - shop varieties scaling fix (240px images + white cards + 1.05rem labels; removed 1.8rem inline h2s) */
+    /* v40 - hide scrollbar on .varieties (keep horizontal scroll via wheel/touch) */
   </style>
 </head>
 <body>
