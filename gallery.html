@@ -25,19 +25,23 @@
   <link rel="icon" href="logo.svg" type="image/svg+xml">
   <style>
     :root { 
-      --charcoal: #2C2C2C; 
-      --dark-gray: #3A3A3A; 
-      --medium-gray: #5C5C5C; 
-      --light-gray: #f5f5f5; 
-      --accent: #4A4A4A;
+      --bg: #F8F5F0;
+      --bg-alt: #F0EBE3;
+      --text-primary: #1F1F1F;
+      --text-secondary: #4A4540;
+      --text-muted: #6B665F;
+      --walnut: #5C4033;
+      --walnut-light: #8B6F47;
+      --border: #D4CFC6;
+      --deep: #2C2823; /* warm deep charcoal for dark accents, header bars, cta cards */
     }
     * { margin:0; padding:0; box-sizing:border-box; }
     html, body { width: 100%; overflow-x: hidden; }
     body { 
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
       line-height: 1.7; 
-      color: var(--charcoal); 
-      background: var(--light-gray); 
+      color: var(--text-primary); 
+      background: var(--bg); 
       letter-spacing: -0.015em;
     }
 
@@ -47,14 +51,14 @@
     input:focus-visible,
     select:focus-visible,
     textarea:focus-visible {
-      outline: 2px solid var(--charcoal);
+      outline: 2px solid var(--walnut);
       outline-offset: 2px;
     }
     h1, h2, h3 { 
       font-family: Georgia, 'Times New Roman', serif; 
       font-weight: 600; 
       letter-spacing: -0.025em; 
-      color: var(--charcoal);
+      color: var(--text-primary);
       text-align: center;
     }
 
@@ -64,22 +68,26 @@
     }
     .nav { 
       position: fixed; top: 0; width: 100%; 
-      background: rgba(245,245,245,0.96); 
-      backdrop-filter: blur(12px); 
+      background: rgba(248,245,240,0.96); 
+      backdrop-filter: blur(10px); 
       z-index: 100; 
-      padding: 0.55rem 6%; 
+      padding: 0.5rem 6%; 
       display: flex; justify-content: space-between; align-items: center; 
-      border-bottom: 1px solid #e0e0e0;
+      border-bottom: 1px solid var(--border);
     }
     .nav .logo img { 
       height: 40px; 
       shape-rendering: geometricPrecision;
       image-rendering: -webkit-optimize-contrast;
     }
-    .nav a { margin-left: 2.25rem; text-decoration: none; color: var(--charcoal); font-weight: 500; font-size: 0.95rem; }
+    .nav a { margin-left: 2.25rem; text-decoration: none; color: var(--text-primary); font-weight: 500; font-size: 0.95rem; }
     .nav .inquire-btn {
-      background: var(--dark-gray); color: white; padding: 0.55rem 1.4rem; border-radius: 50px; 
+      background: var(--walnut); color: white; padding: 0.5rem 1.35rem; border-radius: 50px; 
       text-decoration: none; font-weight: 600; font-size: 0.9rem; margin-left: 1.5rem;
+      transition: background 0.2s ease;
+    }
+    .nav .inquire-btn:hover {
+      background: var(--walnut-light);
     }
 
     /* Mobile hamburger */
@@ -99,7 +107,7 @@
       display: block;
       height: 2px;
       width: 100%;
-      background: var(--charcoal);
+      background: var(--text-primary);
       transition: all 0.3s ease;
     }
     .nav-mobile {
@@ -108,27 +116,28 @@
       top: 100%;
       left: 0;
       right: 0;
-      background: rgba(245,245,245,0.98);
-      backdrop-filter: blur(12px);
+      background: rgba(248,245,240,0.98);
+      backdrop-filter: blur(10px);
       padding: 1rem 6%;
       flex-direction: column;
       gap: 0.75rem;
-      border-bottom: 1px solid #e0e0e0;
+      border-bottom: 1px solid var(--border);
       box-shadow: 0 4px 12px rgba(0,0,0,0.06);
     }
     .nav-mobile a {
       padding: 0.6rem 0;
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid var(--border);
     }
     .nav-mobile a:last-child { border-bottom: none; }
     .nav-mobile .inquire-btn.mobile {
-      background: var(--dark-gray);
+      background: var(--walnut);
       color: white;
       padding: 0.7rem 1.2rem;
       border-radius: 50px;
       margin-top: 0.5rem;
       text-align: center;
       border-bottom: none;
+      transition: background 0.2s ease;
     }
 
     /* Mobile nav active states */
@@ -138,7 +147,7 @@
     .nav.open .nav-toggle span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
     .hero { 
       width: 100%; height: 100vh; 
-      background: linear-gradient(rgba(44,44,44,0.25), rgba(30,30,30,0.42)), url('images/Gallery/Custom Commissions/Fossil Monolith/fossil-monolith-hero.jpeg') center/cover no-repeat; 
+      background: linear-gradient(rgba(44,44,44,0.25), rgba(30,30,30,0.42)), url('images/Gallery/Custom Commissions/Fossil-Monolith/fossil-monolith-hero.jpeg') center/cover no-repeat; 
       display: flex; align-items: center; justify-content: center; text-align: center; color: white; 
       position: relative;
     }
@@ -170,47 +179,43 @@
       margin-top: 2.25rem;        /* reduced to compensate for extra logo lift */
     }
     .btn-primary { 
-      background: white; color: var(--charcoal); padding: 0.85rem 2.1rem; border-radius: 50px; 
+      background: white; color: var(--text-primary); padding: 0.85rem 2.1rem; border-radius: 50px; 
       text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.2s ease;
     }
-    .btn-primary:hover { background: #f0e9df; transform: translateY(-1px); }
+    .btn-primary:hover { background: #F0EBE3; transform: translateY(-1px); }
     .btn-secondary { 
       border: 2px solid white; color: white; padding: 0.85rem 2.1rem; border-radius: 50px; 
       text-decoration: none; font-weight: 600; font-size: 1rem;
     }
     .container { 
-      padding: 7rem 6%; 
+      padding: 5.75rem 6%; 
       max-width: 1280px; 
       margin: 0 auto; 
     }
 
-    /* Reverted: no full-width section backgrounds stretching edge-to-edge.
-       Visual distinction for key areas is now contained within the centered .container. */
-
-    /* Contained treatment for the contact/cta teaser */
+    /* Contained treatment for the contact/cta teaser (warm deep) */
     #connect .container {
-      background: var(--charcoal);
-      color: #ddd;
+      background: var(--deep);
+      color: #EDE8E0;
       border-radius: 10px;
     }
     #connect .container h2 { color: white; }
 
-    /* Subtle contained background for the gallery grids */
+    /* Subtle contained background for the gallery grids (warm alt) */
     #work .container {
-      background: #f0f0f0;
+      background: var(--bg-alt);
       border-radius: 10px;
     }
     .gallery { 
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.75rem; 
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; 
     }
     .gallery img { 
       width: 100%; height: auto; border-radius: 6px; 
-      box-shadow: 0 12px 28px rgba(0,0,0,0.12); transition: transform 0.4s cubic-bezier(0.4,0,0.2,1), box-shadow 0.4s ease, filter 0.4s ease; cursor: pointer;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.1); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), box-shadow 0.35s ease; cursor: pointer;
     }
     .gallery img:hover { 
-      transform: scale(1.025); 
-      box-shadow: 0 20px 45px rgba(0,0,0,0.18);
-      filter: brightness(1.04) saturate(1.05);
+      transform: scale(1.015); 
+      box-shadow: 0 16px 34px rgba(0,0,0,0.13);
     }
 
     /* Subtle professional entrance animation for gallery */
@@ -224,17 +229,21 @@
     /* .cta and .craft no longer force full-width or page-level bgs (reverted). 
        The contact teaser uses contained dark treatment via #connect .container. */
     footer { 
-      background: #f0f0f0; padding: 3.5rem 6%; text-align: center; 
-      font-size: 0.92rem; color: var(--medium-gray); border-top: 1px solid #e0e0e0;
+      background: var(--bg-alt); padding: 3rem 6%; text-align: center; 
+      font-size: 0.92rem; color: var(--text-muted); border-top: 1px solid var(--border);
     }
     .form { max-width: 520px; margin: 2rem auto 0; }
     .form input, .form textarea, .form select { 
       width: 100%; padding: 0.85rem 1rem; margin-bottom: 1rem; 
-      border: 1px solid #d4d0c8; border-radius: 6px; font-size: 1rem;
+      border: 1px solid var(--border); border-radius: 6px; font-size: 1rem;
     }
     .form button { 
-      background: var(--dark-gray); color: white; padding: 0.9rem 2.4rem; border: none; 
+      background: var(--walnut); color: white; padding: 0.9rem 2.4rem; border: none; 
       border-radius: 50px; font-weight: 700; cursor: pointer; font-size: 1rem;
+      transition: background 0.2s ease;
+    }
+    .form button:hover {
+      background: var(--walnut-light);
     }
 
     /* Lightbox Styles */
@@ -392,7 +401,7 @@
   </nav>
 
   <!-- PAGE INTRO -->
-  <section style="padding: 2.5rem 0; background: var(--charcoal); margin-top: 0;">
+  <section style="padding: 2.5rem 0; background: var(--deep); margin-top: 0;">
     <div class="container" style="padding: 1rem 6%;">
       <h1 style="text-align:center; font-size:2.4rem; margin-bottom:0; color:#f5f5f5;">Gallery</h1>
     </div>
@@ -403,32 +412,32 @@
     <div class="container">
 
       <!-- Clocks -->
-      <h2 style="margin-top:2.5rem; font-size:1.8rem; border-bottom:1px solid #ddd; padding-bottom:0.5rem;">Clocks</h2>
+      <h2 style="margin-top:2rem; font-size:1.7rem; border-bottom:1px solid var(--border); padding-bottom:0.4rem;">Clocks</h2>
       <div class="gallery">
         <img src="images/Gallery/Custom Commissions/The Horizon Clock/the-horizon-clock.jpeg" alt="The Horizon Clock" data-multi="images/Gallery/Custom Commissions/The Horizon Clock/the-horizon-clock.jpeg,images/Gallery/Custom Commissions/The Horizon Clock/the-horizon-clock-2.jpeg" loading="lazy">
         <img src="images/Gallery/Custom Commissions/Sculptural Wave Clock/sculptural-wave-clock.jpeg" alt="Sculptural Wave Clock" loading="lazy">
       </div>
 
       <!-- Picture Frames & Triptychs -->
-      <h2 class="local-mix" style="margin-top:2.5rem; font-size:1.8rem; border-bottom:1px solid #ddd; padding-bottom:0.5rem;">Picture Frames & Triptychs</h2>
+      <h2 class="local-mix" style="margin-top:2rem; font-size:1.7rem; border-bottom:1px solid var(--border); padding-bottom:0.4rem;">Picture Frames & Triptychs</h2>
       <div class="gallery">
         <img src="images/Gallery/Custom Commissions/Leopardwood Picture Frame/leopardwood-frame.jpeg" alt="Leopardwood Picture Frame" loading="lazy">
-        <img src="images/Gallery/Custom Commissions/Walnut + Alloy Frame/walnut-and-alloy-frame.jpeg" alt="Walnut + Alloy Frame" loading="lazy">
+        <img src="images/Gallery/Custom Commissions/Walnut-Alloy-Frame/walnut-and-alloy-frame.jpeg" alt="Walnut-Alloy-Frame" loading="lazy">
         <img src="images/Gallery/Custom Commissions/Zebrawood Picture Frame/zebrawood-picture-frame.jpeg" alt="Zebrawood Picture Frame" loading="lazy">
         <img src="images/Gallery/Custom Commissions/Triptych Frame/triptych-frame.jpeg" alt="Triptych Frame" loading="lazy">
         <img src="images/Gallery/Custom Commissions/Modern Multi-Tone Frame/modern-multi-tone-frame.jpeg" alt="Modern Multi-Tone Frame" data-multi="images/Gallery/Custom Commissions/Modern Multi-Tone Frame/modern-multi-tone-frame.jpeg,images/Gallery/Custom Commissions/Modern Multi-Tone Frame/modern-multi-tone-frame-2.jpeg" loading="lazy">
       </div>
 
       <!-- Keepsake Boxes & Stands -->
-      <h2 style="margin-top:2.5rem; font-size:1.8rem; border-bottom:1px solid #ddd; padding-bottom:0.5rem;">Keepsake Boxes & Stands</h2>
+      <h2 style="margin-top:2rem; font-size:1.7rem; border-bottom:1px solid var(--border); padding-bottom:0.4rem;">Keepsake Boxes & Stands</h2>
       <div class="gallery">
         <img src="images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box.jpeg" alt="Modern Grid Box" data-multi="images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-2.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-3.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-4.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-5.jpeg" loading="lazy">
-        <img src="images/Gallery/Custom Commissions/Form + Fossil Pair/form-and-fossil-pair.jpeg" alt="Form and Fossil Pair" data-multi="images/Gallery/Custom Commissions/Form + Fossil Pair/form-and-fossil-pair.jpeg,images/Gallery/Custom Commissions/Form + Fossil Pair/form-and-fossil-pair-2.jpeg" loading="lazy">
+        <img src="images/Gallery/Custom Commissions/Form-Fossil-Pair/form-and-fossil-pair.jpeg" alt="Form and Fossil Pair" data-multi="images/Gallery/Custom Commissions/Form-Fossil-Pair/form-and-fossil-pair.jpeg,images/Gallery/Custom Commissions/Form-Fossil-Pair/form-and-fossil-pair-2.jpeg" loading="lazy">
         <img src="images/Gallery/Custom Commissions/Sea Jasper Fossil Stand/sea-jasper-fossil-stand.jpeg" alt="Sea Jasper Fossil Stand" data-multi="images/Gallery/Custom Commissions/Sea Jasper Fossil Stand/sea-jasper-fossil-stand.jpeg,images/Gallery/Custom Commissions/Sea Jasper Fossil Stand/sea-jasper-fossil-stand-2.jpeg" loading="lazy">
       </div>
 
       <!-- Sculptural Pieces -->
-      <h2 style="margin-top:2.5rem; font-size:1.8rem; border-bottom:1px solid #ddd; padding-bottom:0.5rem;">Sculptural Pieces</h2>
+      <h2 style="margin-top:2rem; font-size:1.7rem; border-bottom:1px solid var(--border); padding-bottom:0.4rem;">Sculptural Pieces</h2>
       <div class="gallery">
         <img src="images/Gallery/Custom Commissions/Bobcat Perch/bobcat-perch.jpeg" alt="Bobcat Perch" data-multi="images/Gallery/Custom Commissions/Bobcat Perch/bobcat-perch.jpeg,images/Gallery/Custom Commissions/Bobcat Perch/bobcat-perch-2.jpeg" loading="lazy">
         <img src="images/Gallery/Custom Commissions/Reed Lake Reverie/reed-lake-reverie.jpeg" alt="Reed Lake Reverie" loading="lazy">
@@ -441,20 +450,20 @@
   <section id="connect" class="cta">
     <div class="container">
       <h2 style="font-size:2rem; margin-bottom:1rem; color:white;">Interested in a piece?</h2>
-      <p style="max-width:620px; margin:0 auto 1.5rem; font-size:1.1rem; color:#ddd;">
+      <p style="max-width:620px; margin:0 auto 1.5rem; font-size:1.1rem; color:#EDE8E0;">
         Contact us for custom commissions or to purchase available work.
       </p>
-      <p style="font-size:1.05rem; color:#ccc;">
-        <a href="index.html#connect" style="color:#ccc; text-decoration:underline;">Contact form</a> &nbsp;|&nbsp; 
-        <a href="mailto:contact@stocktonandrogers.com" style="color:#ccc; text-decoration:underline;">contact@stocktonandrogers.com</a> &nbsp;|&nbsp; 
-        <a href="tel:4793963935" style="color:#ccc; text-decoration:underline;">(479) 396-3935</a>
+      <p style="font-size:1.05rem; color:#D4CFC6;">
+        <a href="index.html#connect" style="color:#D4CFC6; text-decoration:underline;">Contact form</a> &nbsp;|&nbsp; 
+        <a href="mailto:contact@stocktonandrogers.com" style="color:#D4CFC6; text-decoration:underline;">contact@stocktonandrogers.com</a> &nbsp;|&nbsp; 
+        <a href="tel:4793963935" style="color:#D4CFC6; text-decoration:underline;">(479) 396-3935</a>
       </p>
     </div>
   </section>
 
   <footer>
     <img src="logo.svg" alt="Stockton & Rogers" style="height: 72px; margin-bottom: 12px;">
-    <p style="margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--charcoal); font-style: italic;">Handcrafted. Timeless Design. Heirloom Quality.</p>
+    <p style="margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--text-secondary); font-style: italic;">Handcrafted. Timeless Design. Heirloom Quality.</p>
     <p>
       © 2026 • All pieces handcrafted in Northwest Arkansas<br>
       <a href="tel:4793963935" style="color:inherit; text-decoration:underline;">(479) 396-3935</a> | 
@@ -470,8 +479,8 @@
     <div id="lightbox-caption"></div>
     <div id="lightbox-multi" style="display: none;"></div>
     <div class="lightbox-arrows" id="lightbox-arrows" style="display: none;">
-      <span class="arrow prev" onclick="prevImage(); event.stopImmediatePropagation();">&#10094;</span>
-      <span class="arrow next" onclick="nextImage(); event.stopImmediatePropagation();">&#10095;</span>
+      <span class="arrow prev" onclick="prevImage(); event.stopImmediatePropagation();">&larr;</span>
+      <span class="arrow next" onclick="nextImage(); event.stopImmediatePropagation();">&rarr;</span>
     </div>
   </div>
 
