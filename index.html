@@ -142,7 +142,7 @@
     .nav.open .nav-toggle span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
     .hero { 
       width: 100%; height: 100vh; 
-      background: linear-gradient(rgba(44,44,44,0.10), rgba(30,30,30,0.25)), url('images/Gallery/Custom Commissions/Fossil-Monolith/fossil-monolith-hero.jpeg') center/cover no-repeat; 
+      background: linear-gradient(rgba(44,44,44,0.08), rgba(30,30,30,0.22)), url('images/Gallery/Custom Commissions/Fossil-Monolith/fossil-monolith-hero.jpeg') center 30%/cover no-repeat; 
       display: flex; align-items: center; justify-content: center; text-align: center; color: white; 
       position: relative;
     }
@@ -152,9 +152,9 @@
       padding-top: 20px;          /* minimal padding */
     }
     .hero-content .logo img { 
-      height: 108px; 
+      height: clamp(80px, 11vh, 110px); 
       position: relative; 
-      top: -195px;                /* lifted higher to position logo above the fossil piece */
+      top: clamp(-140px, -16vh, -200px);                /* responsive lift to position logo above the fossil piece */
       margin-bottom: 0.6rem;
       shape-rendering: geometricPrecision;
       image-rendering: -webkit-optimize-contrast;
@@ -169,6 +169,7 @@
       margin-left: auto; 
       margin-right: auto; 
       color: #f0e9df;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
     }
     .hero-buttons { 
       display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; 
@@ -334,12 +335,19 @@
       .nav-toggle { display: flex; }
       .nav .inquire-btn { display: none; }
       .hero h1 { font-size: 2.4rem; }
-      .hero .tagline { font-size: 1.15rem; }
+      .hero .tagline { font-size: 1.05rem; max-width: 85%; }
       .container { padding: 5rem 4%; }
       .lightbox-content { max-width: 96%; max-height: 78vh; }
       .lightbox-arrows { padding: 0 15px; }
       .arrow { width: 40px; height: 40px; font-size: 28px; }
       #lightbox-caption { font-size: 0.95rem; bottom: 18px; }
+      .hero-content .logo img {
+        height: clamp(70px, 12vh, 92px);
+        top: clamp(-100px, -14vh, -150px);
+      }
+      .hero-buttons {
+        margin-top: 1.5rem;
+      }
     }
 
     /* Desktop-specific adjustments - higher logo on larger screens */
@@ -348,8 +356,8 @@
         padding-top: 10px;
       }
       .hero-content .logo img { 
-        height: 102px; 
-        top: -220px;               /* lifted higher to position logo above the fossil piece in the hero photo */
+        height: clamp(85px, 10vh, 105px); 
+        top: clamp(-150px, -15vh, -190px); 
         shape-rendering: geometricPrecision;
         image-rendering: -webkit-optimize-contrast;
         filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
