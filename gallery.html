@@ -203,7 +203,7 @@
     /* Subtle contained background for the gallery grids (warm alt) */
     #work .container {
       background: var(--bg-alt);
-      border-radius: 10px; 
+      border-radius: 10px;
     }
     .gallery { 
       display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; 
@@ -223,7 +223,7 @@
       to { opacity: 1; transform: translateY(0); }
     }
     .gallery img.gallery-animated {
-      animation: galleryFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) both; 
+      animation: galleryFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
     }
     /* .cta and .craft no longer force full-width or page-level bgs (reverted). 
        The contact teaser uses contained dark treatment via #connect .container. */
@@ -369,14 +369,14 @@
 
   <!-- NAV -->
   <nav class="nav">
-    <div class="logo"><a href="/"><img src="logo.svg" alt="Stockton & Rogers"></a></div>
+    <div class="logo"><a href="index.html"><img src="logo.svg" alt="Stockton & Rogers"></a></div>
     
     <!-- Desktop nav -->
     <div class="nav-links" style="display: flex; align-items: center;">
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/gallery">Gallery</a>
-      <a href="/shop">Shop</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="shop.html">Shop</a>
       <a href="#connect">Contact</a>
       <a href="#connect" class="inquire-btn">Inquire</a>
     </div>
@@ -390,10 +390,10 @@
 
     <!-- Mobile menu -->
     <div class="nav-mobile">
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/gallery">Gallery</a>
-      <a href="/shop">Shop</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="shop.html">Shop</a>
       <a href="#connect">Contact</a>
       <a href="#connect" class="inquire-btn mobile">Inquire</a>
     </div>
@@ -407,40 +407,98 @@
     </div>
   </section>
 
-  <!-- GROUPED GALLERY CONTENT (full width via #work + inner container for max-width content) -->
+  <!-- GROUPED GALLERY CONTENT (pictures below titles/descriptions) -->
   <section id="work">
     <div class="container">
 
+      <p style="text-align:center; margin-bottom: 1.25rem; font-size:1rem; color: var(--text-muted); max-width: 70ch;">
+        A selection of past commissions. Each was made for a specific person, and built around the thing they wanted to keep.
+      </p>
+      <p style="text-align:center; margin-bottom: 1.75rem; font-size:1rem; color: var(--text-secondary); max-width: 70ch;">
+        Every piece here was designed around the one thing it holds — a frame that echoes the photograph inside it, a stand built around a single stone, an inlay that answers the art. Built from locally sourced hardwoods and select exotics, each was made for one person, one object, one purpose.
+      </p>
+
       <!-- Clocks -->
       <h2 style="margin-top:2rem; font-size:1.7rem; border-bottom:1px solid var(--border); padding-bottom:0.4rem;">Clocks</h2>
-      <div class="gallery">
-        <img src="images/Gallery/Custom Commissions/The Horizon Clock/the-horizon-clock.jpeg" alt="The Horizon Clock" data-multi="images/Gallery/Custom Commissions/The Horizon Clock/the-horizon-clock.jpeg,images/Gallery/Custom Commissions/The Horizon Clock/the-horizon-clock-2.jpeg" loading="lazy">
-        <img src="images/Gallery/Custom Commissions/Sculptural Wave Clock/sculptural-wave-clock.jpeg" alt="Sculptural Wave Clock" loading="lazy">
+      <h3 style="margin: 0.9rem 0 0.4rem; font-size:1.35rem;">The Horizon Clock</h3>
+      <p style="margin-bottom: 0.6rem; color: var(--text-secondary);">A low, linear timepiece in red oak with walnut inlays, its face floating behind a clear panel on four standoffs.</p>
+      <div class="gallery" style="max-width: 720px; margin: 0 auto 1.25rem;">
+        <img src="images/Gallery/Custom Commissions/The Horizon Clock/the-horizon-clock.jpeg" alt="The Horizon Clock" data-multi="images/Gallery/Custom Commissions/The Horizon Clock/the-horizon-clock.jpeg,images/Gallery/Custom Commissions/The Horizon Clock/the-horizon-clock-2.jpeg" loading="lazy" style="cursor: pointer;">
+      </div>
+
+      <h3 style="margin: 0.9rem 0 0.4rem; font-size:1.35rem;">Sculptural Wave Clock</h3>
+      <p style="margin-bottom: 0.6rem; color: var(--text-secondary);">A dramatic angular form in cherry, its hours marked by alternating aluminum and brass dots, the face floating behind a clear panel above a carved wave-cut base.</p>
+      <div class="gallery" style="max-width: 720px; margin: 0 auto 1.25rem;">
+        <img src="images/Gallery/Custom Commissions/Sculptural Wave Clock/sculptural-wave-clock.jpeg" alt="Sculptural Wave Clock" loading="lazy" style="cursor: pointer;">
       </div>
 
       <!-- Picture Frames & Triptychs -->
-      <h2 class="local-mix" style="margin-top:2rem; font-size:1.7rem; border-bottom:1px solid var(--border); padding-bottom:0.4rem;">Picture Frames & Triptychs</h2>
-      <div class="gallery">
-        <img src="images/Gallery/Custom Commissions/Leopardwood Picture Frame/leopardwood-frame.jpeg" alt="Leopardwood Picture Frame" loading="lazy">
-        <img src="images/Gallery/Custom Commissions/Walnut-Alloy-Frame/walnut-and-alloy-frame.jpeg" alt="Walnut-Alloy-Frame" loading="lazy">
-        <img src="images/Gallery/Custom Commissions/Zebrawood Picture Frame/zebrawood-picture-frame.jpeg" alt="Zebrawood Picture Frame" loading="lazy">
-        <img src="images/Gallery/Custom Commissions/Triptych Frame/triptych-frame.jpeg" alt="Triptych Frame" loading="lazy">
-        <img src="images/Gallery/Custom Commissions/Modern Multi-Tone Frame/modern-multi-tone-frame.jpeg" alt="Modern Multi-Tone Frame" data-multi="images/Gallery/Custom Commissions/Modern Multi-Tone Frame/modern-multi-tone-frame.jpeg,images/Gallery/Custom Commissions/Modern Multi-Tone Frame/modern-multi-tone-frame-2.jpeg" loading="lazy">
+      <h2 style="margin-top:2rem; font-size:1.7rem; border-bottom:1px solid var(--border); padding-bottom:0.4rem;">Picture Frames & Triptychs</h2>
+
+      <h3 style="margin: 0.9rem 0 0.4rem; font-size:1.35rem;">Aged-Padauk + Alloy</h3>
+      <p style="margin-bottom: 0.6rem; color: var(--text-secondary);">Warm, deep-toned padauk set with columns of aluminum dots angled to echo the sloping lines of the church in the print.</p>
+      <div class="gallery" style="max-width: 720px; margin: 0 auto 1.25rem;">
+        <img src="images/Gallery/Custom Commissions/Walnut-Alloy-Frame/walnut-and-alloy-frame.jpeg" alt="Aged-Padauk + Alloy" loading="lazy" style="cursor: pointer;">
+      </div>
+
+      <h3 style="margin: 0.9rem 0 0.4rem; font-size:1.35rem;">Triptych Frame</h3>
+      <p style="margin-bottom: 0.6rem; color: var(--text-secondary);">Three whitewashed maple panels with a cherry inlay worked into a pattern of three crosses to echo the prints it holds.</p>
+      <div class="gallery" style="max-width: 720px; margin: 0 auto 1.25rem;">
+        <img src="images/Gallery/Custom Commissions/Triptych Frame/triptych-frame.jpeg" alt="Triptych Frame" loading="lazy" style="cursor: pointer;">
+      </div>
+
+      <h3 style="margin: 0.9rem 0 0.4rem; font-size:1.35rem;">Modern Multi-Tone Frame</h3>
+      <p style="margin-bottom: 0.6rem; color: var(--text-secondary);">Three stacked hardwoods, walnut to oak to maple, aligned so the grain transition follows the horizon of the photograph it holds.</p>
+      <div class="gallery" style="max-width: 720px; margin: 0 auto 1.25rem;">
+        <img src="images/Gallery/Custom Commissions/Modern Multi-Tone Frame/modern-multi-tone-frame.jpeg" alt="Modern Multi-Tone Frame" data-multi="images/Gallery/Custom Commissions/Modern Multi-Tone Frame/modern-multi-tone-frame.jpeg,images/Gallery/Custom Commissions/Modern Multi-Tone Frame/modern-multi-tone-frame-2.jpeg" loading="lazy" style="cursor: pointer;">
+      </div>
+
+      <h3 style="margin: 0.9rem 0 0.4rem; font-size:1.35rem;">Zebrawood Picture Frame</h3>
+      <p style="margin-bottom: 0.6rem; color: var(--text-secondary);">Bold zebrawood with deep striping, built up in a wide stepped profile around the image.</p>
+      <div class="gallery" style="max-width: 720px; margin: 0 auto 1.25rem;">
+        <img src="images/Gallery/Custom Commissions/Zebrawood Picture Frame/zebrawood-picture-frame.jpeg" alt="Zebrawood Picture Frame" loading="lazy" style="cursor: pointer;">
+      </div>
+
+      <h3 style="margin: 0.9rem 0 0.4rem; font-size:1.35rem;">Leopardwood Picture Frame</h3>
+      <p style="margin-bottom: 0.6rem; color: var(--text-secondary);">Figured leopardwood with its distinctive flecked grain, framing a cherished portrait.</p>
+      <div class="gallery" style="max-width: 720px; margin: 0 auto 1.25rem;">
+        <img src="images/Gallery/Custom Commissions/Leopardwood Picture Frame/leopardwood-frame.jpeg" alt="Leopardwood Picture Frame" loading="lazy" style="cursor: pointer;">
       </div>
 
       <!-- Keepsake Boxes & Stands -->
       <h2 style="margin-top:2rem; font-size:1.7rem; border-bottom:1px solid var(--border); padding-bottom:0.4rem;">Keepsake Boxes & Stands</h2>
-      <div class="gallery">
-        <img src="images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box.jpeg" alt="Modern Grid Box" data-multi="images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-2.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-3.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-4.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-5.jpeg" loading="lazy">
-        <img src="images/Gallery/Custom Commissions/Form-Fossil-Pair/form-and-fossil-pair.jpeg" alt="Form and Fossil Pair" data-multi="images/Gallery/Custom Commissions/Form-Fossil-Pair/form-and-fossil-pair-2.jpeg" loading="lazy">
-        <img src="images/Gallery/Custom Commissions/Sea Jasper Fossil Stand/sea-jasper-fossil-stand.jpeg" alt="Sea Jasper Fossil Stand" data-multi="images/Gallery/Custom Commissions/Sea Jasper Fossil Stand/sea-jasper-fossil-stand.jpeg,images/Gallery/Custom Commissions/Sea Jasper Fossil Stand/sea-jasper-fossil-stand-2.jpeg" loading="lazy">
+
+      <h3 style="margin: 0.9rem 0 0.4rem; font-size:1.35rem;">Modern Grid Box</h3>
+      <p style="margin-bottom: 0.6rem; color: var(--text-secondary);">A maple keepsake box wrapped in a cherry grid inlay, personalized with three inlaid symbols on the lid, opening to a lift-out tray above a lower compartment.</p>
+      <div class="gallery" style="max-width: 720px; margin: 0 auto 1.25rem;">
+        <img src="images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box.jpeg" alt="Modern Grid Box" data-multi="images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-2.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-3.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-4.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-5.jpeg" loading="lazy" style="cursor: pointer;">
+      </div>
+
+      <h3 style="margin: 0.9rem 0 0.4rem; font-size:1.35rem;">Sea Jasper Fossil Stand</h3>
+      <p style="margin-bottom: 0.6rem; color: var(--text-secondary);">A polished sea-jasper specimen cradled on a grooved walnut base, paired with a copper tube that holds a rolled document telling the stone's story.</p>
+      <div class="gallery" style="max-width: 720px; margin: 0 auto 1.25rem;">
+        <img src="images/Gallery/Custom Commissions/Sea Jasper Fossil Stand/sea-jasper-fossil-stand.jpeg" alt="Sea Jasper Fossil Stand" data-multi="images/Gallery/Custom Commissions/Sea Jasper Fossil Stand/sea-jasper-fossil-stand.jpeg,images/Gallery/Custom Commissions/Sea Jasper Fossil Stand/sea-jasper-fossil-stand-2.jpeg" loading="lazy" style="cursor: pointer;">
       </div>
 
       <!-- Sculptural Pieces -->
       <h2 style="margin-top:2rem; font-size:1.7rem; border-bottom:1px solid var(--border); padding-bottom:0.4rem;">Sculptural Pieces</h2>
-      <div class="gallery">
-        <img src="images/Gallery/Custom Commissions/Bobcat Perch/bobcat-perch.jpeg" alt="Bobcat Perch" data-multi="images/Gallery/Custom Commissions/Bobcat Perch/bobcat-perch-2.jpeg" loading="lazy">
-        <img src="images/Gallery/Custom Commissions/Reed Lake Reverie/reed-lake-reverie.jpeg" alt="Reed Lake Reverie" loading="lazy">
+
+      <h3 style="margin: 0.9rem 0 0.4rem; font-size:1.35rem;">Form + Fossil I</h3>
+      <p style="margin-bottom: 0.6rem; color: var(--text-secondary);">A slab of petrified wood paired with maple hand-carved to mirror it, each held upright between aluminum posts on a curved walnut base.</p>
+      <div class="gallery" style="max-width: 720px; margin: 0 auto 1.25rem;">
+        <img src="images/Gallery/Custom Commissions/Form-Fossil-Pair/form-and-fossil-pair.jpeg" alt="Form + Fossil I" data-multi="images/Gallery/Custom Commissions/Form-Fossil-Pair/form-and-fossil-pair.jpeg,images/Gallery/Custom Commissions/Form-Fossil-Pair/form-and-fossil-pair-2.jpeg" loading="lazy" style="cursor: pointer;">
+      </div>
+
+      <h3 style="margin: 0.9rem 0 0.4rem; font-size:1.35rem;">Bobcat Perch</h3>
+      <p style="margin-bottom: 0.6rem; color: var(--text-secondary);">A wildlife photograph in red oak with a gold mat, four maple slats raking diagonally across one corner like a bobcat's claw marks.</p>
+      <div class="gallery" style="max-width: 720px; margin: 0 auto 1.25rem;">
+        <img src="images/Gallery/Custom Commissions/Bobcat Perch/bobcat-perch.jpeg" alt="Bobcat Perch" data-multi="images/Gallery/Custom Commissions/Bobcat Perch/bobcat-perch.jpeg,images/Gallery/Custom Commissions/Bobcat Perch/bobcat-perch-2.jpeg" loading="lazy" style="cursor: pointer;">
+      </div>
+
+      <h3 style="margin: 0.9rem 0 0.4rem; font-size:1.35rem;">Reed Lake Reverie</h3>
+      <p style="margin-bottom: 0.6rem; color: var(--text-secondary);">A black-and-white lodge scene in dark-stained wood, mounted with a birch branch and a piece of raw quartz.</p>
+      <div class="gallery" style="max-width: 720px; margin: 0 auto 1.25rem;">
+        <img src="images/Gallery/Custom Commissions/Reed Lake Reverie/reed-lake-reverie.jpeg" alt="Reed Lake Reverie" loading="lazy" style="cursor: pointer;">
       </div>
 
     </div>
@@ -454,7 +512,7 @@
         Contact us for custom commissions or to purchase available work.
       </p>
       <p style="font-size:1.05rem; color:#D4CFC6;">
-        <a href="/#connect" style="color:#D4CFC6; text-decoration:underline;">Contact form</a> &nbsp;|&nbsp; 
+        <a href="index.html#connect" style="color:#D4CFC6; text-decoration:underline;">Contact form</a> &nbsp;|&nbsp; 
         <a href="mailto:contact@stocktonandrogers.com" style="color:#D4CFC6; text-decoration:underline;">contact@stocktonandrogers.com</a> &nbsp;|&nbsp; 
         <a href="tel:4793963935" style="color:#D4CFC6; text-decoration:underline;">(479) 396-3935</a>
       </p>
@@ -467,8 +525,7 @@
     <p>
       © 2026 • All pieces handcrafted in Northwest Arkansas<br>
       <a href="tel:4793963935" style="color:inherit; text-decoration:underline;">(479) 396-3935</a> | 
-      <a href="mailto:contact@stocktonandrogers.com" style="color:inherit; text-decoration:underline;">contact@stocktonandrogers.com</a><br>
-      P.O. Box 10068, Fayetteville, AR 72703
+      <a href="mailto:contact@stocktonandrogers.com" style="color:inherit; text-decoration:underline;">contact@stocktonandrogers.com</a>
     </p>
   </footer>
 
