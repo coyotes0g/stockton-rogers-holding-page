@@ -457,7 +457,7 @@
           <!-- Walnut + Maple -->
           <h2>Walnut + Maple</h2>
           <div class="gallery">
-            <a href="heritage-float-walnut-maple.html">
+            <a href="heritage-float-walnut-maple.html" style="display:block;">
               <img src="images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-4.jpeg" alt="Walnut + Maple" loading="lazy">
             </a>
           </div>
@@ -466,7 +466,7 @@
           <!-- Cherry + Walnut -->
           <h2>Cherry + Walnut</h2>
           <div class="gallery">
-            <a href="heritage-float-cherry-walnut.html">
+            <a href="heritage-float-cherry-walnut.html" style="display:block;">
               <img src="images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry-hero.jpeg" alt="Cherry + Walnut" loading="lazy">
             </a>
           </div>
@@ -475,7 +475,7 @@
           <!-- Cherry + Maple -->
           <h2>Cherry + Maple</h2>
           <div class="gallery">
-            <a href="heritage-float-cherry-maple.html">
+            <a href="heritage-float-cherry-maple.html" style="display:block;">
               <img src="images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple-hero.jpeg" alt="Cherry + Maple" loading="lazy">
             </a>
           </div>
@@ -484,7 +484,7 @@
           <!-- White Oak + Walnut -->
           <h2>White Oak + Walnut</h2>
           <div class="gallery">
-            <a href="heritage-float-white-oak-walnut.html">
+            <a href="heritage-float-white-oak-walnut.html" style="display:block;">
               <img src="images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-hero.jpeg" alt="White Oak + Walnut" loading="lazy">
             </a>
           </div>
@@ -689,11 +689,12 @@
       });
 
       document.querySelectorAll('.gallery img').forEach(img => {
+        if (img.closest('a')) {
+          // Linked images (e.g. Heritage Float variants) navigate to their pages instead of lightbox.
+          // Do not attach the lightbox click handler.
+          return;
+        }
         img.addEventListener('click', (e) => {
-          if (img.closest('a')) {
-            // Let the link navigate to the variant page instead of opening lightbox
-            return;
-          }
           const videoSrc = img.getAttribute('data-video');
           const multi = img.getAttribute('data-multi');
           const alt = img.getAttribute('alt') || '';
