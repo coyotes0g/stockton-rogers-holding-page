@@ -457,28 +457,36 @@
           <!-- Walnut + Maple -->
           <h2>Walnut + Maple</h2>
           <div class="gallery">
-            <img src="images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-4.jpeg" alt="Walnut + Maple" data-multi="images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-4.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-2.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-3.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-5.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-showcase.MP4" loading="lazy">
+            <a href="heritage-float-walnut-maple.html">
+              <img src="images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-4.jpeg" alt="Walnut + Maple" loading="lazy">
+            </a>
           </div>
         </div>
         <div class="variety">
           <!-- Cherry + Walnut -->
           <h2>Cherry + Walnut</h2>
           <div class="gallery">
-            <img src="images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry-hero.jpeg" alt="Cherry + Walnut" data-multi="images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry-hero.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry-2.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry-3.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry-4.jpeg" loading="lazy">
+            <a href="heritage-float-cherry-walnut.html">
+              <img src="images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry-hero.jpeg" alt="Cherry + Walnut" loading="lazy">
+            </a>
           </div>
         </div>
         <div class="variety">
           <!-- Cherry + Maple -->
           <h2>Cherry + Maple</h2>
           <div class="gallery">
-            <img src="images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple-hero.jpeg" alt="Cherry + Maple" data-multi="images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple-hero.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple-2.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple-3.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple-4.jpeg" loading="lazy">
+            <a href="heritage-float-cherry-maple.html">
+              <img src="images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple-hero.jpeg" alt="Cherry + Maple" loading="lazy">
+            </a>
           </div>
         </div>
         <div class="variety">
           <!-- White Oak + Walnut -->
           <h2>White Oak + Walnut</h2>
           <div class="gallery">
-            <img src="images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-hero.jpeg" alt="White Oak + Walnut" data-multi="images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-hero.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-2.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-3.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-4.jpeg" loading="lazy">
+            <a href="heritage-float-white-oak-walnut.html">
+              <img src="images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-hero.jpeg" alt="White Oak + Walnut" loading="lazy">
+            </a>
           </div>
         </div>
       </div>
@@ -681,7 +689,11 @@
       });
 
       document.querySelectorAll('.gallery img').forEach(img => {
-        img.addEventListener('click', () => {
+        img.addEventListener('click', (e) => {
+          if (img.closest('a')) {
+            // Let the link navigate to the variant page instead of opening lightbox
+            return;
+          }
           const videoSrc = img.getAttribute('data-video');
           const multi = img.getAttribute('data-multi');
           const alt = img.getAttribute('alt') || '';
