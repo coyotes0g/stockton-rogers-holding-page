@@ -175,6 +175,52 @@
       box-shadow: 0 16px 34px rgba(0,0,0,0.13);
     }
 
+    /* Carousel nav for main product hero (multiple views) */
+    .gallery.carousel {
+      position: relative;
+      display: block;
+      max-width: 720px;
+      margin: 0 auto 0.75rem;
+    }
+    .gallery.carousel img {
+      display: none;
+      height: auto;
+      width: 100%;
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+      transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), box-shadow 0.35s ease, opacity 0.2s;
+      cursor: pointer;
+    }
+    .gallery.carousel img.active {
+      display: block;
+    }
+    .gallery.carousel .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(44, 44, 44, 0.65);
+      color: #fff;
+      border: none;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      transition: background 0.2s;
+      user-select: none;
+    }
+    .gallery.carousel .carousel-arrow:hover {
+      background: rgba(44, 44, 44, 0.85);
+    }
+    .gallery.carousel .carousel-arrow.prev { left: 10px; }
+    .gallery.carousel .carousel-arrow.next { right: 10px; }
+
     /* List style for variants instead of grid */
     .varieties {
       display: block;
@@ -444,11 +490,31 @@
       <p style="font-size: 1.55rem; font-style: italic; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.3;">
         Your story, beautifully suspended.
       </p>
-      <div class="gallery" style="max-width: 720px; margin: 0 auto 0.75rem;">
+      <div class="gallery carousel" style="max-width: 720px; margin: 0 auto 0.75rem;">
         <img src="images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-hero.jpeg" 
              alt="White Oak + Walnut" 
              data-multi="images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-hero.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-2.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-3.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-4.jpeg"
-             style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 12px 32px rgba(0,0,0,0.12); cursor: pointer;" 
+             style="cursor: pointer;" 
+             loading="lazy">
+        <img src="images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak.jpeg" 
+             alt="White Oak + Walnut" 
+             data-multi="images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-hero.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-2.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-3.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-4.jpeg"
+             style="cursor: pointer;" 
+             loading="lazy">
+        <img src="images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-2.jpeg" 
+             alt="White Oak + Walnut" 
+             data-multi="images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-hero.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-2.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-3.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-4.jpeg"
+             style="cursor: pointer;" 
+             loading="lazy">
+        <img src="images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-3.jpeg" 
+             alt="White Oak + Walnut" 
+             data-multi="images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-hero.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-2.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-3.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-4.jpeg"
+             style="cursor: pointer;" 
+             loading="lazy">
+        <img src="images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-4.jpeg" 
+             alt="White Oak + Walnut" 
+             data-multi="images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-hero.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-2.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-3.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-4.jpeg"
+             style="cursor: pointer;" 
              loading="lazy">
       </div>
       <p class="product-intro" style="color: var(--text-secondary);">
@@ -500,7 +566,7 @@
       <h2 style="text-align:center; font-size:1.35rem; margin-bottom: 0.5rem;">Key Features</h2>
       <ul class="features">
         <li>Two 10mm premium acrylic panels, secured with magnets for easy photo swapping</li>
-        <li>Designed for a 4″×6″ photo to achieve the floating effect; also accommodates a 5″×7″</li>
+        <li>Designed for a 4″	imes6″ photo to achieve the floating effect; also accommodates a 5″	imes7″</li>
         <li>Continuous 1/16″ perimeter inlay on all four sides for a refined, finished edge</li>
         <li>Intuitive top drop-in mounting channel — no visible hardware</li>
         <li>Round felt pads for surface protection</li>
@@ -544,7 +610,7 @@
     <div class="container">
       <h2 style="font-size:2.5rem; margin-bottom:1rem; color:white;">Ready to bring your story into the light?</h2>
       <p style="max-width:620px; margin:0 auto 1.25rem; font-size:1.1rem; color:#EDE8E0;">
-        Inquire for availability, custom sizes, or wood options. We're happy to discuss the perfect combination for your space and photograph.
+        Inquire for availability, custom sizes, or wood options. We’re happy to discuss the perfect combination for your space and photograph.
       </p>
 
       <form id="contact-form" class="form" action="https://formspree.io/f/mzdqejng" method="POST">
@@ -559,7 +625,7 @@
           <option value="Custom">Custom size or wood</option>
           <option value="Other">Other question</option>
         </select>
-        <textarea name="message" rows="4" placeholder="Tell us about the photograph or memory you'd like to display, or any custom requests..." data-fs-field autocomplete="off" required></textarea>
+        <textarea name="message" rows="4" placeholder="Tell us about the photograph or memory you’d like to display, or any custom requests..." data-fs-field autocomplete="off" required></textarea>
         <input type="hidden" name="_subject" value="Heritage Float inquiry from stocktonandrogers.com">
         <button type="submit" id="form-submit-btn" data-fs-submit-btn>Send Inquiry</button>
       </form>
@@ -567,7 +633,7 @@
       <!-- Form success message -->
       <div id="form-success" data-fs-success style="display:none; text-align:center; padding:2rem; background:var(--bg-alt); border-radius:12px; margin-top:1.5rem;">
         <p style="font-size:1.15rem; color: var(--text-primary); margin-bottom:0.5rem;">Thank you — your message has been sent.</p>
-        <p style="font-size:0.95rem; color: var(--text-muted);">We'll get back to you within 1–2 business days.</p>
+        <p style="font-size:0.95rem; color: var(--text-muted);">We’ll get back to you within 1–2 business days.</p>
       </div>
 
       <p style="margin-top:2.5rem; font-size:1.05rem; color:#D4CFC6;">
@@ -705,6 +771,48 @@
       arrows.style.display = 'none';
     }
 
+    function initCarouselNav() {
+      document.querySelectorAll('.gallery').forEach(gallery => {
+        if (gallery.closest('.variety')) return;
+        const imgs = Array.from(gallery.querySelectorAll('img'));
+        if (imgs.length === 0) return;
+
+        imgs.forEach((img, i) => img.classList.toggle('active', i === 0));
+
+        if (imgs.length <= 1) return;
+
+        let current = 0;
+
+        const prevBtn = document.createElement('button');
+        prevBtn.className = 'carousel-arrow prev';
+        prevBtn.innerHTML = '&#10094;';
+        prevBtn.setAttribute('aria-label', 'Previous photo');
+
+        const nextBtn = document.createElement('button');
+        nextBtn.className = 'carousel-arrow next';
+        nextBtn.innerHTML = '&#10095;';
+        nextBtn.setAttribute('aria-label', 'Next photo');
+
+        gallery.appendChild(prevBtn);
+        gallery.appendChild(nextBtn);
+
+        function show(index) {
+          current = (index + imgs.length) % imgs.length;
+          imgs.forEach((img, i) => img.classList.toggle('active', i === current));
+        }
+
+        prevBtn.addEventListener('click', (e) => {
+          e.stopImmediatePropagation();
+          show(current - 1);
+        });
+
+        nextBtn.addEventListener('click', (e) => {
+          e.stopImmediatePropagation();
+          show(current + 1);
+        });
+      });
+    }
+
     // Professional AJAX form handler (Formspree)
     function initContactForm() {
       const form = document.getElementById('contact-form');
@@ -778,6 +886,7 @@
         });
       });
 
+      initCarouselNav();
       initContactForm();
 
       // Staggered entrance for the variety images
