@@ -13,7 +13,7 @@
   <meta property="og:url" content="https://www.stocktonandrogers.com">
   <!-- Recommended: Upload a beautiful 1200x630 image (use one of your best product shots) as images/og-image.jpg -->
   <!-- <meta property="og:image" content="https://www.stocktonandrogers.com/images/og-image.jpg"> -->
-  <!-- <meta property="og:image:width" content="1200">
+  <!-- <meta property="og:image:width" content="1200"> -->
   <!-- <meta property="og:image:height" content="630"> -->
 
   <!-- Twitter / X Card -->
@@ -205,13 +205,26 @@
     #work .container {
       background: var(--bg-alt);
       border-radius: 10px;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
     }
     .gallery { 
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; 
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      padding-bottom: 0.5rem;
+      -webkit-overflow-scrolling: touch;
     }
     .gallery img { 
-      width: 100%; height: auto; border-radius: 6px; 
-      box-shadow: 0 10px 24px rgba(0,0,0,0.1); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), box-shadow 0.35s ease; cursor: pointer;
+      height: auto; 
+      max-height: 320px;
+      width: auto;
+      max-width: 100%;
+      border-radius: 6px; 
+      box-shadow: 0 10px 24px rgba(0,0,0,0.1); 
+      transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), box-shadow 0.35s ease; 
+      cursor: pointer;
+      flex-shrink: 0;
     }
     .gallery img:hover { 
       transform: scale(1.015); 
@@ -408,104 +421,128 @@
     </div>
   </section>
 
+  <p style="text-align:center; margin: 1rem 0 1.5rem; font-size:1rem; color: var(--text-muted); max-width: 70ch; font-style: italic;">
+    A selection of past commissions. Each was made for a specific person, and built around the thing they wanted to keep.
+  </p>
+
   <!-- GROUPED GALLERY CONTENT (pictures below titles/descriptions) -->
   <section id="work">
     <div class="container">
 
-      <p style="text-align:center; margin-bottom: 1.25rem; font-size:1rem; color: var(--text-muted); max-width: 70ch;">
-        A selection of past commissions. Each was made for a specific person, and built around the thing they wanted to keep.
-      </p>
-      <p style="text-align:center; margin-bottom: 1.75rem; font-size:1rem; color: var(--text-secondary); max-width: 70ch;">
+      <p style="text-align:center; margin-bottom: 1rem; font-size:1rem; color: var(--text-secondary); max-width: 70ch;">
         Every piece here was designed around the one thing it holds — a frame that echoes the photograph inside it, a stand built around a single stone, an inlay that answers the art. Built from locally sourced hardwoods and select exotics, each was made for one person, one object, one purpose.
       </p>
 
       <!-- Clocks -->
-      <h2 style="margin-top:2rem; font-size:1.7rem; border-bottom:1px solid var(--border); padding-bottom:0.4rem;">Clocks</h2>
+      <h2 style="margin-top:1.5rem; font-size:1.7rem; border-bottom:1px solid var(--border); padding-bottom:0.4rem;">Clocks</h2>
       <h3 style="margin: 0.9rem 0 0.4rem; font-size:1.35rem;">The Horizon Clock</h3>
       <p style="margin-bottom: 0.6rem; color: var(--text-secondary);">A low, linear timepiece in red oak with walnut inlays, its face floating behind a clear panel on four standoffs.</p>
-      <div class="gallery" style="max-width: 720px; margin: 0 auto 1.25rem;">
+      <div class="gallery" style="max-width: 720px; margin: 0 auto 2rem;">
         <img src="images/Gallery/Custom Commissions/The Horizon Clock/the-horizon-clock.jpeg" alt="The Horizon Clock" data-multi="images/Gallery/Custom Commissions/The Horizon Clock/the-horizon-clock.jpeg,images/Gallery/Custom Commissions/The Horizon Clock/the-horizon-clock-2.jpeg" loading="lazy" style="cursor: pointer;">
+        <img src="images/Gallery/Custom Commissions/The Horizon Clock/the-horizon-clock-2.jpeg" alt="The Horizon Clock" data-multi="images/Gallery/Custom Commissions/The Horizon Clock/the-horizon-clock.jpeg,images/Gallery/Custom Commissions/The Horizon Clock/the-horizon-clock-2.jpeg" loading="lazy" style="cursor: pointer;">
       </div>
 
       <h3 style="margin: 0.9rem 0 0.4rem; font-size:1.35rem;">Sculptural Wave Clock</h3>
       <p style="margin-bottom: 0.6rem; color: var(--text-secondary);">A dramatic angular form in cherry, its hours marked by alternating aluminum and brass dots, the face floating behind a clear panel above a carved wave-cut base.</p>
-      <div class="gallery" style="max-width: 720px; margin: 0 auto 1.25rem;">
+      <div class="gallery" style="max-width: 720px; margin: 0 auto 2rem;">
         <img src="images/Gallery/Custom Commissions/Sculptural Wave Clock/sculptural-wave-clock.jpeg" alt="Sculptural Wave Clock" loading="lazy" style="cursor: pointer;">
       </div>
 
       <!-- Picture Frames & Triptychs -->
-      <h2 style="margin-top:2rem; font-size:1.7rem; border-bottom:1px solid var(--border); padding-bottom:0.4rem;">Picture Frames & Triptychs</h2>
+      <h2 style="margin-top:1.5rem; font-size:1.7rem; border-bottom:1px solid var(--border); padding-bottom:0.4rem;">Picture Frames & Triptychs</h2>
 
       <h3 style="margin: 0.9rem 0 0.4rem; font-size:1.35rem;">Aged-Padauk + Alloy</h3>
       <p style="margin-bottom: 0.6rem; color: var(--text-secondary);">Warm, deep-toned padauk set with columns of aluminum dots angled to echo the sloping lines of the church in the print.</p>
-      <div class="gallery" style="max-width: 720px; margin: 0 auto 1.25rem;">
+      <div class="gallery" style="max-width: 720px; margin: 0 auto 2rem;">
         <img src="images/Gallery/Custom Commissions/Walnut-Alloy-Frame/walnut-and-alloy-frame.jpeg" alt="Aged-Padauk + Alloy" loading="lazy" style="cursor: pointer;">
       </div>
 
       <h3 style="margin: 0.9rem 0 0.4rem; font-size:1.35rem;">Triptych Frame</h3>
       <p style="margin-bottom: 0.6rem; color: var(--text-secondary);">Three whitewashed maple panels with a cherry inlay worked into a pattern of three crosses to echo the prints it holds.</p>
-      <div class="gallery" style="max-width: 720px; margin: 0 auto 1.25rem;">
+      <div class="gallery" style="max-width: 720px; margin: 0 auto 2rem;">
         <img src="images/Gallery/Custom Commissions/Triptych Frame/triptych-frame.jpeg" alt="Triptych Frame" loading="lazy" style="cursor: pointer;">
       </div>
 
       <h3 style="margin: 0.9rem 0 0.4rem; font-size:1.35rem;">Modern Multi-Tone Frame</h3>
       <p style="margin-bottom: 0.6rem; color: var(--text-secondary);">Three stacked hardwoods, walnut to oak to maple, aligned so the grain transition follows the horizon of the photograph it holds.</p>
-      <div class="gallery" style="max-width: 720px; margin: 0 auto 1.25rem;">
+      <div class="gallery" style="max-width: 720px; margin: 0 auto 2rem;">
         <img src="images/Gallery/Custom Commissions/Modern Multi-Tone Frame/modern-multi-tone-frame.jpeg" alt="Modern Multi-Tone Frame" data-multi="images/Gallery/Custom Commissions/Modern Multi-Tone Frame/modern-multi-tone-frame.jpeg,images/Gallery/Custom Commissions/Modern Multi-Tone Frame/modern-multi-tone-frame-2.jpeg" loading="lazy" style="cursor: pointer;">
+        <img src="images/Gallery/Custom Commissions/Modern Multi-Tone Frame/modern-multi-tone-frame-2.jpeg" alt="Modern Multi-Tone Frame" data-multi="images/Gallery/Custom Commissions/Modern Multi-Tone Frame/modern-multi-tone-frame.jpeg,images/Gallery/Custom Commissions/Modern Multi-Tone Frame/modern-multi-tone-frame-2.jpeg" loading="lazy" style="cursor: pointer;">
       </div>
 
       <h3 style="margin: 0.9rem 0 0.4rem; font-size:1.35rem;">Zebrawood Picture Frame</h3>
       <p style="margin-bottom: 0.6rem; color: var(--text-secondary);">Bold zebrawood with deep striping, built up in a wide stepped profile around the image.</p>
-      <div class="gallery" style="max-width: 720px; margin: 0 auto 1.25rem;">
+      <div class="gallery" style="max-width: 720px; margin: 0 auto 2rem;">
         <img src="images/Gallery/Custom Commissions/Zebrawood Picture Frame/zebrawood-picture-frame.jpeg" alt="Zebrawood Picture Frame" loading="lazy" style="cursor: pointer;">
       </div>
 
       <h3 style="margin: 0.9rem 0 0.4rem; font-size:1.35rem;">Leopardwood Picture Frame</h3>
       <p style="margin-bottom: 0.6rem; color: var(--text-secondary);">Figured leopardwood with its distinctive flecked grain, framing a cherished portrait.</p>
-      <div class="gallery" style="max-width: 720px; margin: 0 auto 1.25rem;">
+      <div class="gallery" style="max-width: 720px; margin: 0 auto 2rem;">
         <img src="images/Gallery/Custom Commissions/Leopardwood Picture Frame/leopardwood-frame.jpeg" alt="Leopardwood Picture Frame" loading="lazy" style="cursor: pointer;">
       </div>
 
       <!-- Keepsake Boxes & Stands -->
-      <h2 style="margin-top:2rem; font-size:1.7rem; border-bottom:1px solid var(--border); padding-bottom:0.4rem;">Keepsake Boxes & Stands</h2>
+      <h2 style="margin-top:1.5rem; font-size:1.7rem; border-bottom:1px solid var(--border); padding-bottom:0.4rem;">Keepsake Boxes & Stands</h2>
 
       <h3 style="margin: 0.9rem 0 0.4rem; font-size:1.35rem;">Modern Grid Box</h3>
       <p style="margin-bottom: 0.6rem; color: var(--text-secondary);">A maple keepsake box wrapped in a cherry grid inlay, personalized with three inlaid symbols on the lid, opening to a lift-out tray above a lower compartment.</p>
-      <div class="gallery" style="max-width: 720px; margin: 0 auto 1.25rem;">
+      <div class="gallery" style="max-width: 720px; margin: 0 auto 2rem;">
         <img src="images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box.jpeg" alt="Modern Grid Box" data-multi="images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-2.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-3.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-4.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-5.jpeg" loading="lazy" style="cursor: pointer;">
+        <img src="images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-2.jpeg" alt="Modern Grid Box" data-multi="images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-2.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-3.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-4.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-5.jpeg" loading="lazy" style="cursor: pointer;">
+        <img src="images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-3.jpeg" alt="Modern Grid Box" data-multi="images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-2.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-3.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-4.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-5.jpeg" loading="lazy" style="cursor: pointer;">
+        <img src="images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-4.jpeg" alt="Modern Grid Box" data-multi="images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-2.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-3.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-4.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-5.jpeg" loading="lazy" style="cursor: pointer;">
+        <img src="images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-5.jpeg" alt="Modern Grid Box" data-multi="images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-2.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-3.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-4.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-5.jpeg" loading="lazy" style="cursor: pointer;">
       </div>
 
       <h3 style="margin: 0.9rem 0 0.4rem; font-size:1.35rem;">Sea Jasper Fossil Stand</h3>
       <p style="margin-bottom: 0.6rem; color: var(--text-secondary);">A polished sea-jasper specimen cradled on a grooved walnut base, paired with a copper tube that holds a rolled document telling the stone's story.</p>
-      <div class="gallery" style="max-width: 720px; margin: 0 auto 1.25rem;">
+      <div class="gallery" style="max-width: 720px; margin: 0 auto 2rem;">
         <img src="images/Gallery/Custom Commissions/Sea Jasper Fossil Stand/sea-jasper-fossil-stand.jpeg" alt="Sea Jasper Fossil Stand" data-multi="images/Gallery/Custom Commissions/Sea Jasper Fossil Stand/sea-jasper-fossil-stand.jpeg,images/Gallery/Custom Commissions/Sea Jasper Fossil Stand/sea-jasper-fossil-stand-2.jpeg" loading="lazy" style="cursor: pointer;">
+        <img src="images/Gallery/Custom Commissions/Sea Jasper Fossil Stand/sea-jasper-fossil-stand-2.jpeg" alt="Sea Jasper Fossil Stand" data-multi="images/Gallery/Custom Commissions/Sea Jasper Fossil Stand/sea-jasper-fossil-stand.jpeg,images/Gallery/Custom Commissions/Sea Jasper Fossil Stand/sea-jasper-fossil-stand-2.jpeg" loading="lazy" style="cursor: pointer;">
       </div>
 
       <!-- Sculptural Pieces -->
-      <h2 style="margin-top:2rem; font-size:1.7rem; border-bottom:1px solid var(--border); padding-bottom:0.4rem;">Sculptural Pieces</h2>
+      <h2 style="margin-top:1.5rem; font-size:1.7rem; border-bottom:1px solid var(--border); padding-bottom:0.4rem;">Sculptural Pieces</h2>
 
       <h3 style="margin: 0.9rem 0 0.4rem; font-size:1.35rem;">Form + Fossil I</h3>
       <p style="margin-bottom: 0.6rem; color: var(--text-secondary);">A slab of petrified wood paired with maple hand-carved to mirror it, each held upright between aluminum posts on a curved walnut base.</p>
-      <div class="gallery" style="max-width: 720px; margin: 0 auto 1.25rem;">
+      <div class="gallery" style="max-width: 720px; margin: 0 auto 2rem;">
         <img src="images/Gallery/Custom Commissions/Form-Fossil-Pair/form-and-fossil-pair.jpeg" alt="Form + Fossil I" data-multi="images/Gallery/Custom Commissions/Form-Fossil-Pair/form-and-fossil-pair.jpeg,images/Gallery/Custom Commissions/Form-Fossil-Pair/form-and-fossil-pair-2.jpeg" loading="lazy" style="cursor: pointer;">
+        <img src="images/Gallery/Custom Commissions/Form-Fossil-Pair/form-and-fossil-pair-2.jpeg" alt="Form + Fossil I" data-multi="images/Gallery/Custom Commissions/Form-Fossil-Pair/form-and-fossil-pair.jpeg,images/Gallery/Custom Commissions/Form-Fossil-Pair/form-and-fossil-pair-2.jpeg" loading="lazy" style="cursor: pointer;">
       </div>
 
       <h3 style="margin: 0.9rem 0 0.4rem; font-size:1.35rem;">Form and Fossil II</h3>
       <p style="margin-bottom: 0.6rem; color: var(--text-secondary);">A slab of banded petrified wood paired with walnut hand-carved to mirror it, each held upright between aluminum posts on a pale maple base.</p>
-      <div class="gallery" style="max-width: 720px; margin: 0 auto 1.25rem;">
+      <div class="gallery" style="max-width: 720px; margin: 0 auto 2rem;">
         <img src="images/Gallery/Custom Commissions/Form-and-Fossil-II/form-and-fossil-ii-main.jpeg" alt="Form and Fossil II" data-multi="images/Gallery/Custom Commissions/Form-and-Fossil-II/form-and-fossil-ii-main.jpeg,images/Gallery/Custom Commissions/Form-and-Fossil-II/form-and-fossil-ii-1.jpeg,images/Gallery/Custom Commissions/Form-and-Fossil-II/form-and-fossil-ii-2.jpeg" loading="lazy" style="cursor: pointer;">
+        <img src="images/Gallery/Custom Commissions/Form-and-Fossil-II/form-and-fossil-ii-1.jpeg" alt="Form and Fossil II" data-multi="images/Gallery/Custom Commissions/Form-and-Fossil-II/form-and-fossil-ii-main.jpeg,images/Gallery/Custom Commissions/Form-and-Fossil-II/form-and-fossil-ii-1.jpeg,images/Gallery/Custom Commissions/Form-and-Fossil-II/form-and-fossil-ii-2.jpeg" loading="lazy" style="cursor: pointer;">
+        <img src="images/Gallery/Custom Commissions/Form-and-Fossil-II/form-and-fossil-ii-2.jpeg" alt="Form and Fossil II" data-multi="images/Gallery/Custom Commissions/Form-and-Fossil-II/form-and-fossil-ii-main.jpeg,images/Gallery/Custom Commissions/Form-and-Fossil-II/form-and-fossil-ii-1.jpeg,images/Gallery/Custom Commissions/Form-and-Fossil-II/form-and-fossil-ii-2.jpeg" loading="lazy" style="cursor: pointer;">
       </div>
 
       <h3 style="margin: 0.9rem 0 0.4rem; font-size:1.35rem;">Bobcat Perch</h3>
       <p style="margin-bottom: 0.6rem; color: var(--text-secondary);">A wildlife photograph in red oak with a gold mat, four maple slats raking diagonally across one corner like a bobcat's claw marks.</p>
-      <div class="gallery" style="max-width: 720px; margin: 0 auto 1.25rem;">
+      <div class="gallery" style="max-width: 720px; margin: 0 auto 2rem;">
         <img src="images/Gallery/Custom Commissions/Bobcat Perch/bobcat-perch.jpeg" alt="Bobcat Perch" data-multi="images/Gallery/Custom Commissions/Bobcat Perch/bobcat-perch.jpeg,images/Gallery/Custom Commissions/Bobcat Perch/bobcat-perch-2.jpeg" loading="lazy" style="cursor: pointer;">
+        <img src="images/Gallery/Custom Commissions/Bobcat Perch/bobcat-perch-2.jpeg" alt="Bobcat Perch" data-multi="images/Gallery/Custom Commissions/Bobcat Perch/bobcat-perch.jpeg,images/Gallery/Custom Commissions/Bobcat Perch/bobcat-perch-2.jpeg" loading="lazy" style="cursor: pointer;">
       </div>
 
       <h3 style="margin: 0.9rem 0 0.4rem; font-size:1.35rem;">Reed Lake Reverie</h3>
       <p style="margin-bottom: 0.6rem; color: var(--text-secondary);">A black-and-white lodge scene in dark-stained wood, mounted with a birch branch and a piece of raw quartz.</p>
-      <div class="gallery" style="max-width: 720px; margin: 0 auto 1.25rem;">
+      <div class="gallery" style="max-width: 720px; margin: 0 auto 2rem;">
         <img src="images/Gallery/Custom Commissions/Reed Lake Reverie/reed-lake-reverie.jpeg" alt="Reed Lake Reverie" loading="lazy" style="cursor: pointer;">
+      </div>
+
+      <!-- Other Commissions -->
+      <h2 style="margin-top:1.5rem; font-size:1.7rem; border-bottom:1px solid var(--border); padding-bottom:0.4rem;">Other Commissions</h2>
+
+      <h3 style="margin: 0.9rem 0 0.4rem; font-size:1.35rem;">Heirloom Chessboard</h3>
+      <p style="margin-bottom: 0.6rem; color: var(--text-secondary);">Walnut and cherry squares set within a fine maple grid and framed in solid walnut, the board sized and built to host its glass pieces in play.</p>
+      <div class="gallery" style="max-width: 720px; margin: 0 auto 2rem;">
+        <img src="images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-main.jpeg" alt="Heirloom Chessboard" data-multi="images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-main.jpeg,images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-1.jpeg,images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-2.jpeg,images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-3.jpeg" loading="lazy" style="cursor: pointer;">
+        <img src="images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-1.jpeg" alt="Heirloom Chessboard" data-multi="images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-main.jpeg,images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-1.jpeg,images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-2.jpeg,images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-3.jpeg" loading="lazy" style="cursor: pointer;">
+        <img src="images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-2.jpeg" alt="Heirloom Chessboard" data-multi="images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-main.jpeg,images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-1.jpeg,images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-2.jpeg,images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-3.jpeg" loading="lazy" style="cursor: pointer;">
+        <img src="images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-3.jpeg" alt="Heirloom Chessboard" data-multi="images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-main.jpeg,images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-1.jpeg,images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-2.jpeg,images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-3.jpeg" loading="lazy" style="cursor: pointer;">
       </div>
 
     </div>
@@ -514,14 +551,17 @@
   <!-- CONTACT TEASER -->
   <section id="connect" class="cta">
     <div class="container">
-      <h2 style="font-size:2rem; margin-bottom:1rem; color:white;">Interested in a piece?</h2>
-      <p style="max-width:620px; margin:0 auto 1.5rem; font-size:1.1rem; color:#EDE8E0;">
-        Contact us for custom commissions or to purchase available work.
+      <h2 style="font-size:2rem; margin-bottom:1rem; color:white;">Commission a Piece</h2>
+      <p style="max-width:620px; margin:0 auto 0.5rem; font-size:1.1rem; color:#EDE8E0;">
+        Yours begins with a conversation.
       </p>
-      <p style="font-size:1.05rem; color:#D4CFC6;">
-        P.O. Box 10068, Fayetteville, AR 72703 &nbsp;|&nbsp;
-        <a href="index.html#connect" style="color:#D4CFC6; text-decoration:underline;">Contact form</a> &nbsp;|&nbsp; 
-        <a href="mailto:contact@stocktonandrogers.com" style="color:#D4CFC6; text-decoration:underline;">contact@stocktonandrogers.com</a> &nbsp;|&nbsp; 
+      <p style="max-width:620px; margin:0 auto 1.5rem; font-size:1.1rem; color:#EDE8E0;">
+        Tell us about the photograph, the specimen, or the keepsake you'd like built around — and we'll design a piece made for it alone.
+      </p>
+      <p style="margin-top:2.5rem; font-size:1.05rem; color:#D4CFC6;">
+        P.O. Box 10068, Fayetteville, AR 72703<br>
+        <a href="index.html#connect" style="color:#D4CFC6; text-decoration:underline;">Contact form</a><br>
+        <a href="mailto:contact@stocktonandrogers.com" style="color:#D4CFC6; text-decoration:underline;">contact@stocktonandrogers.com</a><br>
         <a href="tel:4793963935" style="color:#D4CFC6; text-decoration:underline;">(479) 396-3935</a>
       </p>
     </div>
@@ -604,11 +644,8 @@
       if (multiImages) {
         const srcs = multiImages.split(',').map(s => s.trim());
         currentImages = srcs;
-        currentCaptions = srcs.map((s, i) => {
-          if (i === 0 && clickedAlt) return toTitleCase(clickedAlt);
-          let name = s.replace(/\.(jpeg|jpg|png|gif|mp4|mov|webm)$/i, '');
-          name = name.replace(/[-_]/g, ' ');
-          return toTitleCase(name);
+        currentCaptions = srcs.map(() => {
+          return clickedAlt ? toTitleCase(clickedAlt) : '';
         });
         currentIndex = 0;
         if (captionEl) captionEl.style.display = 'block';

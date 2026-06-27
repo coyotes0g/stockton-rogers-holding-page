@@ -13,7 +13,7 @@
   <meta property="og:url" content="https://www.stocktonandrogers.com">
   <!-- Recommended: Upload a beautiful 1200x630 image (use one of your best product shots) as images/og-image.jpg -->
   <!-- <meta property="og:image" content="https://www.stocktonandrogers.com/images/og-image.jpg"> -->
-  <!-- <meta property="og:image:width" content="1200">
+  <!-- <meta property="og:image:width" content="1200"> -->
   <!-- <meta property="og:image:height" content="630"> -->
 
   <!-- Twitter / X Card -->
@@ -616,11 +616,8 @@
       if (multiImages) {
         const srcs = multiImages.split(',').map(s => s.trim());
         currentImages = srcs;
-        currentCaptions = srcs.map((s, i) => {
-          if (clickedAlt) return clickedAlt;  // use the variety name for all images in this lightbox
-          let name = s.replace(/\.(jpeg|jpg|png|gif|mp4|mov|webm)$/i, '');
-          name = name.replace(/[-_]/g, ' ');
-          return toTitleCase(name);
+        currentCaptions = srcs.map(() => {
+          return clickedAlt ? clickedAlt : '';
         });
         currentIndex = 0;
         if (captionEl) captionEl.style.display = 'block';

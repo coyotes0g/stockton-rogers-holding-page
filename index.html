@@ -13,7 +13,7 @@
   <meta property="og:url" content="https://www.stocktonandrogers.com">
   <!-- Recommended: Upload a beautiful 1200x630 image (use one of your best product shots) as images/og-image.jpg -->
   <!-- <meta property="og:image" content="https://www.stocktonandrogers.com/images/og-image.jpg"> -->
-  <!-- <meta property="og:image:width" content="1200">
+  <!-- <meta property="og:image:width" content="1200"> -->
   <!-- <meta property="og:image:height" content="630"> -->
 
   <!-- Twitter / X Card -->
@@ -223,6 +223,13 @@
     .gallery img:hover { 
       transform: scale(1.015); 
       box-shadow: 0 16px 34px rgba(0,0,0,0.13);
+    }
+    .gallery img.no-lightbox {
+      cursor: default;
+    }
+    .gallery img.no-lightbox:hover {
+      transform: none;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.1);
     }
 
     /* Subtle professional entrance animation for gallery */
@@ -439,12 +446,12 @@
     <div class="container">
       <h2 style="text-align:center; margin-bottom:3.25rem; font-size:2.35rem;">Featured Work</h2>
       <div class="gallery">
-        <img src="images/Gallery/Custom Commissions/Sea Jasper Fossil Stand/sea-jasper-fossil-stand.jpeg" alt="Sea Jasper Fossil Stand" data-multi="images/Gallery/Custom Commissions/Sea Jasper Fossil Stand/sea-jasper-fossil-stand.jpeg,images/Gallery/Custom Commissions/Sea Jasper Fossil Stand/sea-jasper-fossil-stand-2.jpeg" loading="lazy">
-        <img src="images/Gallery/Custom Commissions/Sculptural Wave Clock/sculptural-wave-clock.jpeg" alt="Sculptural Wave Clock" loading="lazy">
-        <img src="images/Gallery/Custom Commissions/Form-Fossil-Pair/form-and-fossil-pair.jpeg" alt="Form and Fossil Pair" data-multi="images/Gallery/Custom Commissions/Form-Fossil-Pair/form-and-fossil-pair.jpeg,images/Gallery/Custom Commissions/Form-Fossil-Pair/form-and-fossil-pair-2.jpeg" loading="lazy">
-        <img src="images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box.jpeg" alt="Modern Grid Box" data-multi="images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-2.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-3.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-4.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-5.jpeg" loading="lazy">
-        <img src="images/Gallery/Custom Commissions/The Horizon Clock/the-horizon-clock.jpeg" alt="The Horizon Clock" data-multi="images/Gallery/Custom Commissions/The Horizon Clock/the-horizon-clock.jpeg,images/Gallery/Custom Commissions/The Horizon Clock/the-horizon-clock-2.jpeg" loading="lazy">
-        <img src="images/Gallery/Custom Commissions/Modern Multi-Tone Frame/modern-multi-tone-frame.jpeg" alt="Modern Multi-Tone Frame" data-multi="images/Gallery/Custom Commissions/Modern Multi-Tone Frame/modern-multi-tone-frame.jpeg,images/Gallery/Custom Commissions/Modern Multi-Tone Frame/modern-multi-tone-frame-2.jpeg" loading="lazy">
+        <img src="images/Gallery/Custom Commissions/Sea Jasper Fossil Stand/sea-jasper-fossil-stand.jpeg" alt="Sea Jasper Fossil Stand" loading="lazy" class="no-lightbox">
+        <img src="images/Gallery/Custom Commissions/Sculptural Wave Clock/sculptural-wave-clock.jpeg" alt="Sculptural Wave Clock" loading="lazy" class="no-lightbox">
+        <img src="images/Gallery/Custom Commissions/Form-Fossil-Pair/form-and-fossil-pair.jpeg" alt="Form and Fossil Pair" loading="lazy" class="no-lightbox">
+        <img src="images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box.jpeg" alt="Modern Grid Box" loading="lazy" class="no-lightbox">
+        <img src="images/Gallery/Custom Commissions/The Horizon Clock/the-horizon-clock.jpeg" alt="The Horizon Clock" loading="lazy" class="no-lightbox">
+        <img src="images/Gallery/Custom Commissions/Modern Multi-Tone Frame/modern-multi-tone-frame.jpeg" alt="Modern Multi-Tone Frame" loading="lazy" class="no-lightbox">
       </div>
       <p style="text-align:center; margin-top:2.75rem; font-size:1.05rem; color: var(--text-muted);"><a href="gallery.html">View full Gallery</a> • <a href="shop.html">Shop available pieces</a></p>
     </div>
@@ -579,11 +586,8 @@
       if (multiImages) {
         const srcs = multiImages.split(',').map(s => s.trim());
         currentImages = srcs;
-        currentCaptions = srcs.map((s, i) => {
-          if (i === 0 && clickedAlt) return toTitleCase(clickedAlt);
-          let name = s.replace(/\.(jpeg|jpg|png|gif|mp4|mov|webm)$/i, '');
-          name = name.replace(/[-_]/g, ' ');
-          return toTitleCase(name);
+        currentCaptions = srcs.map(() => {
+          return clickedAlt ? toTitleCase(clickedAlt) : '';
         });
         currentIndex = 0;
         if (captionEl) captionEl.style.display = 'block';
@@ -654,6 +658,7 @@
       });
 
       document.querySelectorAll('.gallery img').forEach(img => {
+        if (img.classList.contains('no-lightbox')) return;
         img.addEventListener('click', () => {
           const videoSrc = img.getAttribute('data-video');
           const multi = img.getAttribute('data-multi');

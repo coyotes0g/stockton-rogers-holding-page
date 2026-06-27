@@ -655,11 +655,8 @@
       if (multiImages) {
         const srcs = multiImages.split(',').map(s => s.trim());
         currentImages = srcs;
-        currentCaptions = srcs.map((s, i) => {
-          if (clickedAlt) return clickedAlt;  // use the variety name for all images in this lightbox
-          let name = s.replace(/\.(jpeg|jpg|png|gif|mp4|mov|webm)$/i, '');
-          name = name.replace(/[-_]/g, ' ');
-          return toTitleCase(name);
+        currentCaptions = srcs.map(() => {
+          return clickedAlt ? clickedAlt : '';
         });
         currentIndex = 0;
         if (captionEl) captionEl.style.display = 'block';
