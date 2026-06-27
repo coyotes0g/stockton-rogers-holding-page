@@ -13,7 +13,7 @@
   <meta property="og:url" content="https://www.stocktonandrogers.com">
   <!-- Recommended: Upload a beautiful 1200x630 image (use one of your best product shots) as images/og-image.jpg -->
   <!-- <meta property="og:image" content="https://www.stocktonandrogers.com/images/og-image.jpg"> -->
-  <!-- <meta property="og:image:width" content="1200">
+  <!-- <meta property="og:image:width" content="1200"> -->
   <!-- <meta property="og:image:height" content="630"> -->
 
   <!-- Twitter / X Card -->
@@ -209,27 +209,57 @@
       padding-bottom: 2rem;
     }
     .gallery { 
-      display: flex;
-      overflow-x: auto;
-      gap: 1rem;
-      padding-bottom: 0.5rem;
-      -webkit-overflow-scrolling: touch;
+      position: relative;
+      display: block;
+      max-width: 720px;
+      margin: 0 auto 2rem;
     }
     .gallery img { 
+      display: none;
       height: auto; 
       max-height: 320px;
-      width: auto;
+      width: 100%;
       max-width: 100%;
       border-radius: 6px; 
       box-shadow: 0 10px 24px rgba(0,0,0,0.1); 
-      transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), box-shadow 0.35s ease; 
+      transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), box-shadow 0.35s ease, opacity 0.2s; 
       cursor: pointer;
-      flex-shrink: 0;
+      object-fit: contain;
+    }
+    .gallery img.active { 
+      display: block;
     }
     .gallery img:hover { 
       transform: scale(1.015); 
       box-shadow: 0 16px 34px rgba(0,0,0,0.13);
     }
+
+    /* Inline photo navigation arrows (no scrollbar) */
+    .gallery .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(44, 44, 44, 0.65);
+      color: #fff;
+      border: none;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      transition: background 0.2s;
+      user-select: none;
+    }
+    .gallery .carousel-arrow:hover {
+      background: rgba(44, 44, 44, 0.85);
+    }
+    .gallery .carousel-arrow.prev { left: 10px; }
+    .gallery .carousel-arrow.next { right: 10px; }
 
     /* Subtle professional entrance animation for gallery */
     @keyframes galleryFadeIn {
@@ -421,7 +451,7 @@
     </div>
   </section>
 
-  <p style="text-align:center; margin: 1rem 0 1.5rem; font-size:1rem; color: var(--text-muted); max-width: 70ch; font-style: italic;">
+  <p style="text-align:center; margin: 1rem 0 1.5rem; font-size:0.95rem; color: var(--text-muted); max-width: 70ch; font-style: italic;">
     A selection of past commissions. Each was made for a specific person, and built around the thing they wanted to keep.
   </p>
 
@@ -694,6 +724,48 @@
       arrows.style.display = 'none';
     }
 
+    function initGalleryNav() {
+      document.querySelectorAll('#work .gallery').forEach(gallery => {
+        const imgs = Array.from(gallery.querySelectorAll('img'));
+        if (imgs.length === 0) return;
+
+        // Activate the first image (others hidden via CSS for multis)
+        imgs.forEach((img, i) => img.classList.toggle('active', i === 0));
+
+        if (imgs.length <= 1) return;
+
+        let current = 0;
+
+        const prevBtn = document.createElement('button');
+        prevBtn.className = 'carousel-arrow prev';
+        prevBtn.innerHTML = '&#10094;';
+        prevBtn.setAttribute('aria-label', 'Previous photo');
+
+        const nextBtn = document.createElement('button');
+        nextBtn.className = 'carousel-arrow next';
+        nextBtn.innerHTML = '&#10095;';
+        nextBtn.setAttribute('aria-label', 'Next photo');
+
+        gallery.appendChild(prevBtn);
+        gallery.appendChild(nextBtn);
+
+        function show(index) {
+          current = (index + imgs.length) % imgs.length;
+          imgs.forEach((img, i) => img.classList.toggle('active', i === current));
+        }
+
+        prevBtn.addEventListener('click', (e) => {
+          e.stopImmediatePropagation();
+          show(current - 1);
+        });
+
+        nextBtn.addEventListener('click', (e) => {
+          e.stopImmediatePropagation();
+          show(current + 1);
+        });
+      });
+    }
+
     // Professional AJAX form handler (Formspree)
     function initContactForm() {
       const form = document.getElementById('contact-form');
@@ -767,6 +839,7 @@
         });
       });
 
+      initGalleryNav();
       initContactForm();
 
       // Staggered entrance animation for gallery (professional touch)
