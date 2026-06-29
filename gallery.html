@@ -209,57 +209,24 @@
       padding-bottom: 2rem;
     }
     .gallery { 
-      position: relative;
       display: block;
       max-width: 720px;
       margin: 0 auto 2rem;
     }
     .gallery img { 
-      display: none;
+      display: block;
       height: auto; 
-      max-height: 320px;
       width: 100%;
       max-width: 100%;
       border-radius: 6px; 
       box-shadow: 0 10px 24px rgba(0,0,0,0.1); 
       transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), box-shadow 0.35s ease, opacity 0.2s; 
       cursor: pointer;
-      object-fit: contain;
-    }
-    .gallery img.active { 
-      display: block;
     }
     .gallery img:hover { 
       transform: scale(1.015); 
       box-shadow: 0 16px 34px rgba(0,0,0,0.13);
     }
-
-    /* Inline photo navigation arrows (no scrollbar) */
-    .gallery .carousel-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(44, 44, 44, 0.65);
-      color: #fff;
-      border: none;
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      font-size: 20px;
-      cursor: pointer;
-      z-index: 10;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      line-height: 1;
-      transition: background 0.2s;
-      user-select: none;
-    }
-    .gallery .carousel-arrow:hover {
-      background: rgba(44, 44, 44, 0.85);
-    }
-    .gallery .carousel-arrow.prev { left: 10px; }
-    .gallery .carousel-arrow.next { right: 10px; }
 
     /* Subtle professional entrance animation for gallery */
     @keyframes galleryFadeIn {
@@ -469,7 +436,6 @@
       <p style="margin-bottom: 0.6rem; color: var(--text-secondary);">A low, linear timepiece in red oak with walnut inlays, its face floating behind a clear panel on four standoffs.</p>
       <div class="gallery" style="max-width: 720px; margin: 0 auto 2rem;">
         <img src="images/Gallery/Custom Commissions/The Horizon Clock/the-horizon-clock.jpeg" alt="The Horizon Clock" data-multi="images/Gallery/Custom Commissions/The Horizon Clock/the-horizon-clock.jpeg,images/Gallery/Custom Commissions/The Horizon Clock/the-horizon-clock-2.jpeg" loading="lazy" style="cursor: pointer;">
-        <img src="images/Gallery/Custom Commissions/The Horizon Clock/the-horizon-clock-2.jpeg" alt="The Horizon Clock" data-multi="images/Gallery/Custom Commissions/The Horizon Clock/the-horizon-clock.jpeg,images/Gallery/Custom Commissions/The Horizon Clock/the-horizon-clock-2.jpeg" loading="lazy" style="cursor: pointer;">
       </div>
 
       <h3 style="margin: 0.9rem 0 0.4rem; font-size:1.35rem;">Sculptural Wave Clock</h3>
@@ -497,7 +463,6 @@
       <p style="margin-bottom: 0.6rem; color: var(--text-secondary);">Three stacked hardwoods, walnut to oak to maple, aligned so the grain transition follows the horizon of the photograph it holds.</p>
       <div class="gallery" style="max-width: 720px; margin: 0 auto 2rem;">
         <img src="images/Gallery/Custom Commissions/Modern Multi-Tone Frame/modern-multi-tone-frame.jpeg" alt="Modern Multi-Tone Frame" data-multi="images/Gallery/Custom Commissions/Modern Multi-Tone Frame/modern-multi-tone-frame.jpeg,images/Gallery/Custom Commissions/Modern Multi-Tone Frame/modern-multi-tone-frame-2.jpeg" loading="lazy" style="cursor: pointer;">
-        <img src="images/Gallery/Custom Commissions/Modern Multi-Tone Frame/modern-multi-tone-frame-2.jpeg" alt="Modern Multi-Tone Frame" data-multi="images/Gallery/Custom Commissions/Modern Multi-Tone Frame/modern-multi-tone-frame.jpeg,images/Gallery/Custom Commissions/Modern Multi-Tone Frame/modern-multi-tone-frame-2.jpeg" loading="lazy" style="cursor: pointer;">
       </div>
 
       <h3 style="margin: 0.9rem 0 0.4rem; font-size:1.35rem;">Zebrawood Picture Frame</h3>
@@ -519,17 +484,12 @@
       <p style="margin-bottom: 0.6rem; color: var(--text-secondary);">A maple keepsake box wrapped in a cherry grid inlay, personalized with three inlaid symbols on the lid, opening to a lift-out tray above a lower compartment.</p>
       <div class="gallery" style="max-width: 720px; margin: 0 auto 2rem;">
         <img src="images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box.jpeg" alt="Modern Grid Box" data-multi="images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-2.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-3.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-4.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-5.jpeg" loading="lazy" style="cursor: pointer;">
-        <img src="images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-2.jpeg" alt="Modern Grid Box" data-multi="images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-2.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-3.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-4.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-5.jpeg" loading="lazy" style="cursor: pointer;">
-        <img src="images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-3.jpeg" alt="Modern Grid Box" data-multi="images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-2.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-3.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-4.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-5.jpeg" loading="lazy" style="cursor: pointer;">
-        <img src="images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-4.jpeg" alt="Modern Grid Box" data-multi="images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-2.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-3.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-4.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-5.jpeg" loading="lazy" style="cursor: pointer;">
-        <img src="images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-5.jpeg" alt="Modern Grid Box" data-multi="images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-2.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-3.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-4.jpeg,images/Gallery/Custom Commissions/Modern Grid Box/modern-grid-box-5.jpeg" loading="lazy" style="cursor: pointer;">
       </div>
 
       <h3 style="margin: 0.9rem 0 0.4rem; font-size:1.35rem;">Sea Jasper Fossil Stand</h3>
       <p style="margin-bottom: 0.6rem; color: var(--text-secondary);">A polished sea-jasper specimen cradled on a grooved walnut base, paired with a copper tube that holds a rolled document telling the stone's story.</p>
       <div class="gallery" style="max-width: 720px; margin: 0 auto 2rem;">
         <img src="images/Gallery/Custom Commissions/Sea Jasper Fossil Stand/sea-jasper-fossil-stand.jpeg" alt="Sea Jasper Fossil Stand" data-multi="images/Gallery/Custom Commissions/Sea Jasper Fossil Stand/sea-jasper-fossil-stand.jpeg,images/Gallery/Custom Commissions/Sea Jasper Fossil Stand/sea-jasper-fossil-stand-2.jpeg" loading="lazy" style="cursor: pointer;">
-        <img src="images/Gallery/Custom Commissions/Sea Jasper Fossil Stand/sea-jasper-fossil-stand-2.jpeg" alt="Sea Jasper Fossil Stand" data-multi="images/Gallery/Custom Commissions/Sea Jasper Fossil Stand/sea-jasper-fossil-stand.jpeg,images/Gallery/Custom Commissions/Sea Jasper Fossil Stand/sea-jasper-fossil-stand-2.jpeg" loading="lazy" style="cursor: pointer;">
       </div>
 
       <!-- Sculptural Pieces -->
@@ -539,22 +499,18 @@
       <p style="margin-bottom: 0.6rem; color: var(--text-secondary);">A slab of petrified wood paired with maple hand-carved to mirror it, each held upright between aluminum posts on a curved walnut base.</p>
       <div class="gallery" style="max-width: 720px; margin: 0 auto 2rem;">
         <img src="images/Gallery/Custom Commissions/Form-Fossil-Pair/form-and-fossil-pair.jpeg" alt="Form + Fossil I" data-multi="images/Gallery/Custom Commissions/Form-Fossil-Pair/form-and-fossil-pair.jpeg,images/Gallery/Custom Commissions/Form-Fossil-Pair/form-and-fossil-pair-2.jpeg" loading="lazy" style="cursor: pointer;">
-        <img src="images/Gallery/Custom Commissions/Form-Fossil-Pair/form-and-fossil-pair-2.jpeg" alt="Form + Fossil I" data-multi="images/Gallery/Custom Commissions/Form-Fossil-Pair/form-and-fossil-pair.jpeg,images/Gallery/Custom Commissions/Form-Fossil-Pair/form-and-fossil-pair-2.jpeg" loading="lazy" style="cursor: pointer;">
       </div>
 
-      <h3 style="margin: 0.9rem 0 0.4rem; font-size:1.35rem;">Form and Fossil II</h3>
+      <h3 style="margin: 0.9rem 0 0.4rem; font-size:1.35rem;">Form + Fossil II</h3>
       <p style="margin-bottom: 0.6rem; color: var(--text-secondary);">A slab of banded petrified wood paired with walnut hand-carved to mirror it, each held upright between aluminum posts on a pale maple base.</p>
       <div class="gallery" style="max-width: 720px; margin: 0 auto 2rem;">
-        <img src="images/Gallery/Custom Commissions/Form-and-Fossil-II/form-and-fossil-ii-main.jpeg" alt="Form and Fossil II" data-multi="images/Gallery/Custom Commissions/Form-and-Fossil-II/form-and-fossil-ii-main.jpeg,images/Gallery/Custom Commissions/Form-and-Fossil-II/form-and-fossil-ii-1.jpeg,images/Gallery/Custom Commissions/Form-and-Fossil-II/form-and-fossil-ii-2.jpeg" loading="lazy" style="cursor: pointer;">
-        <img src="images/Gallery/Custom Commissions/Form-and-Fossil-II/form-and-fossil-ii-1.jpeg" alt="Form and Fossil II" data-multi="images/Gallery/Custom Commissions/Form-and-Fossil-II/form-and-fossil-ii-main.jpeg,images/Gallery/Custom Commissions/Form-and-Fossil-II/form-and-fossil-ii-1.jpeg,images/Gallery/Custom Commissions/Form-and-Fossil-II/form-and-fossil-ii-2.jpeg" loading="lazy" style="cursor: pointer;">
-        <img src="images/Gallery/Custom Commissions/Form-and-Fossil-II/form-and-fossil-ii-2.jpeg" alt="Form and Fossil II" data-multi="images/Gallery/Custom Commissions/Form-and-Fossil-II/form-and-fossil-ii-main.jpeg,images/Gallery/Custom Commissions/Form-and-Fossil-II/form-and-fossil-ii-1.jpeg,images/Gallery/Custom Commissions/Form-and-Fossil-II/form-and-fossil-ii-2.jpeg" loading="lazy" style="cursor: pointer;">
+        <img src="images/Gallery/Custom Commissions/Form-and-Fossil-II/form-and-fossil-ii-main.jpeg" alt="Form + Fossil II" data-multi="images/Gallery/Custom Commissions/Form-and-Fossil-II/form-and-fossil-ii-main.jpeg,images/Gallery/Custom Commissions/Form-and-Fossil-II/form-and-fossil-ii-1.jpeg,images/Gallery/Custom Commissions/Form-and-Fossil-II/form-and-fossil-ii-2.jpeg" loading="lazy" style="cursor: pointer;">
       </div>
 
       <h3 style="margin: 0.9rem 0 0.4rem; font-size:1.35rem;">Bobcat Perch</h3>
       <p style="margin-bottom: 0.6rem; color: var(--text-secondary);">A wildlife photograph in red oak with a gold mat, four maple slats raking diagonally across one corner like a bobcat's claw marks.</p>
       <div class="gallery" style="max-width: 720px; margin: 0 auto 2rem;">
         <img src="images/Gallery/Custom Commissions/Bobcat Perch/bobcat-perch.jpeg" alt="Bobcat Perch" data-multi="images/Gallery/Custom Commissions/Bobcat Perch/bobcat-perch.jpeg,images/Gallery/Custom Commissions/Bobcat Perch/bobcat-perch-2.jpeg" loading="lazy" style="cursor: pointer;">
-        <img src="images/Gallery/Custom Commissions/Bobcat Perch/bobcat-perch-2.jpeg" alt="Bobcat Perch" data-multi="images/Gallery/Custom Commissions/Bobcat Perch/bobcat-perch.jpeg,images/Gallery/Custom Commissions/Bobcat Perch/bobcat-perch-2.jpeg" loading="lazy" style="cursor: pointer;">
       </div>
 
       <h3 style="margin: 0.9rem 0 0.4rem; font-size:1.35rem;">Reed Lake Reverie</h3>
@@ -570,9 +526,6 @@
       <p style="margin-bottom: 0.6rem; color: var(--text-secondary);">Walnut and cherry squares set within a fine maple grid and framed in solid walnut, the board sized and built to host its glass pieces in play.</p>
       <div class="gallery" style="max-width: 720px; margin: 0 auto 2rem;">
         <img src="images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-main.jpeg" alt="Heirloom Chessboard" data-multi="images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-main.jpeg,images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-1.jpeg,images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-2.jpeg,images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-3.jpeg" loading="lazy" style="cursor: pointer;">
-        <img src="images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-1.jpeg" alt="Heirloom Chessboard" data-multi="images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-main.jpeg,images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-1.jpeg,images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-2.jpeg,images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-3.jpeg" loading="lazy" style="cursor: pointer;">
-        <img src="images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-2.jpeg" alt="Heirloom Chessboard" data-multi="images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-main.jpeg,images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-1.jpeg,images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-2.jpeg,images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-3.jpeg" loading="lazy" style="cursor: pointer;">
-        <img src="images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-3.jpeg" alt="Heirloom Chessboard" data-multi="images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-main.jpeg,images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-1.jpeg,images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-2.jpeg,images/Gallery/Custom Commissions/Heirloom Chessboard/heirloom-chessboard-3.jpeg" loading="lazy" style="cursor: pointer;">
       </div>
 
     </div>
@@ -589,8 +542,9 @@
         Tell us about the photograph, the specimen, or the keepsake you'd like built around — and we'll design a piece made for it alone.
       </p>
       <p style="margin-top:2.5rem; font-size:1.05rem; color:#D4CFC6;">
-        P.O. Box 10068, Fayetteville, AR 72703<br>
         <a href="index.html#connect" style="color:#D4CFC6; text-decoration:underline;">Contact form</a><br>
+        P.O. Box 10068<br>
+        Fayetteville, AR 72703<br>
         <a href="mailto:contact@stocktonandrogers.com" style="color:#D4CFC6; text-decoration:underline;">contact@stocktonandrogers.com</a><br>
         <a href="tel:4793963935" style="color:#D4CFC6; text-decoration:underline;">(479) 396-3935</a>
       </p>
@@ -602,7 +556,7 @@
     <p style="margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--text-secondary); font-style: italic;">Handcrafted. Timeless Design. Heirloom Quality.</p>
     <p>
       © 2026 • All pieces handcrafted in Northwest Arkansas<br>
-      P.O. Box 10068, Fayetteville, AR 72703<br>
+      P.O. Box 10068 | Fayetteville, AR 72703<br>
       <a href="tel:4793963935" style="color:inherit; text-decoration:underline;">(479) 396-3935</a> | 
       <a href="mailto:contact@stocktonandrogers.com" style="color:inherit; text-decoration:underline;">contact@stocktonandrogers.com</a>
     </p>
@@ -724,48 +678,6 @@
       arrows.style.display = 'none';
     }
 
-    function initGalleryNav() {
-      document.querySelectorAll('#work .gallery').forEach(gallery => {
-        const imgs = Array.from(gallery.querySelectorAll('img'));
-        if (imgs.length === 0) return;
-
-        // Activate the first image (others hidden via CSS for multis)
-        imgs.forEach((img, i) => img.classList.toggle('active', i === 0));
-
-        if (imgs.length <= 1) return;
-
-        let current = 0;
-
-        const prevBtn = document.createElement('button');
-        prevBtn.className = 'carousel-arrow prev';
-        prevBtn.innerHTML = '&#10094;';
-        prevBtn.setAttribute('aria-label', 'Previous photo');
-
-        const nextBtn = document.createElement('button');
-        nextBtn.className = 'carousel-arrow next';
-        nextBtn.innerHTML = '&#10095;';
-        nextBtn.setAttribute('aria-label', 'Next photo');
-
-        gallery.appendChild(prevBtn);
-        gallery.appendChild(nextBtn);
-
-        function show(index) {
-          current = (index + imgs.length) % imgs.length;
-          imgs.forEach((img, i) => img.classList.toggle('active', i === current));
-        }
-
-        prevBtn.addEventListener('click', (e) => {
-          e.stopImmediatePropagation();
-          show(current - 1);
-        });
-
-        nextBtn.addEventListener('click', (e) => {
-          e.stopImmediatePropagation();
-          show(current + 1);
-        });
-      });
-    }
-
     // Professional AJAX form handler (Formspree)
     function initContactForm() {
       const form = document.getElementById('contact-form');
@@ -839,7 +751,6 @@
         });
       });
 
-      initGalleryNav();
       initContactForm();
 
       // Staggered entrance animation for gallery (professional touch)
