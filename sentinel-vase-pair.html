@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sentinel Vase Pair | Stockton & Rogers | Functional Art</title>
+
+  <meta name="description" content="Sentinel Vase Pair — two mirrored hand-turned hardwood vases designed as a coordinated pair. Handcrafted in Northwest Arkansas from premium local hardwoods with a signature hand-rubbed oil finish.">
+  <meta property="og:title" content="Sentinel Vase Pair | Stockton & Rogers | Functional Art">
+  <meta property="og:description" content="Two mirrored profiles, designed as a pair. Quiet sculptural presence for mantel, console or shelf. Handcrafted heirloom quality from Northwest Arkansas hardwoods.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.stocktonandrogers.com/sentinel-vase-pair.html">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sentinel Vase Pair | Stockton & Rogers">
+  <meta name="twitter:description" content="Handcrafted paired hardwood vases with quiet sculptural presence.">
+
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <style>
+    :root { 
+      --bg: #F8F5F0; --bg-alt: #F0EBE3; --text-primary: #1F1F1F; --text-secondary: #4A4540; --text-muted: #6B665F;
+      --walnut: #5C4033; --walnut-light: #8B6F47; --border: #D4CFC6; --deep: #2C2823;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html, body { width: 100%; overflow-x: hidden; }
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.7; color: var(--text-primary); background: var(--bg); letter-spacing: -0.015em; }
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--walnut); outline-offset: 2px; }
+    h1, h2, h3 { font-family: Georgia, 'Times New Roman', serif; font-weight: 600; letter-spacing: -0.025em; color: var(--text-primary); text-align: center; }
+    .nav { position: fixed; top: 0; width: 100%; background: rgba(248,245,240,0.96); backdrop-filter: blur(10px); z-index: 100; padding: 0.5rem 6%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); }
+    .nav .logo img { height: 40px; shape-rendering: geometricPrecision; }
+    .nav a { margin-left: 2.25rem; text-decoration: none; color: var(--text-primary); font-weight: 500; font-size: 0.95rem; }
+    .nav .inquire-btn { background: var(--walnut); color: white; padding: 0.5rem 1.35rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.9rem; margin-left: 1.5rem; transition: background 0.2s ease; }
+    .nav .inquire-btn:hover { background: var(--walnut-light); }
+    .nav-toggle { display: none; flex-direction: column; justify-content: space-between; width: 28px; height: 20px; background: transparent; border: none; padding: 0; cursor: pointer; z-index: 110; }
+    .nav-toggle span { display: block; height: 2px; width: 100%; background: var(--text-primary); transition: all 0.3s ease; }
+    .nav-mobile { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(248,245,240,0.98); backdrop-filter: blur(10px); padding: 1rem 6%; flex-direction: column; gap: 0.75rem; border-bottom: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+    .nav-mobile a { padding: 0.6rem 0; border-bottom: 1px solid var(--border); }
+    .nav-mobile a:last-child { border-bottom: none; }
+    .nav-mobile .inquire-btn.mobile { background: var(--walnut); color: white; padding: 0.7rem 1.2rem; border-radius: 50px; margin-top: 0.5rem; text-align: center; border-bottom: none; }
+    .nav.open .nav-mobile { display: flex; }
+    .nav.open .nav-toggle span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
+    .nav.open .nav-toggle span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    .container { padding: 5.75rem 6%; max-width: 1280px; margin: 0 auto; }
+    #connect .container { background: var(--deep); color: #EDE8E0; border-radius: 10px; }
+    #connect .container h2 { color: white; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+    .gallery img { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; }
+    .gallery img:hover { transform: scale(1.015); box-shadow: 0 14px 30px rgba(0,0,0,0.14); }
+    .btn-primary { display: inline-block; background: var(--walnut); color: white; padding: 0.65rem 1.6rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: background 0.2s ease; }
+    .btn-primary:hover { background: var(--walnut-light); }
+    .form input, .form select, .form textarea { width: 100%; padding: 0.75rem 1rem; margin-bottom: 1rem; border: 1px solid var(--border); border-radius: 8px; font-size: 1rem; background: #fff; }
+    .form textarea { min-height: 120px; resize: vertical; }
+    .success-message { display: none; background: #2e7d32; color: white; padding: 1rem; border-radius: 8px; text-align: center; margin-top: 1rem; }
+    footer { background: var(--bg-alt); padding: 2.5rem 6%; text-align: center; font-size: 0.9rem; color: var(--text-muted); }
+    footer .logo img { height: 48px; margin-bottom: 0.75rem; }
+    .section { margin-bottom: 3rem; }
+    .two-column { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+  </style>
+</head>
+<body>
+  <!-- Fixed Navigation -->
+  <nav class="nav" id="nav">
+    <div class="logo"><a href="index.html"><img src="logo.svg" alt="Stockton & Rogers logo"></a></div>
+    <div class="nav-links desktop">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="shop.html">Shop</a>
+      <a href="#connect" class="inquire-btn">Inquire</a>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
+    <div class="nav-mobile" id="nav-mobile">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="shop.html">Shop</a>
+      <a href="#connect" class="inquire-btn mobile">Inquire</a>
+    </div>
+  </nav>
+
+  <div class="container" style="padding-top: 6.5rem;">
+    <!-- Tagline -->
+    <p style="text-align: center; font-style: italic; color: var(--text-secondary); font-size: 1.25rem; max-width: 620px; margin: 0 auto 2.5rem;">Two mirrored profiles, designed as a pair.</p>
+
+    <!-- Image Carousel / Gallery -->
+    <div class="section">
+      <div class="gallery">
+        <img src="form-and-fossil-pair-2.jpeg" alt="Sentinel Vase Pair — coordinated hand-turned hardwood vases side by side" loading="lazy">
+        <img src="form-and-fossil-pair-2.jpeg" alt="Sentinel Vase Pair detail — rich hardwood grain and silhouette" loading="lazy">
+        <img src="fossil-monolith.jpeg" alt="Sentinel Vase Pair in a quiet interior setting with natural light" loading="lazy">
+      </div>
+      <p style="text-align: center; font-size: 0.9rem; color: var(--text-muted); margin-top: 0.75rem;">Click any image to enlarge • Sentinel I (taller) & Sentinel II (grounded)</p>
+    </div>
+
+    <!-- Description -->
+    <div class="section">
+      <h2 style="margin-bottom: 1rem;">The Sentinel Vase Pair</h2>
+      <div style="max-width: 780px; margin: 0 auto; color: var(--text-secondary);">
+        <p>The Sentinel Vase Pair brings quiet sculptural presence and balanced dialogue to any surface. Each vase is hand-turned from premium Northwest Arkansas hardwoods and finished with our signature hand-rubbed oil that deepens the natural grain and offers a warm, living patina over time.</p>
+        <p style="margin-top: 1rem;">Designed as a coordinated pair, Sentinel I offers a taller, more commanding profile ideal for branches, dried arrangements, or solitary display. Sentinel II provides a lower, grounded counterpoint that anchors the composition. Together they create visual harmony whether placed on a mantel, console table, or open shelf.</p>
+      </div>
+    </div>
+
+    <!-- The Two Versions -->
+    <div class="section">
+      <h3 style="margin-bottom: 1.5rem;">Sentinel I &amp; Sentinel II</h3>
+      <div class="two-column">
+        <div style="background: white; border: 1px solid var(--border); border-radius: 10px; padding: 1.75rem;">
+          <h4 style="text-align: left; margin-bottom: 0.75rem; color: var(--walnut);">Sentinel I — The Tall Profile</h4>
+          <p style="color: var(--text-secondary);">Taller and more vertical, Sentinel I draws the eye upward. Its elegant taper and generous opening make it perfect for fresh or dried botanicals, or as a standalone sculptural object.</p>
+          <ul style="margin-top: 1rem; padding-left: 1.1rem; color: var(--text-secondary); font-size: 0.95rem;">
+            <li>Approx. 11–12″ tall</li>
+            <li>Generous 3″ opening</li>
+            <li>Weighted base for stability</li>
+          </ul>
+        </div>
+        <div style="background: white; border: 1px solid var(--border); border-radius: 10px; padding: 1.75rem;">
+          <h4 style="text-align: left; margin-bottom: 0.75rem; color: var(--walnut);">Sentinel II — The Grounded Form</h4>
+          <p style="color: var(--text-secondary);">Lower and more grounded, Sentinel II offers a sense of quiet strength. Its slightly wider stance and lower center of gravity make it an ideal anchor for the pair or a beautiful vessel on its own.</p>
+          <ul style="margin-top: 1rem; padding-left: 1.1rem; color: var(--text-secondary); font-size: 0.95rem;">
+            <li>Approx. 7–8″ tall</li>
+            <li>Broader 4.5″ base</li>
+            <li>Perfect counterpoint to Sentinel I</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Features -->
+    <div class="section">
+      <h3 style="margin-bottom: 1rem;">Key Features</h3>
+      <ul style="max-width: 720px; margin: 0 auto; padding-left: 1.2rem; color: var(--text-secondary); line-height: 1.85;">
+        <li>Hand-turned from responsibly sourced Northwest Arkansas hardwoods</li>
+        <li>Signature hand-rubbed oil finish that highlights grain and develops a rich patina</li>
+        <li>Weighted bases for exceptional stability on any surface</li>
+        <li>Designed and sold as a coordinated pair to honor their intended relationship</li>
+        <li>Versatile for fresh flowers, dried arrangements, or pure sculptural display</li>
+        <li>Each piece is unique — no two pairs are exactly alike</li>
+      </ul>
+    </div>
+
+    <!-- Specs -->
+    <div class="section">
+      <h3 style="margin-bottom: 1rem;">Specifications</h3>
+      <div style="max-width: 620px; margin: 0 auto; background: white; border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem 2rem; font-size: 0.95rem;">
+        <dl style="display: grid; grid-template-columns: 140px 1fr; gap: 0.6rem 1.25rem; margin: 0;">
+          <dt style="font-weight: 600; color: var(--walnut);">Materials</dt>
+          <dd>Premium local hardwoods (species vary by availability)</dd>
+          <dt style="font-weight: 600; color: var(--walnut);">Finish</dt>
+          <dd>Hand-rubbed premium oil (food-safe, renewable)</dd>
+          <dt style="font-weight: 600; color: var(--walnut);">Sentinel I</dt>
+          <dd>~11.5–12″ tall × ~5″ base diameter</dd>
+          <dt style="font-weight: 600; color: var(--walnut);">Sentinel II</dt>
+          <dd>~7.5–8″ tall × ~5.5″ base diameter</dd>
+          <dt style="font-weight: 600; color: var(--walnut);">Sold As</dt>
+          <dd>Coordinated pair (priced and shipped together)</dd>
+        </dl>
+      </div>
+    </div>
+
+    <!-- Price -->
+    <div style="text-align: center; margin: 2.5rem 0 1rem;">
+      <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 0.25rem;">Starting at</p>
+      <p style="font-size: 2.1rem; font-weight: 700; color: var(--walnut); letter-spacing: -0.02em;">$245 <span style="font-size: 1rem; font-weight: 500; color: var(--text-muted);">for the pair</span></p>
+    </div>
+
+    <!-- Inquiry -->
+    <section id="connect" style="margin-top: 3rem;">
+      <div class="container">
+        <div style="max-width: 620px; margin: 0 auto; background: var(--deep); color: #EDE8E0; padding: 2.5rem; border-radius: 12px;">
+          <h2 style="color: white; text-align: center; margin-bottom: 0.5rem;">Ready to welcome the Sentinel pair home?</h2>
+          <p style="text-align: center; color: #d4c9b8; margin-bottom: 1.75rem;">Each pair is made to order. Let us know your preferred hardwood or any custom details.</p>
+
+          <form id="inquiry-form" class="form" action="https://formspree.io/f/mzdqejng" method="POST">
+            <input type="hidden" name="_subject" value="Sentinel Vase Pair inquiry from stocktonandrogers.com">
+            <label for="name2">Name</label>
+            <input type="text" id="name2" name="name" required>
+            <label for="email2">Email</label>
+            <input type="email" id="email2" name="email" required>
+            <label for="project2">Project</label>
+            <select id="project2" name="project" required>
+              <option value="Sentinel Vase Pair" selected>Sentinel Vase Pair</option>
+              <option value="Heritage Float Display Frame">Heritage Float Display Frame</option>
+              <option value="Custom Commission">Custom Commission</option>
+              <option value="Other">Other</option>
+            </select>
+            <label for="message2">Message or special requests</label>
+            <textarea id="message2" name="message" placeholder="Preferred wood species, timeline, or any details..." required></textarea>
+            <button type="submit" class="btn-primary" style="width: 100%; margin-top: 0.5rem;">Send Inquiry</button>
+          </form>
+          <div id="success-message" class="success-message">Thank you — your message has been sent. We’ll reply within 1–2 business days.</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer style="margin-top: 4rem;">
+    <div class="logo"><img src="logo.svg" alt="Stockton & Rogers"></div>
+    <p><strong>Handcrafted. Timeless Design. Heirloom Quality.</strong></p>
+    <p style="margin-top: 1rem;">
+      © 2026 Stockton & Rogers<br>
+      P.O. Box 10068, Fayetteville, AR 72703<br>
+      <a href="tel:4793963935" style="color: inherit; text-decoration: none;">(479) 396-3935</a> • 
+      <a href="mailto:contact@stocktonandrogers.com" style="color: inherit; text-decoration: none;">contact@stocktonandrogers.com</a>
+    </p>
+  </footer>
+
+  <script>
+    function toggleMobileNav() {
+      const nav = document.getElementById('nav');
+      nav.classList.toggle('open');
+    }
+    document.querySelectorAll('.nav-mobile a').forEach(link => {
+      link.addEventListener('click', () => document.getElementById('nav').classList.remove('open'));
+    });
+
+    // Formspree
+    const form = document.getElementById('inquiry-form');
+    const successMsg = document.getElementById('success-message');
+    if (form) {
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+        try {
+          const response = await fetch(form.action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
+          if (response.ok) {
+            form.style.display = 'none';
+            successMsg.style.display = 'block';
+          } else {
+            alert('Something went wrong. Please email us directly.');
+          }
+        } catch (err) {
+          alert('Network error. Please try again.');
+        }
+      });
+    }
+
+    // Simple lightbox for gallery images
+    document.querySelectorAll('.gallery img').forEach(img => {
+      img.addEventListener('click', () => {
+        const lb = document.createElement('div');
+        lb.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.92);display:flex;align-items:center;justify-content:center;z-index:9999;padding:2rem;';
+        lb.innerHTML = `<img src="${img.src}" style="max-width:92%;max-height:92%;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,0.6);">`;
+        lb.onclick = () => lb.remove();
+        document.body.appendChild(lb);
+      });
+    });
+  </script>
+</body>
+</html>
