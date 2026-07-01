@@ -544,19 +544,19 @@
       <div class="varieties">
         <div class="variety">
           <!-- Walnut + Maple -->
-          <h2><a href="heritage-float-walnut-maple.html" style="color: inherit; text-decoration: underline;">Walnut + Maple</a> - <span style="font-size:0.95rem; color:var(--text-muted);">deep walnut with a bright maple line; warm and dramatic.</span></h2>
+          <h2 data-variant="walnut-maple" style="cursor: pointer; text-decoration: underline;">Walnut + Maple - <span style="font-size:0.95rem; color:var(--text-muted);">deep walnut with a bright maple line; warm and dramatic.</span></h2>
         </div>
         <div class="variety">
           <!-- Cherry + Walnut -->
-          <h2><a href="heritage-float-cherry-walnut.html" style="color: inherit; text-decoration: underline;">Cherry + Walnut</a> - <span style="font-size:0.95rem; color:var(--text-muted);">warm cherry with a dark walnut line; rich and quietly tonal.</span></h2>
+          <h2 data-variant="cherry-walnut" style="cursor: pointer;">Cherry + Walnut - <span style="font-size:0.95rem; color:var(--text-muted);">warm cherry with a dark walnut line; rich and quietly tonal.</span></h2>
         </div>
         <div class="variety">
           <!-- Cherry + Maple -->
-          <h2><a href="heritage-float-cherry-maple.html" style="color: inherit; text-decoration: underline;">Cherry + Maple</a> - <span style="font-size:0.95rem; color:var(--text-muted);">warm cherry with a pale maple line; bright and soft.</span></h2>
+          <h2 data-variant="cherry-maple" style="cursor: pointer;">Cherry + Maple - <span style="font-size:0.95rem; color:var(--text-muted);">warm cherry with a pale maple line; bright and soft.</span></h2>
         </div>
         <div class="variety">
           <!-- White Oak + Walnut -->
-          <h2><a href="heritage-float-white-oak-walnut.html" style="color: inherit; text-decoration: underline;">White Oak + Walnut</a> - <span style="font-size:0.95rem; color:var(--text-muted);">pale oak with a dark walnut line; clean and modern.</span></h2>
+          <h2 data-variant="white-oak-walnut" style="cursor: pointer;">White Oak + Walnut - <span style="font-size:0.95rem; color:var(--text-muted);">pale oak with a dark walnut line; clean and modern.</span></h2>
         </div>
       </div>
     </div>
@@ -666,8 +666,8 @@
     <div id="lightbox-caption"></div>
     <div id="lightbox-multi" style="display: none;"></div>
     <div class="lightbox-arrows" id="lightbox-arrows" style="display: none;">
-      <span class="arrow prev" onclick="prevImage(); event.stopImmediatePropagation();">&larr;</span>
-      <span class="arrow next" onclick="nextImage(); event.stopImmediatePropagation();">&rarr;</span>
+      <span class="arrow prev" onclick="prevImage(); event.stopImmediatePropagation();">&#10094;</span>
+      <span class="arrow next" onclick="nextImage(); event.stopImmediatePropagation();">&#10095;</span>
     </div>
   </div>
 
@@ -774,6 +774,148 @@
       arrows.style.display = 'none';
     }
 
+    // Dynamic variant data for carousel swaps (exact paths + data-multi from original pages)
+    const VARIANTS = {
+      'walnut-maple': {
+        name: 'Walnut + Maple',
+        imgs: [
+          { src: 'images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-4.jpeg', multi: 'images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-4.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-2.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-3.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-5.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-showcase.MP4', alt: 'Walnut + Maple' },
+          { src: 'images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut.jpeg', multi: 'images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-4.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-2.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-3.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-5.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-showcase.MP4', alt: 'Walnut + Maple' },
+          { src: 'images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-2.jpeg', multi: 'images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-4.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-2.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-3.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-5.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-showcase.MP4', alt: 'Walnut + Maple' },
+          { src: 'images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-3.jpeg', multi: 'images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-4.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-2.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-3.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-5.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-showcase.MP4', alt: 'Walnut + Maple' },
+          { src: 'images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-5.jpeg', multi: 'images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-4.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-2.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-3.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-5.jpeg,images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-showcase.MP4', alt: 'Walnut + Maple' }
+        ]
+      },
+      'cherry-walnut': {
+        name: 'Cherry + Walnut',
+        imgs: [
+          { src: 'images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry-hero.jpeg', multi: 'images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry-hero.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry-2.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry-3.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry-4.jpeg', alt: 'Cherry + Walnut' },
+          { src: 'images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry.jpeg', multi: 'images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry-hero.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry-2.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry-3.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry-4.jpeg', alt: 'Cherry + Walnut' },
+          { src: 'images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry-2.jpeg', multi: 'images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry-hero.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry-2.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry-3.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry-4.jpeg', alt: 'Cherry + Walnut' },
+          { src: 'images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry-3.jpeg', multi: 'images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry-hero.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry-2.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry-3.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry-4.jpeg', alt: 'Cherry + Walnut' },
+          { src: 'images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry-4.jpeg', multi: 'images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry-hero.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry-2.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry-3.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry-4.jpeg', alt: 'Cherry + Walnut' }
+        ]
+      },
+      'cherry-maple': {
+        name: 'Cherry + Maple',
+        imgs: [
+          { src: 'images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple-hero.jpeg', multi: 'images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple-hero.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple-2.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple-3.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple-4.jpeg', alt: 'Cherry + Maple' },
+          { src: 'images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple.jpeg', multi: 'images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple-hero.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple-2.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple-3.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple-4.jpeg', alt: 'Cherry + Maple' },
+          { src: 'images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple-2.jpeg', multi: 'images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple-hero.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple-2.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple-3.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple-4.jpeg', alt: 'Cherry + Maple' },
+          { src: 'images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple-3.jpeg', multi: 'images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple-hero.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple-2.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple-3.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple-4.jpeg', alt: 'Cherry + Maple' },
+          { src: 'images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple-4.jpeg', multi: 'images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple-hero.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple-2.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple-3.jpeg,images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple-4.jpeg', alt: 'Cherry + Maple' }
+        ]
+      },
+      'white-oak-walnut': {
+        name: 'White Oak + Walnut',
+        imgs: [
+          { src: 'images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-hero.jpeg', multi: 'images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-hero.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-2.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-3.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-4.jpeg', alt: 'White Oak + Walnut' },
+          { src: 'images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak.jpeg', multi: 'images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-hero.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-2.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-3.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-4.jpeg', alt: 'White Oak + Walnut' },
+          { src: 'images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-2.jpeg', multi: 'images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-hero.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-2.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-3.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-4.jpeg', alt: 'White Oak + Walnut' },
+          { src: 'images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-3.jpeg', multi: 'images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-hero.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-2.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-3.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-4.jpeg', alt: 'White Oak + Walnut' },
+          { src: 'images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-4.jpeg', multi: 'images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-hero.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-2.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-3.jpeg,images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-4.jpeg', alt: 'White Oak + Walnut' }
+        ]
+      }
+    };
+
+    function setupCarouselForGallery(gallery) {
+      // Clear any previous arrows for this gallery
+      gallery.querySelectorAll('.carousel-arrow').forEach(a => a.remove());
+
+      const imgs = Array.from(gallery.querySelectorAll('img'));
+      if (imgs.length === 0) return;
+
+      imgs.forEach((img, i) => img.classList.toggle('active', i === 0));
+
+      if (imgs.length <= 1) return;
+
+      let current = 0;
+
+      const prevBtn = document.createElement('button');
+      prevBtn.className = 'carousel-arrow prev';
+      prevBtn.innerHTML = '&#10094;';
+      prevBtn.setAttribute('aria-label', 'Previous photo');
+
+      const nextBtn = document.createElement('button');
+      nextBtn.className = 'carousel-arrow next';
+      nextBtn.innerHTML = '&#10095;';
+      nextBtn.setAttribute('aria-label', 'Next photo');
+
+      gallery.appendChild(prevBtn);
+      gallery.appendChild(nextBtn);
+
+      function show(index) {
+        current = (index + imgs.length) % imgs.length;
+        imgs.forEach((img, i) => img.classList.toggle('active', i === current));
+      }
+
+      prevBtn.addEventListener('click', (e) => {
+        e.stopImmediatePropagation();
+        show(current - 1);
+      });
+
+      nextBtn.addEventListener('click', (e) => {
+        e.stopImmediatePropagation();
+        show(current + 1);
+      });
+    }
+
+    function setActiveVariant(key) {
+      if (!VARIANTS[key]) key = 'walnut-maple';
+
+      // Update selector underlines (the varieties list is the nav)
+      document.querySelectorAll('#work .varieties h2[data-variant]').forEach(h => {
+        const isActive = h.getAttribute('data-variant') === key;
+        h.style.textDecoration = isActive ? 'underline' : 'none';
+      });
+
+      const gallery = document.querySelector('.gallery.carousel');
+      if (!gallery) return;
+
+      // Remove old images + arrows
+      gallery.querySelectorAll(':scope > img, :scope > .carousel-arrow').forEach(el => el.remove());
+
+      // Inject fresh images for this variant
+      const v = VARIANTS[key];
+      v.imgs.forEach((d, i) => {
+        const img = document.createElement('img');
+        img.src = d.src;
+        img.alt = d.alt;
+        img.setAttribute('data-multi', d.multi);
+        img.loading = 'lazy';
+        img.style.cursor = 'pointer';
+        if (i === 0) img.classList.add('active');
+        gallery.appendChild(img);
+      });
+
+      // Setup fresh carousel arrows + cycling for the new set
+      setupCarouselForGallery(gallery);
+
+      // Re-attach lightbox via delegation (see init)
+      // Delegation is set once on the gallery; new imgs are covered automatically.
+
+      // Deep link support
+      try {
+        const url = new URL(window.location.href);
+        url.searchParams.set('variant', key);
+        history.replaceState({}, '', url);
+      } catch (e) {}
+    }
+
+    function initVariantSelector() {
+      const params = new URLSearchParams(window.location.search);
+      let start = params.get('variant');
+      if (!start || !VARIANTS[start]) start = 'walnut-maple';
+      setActiveVariant(start);
+
+      document.querySelectorAll('#work .varieties h2[data-variant]').forEach(h2 => {
+        h2.addEventListener('click', () => {
+          const v = h2.getAttribute('data-variant');
+          if (v) setActiveVariant(v);
+        });
+      });
+    }
+
     function initCarouselNav() {
       document.querySelectorAll('.gallery').forEach(gallery => {
         if (gallery.closest('.variety')) return;
@@ -873,9 +1015,12 @@
         });
       });
 
-      // Attach lightbox to all .gallery imgs (varieties + any featured)
-      document.querySelectorAll('.gallery img').forEach(img => {
-        img.addEventListener('click', () => {
+      // Delegation on the hero carousel so dynamically swapped imgs get lightbox automatically
+      const heroCarousel = document.querySelector('.gallery.carousel');
+      if (heroCarousel) {
+        heroCarousel.addEventListener('click', (e) => {
+          const img = e.target.closest('img');
+          if (!img) return;
           const videoSrc = img.getAttribute('data-video');
           const multi = img.getAttribute('data-multi');
           const alt = img.getAttribute('alt') || '';
@@ -887,9 +1032,10 @@
             openLightbox(img.src, null, alt);
           }
         });
-      });
+      }
 
-      initCarouselNav();
+      // Carousel is initialized via initVariantSelector() + setActiveVariant() which uses setupCarouselForGallery
+      initVariantSelector();
       initContactForm();
 
       // Staggered entrance for the variety images

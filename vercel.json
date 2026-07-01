@@ -1,4 +1,24 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false
+  "redirects": [
+    {
+      "source": "/heritage-float-walnut-maple.html",
+      "destination": "/heritage-float-display-frame.html?variant=walnut-maple",
+      "statusCode": 301
+    },
+    {
+      "source": "/heritage-float-cherry-walnut.html",
+      "destination": "/heritage-float-display-frame.html?variant=cherry-walnut",
+      "statusCode": 301
+    },
+    {
+      "source": "/heritage-float-cherry-maple.html",
+      "destination": "/heritage-float-display-frame.html?variant=cherry-maple",
+      "statusCode": 301
+    },
+    {
+      "source": "/heritage-float-white-oak-walnut.html",
+      "destination": "/heritage-float-display-frame.html?variant=white-oak-walnut",
+      "statusCode": 301
+    }
+  ]
 }
