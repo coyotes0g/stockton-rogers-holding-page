@@ -257,6 +257,57 @@
       box-shadow: 0 6px 14px rgba(0,0,0,0.12);
     }
 
+    /* Wood swatch selector row for dynamic carousel swaps */
+    .wood-swatches {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin: 0 auto 0.75rem;
+      max-width: 720px;
+    }
+    .wood-swatches .swatch {
+      cursor: pointer;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 8px;
+      text-align: center;
+      background: var(--bg);
+      min-width: 130px;
+      transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+    }
+    .wood-swatches .swatch:hover {
+      transform: translateY(-1px);
+    }
+    .wood-swatches .swatch.active {
+      border-color: var(--walnut);
+      background: var(--bg-alt);
+    }
+    .wood-swatches .swatch img {
+      width: 64px;
+      height: 64px;
+      object-fit: cover;
+      border-radius: 4px;
+      display: block;
+      margin: 0 auto 4px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .wood-swatches .swatch .label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.15;
+    }
+    .wood-swatches .swatch .desc {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      line-height: 1.1;
+      margin-top: 2px;
+      max-width: 120px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     footer { 
       background: var(--bg-alt); padding: 3rem 6%; text-align: center; 
       font-size: 0.92rem; color: var(--text-muted); border-top: 1px solid var(--border);
@@ -492,6 +543,31 @@
       <p style="font-size: 1.55rem; font-style: italic; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.3;">
         Your story, beautifully suspended.
       </p>
+
+      <!-- Wood selector swatches (promoted from the previous text list into interactive controls) -->
+      <div class="wood-swatches">
+        <div class="swatch active" data-variant="walnut-maple">
+          <img src="images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut.jpeg" alt="Walnut + Maple">
+          <div class="label">Walnut + Maple</div>
+          <div class="desc">deep walnut with a bright maple line; warm and dramatic.</div>
+        </div>
+        <div class="swatch" data-variant="cherry-walnut">
+          <img src="images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/heritage-float-display-frame-cherry-hero.jpeg" alt="Cherry + Walnut">
+          <div class="label">Cherry + Walnut</div>
+          <div class="desc">warm cherry with a dark walnut line; rich and quietly tonal.</div>
+        </div>
+        <div class="swatch" data-variant="cherry-maple">
+          <img src="images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/heritage-float-display-frame-cherry-maple-hero.jpeg" alt="Cherry + Maple">
+          <div class="label">Cherry + Maple</div>
+          <div class="desc">warm cherry with a pale maple line; bright and soft.</div>
+        </div>
+        <div class="swatch" data-variant="white-oak-walnut">
+          <img src="images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/heritage-float-display-frame-white-oak-hero.jpeg" alt="White Oak + Walnut">
+          <div class="label">White Oak + Walnut</div>
+          <div class="desc">pale oak with a dark walnut line; clean and modern.</div>
+        </div>
+      </div>
+
       <div class="gallery carousel" style="max-width: 720px; margin: 0 auto 0.75rem;">
         <img src="images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-4.jpeg" 
              alt="Walnut + Maple" 
@@ -535,32 +611,8 @@
     </div>
   </section>
 
-  <!-- AVAILABLE IN FOUR HEIRLOOM COMBINATIONS -->
-  <section id="work" style="padding: 1rem 6% 1.25rem;">
-    <div class="container" style="max-width: 820px; padding: 0;">
-      <h2 style="text-align:center; font-size:1.45rem; margin-bottom:0.5rem;">Available in Four Heirloom Combinations</h2>
-      <p style="text-align:center; margin-bottom: 0.75rem; font-size:1rem; color: var(--text-muted);">Each base is paired with a contrasting perimeter inlay for quiet sophistication.</p>
-
-      <div class="varieties">
-        <div class="variety">
-          <!-- Walnut + Maple -->
-          <h2 data-variant="walnut-maple" style="cursor: pointer; text-decoration: underline;">Walnut + Maple - <span style="font-size:0.95rem; color:var(--text-muted);">deep walnut with a bright maple line; warm and dramatic.</span></h2>
-        </div>
-        <div class="variety">
-          <!-- Cherry + Walnut -->
-          <h2 data-variant="cherry-walnut" style="cursor: pointer;">Cherry + Walnut - <span style="font-size:0.95rem; color:var(--text-muted);">warm cherry with a dark walnut line; rich and quietly tonal.</span></h2>
-        </div>
-        <div class="variety">
-          <!-- Cherry + Maple -->
-          <h2 data-variant="cherry-maple" style="cursor: pointer;">Cherry + Maple - <span style="font-size:0.95rem; color:var(--text-muted);">warm cherry with a pale maple line; bright and soft.</span></h2>
-        </div>
-        <div class="variety">
-          <!-- White Oak + Walnut -->
-          <h2 data-variant="white-oak-walnut" style="cursor: pointer;">White Oak + Walnut - <span style="font-size:0.95rem; color:var(--text-muted);">pale oak with a dark walnut line; clean and modern.</span></h2>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Wood selector swatches are placed earlier (after tagline) for the specified flow.
+       The previous static list has been promoted into the interactive swatches above. -->
 
   <!-- KEY FEATURES -->
   <section style="padding: 1.25rem 6% 1rem;">
@@ -863,10 +915,9 @@
     function setActiveVariant(key) {
       if (!VARIANTS[key]) key = 'walnut-maple';
 
-      // Update selector underlines (the varieties list is the nav)
-      document.querySelectorAll('#work .varieties h2[data-variant]').forEach(h => {
-        const isActive = h.getAttribute('data-variant') === key;
-        h.style.textDecoration = isActive ? 'underline' : 'none';
+      // Update swatch active states (the selector row is the nav)
+      document.querySelectorAll('.wood-swatches .swatch').forEach(s => {
+        s.classList.toggle('active', s.getAttribute('data-variant') === key);
       });
 
       const gallery = document.querySelector('.gallery.carousel');
@@ -908,9 +959,10 @@
       if (!start || !VARIANTS[start]) start = 'walnut-maple';
       setActiveVariant(start);
 
-      document.querySelectorAll('#work .varieties h2[data-variant]').forEach(h2 => {
-        h2.addEventListener('click', () => {
-          const v = h2.getAttribute('data-variant');
+      // Attach clicks to the swatches (interactive selector)
+      document.querySelectorAll('.wood-swatches .swatch').forEach(swatch => {
+        swatch.addEventListener('click', () => {
+          const v = swatch.getAttribute('data-variant');
           if (v) setActiveVariant(v);
         });
       });
