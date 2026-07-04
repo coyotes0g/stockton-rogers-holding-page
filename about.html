@@ -330,13 +330,15 @@
       .arrow { width: 40px; height: 40px; font-size: 28px; }
       #lightbox-caption { font-size: 0.95rem; bottom: 18px; }
       .about-family-photos {
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: center !important;
+        align-items: flex-start !important;
+        gap: 6px;
       }
       .about-family-photos img {
-        width: 140px !important;
-        height: 170px !important;
+        width: 85px !important;
+        height: 100px !important;
       }
     }
 
@@ -376,10 +378,11 @@
 
     .about-family-photos {
       display: flex;
+      flex-wrap: nowrap;
       justify-content: center;
       align-items: flex-start;
-      gap: 12px;
-      margin: 3rem 0 3rem;
+      gap: 8px;
+      margin: 2rem 0 2rem;
     }
     .about-family-photos img {
       width: 260px;
