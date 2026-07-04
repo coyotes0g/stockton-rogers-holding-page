@@ -329,6 +329,17 @@
       .lightbox-arrows { padding: 0 15px; }
       .arrow { width: 40px; height: 40px; font-size: 28px; }
       #lightbox-caption { font-size: 0.95rem; bottom: 18px; }
+      .about-family-photos {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: center !important;
+        align-items: flex-start !important;
+        gap: 6px;
+      }
+      .about-family-photos img {
+        width: 85px !important;
+        height: 100px !important;
+      }
     }
 
     /* Desktop-specific adjustments - higher logo on larger screens */
@@ -363,6 +374,22 @@
         margin: 0 auto 1.5rem;
         max-width: 220px;
       }
+    }
+
+    .about-family-photos {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 8px;
+      margin: 2rem 0 2rem;
+    }
+    .about-family-photos img {
+      width: 260px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 4px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
     /* Professional polish: improved readability for long content sections */
@@ -425,10 +452,10 @@
       <p>We work with premium locally sourced hardwoods—walnut, cherry, red and white oak, maple—and select exotics for striking contrast and intricate inlays. The result celebrates the natural figure of the wood rather than hiding it.</p>
       <p>This is more than furniture. <em>It's functional art.</em><br>Welcome to Stockton &amp; Rogers.</p>
 
-      <div style="display:flex; justify-content:center; align-items:flex-start; gap:12px; margin: 3rem 0 3rem;">
-        <img src="images/great-uncle.jpeg" alt="Great Uncle" style="width:260px; height:300px; object-fit:cover; border-radius:4px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
-        <img src="images/jsrogers.jpeg" alt="J.S. Rogers" style="width:260px; height:300px; object-fit:cover; border-radius:4px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
-        <img src="images/wgrogers.jpeg" alt="W.G. Rogers" style="width:260px; height:300px; object-fit:cover; border-radius:4px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
+      <div class="about-family-photos">
+        <img src="images/great-uncle.jpeg" alt="Great Uncle" style="object-fit:cover; border-radius:4px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
+        <img src="images/jsrogers.jpeg" alt="J.S. Rogers" style="object-fit:cover; border-radius:4px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
+        <img src="images/wgrogers.jpeg" alt="W.G. Rogers" style="object-fit:cover; border-radius:4px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
       </div>
 
       <h3 style="text-align:center; margin:1.5rem 0 0.5rem; font-size:1.25rem;">Our Roots</h3>
