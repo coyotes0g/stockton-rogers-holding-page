@@ -140,7 +140,7 @@
     .nav.open .nav-toggle span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
     .container { 
-      padding: 5.75rem 6%; 
+      padding: 6.5rem 6%; 
       max-width: 1280px; 
       margin: 0 auto; 
     }
@@ -180,7 +180,7 @@
       position: relative;
       display: block;
       max-width: 720px;
-      margin: 0 auto 0.75rem;
+      margin: 0 auto 1.5rem;
     }
     .gallery.carousel img {
       display: none;
@@ -212,30 +212,36 @@
       align-items: center;
       justify-content: center;
       line-height: 1;
-      transition: background 0.2s;
+      transition: opacity 0.2s ease, background 0.2s;
       user-select: none;
+      opacity: 0;
+      pointer-events: none;
     }
     .gallery.carousel .carousel-arrow:hover {
       background: rgba(44, 44, 44, 0.85);
     }
 
-    .carousel-wrapper {
+    .gallery.carousel {
       position: relative;
-      max-width: 720px;
-      margin: 0 auto 0.75rem;
-      overflow: visible;
     }
 
-    /* Arrows placed outside the image frame (in the wrapper space) */
-    .carousel-wrapper .carousel-arrow.prev { left: -46px; }
-    .carousel-wrapper .carousel-arrow.next { right: -46px; }
+    /* Arrows overlaid on the picture (desktop only), invisible until hover over the picture */
+    .gallery.carousel .carousel-arrow.prev { left: 15px; }
+    .gallery.carousel .carousel-arrow.next { right: 15px; }
+
+    @media (min-width: 601px) {
+      .gallery.carousel:hover .carousel-arrow {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
 
     /* Mobile dots indicator */
     .carousel-dots {
-      display: none;
+      display: flex;
       justify-content: center;
-      gap: 6px;
-      margin-top: 8px;
+      gap: 8px;
+      margin-top: 1rem;
     }
     .carousel-dots .dot {
       width: 7px;
@@ -253,9 +259,6 @@
     @media (max-width: 600px) {
       .carousel-wrapper .carousel-arrow {
         display: none;
-      }
-      .carousel-dots {
-        display: flex;
       }
     }
 
@@ -295,62 +298,59 @@
       box-shadow: 0 6px 14px rgba(0,0,0,0.12);
     }
 
-    /* Wood swatch selector row for dynamic carousel swaps */
+    /* Wood swatch selector styled like the cover cards on the Shop page */
     .wood-swatches {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 0.6rem;
-      margin: 0 auto 0.5rem;
+      gap: 1rem;
+      margin: 2.5rem auto 2rem;
       max-width: 720px;
     }
     .wood-swatches .swatch {
       cursor: pointer;
       border: 2px solid var(--border);
-      border-radius: 6px;
-      padding: 4px;
-      text-align: center;
-      background: var(--bg);
-      min-width: 92px;
-      transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--bg-alt);
+      width: 155px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
     }
     .wood-swatches .swatch:hover {
-      transform: translateY(-1px);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
     }
     .wood-swatches .swatch.active {
       border-color: var(--walnut);
-      background: var(--bg-alt);
     }
     .wood-swatches .swatch img {
-      width: 46px;
-      height: 46px;
+      width: 100%;
+      height: 85px;
       object-fit: cover;
-      border-radius: 3px;
       display: block;
-      margin: 0 auto 3px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.12);
     }
     .wood-swatches .swatch .label {
-      font-size: 0.72rem;
+      padding: 0.35rem 0.5rem 0;
+      font-size: 0.8rem;
       font-weight: 600;
       color: var(--text-primary);
-      line-height: 1.1;
+      line-height: 1.15;
+      text-align: left;
     }
     .wood-swatches .swatch .desc {
-      font-size: 0.58rem;
+      padding: 0 0.5rem 0.4rem;
+      font-size: 0.65rem;
       color: var(--text-muted);
-      line-height: 1.05;
-      margin-top: 1px;
-      max-width: 84px;
-      margin-left: auto;
-      margin-right: auto;
+      line-height: 1.1;
+      text-align: left;
     }
 
     footer { 
       background: var(--bg-alt); padding: 3rem 6%; text-align: center; 
       font-size: 0.92rem; color: var(--text-muted); border-top: 1px solid var(--border);
     }
-    .form { max-width: 520px; margin: 2rem auto 0; }
+    .form { max-width: 520px; margin: 2.5rem auto 0; }
     .form input, .form textarea, .form select { 
       width: 100%; padding: 0.85rem 1rem; margin-bottom: 1rem; 
       border: 1px solid var(--border); border-radius: 6px; font-size: 1rem;
@@ -447,7 +447,7 @@
       .nav .inquire-btn { display: none; }
       .hero h1 { font-size: 2.4rem; }
       .hero .tagline { font-size: 1.15rem; }
-      .container { padding: 5rem 4%; }
+      .container { padding: 5.5rem 4%; }
       .lightbox-content { max-width: 96%; max-height: 78vh; }
       .lightbox-arrows { padding: 0 15px; }
       .arrow { width: 40px; height: 40px; font-size: 28px; }
@@ -474,22 +474,22 @@
     /* Product page specifics */
     .product-intro {
       max-width: 820px;
-      margin: 0 auto;
+      margin: 0 auto 2.5rem;
       font-size: 1.1rem;
       line-height: 1.8;
     }
     .specs {
       max-width: 720px;
-      margin: 1.5rem auto;
+      margin: 2rem auto;
       background: var(--bg-alt);
       border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 1.25rem 1.5rem;
+      padding: 1.5rem;
     }
     .specs dt {
       font-weight: 600;
       color: var(--text-secondary);
-      margin-top: 0.75rem;
+      margin-top: 1rem;
     }
     .specs dt:first-child { margin-top: 0; }
     .specs dd {
@@ -498,12 +498,12 @@
     }
     .features {
       max-width: 720px;
-      margin: 1rem auto 2rem;
+      margin: 1.5rem auto 2.5rem;
       list-style: none;
       padding-left: 0;
     }
     .features li {
-      padding: 0.35rem 0 0.35rem 1.1rem;
+      padding: 0.5rem 0 0.5rem 1.1rem;
       position: relative;
     }
     .features li:before {
@@ -518,12 +518,13 @@
       font-weight: 600;
       color: var(--walnut);
       letter-spacing: -0.02em;
+      margin-bottom: 1rem;
     }
     .made-to-order {
       font-size: 0.98rem;
       color: var(--text-secondary);
       max-width: 60ch;
-      margin: 1rem auto;
+      margin: 1.5rem auto;
     }
     .section-head {
       text-align: center;
@@ -577,37 +578,13 @@
   </section>
 
   <!-- TAGLINE + HERO VISUAL -->
-  <section style="padding: 1.25rem 6% 0.75rem; background: var(--bg);">
+  <section style="padding: 2rem 6% 2rem; background: var(--bg);">
     <div class="container" style="text-align: center; max-width: 860px; padding: 0;">
-      <p style="font-size: 1.55rem; font-style: italic; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.3; text-align: center;">
+      <p style="font-size: 1.55rem; font-style: italic; color: var(--text-secondary); margin-bottom: 2.5rem; line-height: 1.3; text-align: center;">
         Your story, beautifully suspended.
       </p>
 
-      <!-- Wood selector swatches (promoted from the previous text list into interactive controls) -->
-      <div class="wood-swatches">
-        <div class="swatch active" data-variant="walnut-maple">
-          <img src="images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/walnut-maple-swatch.jpeg" alt="Walnut + Maple">
-          <div class="label">Walnut + Maple</div>
-          <div class="desc">deep walnut with a bright maple line</div>
-        </div>
-        <div class="swatch" data-variant="cherry-walnut">
-          <img src="images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/cherry-walnut-swatch.jpeg" alt="Cherry + Walnut">
-          <div class="label">Cherry + Walnut</div>
-          <div class="desc">warm cherry with a dark walnut line</div>
-        </div>
-        <div class="swatch" data-variant="cherry-maple">
-          <img src="images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/cherry-maple-swatch.jpeg" alt="Cherry + Maple">
-          <div class="label">Cherry + Maple</div>
-          <div class="desc">warm cherry with a pale maple line</div>
-        </div>
-        <div class="swatch" data-variant="white-oak-walnut">
-          <img src="images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/white-oak-walnut-swatch.jpeg" alt="White Oak + Walnut">
-          <div class="label">White Oak + Walnut</div>
-          <div class="desc">pale oak with a dark walnut line</div>
-        </div>
-      </div>
-
-      <div class="carousel-wrapper">
+      <div class="carousel-wrapper" style="margin: 2rem 0 2.5rem;">
         <div class="gallery carousel">
         <img src="images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-4.jpeg" 
              alt="Walnut + Maple" 
@@ -639,24 +616,47 @@
       <p class="product-intro" style="color: var(--text-secondary); text-align: left;">
         A substantial 5″ × 4″ base with a delicate continuous 1/16″ perimeter inlay cradles two crystal-clear 10mm acrylic panels that let your photograph appear to float above the wood. Your photo sits between the panels, which are secured with magnets, so swapping images takes seconds. The panels then drop cleanly into a precisely cut top channel—no visible hardware, just pure, gallery-like elegance. Soft felt pads on the base corners ensure it rests beautifully on any desk, shelf, or mantel.
       </p>
+
+      <!-- Wood selector swatches moved below the description paragraph -->
+      <div class="wood-swatches">
+        <div class="swatch active" data-variant="walnut-maple">
+          <img src="images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/walnut-maple-swatch.jpeg" alt="Walnut + Maple">
+          <div class="label">Walnut + Maple</div>
+          <div class="desc">deep walnut with a bright maple line</div>
+        </div>
+        <div class="swatch" data-variant="cherry-walnut">
+          <img src="images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/cherry-walnut-swatch.jpeg" alt="Cherry + Walnut">
+          <div class="label">Cherry + Walnut</div>
+          <div class="desc">warm cherry with a dark walnut line</div>
+        </div>
+        <div class="swatch" data-variant="cherry-maple">
+          <img src="images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/cherry-maple-swatch.jpeg" alt="Cherry + Maple">
+          <div class="label">Cherry + Maple</div>
+          <div class="desc">warm cherry with a pale maple line</div>
+        </div>
+        <div class="swatch" data-variant="white-oak-walnut">
+          <img src="images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/white-oak-walnut-swatch.jpeg" alt="White Oak + Walnut">
+          <div class="label">White Oak + Walnut</div>
+          <div class="desc">pale oak with a dark walnut line</div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- CRAFTED TO HONOR THE MOMENT -->
-  <section style="padding: 1rem 6% 1.25rem;">
+  <section style="padding: 2rem 6% 2rem;">
     <div class="container" style="max-width: 820px; text-align: left; padding: 0;">
-      <h2 style="font-size: 1.45rem; margin-bottom: 0.5rem; text-align: center;">Crafted to Honor the Moment</h2>
+      <h2 style="font-size: 1.45rem; margin-bottom: 1rem; text-align: center;">Crafted to Honor the Moment</h2>
       <p class="product-intro" style="color: var(--text-secondary); text-align: left;">
         The solid hardwood base provides a grounded, heirloom foundation while the frameless acrylic lets your photograph take center stage with remarkable depth and presence. Whether it holds a family legacy or a quiet milestone, this piece gives your memory the foundation it deserves.
       </p>
     </div>
   </section>
 
-  <!-- Wood selector swatches are placed earlier (after tagline) for the specified flow.
-       The previous static list has been promoted into the interactive swatches above. -->
+  <!-- Wood selector swatches moved below the description paragraph per request. -->
 
   <!-- KEY FEATURES -->
-  <section style="padding: 1.25rem 6% 1rem;">
+  <section style="padding: 2rem 6% 1.5rem;">
     <div class="container" style="max-width: 780px; padding: 0;">
       <h2 style="text-align:center; font-size:1.35rem; margin-bottom: 0.5rem;">Key Features</h2>
       <ul class="features">
@@ -671,7 +671,7 @@
   </section>
 
   <!-- SPECIFICATIONS + PRICING -->
-  <section style="padding: 0 6% 1.75rem;">
+  <section style="padding: 0 6% 2.5rem;">
     <div class="container" style="max-width: 780px; padding: 0;">
       <h2 style="text-align:center; font-size:1.35rem; margin-bottom: 0.5rem;">Specifications</h2>
       <div class="specs">
@@ -687,13 +687,13 @@
         </dl>
       </div>
 
-      <div style="text-align:center; margin-top: 0.75rem;">
+      <div style="text-align:center; margin-top: 1.5rem;">
         <div class="price">$195</div>
-        <p style="font-size:0.95rem; color:var(--text-secondary); margin: 0.5rem auto 0.25rem; font-weight:600; text-align: center;">Handcrafted in Northwest Arkansas</p>
+        <p style="font-size:0.95rem; color:var(--text-secondary); margin: 0.75rem auto 0.5rem; font-weight:600; text-align: center;">Handcrafted in Northwest Arkansas</p>
         <p class="made-to-order">
           Each Heritage Float is made to order in our shop using responsibly sourced premium hardwoods. Ships in 7–12 business days.
         </p>
-        <p style="font-size:0.95rem; color:var(--text-muted); max-width:60ch; margin:0.75rem auto 0; text-align: center;">
+        <p style="font-size:0.95rem; color:var(--text-muted); max-width:60ch; margin:1rem auto 0; text-align: center;">
           Each piece is handcrafted and may contain minor natural variations and imperfections that make it truly one-of-a-kind.
         </p>
       </div>
@@ -703,8 +703,8 @@
   <!-- CONNECT / FORM -->
   <section id="connect" class="cta">
     <div class="container">
-      <h2 style="font-size:2.5rem; margin-bottom:1rem; color:white;">Ready to bring your story into the light?</h2>
-      <p style="max-width:620px; margin:0 auto 1.25rem; font-size:1.1rem; color:#EDE8E0;">
+      <h2 style="font-size:2.5rem; margin-bottom:1.5rem; color:white;">Ready to bring your story into the light?</h2>
+      <p style="max-width:620px; margin:0 auto 2rem; font-size:1.1rem; color:#EDE8E0;">
         Inquire for availability, custom sizes, or wood options. We’re happy to discuss the perfect combination for your space and photograph.
       </p>
 
@@ -933,8 +933,8 @@
       nextBtn.innerHTML = '&#10095;';
       nextBtn.setAttribute('aria-label', 'Next photo');
 
-      wrapper.appendChild(prevBtn);
-      wrapper.appendChild(nextBtn);
+      gallery.appendChild(prevBtn);
+      gallery.appendChild(nextBtn);
 
       // Create dots row for mobile (swipe indicator)
       const dotsContainer = document.createElement('div');
