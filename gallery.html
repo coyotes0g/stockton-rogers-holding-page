@@ -344,6 +344,13 @@
       .lightbox-arrows { padding: 0 15px; }
       .arrow { width: 40px; height: 40px; font-size: 28px; }
       #lightbox-caption { font-size: 0.95rem; bottom: 18px; }
+
+      .gallery-intro {
+        font-size: 0.9rem !important;
+        margin: 1rem auto 1.25rem !important;
+        max-width: 90% !important;
+        line-height: 1.45;
+      }
     }
 
     /* Desktop-specific adjustments - higher logo on larger screens */
@@ -368,6 +375,16 @@
       margin-left: auto;
       margin-right: auto;
       text-align: left;
+    }
+
+    .gallery-intro {
+      font-size: 0.95rem;
+      margin: 1rem auto 1.5rem;
+      max-width: 70ch;
+      text-align: left;
+      font-style: italic;
+      color: var(--text-muted);
+      line-height: 1.5;
     }
 
     /* Keep Gallery subheadings (Clocks, Picture Frames, etc.) left-aligned */
@@ -419,7 +436,7 @@
     </div>
   </section>
 
-  <p style="text-align:left; margin: 1.5rem auto 2rem; font-size:0.95rem; color: var(--text-muted); max-width: 70ch; font-style: italic;">
+  <p class="gallery-intro">
     A selection of past commissions. Each was made for a specific person and built around the thing they wanted to keep.
   </p>
 
