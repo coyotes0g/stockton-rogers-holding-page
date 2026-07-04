@@ -370,6 +370,7 @@
       max-width: 70ch;
       margin-left: auto;
       margin-right: auto;
+      text-align: left;
     }
 
   </style>
@@ -409,28 +410,29 @@
   </nav>
 
   <!-- ABOUT HEADER -->
-  <section style="padding: 0; background: linear-gradient(rgba(44,44,44,0.75), rgba(30,30,30,0.75)); margin-top: 60px;">
-    <div class="container" style="padding: 0 6%; min-height: 7rem; display: flex; align-items: center; justify-content: center;">
-      <h1 style="text-align:center; font-size:2.4rem; margin: 0; color:#f5f5f5;">About Stockton &amp; Rogers</h1>
+  <section style="padding: 0; background: #3A2F2A; margin-top: 60px;">
+    <div class="container" style="padding: 1.1rem 6% 0.5rem; min-height: auto; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      <h1 style="text-align:center; font-size:2.4rem; margin: 0 0 0.15rem; color:#f5f5f5;">About</h1>
+      <span style="font-family: Georgia, 'Times New Roman', serif; font-size:2.4rem; font-weight:600; letter-spacing:-0.025em; color:#f5f5f5; text-align:center;">Stockton &amp; Rogers</span>
     </div>
   </section>
 
   <!-- BIO CONTENT -->
-  <section style="padding: 2rem 0 4rem;">
+  <section style="padding: 0.5rem 0 1.5rem;">
     <div class="container" style="max-width: 860px;">
       <p>Stockton &amp; Rogers is a high-end custom woodworking studio rooted in the hills of Northwest Arkansas. We handcraft heirloom-quality pieces that fuse beauty with functionality into elegant design—pieces built to be lived with, passed down, and loved for generations.</p>
       <p>Our work is born from a simple belief: the best functional art doesn't just sit pretty—it serves a purpose while telling a story. Each piece is designed to honor both the object it holds and the space it inhabits.</p>
       <p>We work with premium locally sourced hardwoods—walnut, cherry, red and white oak, maple—and select exotics for striking contrast and intricate inlays. The result celebrates the natural figure of the wood rather than hiding it.</p>
-      <p>This is more than furniture. <em>It's functional art.</em> Welcome to Stockton &amp; Rogers.</p>
+      <p>This is more than furniture. <em>It's functional art.</em><br>Welcome to Stockton &amp; Rogers.</p>
 
-      <div style="display:flex; justify-content:center; align-items:flex-start; gap:12px; margin:1rem 0;">
-        <img src="images/great-uncle.jpeg" alt="Great Uncle" style="width:30%; max-width:260px; height:auto; border-radius:4px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
-        <img src="images/jsrogers.jpeg" alt="J.S. Rogers" style="width:30%; max-width:260px; height:auto; border-radius:4px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
-        <img src="images/wgrogers.jpeg" alt="W.G. Rogers" style="width:30%; max-width:260px; height:auto; border-radius:4px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
+      <div style="display:flex; justify-content:center; align-items:flex-start; gap:12px; margin: 3rem 0 3rem;">
+        <img src="images/great-uncle.jpeg" alt="Great Uncle" style="width:260px; height:300px; object-fit:cover; border-radius:4px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
+        <img src="images/jsrogers.jpeg" alt="J.S. Rogers" style="width:260px; height:300px; object-fit:cover; border-radius:4px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
+        <img src="images/wgrogers.jpeg" alt="W.G. Rogers" style="width:260px; height:300px; object-fit:cover; border-radius:4px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
       </div>
 
       <h3 style="text-align:center; margin:1.5rem 0 0.5rem; font-size:1.25rem;">Our Roots</h3>
-      <p style="max-width:70ch; margin:0 auto; text-align:center;">Every piece begins in a shop built by hand on our family land. Rooted in the Ozark forests and a generations-deep connection to timber, we make things meant to outlast the hands that made them.</p>
+      <p style="max-width:70ch; margin:0 auto 3rem; text-align:left;">Every piece begins in a shop built by hand on our family land. Rooted in the Ozark forests and a generations-deep connection to timber, we make things meant to outlast the hands that made them.</p>
     </div>
   </section>
 
@@ -468,12 +470,6 @@
       <p style="font-size:0.95rem; color: var(--text-muted);">We’ll get back to you within 1–2 business days.</p>
     </div>
 
-    <p style="margin-top:2.5rem; font-size:1.05rem; color:#D4CFC6;">
-      P.O. Box 10068<br>
-      Fayetteville, AR 72703<br>
-      <a href="mailto:contact@stocktonandrogers.com" style="color:#D4CFC6; text-decoration:underline;">contact@stocktonandrogers.com</a><br>
-      <a href="tel:4793963935" style="color:#D4CFC6; text-decoration:underline;">(479) 396-3935</a>
-    </p>
   </div>
   </section>
 
@@ -496,8 +492,8 @@
     <div id="lightbox-caption"></div>
     <div id="lightbox-multi" style="display: none;"></div>
     <div class="lightbox-arrows" id="lightbox-arrows" style="display: none;">
-      <span class="arrow prev" onclick="prevImage(); event.stopImmediatePropagation();">&larr;</span>
-      <span class="arrow next" onclick="nextImage(); event.stopImmediatePropagation();">&rarr;</span>
+      <span class="arrow prev" onclick="prevImage(); event.stopImmediatePropagation();">&#10094;</span>
+      <span class="arrow next" onclick="nextImage(); event.stopImmediatePropagation();">&#10095;</span>
     </div>
   </div>
 
