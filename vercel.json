@@ -12,6 +12,12 @@
     { "source": "/sentinel-vase/", "destination": "/sentinel-vase.html" }
   ],
   "redirects": [
+    { "source": "/index.html", "destination": "/", "statusCode": 301 },
+    { "source": "/about.html", "destination": "/about", "statusCode": 301 },
+    { "source": "/gallery.html", "destination": "/gallery", "statusCode": 301 },
+    { "source": "/shop.html", "destination": "/shop", "statusCode": 301 },
+    { "source": "/heritage-float-display-frame.html", "destination": "/heritage-float-display-frame", "statusCode": 301 },
+    { "source": "/sentinel-vase.html", "destination": "/sentinel-vase", "statusCode": 301 },
     {
       "source": "/heritage-float-walnut-maple.html",
       "destination": "/heritage-float-display-frame.html?variant=walnut-maple",
