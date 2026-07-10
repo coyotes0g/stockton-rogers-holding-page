@@ -111,6 +111,20 @@
       box-shadow: 0 12px 28px rgba(0,0,0,0.1) !important;
     }
 
+    /* Variant quick-links on product cards (jump straight to that wood combo) */
+    .variant-link {
+      color: var(--walnut);
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.2s ease, border-color 0.2s ease;
+      white-space: nowrap;
+    }
+    .variant-link:hover {
+      color: var(--walnut-light);
+      border-color: var(--walnut-light);
+    }
+
     .nav { 
       position: fixed; top: 0; width: 100%; 
       background: rgba(248,245,240,0.96); 
@@ -544,9 +558,12 @@
             <p style="margin: 0 0 0.6rem; color: var(--text-secondary); font-size: 0.95rem;">
               A substantial 5″ × 4″ hardwood base with floating 10mm acrylic panels. Your photograph appears to hover in elegant, gallery-like suspension.
             </p>
-            <p style="margin: 0 0 0.75rem; font-size: 0.85rem; color: var(--text-muted);">
+            <p style="margin: 0 0 0.75rem; font-size: 0.85rem; color: var(--text-muted); line-height: 1.9;">
               Available in four wood combinations:<br>
-              Walnut + Maple • Cherry + Walnut • Cherry + Maple • White Oak + Walnut.
+              <a href="/heritage-float-display-frame?variant=walnut-maple" class="variant-link">Walnut + Maple</a> •
+              <a href="/heritage-float-display-frame?variant=cherry-walnut" class="variant-link">Cherry + Walnut</a> •
+              <a href="/heritage-float-display-frame?variant=cherry-maple" class="variant-link">Cherry + Maple</a> •
+              <a href="/heritage-float-display-frame?variant=white-oak-walnut" class="variant-link">White Oak + Walnut</a>
             </p>
             <a href="/heritage-float-display-frame" style="display: inline-block; background: var(--walnut); color: white; padding: 0.55rem 1.4rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.9rem;">View details</a>
           </div>
