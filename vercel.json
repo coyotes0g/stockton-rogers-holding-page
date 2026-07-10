@@ -1,0 +1,42 @@
+{
+  "rewrites": [
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/about/", "destination": "/about.html" },
+    { "source": "/gallery", "destination": "/gallery.html" },
+    { "source": "/gallery/", "destination": "/gallery.html" },
+    { "source": "/shop", "destination": "/shop.html" },
+    { "source": "/shop/", "destination": "/shop.html" },
+    { "source": "/heritage-float-display-frame", "destination": "/heritage-float-display-frame.html" },
+    { "source": "/heritage-float-display-frame/", "destination": "/heritage-float-display-frame.html" },
+    { "source": "/sentinel-vase", "destination": "/sentinel-vase.html" },
+    { "source": "/sentinel-vase/", "destination": "/sentinel-vase.html" }
+  ],
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "statusCode": 301 },
+    { "source": "/about.html", "destination": "/about", "statusCode": 301 },
+    { "source": "/gallery.html", "destination": "/gallery", "statusCode": 301 },
+    { "source": "/shop.html", "destination": "/shop", "statusCode": 301 },
+    { "source": "/heritage-float-display-frame.html", "destination": "/heritage-float-display-frame", "statusCode": 301 },
+    { "source": "/sentinel-vase.html", "destination": "/sentinel-vase", "statusCode": 301 },
+    {
+      "source": "/heritage-float-walnut-maple.html",
+      "destination": "/heritage-float-display-frame.html?variant=walnut-maple",
+      "statusCode": 301
+    },
+    {
+      "source": "/heritage-float-cherry-walnut.html",
+      "destination": "/heritage-float-display-frame.html?variant=cherry-walnut",
+      "statusCode": 301
+    },
+    {
+      "source": "/heritage-float-cherry-maple.html",
+      "destination": "/heritage-float-display-frame.html?variant=cherry-maple",
+      "statusCode": 301
+    },
+    {
+      "source": "/heritage-float-white-oak-walnut.html",
+      "destination": "/heritage-float-display-frame.html?variant=white-oak-walnut",
+      "statusCode": 301
+    }
+  ]
+}

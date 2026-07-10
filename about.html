@@ -329,6 +329,17 @@
       .lightbox-arrows { padding: 0 15px; }
       .arrow { width: 40px; height: 40px; font-size: 28px; }
       #lightbox-caption { font-size: 0.95rem; bottom: 18px; }
+      .about-family-photos {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: center !important;
+        align-items: flex-start !important;
+        gap: 6px;
+      }
+      .about-family-photos img {
+        width: 85px !important;
+        height: 100px !important;
+      }
     }
 
     /* Desktop-specific adjustments - higher logo on larger screens */
@@ -365,11 +376,28 @@
       }
     }
 
+    .about-family-photos {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 8px;
+      margin: 2rem 0 2rem;
+    }
+    .about-family-photos img {
+      width: 260px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 4px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
     /* Professional polish: improved readability for long content sections */
     .container p {
       max-width: 70ch;
       margin-left: auto;
       margin-right: auto;
+      text-align: left;
     }
 
   </style>
@@ -409,28 +437,29 @@
   </nav>
 
   <!-- ABOUT HEADER -->
-  <section style="padding: 0; background: linear-gradient(rgba(44,44,44,0.75), rgba(30,30,30,0.75)); margin-top: 60px;">
-    <div class="container" style="padding: 0 6%; min-height: 7rem; display: flex; align-items: center; justify-content: center;">
-      <h1 style="text-align:center; font-size:2.4rem; margin: 0; color:#f5f5f5;">About Stockton &amp; Rogers</h1>
+  <section style="padding: 0; background: #3A2F2A; margin-top: 60px;">
+    <div class="container" style="padding: 1.1rem 6% 0.5rem; min-height: auto; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      <h1 style="text-align:center; font-size:2.4rem; margin: 0 0 0.15rem; color:#f5f5f5;">About</h1>
+      <span style="font-family: Georgia, 'Times New Roman', serif; font-size:2.4rem; font-weight:600; letter-spacing:-0.025em; color:#f5f5f5; text-align:center;">Stockton &amp; Rogers</span>
     </div>
   </section>
 
   <!-- BIO CONTENT -->
-  <section style="padding: 2rem 0 4rem;">
+  <section style="padding: 0.5rem 0 1.5rem;">
     <div class="container" style="max-width: 860px;">
       <p>Stockton &amp; Rogers is a high-end custom woodworking studio rooted in the hills of Northwest Arkansas. We handcraft heirloom-quality pieces that fuse beauty with functionality into elegant design—pieces built to be lived with, passed down, and loved for generations.</p>
       <p>Our work is born from a simple belief: the best functional art doesn't just sit pretty—it serves a purpose while telling a story. Each piece is designed to honor both the object it holds and the space it inhabits.</p>
       <p>We work with premium locally sourced hardwoods—walnut, cherry, red and white oak, maple—and select exotics for striking contrast and intricate inlays. The result celebrates the natural figure of the wood rather than hiding it.</p>
-      <p>This is more than furniture. <em>It's functional art.</em> Welcome to Stockton &amp; Rogers.</p>
+      <p>This is more than furniture. <em>It's functional art.</em><br>Welcome to Stockton &amp; Rogers.</p>
 
-      <div style="display:flex; justify-content:center; align-items:flex-start; gap:12px; margin:1rem 0;">
-        <img src="images/great-uncle.jpeg" alt="Great Uncle" style="width:30%; max-width:260px; height:auto; border-radius:4px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
-        <img src="images/jsrogers.jpeg" alt="J.S. Rogers" style="width:30%; max-width:260px; height:auto; border-radius:4px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
-        <img src="images/wgrogers.jpeg" alt="W.G. Rogers" style="width:30%; max-width:260px; height:auto; border-radius:4px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
+      <div class="about-family-photos">
+        <img src="images/great-uncle.jpeg" alt="Great Uncle" style="object-fit:cover; border-radius:4px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
+        <img src="images/jsrogers.jpeg" alt="J.S. Rogers" style="object-fit:cover; border-radius:4px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
+        <img src="images/wgrogers.jpeg" alt="W.G. Rogers" style="object-fit:cover; border-radius:4px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
       </div>
 
       <h3 style="text-align:center; margin:1.5rem 0 0.5rem; font-size:1.25rem;">Our Roots</h3>
-      <p style="max-width:70ch; margin:0 auto; text-align:center;">Rooted in the dense Ozark forests that shaped our family's deep connection to timber and handcrafted in the shop on this land with precision and reverence — every Stockton &amp; Rogers creation fuses beauty with functionality into elegant heirloom-quality timeless art designed to be lived with, passed down, and loved for generations.</p>
+      <p style="max-width:70ch; margin:0 auto 3rem; text-align:left;">Every piece begins in a shop built by hand on our family land. Rooted in the Ozark forests and a generations-deep connection to timber, we make things meant to outlast the hands that made them.</p>
     </div>
   </section>
 
@@ -439,7 +468,7 @@
     <div class="container">
       <h2 style="font-size:2.5rem; margin-bottom:1rem; color:white;">Ready to create something lasting?</h2>
       <p style="max-width:620px; margin:0 auto 2rem; font-size:1.1rem; color:#EDE8E0;">
-        Whether it's a custom frame, heirloom box, clock, or full table — let's talk about your next piece.
+        Whether it’s a custom frame, heirloom box, clock, or full table — let’s talk about your next piece.
       </p>
 
     <!-- 
@@ -465,13 +494,9 @@
     <!-- Form success message (shown via JS after successful AJAX submit) -->
     <div id="form-success" data-fs-success style="display:none; text-align:center; padding:2rem; background: var(--bg-alt); border-radius:12px; margin-top:1.5rem;">
       <p style="font-size:1.15rem; color: var(--text-primary); margin-bottom:0.5rem;">Thank you — your message has been sent.</p>
-      <p style="font-size:0.95rem; color: var(--text-muted);">We'll get back to you within 1–2 business days.</p>
+      <p style="font-size:0.95rem; color: var(--text-muted);">We’ll get back to you within 1–2 business days.</p>
     </div>
 
-    <p style="margin-top:2.5rem; font-size:1.05rem; color:#D4CFC6;">
-      <a href="mailto:contact@stocktonandrogers.com" style="color:#D4CFC6; text-decoration:underline;">contact@stocktonandrogers.com</a><br>
-      <a href="tel:4793963935" style="color:#D4CFC6; text-decoration:underline;">(479) 396-3935</a>
-    </p>
   </div>
   </section>
 
@@ -480,6 +505,7 @@
     <p style="margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--text-secondary); font-style: italic;">Handcrafted. Timeless Design. Heirloom Quality.</p>
     <p>
       © 2026 • All pieces handcrafted in Northwest Arkansas<br>
+      P.O. Box 10068 | Fayetteville, AR 72703<br>
       <a href="tel:4793963935" style="color:inherit; text-decoration:underline;">(479) 396-3935</a> | 
       <a href="mailto:contact@stocktonandrogers.com" style="color:inherit; text-decoration:underline;">contact@stocktonandrogers.com</a>
     </p>
@@ -551,11 +577,8 @@
       if (multiImages) {
         const srcs = multiImages.split(',').map(s => s.trim());
         currentImages = srcs;
-        currentCaptions = srcs.map((s, i) => {
-          if (i === 0 && clickedAlt) return toTitleCase(clickedAlt);
-          let name = s.replace(/\.(jpeg|jpg|png|gif|mp4|mov|webm)$/i, '');
-          name = name.replace(/[-_]/g, ' ');
-          return toTitleCase(name);
+        currentCaptions = srcs.map(() => {
+          return clickedAlt ? toTitleCase(clickedAlt) : '';
         });
         currentIndex = 0;
         if (captionEl) captionEl.style.display = 'block';
