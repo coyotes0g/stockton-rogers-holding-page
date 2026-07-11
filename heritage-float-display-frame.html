@@ -10,13 +10,32 @@
   <meta property="og:title" content="Heritage Float Display Frame | Stockton &amp; Rogers">
   <meta property="og:description" content="Your story, beautifully suspended. Solid hardwood base with a frameless floating acrylic panel. Handcrafted in Northwest Arkansas.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.stocktonandrogers.com/heritage-float-display-frame.html">
+  <meta property="og:url" content="https://www.stocktonandrogers.com/heritage-float-display-frame">
   <!-- <meta property="og:image" content="https://www.stocktonandrogers.com/images/og-image.jpg"> -->
 
   <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Heritage Float Display Frame | Stockton &amp; Rogers">
   <meta name="twitter:description" content="Handcrafted heirloom photo display with floating acrylic. Premium hardwoods from Northwest Arkansas.">
+
+  <!-- Product structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Heritage Float™ Display Frame",
+    "description": "Solid premium hardwood base with two floating 10mm acrylic panels. Handcrafted to order in Northwest Arkansas in four heirloom wood combinations.",
+    "image": "https://www.stocktonandrogers.com/images/Shop/Products/Heritage%20Float%20Display%20Frame/Walnut-Maple/heritage-float-display-frame-walnut-4.jpeg",
+    "brand": { "@type": "Brand", "name": "Stockton & Rogers" },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://www.stocktonandrogers.com/heritage-float-display-frame",
+      "price": "195",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
 
   <!-- Favicon -->
   <link rel="icon" href="logo.svg" type="image/svg+xml">
@@ -98,6 +117,33 @@
     .page-hero h1 { color: #F5F2EC; font-size: 2.7rem; margin: 0; }
     .page-hero .eyebrow { color: #C9B393; margin-bottom: 0.35rem; }
     .page-hero .sub { color: #CFC8BD; margin: 0.45rem auto 0; font-size: 0.98rem; max-width: 60ch; }
+
+    /* Above-the-fold price + primary Buy Now */
+    .price-line {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: 0.01em;
+      margin: -1.5rem 0 1.2rem;
+    }
+    .btn-buy {
+      display: inline-block;
+      background: var(--walnut);
+      color: #fff;
+      padding: 0.85rem 2.6rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      letter-spacing: 0.01em;
+      box-shadow: 0 4px 14px rgba(92,64,51,0.28);
+      transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-buy:hover {
+      background: var(--walnut-light);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(92,64,51,0.32);
+    }
 
     .nav { 
       position: fixed; top: 0; width: 100%; 
@@ -237,6 +283,8 @@
       height: auto;
       width: 100%;
       max-width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
       border-radius: 8px;
       box-shadow: 0 12px 32px rgba(0,0,0,0.12);
       transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), box-shadow 0.35s ease, opacity 0.2s;
@@ -424,6 +472,32 @@
       background: var(--walnut-light);
       transform: translateY(-1px);
       box-shadow: 0 6px 16px rgba(92,64,51,0.25);
+    }
+    .form label {
+      display: block;
+      text-align: left;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin: 0 0 0.35rem 0.15rem;
+    }
+    #connect .form label { color: #C9B393; }
+
+    /* Send Inquiry is the secondary action on product pages (Buy Now is primary) */
+    #connect .form button {
+      background: transparent;
+      color: #EDE8E0;
+      border: 2px solid rgba(237,232,224,0.55);
+      box-shadow: none;
+    }
+    #connect .form button:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: #EDE8E0;
+      color: #fff;
+      transform: translateY(-1px);
+      box-shadow: none;
     }
 
     /* Lightbox Styles */
@@ -613,7 +687,7 @@
       <a href="/about">About</a>
       <a href="/gallery">Gallery</a>
       <a href="/shop" class="active">Shop</a>
-      <a href="#connect">Contact</a>
+      <a href="/contact">Contact</a>
       <a href="#connect" class="inquire-btn">Inquire</a>
     </div>
 
@@ -630,15 +704,15 @@
       <a href="/about">About</a>
       <a href="/gallery">Gallery</a>
       <a href="/shop" class="active">Shop</a>
-      <a href="#connect">Contact</a>
+      <a href="/contact">Contact</a>
       <a href="#connect" class="inquire-btn mobile">Inquire</a>
     </div>
   </nav>
 
   <!-- PAGE INTRO -->
   <section class="page-hero">
-    <span class="eyebrow">Signature Piece</span>
-    <h1>Heritage Float<sup style="font-size:0.55em;">™</sup> Display Frame</h1>
+    <span class="eyebrow">Display Frame</span>
+    <h1>Heritage Float<sup style="font-size:0.55em;">™</sup></h1>
   </section>
 
   <!-- TAGLINE + HERO VISUAL -->
@@ -647,6 +721,8 @@
       <p style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.9rem; font-style: italic; color: var(--text-secondary); margin-bottom: 2.5rem; line-height: 1.3; text-align: center;">
         Your story, beautifully suspended.
       </p>
+      <p class="price-line">$195 &middot; Ships in 7&ndash;12 business days</p>
+      <p style="margin: 0 0 1.5rem;"><a id="buy-now-btn" class="btn-buy" href="STRIPE_LINK_WALNUT_MAPLE" target="_blank" rel="noopener">Buy Now</a></p>
 
       <div class="carousel-wrapper" style="margin: 2rem 0 2.5rem;">
         <div class="gallery carousel">
@@ -684,22 +760,22 @@
       <!-- Wood selector swatches moved below the description paragraph -->
       <div class="wood-swatches">
         <div class="swatch active" data-variant="walnut-maple">
-          <img src="images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/walnut-maple-swatch.jpeg" alt="Walnut + Maple">
+          <img src="images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/walnut-maple-swatch.jpeg" alt="Walnut + Maple" width="919" height="517" loading="lazy">
           <div class="label">Walnut + Maple</div>
           <div class="desc">deep walnut with a bright maple line</div>
         </div>
         <div class="swatch" data-variant="cherry-walnut">
-          <img src="images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/cherry-walnut-swatch.jpeg" alt="Cherry + Walnut">
+          <img src="images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/cherry-walnut-swatch.jpeg" alt="Cherry + Walnut" width="1074" height="604" loading="lazy">
           <div class="label">Cherry + Walnut</div>
           <div class="desc">warm cherry with a dark walnut line</div>
         </div>
         <div class="swatch" data-variant="cherry-maple">
-          <img src="images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/cherry-maple-swatch.jpeg" alt="Cherry + Maple">
+          <img src="images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/cherry-maple-swatch.jpeg" alt="Cherry + Maple" width="1034" height="582" loading="lazy">
           <div class="label">Cherry + Maple</div>
           <div class="desc">warm cherry with a pale maple line</div>
         </div>
         <div class="swatch" data-variant="white-oak-walnut">
-          <img src="images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/white-oak-walnut-swatch.jpeg" alt="White Oak + Walnut">
+          <img src="images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/white-oak-walnut-swatch.jpeg" alt="White Oak + Walnut" width="1128" height="634" loading="lazy">
           <div class="label">White Oak + Walnut</div>
           <div class="desc">pale oak with a dark walnut line</div>
         </div>
@@ -774,17 +850,21 @@
       </p>
 
       <form id="contact-form" class="form" action="https://formspree.io/f/mzdqejng" method="POST">
-        <input type="text" name="name" placeholder="Your Name" data-fs-field autocomplete="name" required>
-        <input type="email" name="email" placeholder="Email Address" data-fs-field autocomplete="email" required>
-        <select name="project" data-fs-field autocomplete="off" required>
-          <option value="">Interest</option>
+        <label for="field-name">Name</label>
+        <input type="text" id="field-name" name="name" placeholder="Your Name" data-fs-field autocomplete="name" required>
+        <label for="field-email">Email</label>
+        <input type="email" id="field-email" name="email" placeholder="Email Address" data-fs-field autocomplete="email" required>
+        <label for="field-project">Interest</label>
+        <select id="field-project" name="project" data-fs-field autocomplete="off" required>
+          <option value="">Select an interest</option>
           <option value="Walnut-Base-Maple">Walnut + Maple</option>
           <option value="Cherry-Base-Walnut">Cherry + Walnut</option>
           <option value="Cherry-Base-Maple">Cherry + Maple</option>
           <option value="White-Oak-Base-Walnut">White Oak + Walnut</option>
           <option value="Other">Other question</option>
         </select>
-        <textarea name="message" rows="4" placeholder="Tell us about your interest or custom request..." data-fs-field autocomplete="off" required></textarea>
+        <label for="field-message">Message</label>
+        <textarea id="field-message" name="message" rows="4" placeholder="Tell us about your interest or custom request..." data-fs-field autocomplete="off" required></textarea>
         <input type="hidden" name="_subject" value="Heritage Float inquiry from stocktonandrogers.com">
         <button type="submit" id="form-submit-btn" data-fs-submit-btn>Send Inquiry</button>
       </form>
@@ -806,7 +886,7 @@
       <a href="/about">About</a>
       <a href="/gallery">Gallery</a>
       <a href="/shop">Shop</a>
-      <a href="/#connect">Contact</a>
+      <a href="/contact">Contact</a>
     </nav>
     <p>
       P.O. Box 10068 | Fayetteville, AR 72703<br>
@@ -1069,6 +1149,22 @@
       gallery._show = show;
     }
 
+    // Stripe Payment Links (placeholders — owner swaps in the live links)
+    const STRIPE_LINKS = {
+      'walnut-maple': 'STRIPE_LINK_WALNUT_MAPLE',
+      'cherry-walnut': 'STRIPE_LINK_CHERRY_WALNUT',
+      'cherry-maple': 'STRIPE_LINK_CHERRY_MAPLE',
+      'white-oak-walnut': 'STRIPE_LINK_WHITE_OAK_WALNUT'
+    };
+
+    // Interest dropdown values matching each wood variant
+    const INTEREST_VALUES = {
+      'walnut-maple': 'Walnut-Base-Maple',
+      'cherry-walnut': 'Cherry-Base-Walnut',
+      'cherry-maple': 'Cherry-Base-Maple',
+      'white-oak-walnut': 'White-Oak-Base-Walnut'
+    };
+
     function setActiveVariant(key) {
       if (!VARIANTS[key]) key = 'walnut-maple';
 
@@ -1076,6 +1172,12 @@
       document.querySelectorAll('.wood-swatches .swatch').forEach(s => {
         s.classList.toggle('active', s.getAttribute('data-variant') === key);
       });
+
+      // Keep Buy Now + Interest dropdown in sync with the selection
+      const buyBtn = document.getElementById('buy-now-btn');
+      if (buyBtn && STRIPE_LINKS[key]) buyBtn.href = STRIPE_LINKS[key];
+      const interest = document.getElementById('field-project');
+      if (interest && INTEREST_VALUES[key]) interest.value = INTEREST_VALUES[key];
 
       const gallery = document.querySelector('.gallery.carousel');
       if (!gallery) return;
@@ -1091,6 +1193,8 @@
         img.alt = d.alt;
         img.setAttribute('data-multi', d.multi);
         img.loading = 'lazy';
+        img.width = 1200;  // all carousel photos are 3:2 — reserves space, prevents layout shift
+        img.height = 800;
         img.style.cursor = 'pointer';
         if (i === 0) img.classList.add('active');
         gallery.appendChild(img);
@@ -1105,14 +1209,15 @@
       // Deep link support
       try {
         const url = new URL(window.location.href);
-        url.searchParams.set('variant', key);
+        url.searchParams.set('wood', key);
+        url.searchParams.delete('variant');
         history.replaceState({}, '', url);
       } catch (e) {}
     }
 
     function initVariantSelector() {
       const params = new URLSearchParams(window.location.search);
-      let start = params.get('variant');
+      let start = params.get('wood') || params.get('variant');
       if (!start || !VARIANTS[start]) start = 'walnut-maple';
       setActiveVariant(start);
 

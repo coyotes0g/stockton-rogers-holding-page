@@ -6,11 +6,11 @@
   <title>Shop | Stockton & Rogers | Functional Art</title>
 
   <!-- Professional metadata + Social sharing -->
-  <meta name="description" content="Handcrafted functional art from premium Northwest Arkansas hardwoods. Custom tables, picture frames, heirloom boxes, and sculptural clocks by Stockton & Rogers.">
-  <meta property="og:title" content="Stockton & Rogers | Functional Art">
-  <meta property="og:description" content="Exceptional pieces handcrafted from responsibly sourced hardwoods in Northwest Arkansas. Custom commissions welcome.">
+  <meta name="description" content="Shop handcrafted functional art from Stockton & Rogers: the Heritage Float™ Display Frame ($195) and Sentinel Vase™ (from $399), made to order in Northwest Arkansas hardwoods.">
+  <meta property="og:title" content="Shop | Stockton & Rogers">
+  <meta property="og:description" content="Heritage Float™ Display Frame and Sentinel Vase™ — heirloom pieces handcrafted to order in Northwest Arkansas hardwoods.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.stocktonandrogers.com">
+  <meta property="og:url" content="https://www.stocktonandrogers.com/shop">
   <!-- Recommended: Upload a beautiful 1200x630 image (use one of your best product shots) as images/og-image.jpg -->
   <!-- <meta property="og:image" content="https://www.stocktonandrogers.com/images/og-image.jpg"> -->
   <!-- <meta property="og:image:width" content="1200"> -->
@@ -18,8 +18,8 @@
 
   <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Stockton & Rogers | Functional Art">
-  <meta name="twitter:description" content="Handcrafted heirloom pieces from Northwest Arkansas hardwoods.">
+  <meta name="twitter:title" content="Shop | Stockton & Rogers">
+  <meta name="twitter:description" content="Heritage Float™ Display Frame and Sentinel Vase™ — handcrafted to order in Northwest Arkansas hardwoods.">
 
   <!-- Favicon -->
   <link rel="icon" href="logo.svg" type="image/svg+xml">
@@ -109,6 +109,16 @@
     .product-card:hover {
       transform: translateY(-3px);
       box-shadow: 0 12px 28px rgba(0,0,0,0.1) !important;
+    }
+
+    /* Card price — visible but quiet, matches the serif display type */
+    .card-price {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--walnut);
+      letter-spacing: 0.01em;
+      margin: 0 0 0.6rem;
     }
 
     /* Variant quick-links on product cards (jump straight to that wood combo) */
@@ -317,6 +327,17 @@
     .footer-nav a { color: var(--text-secondary); text-decoration: none; font-size: 0.93rem; font-weight: 500; transition: color 0.2s ease; }
     .footer-nav a:hover { color: var(--walnut); }
     .form { max-width: 520px; margin: 2rem auto 0; }
+    .form label {
+      display: block;
+      text-align: left;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin: 0 0 0.35rem 0.15rem;
+    }
+    #connect .form label { color: #C9B393; }
     .form input, .form textarea, .form select {
       width: 100%; padding: 0.85rem 1rem; margin-bottom: 1rem;
       border: 1px solid var(--border); border-radius: 8px; font-size: 1rem;
@@ -513,7 +534,7 @@
       <a href="/about">About</a>
       <a href="/gallery">Gallery</a>
       <a href="/shop" class="active">Shop</a>
-      <a href="#connect">Contact</a>
+      <a href="/contact">Contact</a>
       <a href="#connect" class="inquire-btn">Inquire</a>
     </div>
 
@@ -530,7 +551,7 @@
       <a href="/about">About</a>
       <a href="/gallery">Gallery</a>
       <a href="/shop" class="active">Shop</a>
-      <a href="#connect">Contact</a>
+      <a href="/contact">Contact</a>
       <a href="#connect" class="inquire-btn mobile">Inquire</a>
     </div>
   </nav>
@@ -551,19 +572,20 @@
         <!-- Heritage Float Card -->
         <div class="product-card" style="background: var(--bg-alt); border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.06); max-width: 460px; flex: 1 1 300px;">
           <a href="/heritage-float-display-frame" style="display: block;">
-            <img src="images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-4.jpeg" alt="Heritage Float Display Frame" style="width: 100%; height: 220px; object-fit: cover; display: block;">
+            <img src="images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-4.jpeg" alt="Heritage Float™ Display Frame — walnut base with maple inlay" width="3840" height="2560" loading="lazy" style="width: 100%; height: 220px; object-fit: cover; display: block;">
           </a>
           <div style="padding: 1rem 1.1rem;">
-            <h3 style="margin: 0 0 0.4rem; text-align: left; font-size: 1.5rem;">Heritage Float Display Frame</h3>
+            <h3 style="margin: 0 0 0.4rem; text-align: left; font-size: 1.5rem;">Heritage Float<sup style="font-size:0.55em;">™</sup> Display Frame</h3>
             <p style="margin: 0 0 0.6rem; color: var(--text-secondary); font-size: 0.95rem;">
               A substantial 5″ × 4″ hardwood base with floating 10mm acrylic panels. Your photograph appears to hover in elegant, gallery-like suspension.
             </p>
+            <p class="card-price">$195</p>
             <p style="margin: 0 0 0.75rem; font-size: 0.85rem; color: var(--text-muted); line-height: 1.9;">
               Available in four wood combinations:<br>
-              <a href="/heritage-float-display-frame?variant=walnut-maple" class="variant-link">Walnut + Maple</a> •
-              <a href="/heritage-float-display-frame?variant=cherry-walnut" class="variant-link">Cherry + Walnut</a> •
-              <a href="/heritage-float-display-frame?variant=cherry-maple" class="variant-link">Cherry + Maple</a> •
-              <a href="/heritage-float-display-frame?variant=white-oak-walnut" class="variant-link">White Oak + Walnut</a>
+              <a href="/heritage-float-display-frame?wood=walnut-maple" class="variant-link">Walnut + Maple</a> •
+              <a href="/heritage-float-display-frame?wood=cherry-walnut" class="variant-link">Cherry + Walnut</a> •
+              <a href="/heritage-float-display-frame?wood=cherry-maple" class="variant-link">Cherry + Maple</a> •
+              <a href="/heritage-float-display-frame?wood=white-oak-walnut" class="variant-link">White Oak + Walnut</a>
             </p>
             <a href="/heritage-float-display-frame" style="display: inline-block; background: var(--walnut); color: white; padding: 0.55rem 1.4rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.9rem;">View details</a>
           </div>
@@ -572,16 +594,19 @@
         <!-- Sentinel Vase Card -->
         <div class="product-card" style="background: var(--bg-alt); border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.06); max-width: 460px; flex: 1 1 300px;">
           <a href="/sentinel-vase" style="display: block;">
-            <img src="images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-lifestyle.jpeg" alt="Sentinel Vase" style="width: 100%; height: 220px; object-fit: cover; display: block;">
+            <img src="images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-lifestyle.jpeg" alt="Sentinel Vase™ pair — box-jointed oak columns with walnut fins on cherry bases" width="1728" height="1152" loading="lazy" style="width: 100%; height: 220px; object-fit: cover; display: block;">
           </a>
           <div style="padding: 1rem 1.1rem;">
-            <h3 style="margin: 0 0 0.4rem; text-align: left; font-size: 1.5rem;">Sentinel Vase</h3>
+            <h3 style="margin: 0 0 0.4rem; text-align: left; font-size: 1.5rem;">Sentinel Vase<sup style="font-size:0.55em;">™</sup></h3>
             <p style="margin: 0 0 0.6rem; color: var(--text-secondary); font-size: 0.95rem;">
               Tall architectural vessel with box-jointed oak column, sculptural walnut fins, and solid cherry base. Removable glass insert for fresh, dried, or faux stems.
             </p>
-            <p style="margin: 0 0 0.75rem; font-size: 0.85rem; color: var(--text-muted);">
+            <p class="card-price">From $399</p>
+            <p style="margin: 0 0 0.75rem; font-size: 0.85rem; color: var(--text-muted); line-height: 1.9;">
               Available as a set or individually.<br>
-              Sentinel Vase Pair • Sentinel Vase I or II
+              <a href="/sentinel-vase?config=pair" class="variant-link">Sentinel Vase Pair</a> •
+              <a href="/sentinel-vase?config=vase-1" class="variant-link">Sentinel Vase I</a> •
+              <a href="/sentinel-vase?config=vase-2" class="variant-link">Sentinel Vase II</a>
             </p>
             <a href="/sentinel-vase" style="display: inline-block; background: var(--walnut); color: white; padding: 0.55rem 1.4rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.9rem;">View details</a>
           </div>
@@ -610,19 +635,25 @@
       Real endpoint: https://formspree.io/f/mzdqejng
     -->
     <form id="contact-form" class="form" action="https://formspree.io/f/mzdqejng" method="POST">
-      <input type="text" name="name" placeholder="Your Name" data-fs-field autocomplete="name" required>
-      <input type="email" name="email" placeholder="Email Address" data-fs-field autocomplete="email" required>
-      <select name="project" data-fs-field autocomplete="off" required>
-        <option value="">Interest</option>
+      <label for="field-name">Name</label>
+      <input type="text" id="field-name" name="name" placeholder="Your Name" data-fs-field autocomplete="name" required>
+      <label for="field-email">Email</label>
+      <input type="email" id="field-email" name="email" placeholder="Email Address" data-fs-field autocomplete="email" required>
+      <label for="field-project">Interest</label>
+      <select id="field-project" name="project" data-fs-field autocomplete="off" required>
+        <option value="">Select an interest</option>
         <option value="Walnut+Maple">Walnut + Maple Frame</option>
         <option value="Cherry+Walnut">Cherry + Walnut Frame</option>
         <option value="Cherry+Maple">Cherry + Maple Frame</option>
         <option value="WhiteOak+Walnut">White Oak + Walnut Frame</option>
-        <option value="Sentinel-Vase">Sentinel Vase</option>
+        <option value="Sentinel-Vase-Pair">Sentinel Vase Pair</option>
+        <option value="Sentinel-Vase-I">Sentinel Vase I</option>
+        <option value="Sentinel-Vase-II">Sentinel Vase II</option>
         <option value="Custom">Custom Commission</option>
         <option value="Other">Other</option>
       </select>
-      <textarea name="message" rows="4" placeholder="Tell us about your interest or custom request..." data-fs-field autocomplete="off" required></textarea>
+      <label for="field-message">Message</label>
+      <textarea id="field-message" name="message" rows="4" placeholder="Tell us about your interest or custom request..." data-fs-field autocomplete="off" required></textarea>
       <input type="hidden" name="_subject" value="Shop inquiry from stocktonandrogers.com">
       <button type="submit" id="form-submit-btn" data-fs-submit-btn>Send Inquiry</button>
     </form>
@@ -644,7 +675,7 @@
       <a href="/about">About</a>
       <a href="/gallery">Gallery</a>
       <a href="/shop">Shop</a>
-      <a href="/#connect">Contact</a>
+      <a href="/contact">Contact</a>
     </nav>
     <p>
       P.O. Box 10068 | Fayetteville, AR 72703<br>

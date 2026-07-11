@@ -9,7 +9,9 @@
     { "source": "/heritage-float-display-frame", "destination": "/heritage-float-display-frame.html" },
     { "source": "/heritage-float-display-frame/", "destination": "/heritage-float-display-frame.html" },
     { "source": "/sentinel-vase", "destination": "/sentinel-vase.html" },
-    { "source": "/sentinel-vase/", "destination": "/sentinel-vase.html" }
+    { "source": "/sentinel-vase/", "destination": "/sentinel-vase.html" },
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/contact/", "destination": "/contact.html" }
   ],
   "redirects": [
     { "source": "/index.html", "destination": "/", "statusCode": 301 },
@@ -18,6 +20,7 @@
     { "source": "/shop.html", "destination": "/shop", "statusCode": 301 },
     { "source": "/heritage-float-display-frame.html", "destination": "/heritage-float-display-frame", "statusCode": 301 },
     { "source": "/sentinel-vase.html", "destination": "/sentinel-vase", "statusCode": 301 },
+    { "source": "/contact.html", "destination": "/contact", "statusCode": 301 },
     {
       "source": "/heritage-float-walnut-maple.html",
       "destination": "/heritage-float-display-frame.html?variant=walnut-maple",

@@ -10,7 +10,7 @@
   <meta property="og:title" content="About | Stockton & Rogers | Functional Art">
   <meta property="og:description" content="A high-end custom woodworking studio rooted in Northwest Arkansas. Heirloom-quality pieces that fuse beauty and functionality.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.stocktonandrogers.com">
+  <meta property="og:url" content="https://www.stocktonandrogers.com/about">
   <!-- Recommended: Upload a beautiful 1200x630 image (use one of your best product shots) as images/og-image.jpg -->
   <!-- <meta property="og:image" content="https://www.stocktonandrogers.com/images/og-image.jpg"> -->
   <!-- <meta property="og:image:width" content="1200"> -->
@@ -287,6 +287,17 @@
     .footer-nav a { color: var(--text-secondary); text-decoration: none; font-size: 0.93rem; font-weight: 500; transition: color 0.2s ease; }
     .footer-nav a:hover { color: var(--walnut); }
     .form { max-width: 520px; margin: 2rem auto 0; }
+    .form label {
+      display: block;
+      text-align: left;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin: 0 0 0.35rem 0.15rem;
+    }
+    #connect .form label { color: #C9B393; }
     .form input, .form textarea, .form select {
       width: 100%; padding: 0.85rem 1rem; margin-bottom: 1rem;
       border: 1px solid var(--border); border-radius: 8px; font-size: 1rem;
@@ -484,7 +495,7 @@
       <a href="/about" class="active">About</a>
       <a href="/gallery">Gallery</a>
       <a href="/shop">Shop</a>
-      <a href="#connect">Contact</a>
+      <a href="/contact">Contact</a>
       <a href="#connect" class="inquire-btn">Inquire</a>
     </div>
 
@@ -501,7 +512,7 @@
       <a href="/about" class="active">About</a>
       <a href="/gallery">Gallery</a>
       <a href="/shop">Shop</a>
-      <a href="#connect">Contact</a>
+      <a href="/contact">Contact</a>
       <a href="#connect" class="inquire-btn mobile">Inquire</a>
     </div>
   </nav>
@@ -522,9 +533,9 @@
       <p>This is more than furniture. <em>It's functional art.</em><br>Welcome to Stockton &amp; Rogers.</p>
 
       <div class="about-family-photos">
-        <img src="images/great-uncle.jpeg" alt="Great Uncle" style="object-fit:cover; border-radius:4px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
-        <img src="images/jsrogers.jpeg" alt="J.S. Rogers" style="object-fit:cover; border-radius:4px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
-        <img src="images/wgrogers.jpeg" alt="W.G. Rogers" style="object-fit:cover; border-radius:4px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
+        <img src="images/great-uncle.jpeg" alt="Family photo — great uncle working timber in the Ozarks" width="648" height="864" loading="lazy" style="object-fit:cover; border-radius:4px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
+        <img src="images/jsrogers.jpeg" alt="J.S. Rogers at the family workshop with two dogs" width="1152" height="1536" loading="lazy" style="object-fit:cover; border-radius:4px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
+        <img src="images/wgrogers.jpeg" alt="W.G. Rogers carrying a chainsaw on the family land" width="1151" height="1534" loading="lazy" style="object-fit:cover; border-radius:4px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
       </div>
 
       <h3 style="text-align:center; margin:1.5rem 0 0.5rem; font-size:1.6rem;">Our Roots</h3>
@@ -546,17 +557,21 @@
       Real endpoint: https://formspree.io/f/mzdqejng
     -->
     <form id="contact-form" class="form" action="https://formspree.io/f/mzdqejng" method="POST">
-      <input type="text" name="name" placeholder="Your Name" data-fs-field autocomplete="name" required>
-      <input type="email" name="email" placeholder="Email Address" data-fs-field autocomplete="email" required>
-      <select name="project" data-fs-field autocomplete="off" required>
-        <option value="">Project Type</option>
+      <label for="field-name">Name</label>
+      <input type="text" id="field-name" name="name" placeholder="Your Name" data-fs-field autocomplete="name" required>
+      <label for="field-email">Email</label>
+      <input type="email" id="field-email" name="email" placeholder="Email Address" data-fs-field autocomplete="email" required>
+      <label for="field-project">Project Type</label>
+      <select id="field-project" name="project" data-fs-field autocomplete="off" required>
+        <option value="">Select a project type</option>
         <option value="Table">Custom Table</option>
         <option value="Frame">Picture Frame / Triptych</option>
         <option value="Box">Heirloom Box or Keepsake</option>
         <option value="Clock">Sculptural Clock</option>
         <option value="Other">Other / Custom Commission</option>
       </select>
-      <textarea name="message" rows="4" placeholder="Tell us about your project..." data-fs-field autocomplete="off" required></textarea>
+      <label for="field-message">Message</label>
+      <textarea id="field-message" name="message" rows="4" placeholder="Tell us about your project..." data-fs-field autocomplete="off" required></textarea>
       <input type="hidden" name="_subject" value="Inquiry from stocktonandrogers.com">
       <button type="submit" id="form-submit-btn" data-fs-submit-btn>Send Inquiry</button>
     </form>
@@ -578,7 +593,7 @@
       <a href="/about">About</a>
       <a href="/gallery">Gallery</a>
       <a href="/shop">Shop</a>
-      <a href="/#connect">Contact</a>
+      <a href="/contact">Contact</a>
     </nav>
     <p>
       P.O. Box 10068 | Fayetteville, AR 72703<br>
