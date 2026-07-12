@@ -245,11 +245,13 @@
        The photo is scaled past the frame (122%) and shifted so the crop removes
        empty backdrop above/below the stone, not the stone itself. */
     .hero-art {
+      /* Measured: the stone spans 23.4%–89.8% of the photo's height. 144% scale with
+         a 70% top bias shows exactly 21.4%–90.8% — max size, stone never clipped. */
       position: absolute;
       left: 50%;
-      top: 86%;
-      transform: translate(-50%, -86%);
-      height: 150%;
+      top: 70%;
+      transform: translate(-50%, -70%);
+      height: 144%;
       width: auto;
       max-width: none;
       filter: brightness(1.14) saturate(1.03);
