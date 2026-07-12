@@ -6,11 +6,11 @@
   <title>Shop | Stockton & Rogers | Functional Art</title>
 
   <!-- Professional metadata + Social sharing -->
-  <meta name="description" content="Handcrafted functional art from premium Northwest Arkansas hardwoods. Custom tables, picture frames, heirloom boxes, and sculptural clocks by Stockton & Rogers.">
-  <meta property="og:title" content="Stockton & Rogers | Functional Art">
-  <meta property="og:description" content="Exceptional pieces handcrafted from responsibly sourced hardwoods in Northwest Arkansas. Custom commissions welcome.">
+  <meta name="description" content="Shop handcrafted functional art from Stockton & Rogers: the Heritage Float™ Display Frame ($195) and Sentinel Vase™ (from $399), made to order in Northwest Arkansas hardwoods.">
+  <meta property="og:title" content="Shop | Stockton & Rogers">
+  <meta property="og:description" content="Heritage Float™ Display Frame and Sentinel Vase™ — heirloom pieces handcrafted to order in Northwest Arkansas hardwoods.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.stocktonandrogers.com">
+  <meta property="og:url" content="https://www.stocktonandrogers.com/shop">
   <!-- Recommended: Upload a beautiful 1200x630 image (use one of your best product shots) as images/og-image.jpg -->
   <!-- <meta property="og:image" content="https://www.stocktonandrogers.com/images/og-image.jpg"> -->
   <!-- <meta property="og:image:width" content="1200"> -->
@@ -18,11 +18,16 @@
 
   <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Stockton & Rogers | Functional Art">
-  <meta name="twitter:description" content="Handcrafted heirloom pieces from Northwest Arkansas hardwoods.">
+  <meta name="twitter:title" content="Shop | Stockton & Rogers">
+  <meta name="twitter:description" content="Heritage Float™ Display Frame and Sentinel Vase™ — handcrafted to order in Northwest Arkansas hardwoods.">
 
   <!-- Favicon -->
-  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="icon" href="logo-master.svg" type="image/svg+xml">
+
+  <!-- Typography: elegant serif for headings, refined sans for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root { 
       --bg: #F8F5F0;
@@ -36,14 +41,22 @@
       --deep: #2C2823; /* warm deep charcoal for dark accents, header bars, cta cards */
     }
     * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
     html, body { width: 100%; overflow-x: hidden; }
-    body { 
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
-      line-height: 1.7; 
-      color: var(--text-primary); 
-      background: var(--bg); 
-      letter-spacing: -0.015em;
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.7;
+      color: var(--text-primary);
+      background: var(--bg);
+      letter-spacing: -0.005em;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
+
+    /* Gentle scroll-reveal (class is added by JS, so content stays visible without it) */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
 
     /* Professional focus styles for accessibility */
     a:focus-visible,
@@ -54,12 +67,72 @@
       outline: 2px solid var(--walnut);
       outline-offset: 2px;
     }
-    h1, h2, h3 { 
-      font-family: Georgia, 'Times New Roman', serif; 
-      font-weight: 600; 
-      letter-spacing: -0.025em; 
+    h1, h2, h3 {
+      font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+      font-weight: 600;
+      letter-spacing: 0.005em;
+      line-height: 1.2;
       color: var(--text-primary);
       text-align: center;
+    }
+
+    /* Small uppercase section label for a refined editorial feel */
+    .eyebrow {
+      display: block;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--walnut-light);
+      text-align: center;
+      margin-bottom: 0.6rem;
+    }
+    #connect .eyebrow { color: #C9B393; }
+
+    /* Dark page-title banner shared across interior pages */
+    .page-hero {
+      margin-top: 60px;
+      background: linear-gradient(135deg, #262119 0%, #3A322B 50%, #262119 100%);
+      border-bottom: 3px solid var(--walnut);
+      padding: 2.9rem 6% 2.6rem;
+      text-align: center;
+    }
+    .page-hero h1 { color: #F5F2EC; font-size: 2.7rem; margin: 0; }
+    .page-hero .eyebrow { color: #C9B393; margin-bottom: 0.35rem; }
+    .page-hero .sub { color: #CFC8BD; margin: 0.45rem auto 0; font-size: 0.98rem; max-width: 60ch; }
+
+    /* Product catalog cards */
+    .product-card {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.1) !important;
+    }
+
+    /* Card price — visible but quiet, matches the serif display type */
+    .card-price {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--walnut);
+      letter-spacing: 0.01em;
+      margin: 0 0 0.6rem;
+    }
+
+    /* Variant quick-links on product cards (jump straight to that wood combo) */
+    .variant-link {
+      color: var(--walnut);
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.2s ease, border-color 0.2s ease;
+      white-space: nowrap;
+    }
+    .variant-link:hover {
+      color: var(--walnut-light);
+      border-color: var(--walnut-light);
     }
 
     .nav { 
@@ -71,12 +144,21 @@
       display: flex; justify-content: space-between; align-items: center; 
       border-bottom: 1px solid var(--border);
     }
-    .nav .logo img { 
-      height: 40px; 
+    .nav .logo img {
+      height: 46px;
       shape-rendering: geometricPrecision;
-      image-rendering: -webkit-optimize-contrast;
     }
-    .nav a { margin-left: 2.25rem; text-decoration: none; color: var(--text-primary); font-weight: 500; font-size: 0.95rem; }
+    .nav a { margin-left: 2.25rem; text-decoration: none; color: var(--text-primary); font-weight: 500; font-size: 0.95rem; transition: color 0.2s ease; }
+    .nav .nav-links a:not(.inquire-btn) { position: relative; padding-bottom: 3px; }
+    .nav .nav-links a:not(.inquire-btn)::after {
+      content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px;
+      background: var(--walnut); transform: scaleX(0); transform-origin: center;
+      transition: transform 0.25s ease;
+    }
+    .nav .nav-links a:not(.inquire-btn):hover::after,
+    .nav .nav-links a.active:not(.inquire-btn)::after { transform: scaleX(1); }
+    .nav .nav-links a.active { color: var(--walnut); }
+    .nav-mobile a.active { color: var(--walnut); font-weight: 600; }
     .nav .inquire-btn {
       background: var(--walnut); color: white; padding: 0.5rem 1.35rem; border-radius: 50px; 
       text-decoration: none; font-weight: 600; font-size: 0.9rem; margin-left: 1.5rem;
@@ -158,7 +240,6 @@
       top: -155px;                /* lifted higher to show more of the fossil/mineral background */
       margin-bottom: 0.6rem;
       shape-rendering: geometricPrecision;
-      image-rendering: -webkit-optimize-contrast;
     }
     .hero .tagline { 
       font-size: 1.35rem; 
@@ -179,10 +260,12 @@
       text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.2s ease;
     }
     .btn-primary:hover { background: #F0EBE3; transform: translateY(-1px); }
-    .btn-secondary { 
-      border: 2px solid white; color: white; padding: 0.85rem 2.1rem; border-radius: 50px; 
+    .btn-secondary {
+      border: 2px solid white; color: white; padding: 0.85rem 2.1rem; border-radius: 50px;
       text-decoration: none; font-weight: 600; font-size: 1rem;
+      transition: background 0.2s ease, transform 0.2s ease;
     }
+    .btn-secondary:hover { background: rgba(255,255,255,0.14); transform: translateY(-1px); }
     .container { 
       padding: 5.75rem 6%; 
       max-width: 1280px; 
@@ -215,13 +298,13 @@
     .gallery { 
       display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; 
     }
-    .gallery img { 
-      width: 100%; height: auto; border-radius: 6px; 
-      box-shadow: 0 10px 24px rgba(0,0,0,0.1); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), box-shadow 0.35s ease; cursor: pointer;
+    .gallery img {
+      width: 100%; height: auto; border-radius: 8px; display: block;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.1); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), box-shadow 0.35s ease; cursor: zoom-in;
     }
-    .gallery img:hover { 
-      transform: scale(1.015); 
-      box-shadow: 0 16px 34px rgba(0,0,0,0.13);
+    .gallery img:hover {
+      transform: scale(1.015) translateY(-2px);
+      box-shadow: 0 16px 34px rgba(0,0,0,0.15);
     }
 
     /* Subtle professional entrance animation for gallery */
@@ -234,30 +317,54 @@
     }
     /* .cta and .craft no longer force full-width or page-level bgs (reverted). 
        The contact cta uses contained dark treatment via #connect .container above. */
-    footer { 
-      background: var(--bg-alt); padding: 3rem 6%; text-align: center; 
+    footer {
+      background: var(--bg-alt); padding: 3.25rem 6% 2.5rem; text-align: center;
       font-size: 0.92rem; color: var(--text-muted); border-top: 1px solid var(--border);
     }
+    .footer-nav { display: flex; gap: 1.9rem; justify-content: center; flex-wrap: wrap; margin: 0.9rem 0 1.3rem; }
+    .footer-nav a { color: var(--text-secondary); text-decoration: none; font-size: 0.93rem; font-weight: 500; transition: color 0.2s ease; }
+    .footer-nav a:hover { color: var(--walnut); }
     .form { max-width: 520px; margin: 2rem auto 0; }
-    .form input, .form textarea, .form select { 
-      width: 100%; padding: 0.85rem 1rem; margin-bottom: 1rem; 
-      border: 1px solid var(--border); border-radius: 6px; font-size: 1rem;
+    .form label {
+      display: block;
+      text-align: left;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin: 0 0 0.35rem 0.15rem;
     }
-    .form button { 
-      background: var(--walnut); color: white; padding: 0.9rem 2.4rem; border: none; 
-      border-radius: 50px; font-weight: 700; cursor: pointer; font-size: 1rem;
-      transition: background 0.2s ease;
+    #connect .form label { color: #C9B393; }
+    .form input, .form textarea, .form select {
+      width: 100%; padding: 0.85rem 1rem; margin-bottom: 1rem;
+      border: 1px solid var(--border); border-radius: 8px; font-size: 1rem;
+      font-family: inherit; color: var(--text-primary); background: #fff;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .form input:focus, .form textarea:focus, .form select:focus {
+      outline: none; border-color: var(--walnut-light);
+      box-shadow: 0 0 0 3px rgba(139,111,71,0.18);
+    }
+    .form button {
+      background: var(--walnut); color: white; padding: 0.9rem 2.4rem; border: none;
+      border-radius: 50px; font-weight: 600; cursor: pointer; font-size: 1rem;
+      font-family: inherit; letter-spacing: 0.01em;
+      transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
     }
     .form button:hover {
       background: var(--walnut-light);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(92,64,51,0.25);
     }
 
     /* Lightbox Styles */
-    .lightbox { 
-      display: none; position: fixed; z-index: 1000; left: 0; top: 0; 
-      width: 100%; height: 100%; background-color: rgba(0,0,0,0.92); 
-      overflow: auto; 
-      display: flex; align-items: center; justify-content: center;
+    .lightbox {
+      position: fixed; z-index: 1000; left: 0; top: 0;
+      width: 100%; height: 100%; background-color: rgba(18,15,12,0.94);
+      backdrop-filter: blur(6px);
+      overflow: auto;
+      display: none; align-items: center; justify-content: center;
     }
     .lightbox-content { 
       position: relative; margin: 0; display: block; 
@@ -287,11 +394,11 @@
       pointer-events: none;
     }
     .arrow {
-      background: #555;
+      background: rgba(255,255,255,0.1);
       color: #fff;
-      font-size: 36px;
-      width: 50px;
-      height: 50px;
+      font-size: 30px;
+      width: 52px;
+      height: 52px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -299,13 +406,14 @@
       cursor: pointer;
       user-select: none;
       pointer-events: auto;
-      transition: background 0.2s, transform 0.1s;
-      border: 2px solid #777;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      transition: background 0.2s, transform 0.1s, border-color 0.2s;
+      border: 1px solid rgba(255,255,255,0.35);
+      backdrop-filter: blur(4px);
     }
     .arrow:hover {
-      background: #666;
-      transform: scale(1.1);
+      background: rgba(255,255,255,0.22);
+      border-color: rgba(255,255,255,0.6);
+      transform: scale(1.08);
     }
     .arrow:active {
       transform: scale(0.95);
@@ -351,8 +459,7 @@
         height: 102px; 
         top: -180px;               /* lifted higher to reveal more of the mineral/fossil detail in the background */
         shape-rendering: geometricPrecision;
-        image-rendering: -webkit-optimize-contrast;
-      }
+        }
       .hero-buttons {
         margin-top: 2.5rem;        /* reduced to keep tagline + buttons balanced after extra lift */
       }
@@ -416,15 +523,15 @@
 
   <!-- NAV -->
   <nav class="nav">
-    <div class="logo"><a href="index.html"><img src="logo.svg" alt="Stockton & Rogers"></a></div>
+    <div class="logo"><a href="/"><img src="logo-master.svg" alt="Stockton & Rogers"></a></div>
     
     <!-- Desktop nav -->
     <div class="nav-links" style="display: flex; align-items: center;">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="shop.html">Shop</a>
-      <a href="#connect">Contact</a>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/gallery">Gallery</a>
+      <a href="/shop" class="active">Shop</a>
+      <a href="/contact">Contact</a>
       <a href="#connect" class="inquire-btn">Inquire</a>
     </div>
 
@@ -437,21 +544,20 @@
 
     <!-- Mobile menu -->
     <div class="nav-mobile">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="shop.html">Shop</a>
-      <a href="#connect">Contact</a>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/gallery">Gallery</a>
+      <a href="/shop" class="active">Shop</a>
+      <a href="/contact">Contact</a>
       <a href="#connect" class="inquire-btn mobile">Inquire</a>
     </div>
   </nav>
 
   <!-- PAGE INTRO -->
-  <section style="padding: 0; background: #3A2F2A; margin-top: 60px;">
-    <div class="container" style="padding: 1.1rem 6% 0.85rem; min-height: auto; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-      <h1 style="text-align:center; font-size:2.4rem; margin: 0 0 0.15rem; color:#f5f5f5;">Shop</h1>
-      <span style="font-size: 0.9rem; color: #d4cfc6; letter-spacing: 0.5px; text-align: center;">Handcrafted. Timeless Design. Heirloom Quality.</span>
-    </div>
+  <section class="page-hero">
+    <span class="eyebrow">Available Work</span>
+    <h1>Shop</h1>
+    <p class="sub">Handcrafted. Timeless Design. Heirloom Quality.</p>
   </section>
 
   <!-- PRODUCTS -->
@@ -461,38 +567,45 @@
       <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;">
 
         <!-- Heritage Float Card -->
-        <div style="background: var(--bg-alt); border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.06); max-width: 460px; flex: 1 1 300px;">
-          <a href="heritage-float-display-frame.html" style="display: block;">
-            <img src="images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-4.jpeg" alt="Heritage Float Display Frame" style="width: 100%; height: 220px; object-fit: cover; display: block;">
+        <div class="product-card" style="background: var(--bg-alt); border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.06); max-width: 460px; flex: 1 1 300px;">
+          <a href="/heritage-float-display-frame" style="display: block;">
+            <img src="images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-4.jpeg" alt="Heritage Float™ Display Frame — walnut base with maple inlay" width="3840" height="2560" loading="lazy" style="width: 100%; height: 220px; object-fit: cover; display: block;">
           </a>
           <div style="padding: 1rem 1.1rem;">
-            <h3 style="margin: 0 0 0.4rem; text-align: left; font-size: 1.25rem;">Heritage Float Display Frame</h3>
+            <h3 style="margin: 0 0 0.4rem; text-align: left; font-size: 1.5rem;">Heritage Float<sup style="font-size:0.55em;">™</sup> Display Frame</h3>
             <p style="margin: 0 0 0.6rem; color: var(--text-secondary); font-size: 0.95rem;">
               A substantial 5″ × 4″ hardwood base with floating 10mm acrylic panels. Your photograph appears to hover in elegant, gallery-like suspension.
             </p>
-            <p style="margin: 0 0 0.75rem; font-size: 0.85rem; color: var(--text-muted);">
+            <p class="card-price">$195</p>
+            <p style="margin: 0 0 0.75rem; font-size: 0.85rem; color: var(--text-muted); line-height: 1.9;">
               Available in four wood combinations:<br>
-              Walnut + Maple • Cherry + Walnut • Cherry + Maple • White Oak + Walnut.
+              <a href="/heritage-float-display-frame?wood=walnut-maple" class="variant-link">Walnut + Maple</a> •
+              <a href="/heritage-float-display-frame?wood=cherry-walnut" class="variant-link">Cherry + Walnut</a> •
+              <a href="/heritage-float-display-frame?wood=cherry-maple" class="variant-link">Cherry + Maple</a> •
+              <a href="/heritage-float-display-frame?wood=white-oak-walnut" class="variant-link">White Oak + Walnut</a>
             </p>
-            <a href="heritage-float-display-frame.html" style="display: inline-block; background: var(--walnut); color: white; padding: 0.55rem 1.4rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.9rem;">View details</a>
+            <a href="/heritage-float-display-frame" style="display: inline-block; background: var(--walnut); color: white; padding: 0.55rem 1.4rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.9rem;">View details</a>
           </div>
         </div>
 
         <!-- Sentinel Vase Card -->
-        <div style="background: var(--bg-alt); border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.06); max-width: 460px; flex: 1 1 300px;">
-          <a href="sentinel-vase.html" style="display: block;">
-            <img src="images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-lifestyle.jpeg" alt="Sentinel Vase" style="width: 100%; height: 220px; object-fit: cover; display: block;">
+        <div class="product-card" style="background: var(--bg-alt); border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.06); max-width: 460px; flex: 1 1 300px;">
+          <a href="/sentinel-vase" style="display: block;">
+            <img src="images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-lifestyle.jpeg" alt="Sentinel Vase™ pair — box-jointed oak columns with walnut fins on cherry bases" width="1728" height="1152" loading="lazy" style="width: 100%; height: 220px; object-fit: cover; display: block;">
           </a>
           <div style="padding: 1rem 1.1rem;">
-            <h3 style="margin: 0 0 0.4rem; text-align: left; font-size: 1.25rem;">Sentinel Vase</h3>
+            <h3 style="margin: 0 0 0.4rem; text-align: left; font-size: 1.5rem;">Sentinel Vase<sup style="font-size:0.55em;">™</sup></h3>
             <p style="margin: 0 0 0.6rem; color: var(--text-secondary); font-size: 0.95rem;">
               Tall architectural vessel with box-jointed oak column, sculptural walnut fins, and solid cherry base. Removable glass insert for fresh, dried, or faux stems.
             </p>
-            <p style="margin: 0 0 0.75rem; font-size: 0.85rem; color: var(--text-muted);">
+            <p class="card-price">From $399</p>
+            <p style="margin: 0 0 0.75rem; font-size: 0.85rem; color: var(--text-muted); line-height: 1.9;">
               Available as a set or individually.<br>
-              Sentinel Vase Pair • Sentinel Vase I or II
+              <a href="/sentinel-vase?config=pair" class="variant-link">Sentinel Vase Pair</a> •
+              <a href="/sentinel-vase?config=vase-1" class="variant-link">Sentinel Vase I</a> •
+              <a href="/sentinel-vase?config=vase-2" class="variant-link">Sentinel Vase II</a>
             </p>
-            <a href="sentinel-vase.html" style="display: inline-block; background: var(--walnut); color: white; padding: 0.55rem 1.4rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.9rem;">View details</a>
+            <a href="/sentinel-vase" style="display: inline-block; background: var(--walnut); color: white; padding: 0.55rem 1.4rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.9rem;">View details</a>
           </div>
         </div>
 
@@ -507,8 +620,9 @@
 
   <!-- CONTACT / FORM -->
   <section id="connect" class="cta">
-    <div class="container">
-      <h2 style="font-size:2.5rem; margin-bottom:1rem; color:white;">Ready to purchase or inquire?</h2>
+    <div class="container" data-reveal>
+      <span class="eyebrow">Get in Touch</span>
+      <h2 style="font-size:2.6rem; margin-bottom:1rem; color:white;">Ready to purchase or inquire?</h2>
       <p style="max-width:620px; margin:0 auto 2rem; font-size:1.1rem; color:#EDE8E0;">
         Use the form below or contact us directly.
       </p>
@@ -518,19 +632,25 @@
       Real endpoint: https://formspree.io/f/mzdqejng
     -->
     <form id="contact-form" class="form" action="https://formspree.io/f/mzdqejng" method="POST">
-      <input type="text" name="name" placeholder="Your Name" data-fs-field autocomplete="name" required>
-      <input type="email" name="email" placeholder="Email Address" data-fs-field autocomplete="email" required>
-      <select name="project" data-fs-field autocomplete="off" required>
-        <option value="">Interest</option>
+      <label for="field-name">Name</label>
+      <input type="text" id="field-name" name="name" placeholder="Your Name" data-fs-field autocomplete="name" required>
+      <label for="field-email">Email</label>
+      <input type="email" id="field-email" name="email" placeholder="Email Address" data-fs-field autocomplete="email" required>
+      <label for="field-project">Interest</label>
+      <select id="field-project" name="project" data-fs-field autocomplete="off" required>
+        <option value="">Select an interest</option>
         <option value="Walnut+Maple">Walnut + Maple Frame</option>
         <option value="Cherry+Walnut">Cherry + Walnut Frame</option>
         <option value="Cherry+Maple">Cherry + Maple Frame</option>
         <option value="WhiteOak+Walnut">White Oak + Walnut Frame</option>
-        <option value="Sentinel-Vase">Sentinel Vase</option>
+        <option value="Sentinel-Vase-Pair">Sentinel Vase Pair</option>
+        <option value="Sentinel-Vase-I">Sentinel Vase I</option>
+        <option value="Sentinel-Vase-II">Sentinel Vase II</option>
         <option value="Custom">Custom Commission</option>
         <option value="Other">Other</option>
       </select>
-      <textarea name="message" rows="4" placeholder="Tell us about your interest or custom request..." data-fs-field autocomplete="off" required></textarea>
+      <label for="field-message">Message</label>
+      <textarea id="field-message" name="message" rows="4" placeholder="Tell us about your interest or custom request..." data-fs-field autocomplete="off" required></textarea>
       <input type="hidden" name="_subject" value="Shop inquiry from stocktonandrogers.com">
       <button type="submit" id="form-submit-btn" data-fs-submit-btn>Send Inquiry</button>
     </form>
@@ -545,13 +665,20 @@
   </section>
 
   <footer>
-    <img src="logo.svg" alt="Stockton & Rogers" style="height: 72px; margin-bottom: 12px;">
-    <p style="margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--text-secondary); font-style: italic;">Handcrafted. Timeless Design. Heirloom Quality.</p>
+    <img src="logo-master.svg" alt="Stockton & Rogers" style="height: 72px; margin-bottom: 10px;">
+    <p style="margin-bottom: 0.25rem; font-size: 0.95rem; color: var(--text-secondary); font-style: italic;">Handcrafted. Timeless Design. Heirloom Quality.</p>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/gallery">Gallery</a>
+      <a href="/shop">Shop</a>
+      <a href="/contact">Contact</a>
+    </nav>
     <p>
-      © 2026 • All pieces handcrafted in Northwest Arkansas<br>
-      P.O. Box 10068 | Fayetteville, AR 72703<br>
-      <a href="tel:4793963935" style="color:inherit; text-decoration:underline;">(479) 396-3935</a> | 
-      <a href="mailto:contact@stocktonandrogers.com" style="color:inherit; text-decoration:underline;">contact@stocktonandrogers.com</a>
+      P.O. Box 10068 &nbsp;•&nbsp; Fayetteville, AR 72703<br>
+      <a href="tel:4793963935" style="color:inherit; text-decoration:none;">(479) 396-3935</a> &nbsp;•&nbsp;
+      <a href="mailto:contact@stocktonandrogers.com" style="color:inherit; text-decoration:none;">contact@stocktonandrogers.com</a><br>
+      © 2026 Stockton &amp; Rogers • All pieces handcrafted in Northwest Arkansas
     </p>
   </footer>
 
@@ -601,7 +728,8 @@
         }
 
         if (captionEl && currentCaptions[index]) {
-          captionEl.textContent = currentCaptions[index];
+          const counter = currentImages.length > 1 ? '  ·  ' + (index + 1) + ' / ' + currentImages.length : '';
+          captionEl.textContent = currentCaptions[index] + counter;
         }
         arrows.style.display = currentImages.length > 1 ? 'flex' : 'none';
       }
@@ -719,6 +847,22 @@
         img.style.animationDelay = `${80 + (index * 45)}ms`;
         img.classList.add('gallery-animated');
       });
+
+      // Gentle scroll-reveal for content sections (skipped for reduced-motion users)
+      if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('[data-reveal]').forEach(el => {
+          el.classList.add('reveal');
+          io.observe(el);
+        });
+      }
     });
 
     document.addEventListener('keydown', e => {

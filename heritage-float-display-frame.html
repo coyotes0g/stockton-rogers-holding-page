@@ -10,7 +10,7 @@
   <meta property="og:title" content="Heritage Float Display Frame | Stockton &amp; Rogers">
   <meta property="og:description" content="Your story, beautifully suspended. Solid hardwood base with a frameless floating acrylic panel. Handcrafted in Northwest Arkansas.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.stocktonandrogers.com/heritage-float-display-frame.html">
+  <meta property="og:url" content="https://www.stocktonandrogers.com/heritage-float-display-frame">
   <!-- <meta property="og:image" content="https://www.stocktonandrogers.com/images/og-image.jpg"> -->
 
   <!-- Twitter / X Card -->
@@ -18,8 +18,32 @@
   <meta name="twitter:title" content="Heritage Float Display Frame | Stockton &amp; Rogers">
   <meta name="twitter:description" content="Handcrafted heirloom photo display with floating acrylic. Premium hardwoods from Northwest Arkansas.">
 
+  <!-- Product structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Heritage Float™ Display Frame",
+    "description": "Solid premium hardwood base with two floating 10mm acrylic panels. Handcrafted to order in Northwest Arkansas in four heirloom wood combinations.",
+    "image": "https://www.stocktonandrogers.com/images/Shop/Products/Heritage%20Float%20Display%20Frame/Walnut-Maple/heritage-float-display-frame-walnut-4.jpeg",
+    "brand": { "@type": "Brand", "name": "Stockton & Rogers" },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://www.stocktonandrogers.com/heritage-float-display-frame",
+      "price": "195",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
   <!-- Favicon -->
-  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="icon" href="logo-master.svg" type="image/svg+xml">
+
+  <!-- Typography: elegant serif for headings, refined sans for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root { 
       --bg: #F8F5F0;
@@ -33,14 +57,22 @@
       --deep: #2C2823; /* warm deep charcoal for dark accents, header bars, cta cards */
     }
     * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
     html, body { width: 100%; overflow-x: hidden; }
-    body { 
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
-      line-height: 1.7; 
-      color: var(--text-primary); 
-      background: var(--bg); 
-      letter-spacing: -0.015em;
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.7;
+      color: var(--text-primary);
+      background: var(--bg);
+      letter-spacing: -0.005em;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
+
+    /* Gentle scroll-reveal (class is added by JS, so content stays visible without it) */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
 
     /* Professional focus styles for accessibility */
     a:focus-visible,
@@ -51,12 +83,66 @@
       outline: 2px solid var(--walnut);
       outline-offset: 2px;
     }
-    h1, h2, h3 { 
-      font-family: Georgia, 'Times New Roman', serif; 
-      font-weight: 600; 
-      letter-spacing: -0.025em; 
+    h1, h2, h3 {
+      font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+      font-weight: 600;
+      letter-spacing: 0.005em;
+      line-height: 1.2;
       color: var(--text-primary);
       text-align: center;
+    }
+
+    /* Small uppercase section label for a refined editorial feel */
+    .eyebrow {
+      display: block;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--walnut-light);
+      text-align: center;
+      margin-bottom: 0.6rem;
+    }
+    #connect .eyebrow { color: #C9B393; }
+
+    /* Dark page-title banner shared across interior pages */
+    .page-hero {
+      margin-top: 60px;
+      background: linear-gradient(135deg, #262119 0%, #3A322B 50%, #262119 100%);
+      border-bottom: 3px solid var(--walnut);
+      padding: 2.9rem 6% 2.6rem;
+      text-align: center;
+    }
+    .page-hero h1 { color: #F5F2EC; font-size: 2.7rem; margin: 0; }
+    .page-hero .eyebrow { color: #C9B393; margin-bottom: 0.35rem; }
+    .page-hero .sub { color: #CFC8BD; margin: 0.45rem auto 0; font-size: 0.98rem; max-width: 60ch; }
+
+    /* Above-the-fold price + primary Buy Now */
+    .price-line {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: 0.01em;
+      margin: -1.5rem 0 1.2rem;
+    }
+    .btn-buy {
+      display: inline-block;
+      background: var(--walnut);
+      color: #fff;
+      padding: 0.85rem 2.6rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      letter-spacing: 0.01em;
+      box-shadow: 0 4px 14px rgba(92,64,51,0.28);
+      transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-buy:hover {
+      background: var(--walnut-light);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(92,64,51,0.32);
     }
 
     .nav { 
@@ -68,12 +154,21 @@
       display: flex; justify-content: space-between; align-items: center; 
       border-bottom: 1px solid var(--border);
     }
-    .nav .logo img { 
-      height: 40px; 
+    .nav .logo img {
+      height: 46px;
       shape-rendering: geometricPrecision;
-      image-rendering: -webkit-optimize-contrast;
     }
-    .nav a { margin-left: 2.25rem; text-decoration: none; color: var(--text-primary); font-weight: 500; font-size: 0.95rem; }
+    .nav a { margin-left: 2.25rem; text-decoration: none; color: var(--text-primary); font-weight: 500; font-size: 0.95rem; transition: color 0.2s ease; }
+    .nav .nav-links a:not(.inquire-btn) { position: relative; padding-bottom: 3px; }
+    .nav .nav-links a:not(.inquire-btn)::after {
+      content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px;
+      background: var(--walnut); transform: scaleX(0); transform-origin: center;
+      transition: transform 0.25s ease;
+    }
+    .nav .nav-links a:not(.inquire-btn):hover::after,
+    .nav .nav-links a.active:not(.inquire-btn)::after { transform: scaleX(1); }
+    .nav .nav-links a.active { color: var(--walnut); }
+    .nav-mobile a.active { color: var(--walnut); font-weight: 600; }
     .nav .inquire-btn {
       background: var(--walnut); color: white; padding: 0.5rem 1.35rem; border-radius: 50px; 
       text-decoration: none; font-weight: 600; font-size: 0.9rem; margin-left: 1.5rem;
@@ -187,6 +282,8 @@
       height: auto;
       width: 100%;
       max-width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
       border-radius: 8px;
       box-shadow: 0 12px 32px rgba(0,0,0,0.12);
       transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), box-shadow 0.35s ease, opacity 0.2s;
@@ -346,30 +443,69 @@
       text-align: left;
     }
 
-    footer { 
-      background: var(--bg-alt); padding: 3rem 6%; text-align: center; 
+    footer {
+      background: var(--bg-alt); padding: 3.25rem 6% 2.5rem; text-align: center;
       font-size: 0.92rem; color: var(--text-muted); border-top: 1px solid var(--border);
     }
+    .footer-nav { display: flex; gap: 1.9rem; justify-content: center; flex-wrap: wrap; margin: 0.9rem 0 1.3rem; }
+    .footer-nav a { color: var(--text-secondary); text-decoration: none; font-size: 0.93rem; font-weight: 500; transition: color 0.2s ease; }
+    .footer-nav a:hover { color: var(--walnut); }
     .form { max-width: 520px; margin: 2rem auto 0; }
-    .form input, .form textarea, .form select { 
-      width: 100%; padding: 0.85rem 1rem; margin-bottom: 1rem; 
-      border: 1px solid var(--border); border-radius: 6px; font-size: 1rem;
+    .form input, .form textarea, .form select {
+      width: 100%; padding: 0.85rem 1rem; margin-bottom: 1rem;
+      border: 1px solid var(--border); border-radius: 8px; font-size: 1rem;
+      font-family: inherit; color: var(--text-primary); background: #fff;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
-    .form button { 
-      background: var(--walnut); color: white; padding: 0.9rem 2.4rem; border: none; 
-      border-radius: 50px; font-weight: 700; cursor: pointer; font-size: 1rem;
-      transition: background 0.2s ease;
+    .form input:focus, .form textarea:focus, .form select:focus {
+      outline: none; border-color: var(--walnut-light);
+      box-shadow: 0 0 0 3px rgba(139,111,71,0.18);
+    }
+    .form button {
+      background: var(--walnut); color: white; padding: 0.9rem 2.4rem; border: none;
+      border-radius: 50px; font-weight: 600; cursor: pointer; font-size: 1rem;
+      font-family: inherit; letter-spacing: 0.01em;
+      transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
     }
     .form button:hover {
       background: var(--walnut-light);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(92,64,51,0.25);
+    }
+    .form label {
+      display: block;
+      text-align: left;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin: 0 0 0.35rem 0.15rem;
+    }
+    #connect .form label { color: #C9B393; }
+
+    /* Send Inquiry is the secondary action on product pages (Buy Now is primary) */
+    #connect .form button {
+      background: transparent;
+      color: #EDE8E0;
+      border: 2px solid rgba(237,232,224,0.55);
+      box-shadow: none;
+    }
+    #connect .form button:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: #EDE8E0;
+      color: #fff;
+      transform: translateY(-1px);
+      box-shadow: none;
     }
 
     /* Lightbox Styles */
-    .lightbox { 
-      display: none; position: fixed; z-index: 1000; left: 0; top: 0; 
-      width: 100%; height: 100%; background-color: rgba(0,0,0,0.92); 
-      overflow: auto; 
-      display: flex; align-items: center; justify-content: center;
+    .lightbox {
+      position: fixed; z-index: 1000; left: 0; top: 0;
+      width: 100%; height: 100%; background-color: rgba(18,15,12,0.94);
+      backdrop-filter: blur(6px);
+      overflow: auto;
+      display: none; align-items: center; justify-content: center;
     }
     .lightbox-content { 
       position: relative; margin: 0; display: block; 
@@ -399,11 +535,11 @@
       pointer-events: none;
     }
     .arrow {
-      background: #555;
+      background: rgba(255,255,255,0.1);
       color: #fff;
-      font-size: 36px;
-      width: 50px;
-      height: 50px;
+      font-size: 30px;
+      width: 52px;
+      height: 52px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -411,13 +547,14 @@
       cursor: pointer;
       user-select: none;
       pointer-events: auto;
-      transition: background 0.2s, transform 0.1s;
-      border: 2px solid #777;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      transition: background 0.2s, transform 0.1s, border-color 0.2s;
+      border: 1px solid rgba(255,255,255,0.35);
+      backdrop-filter: blur(4px);
     }
     .arrow:hover {
-      background: #666;
-      transform: scale(1.1);
+      background: rgba(255,255,255,0.22);
+      border-color: rgba(255,255,255,0.6);
+      transform: scale(1.08);
     }
     .arrow:active {
       transform: scale(0.95);
@@ -503,21 +640,22 @@
       padding-left: 0;
     }
     .features li {
-      padding: 0.5rem 0 0.5rem 1.1rem;
+      padding: 0.5rem 0 0.5rem 1.35rem;
       position: relative;
     }
     .features li:before {
-      content: "–";
+      content: "•";
       position: absolute;
-      left: 0;
+      left: 0.15rem;
       color: var(--walnut);
       font-weight: 600;
     }
     .price {
-      font-size: 1.6rem;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 2rem;
       font-weight: 600;
       color: var(--walnut);
-      letter-spacing: -0.02em;
+      letter-spacing: 0.01em;
       margin-bottom: 1rem;
     }
     .made-to-order {
@@ -540,15 +678,15 @@
 
   <!-- NAV (consistent with site) -->
   <nav class="nav">
-    <div class="logo"><a href="index.html"><img src="logo.svg" alt="Stockton &amp; Rogers"></a></div>
+    <div class="logo"><a href="/"><img src="logo-master.svg" alt="Stockton &amp; Rogers"></a></div>
     
     <!-- Desktop nav -->
     <div class="nav-links" style="display: flex; align-items: center;">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="shop.html">Shop</a>
-      <a href="#connect">Contact</a>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/gallery">Gallery</a>
+      <a href="/shop" class="active">Shop</a>
+      <a href="/contact">Contact</a>
       <a href="#connect" class="inquire-btn">Inquire</a>
     </div>
 
@@ -561,26 +699,25 @@
 
     <!-- Mobile menu -->
     <div class="nav-mobile">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="shop.html">Shop</a>
-      <a href="#connect">Contact</a>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/gallery">Gallery</a>
+      <a href="/shop" class="active">Shop</a>
+      <a href="/contact">Contact</a>
       <a href="#connect" class="inquire-btn mobile">Inquire</a>
     </div>
   </nav>
 
   <!-- PAGE INTRO -->
-  <section style="padding: 0; background: #3A2F2A; margin-top: 60px;">
-    <div class="container" style="padding: 1.25rem 6% 0.9rem; min-height: auto; display: flex; align-items: center; justify-content: center;">
-      <h1 style="text-align:center; font-size:2.4rem; margin: 0; color:#f5f5f5;">Heritage Float<sup style="font-size:0.55em;">™</sup> Display Frame</h1>
-    </div>
+  <section class="page-hero">
+    <span class="eyebrow">Display Frame</span>
+    <h1>Heritage Float<sup style="font-size:0.55em;">™</sup></h1>
   </section>
 
   <!-- TAGLINE + HERO VISUAL -->
   <section style="padding: 2rem 6% 2rem; background: var(--bg);">
     <div class="container" style="text-align: center; max-width: 860px; padding: 0;">
-      <p style="font-size: 1.55rem; font-style: italic; color: var(--text-secondary); margin-bottom: 2.5rem; line-height: 1.3; text-align: center;">
+      <p style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.9rem; font-style: italic; color: var(--text-secondary); margin-bottom: 2.5rem; line-height: 1.3; text-align: center;">
         Your story, beautifully suspended.
       </p>
 
@@ -620,22 +757,22 @@
       <!-- Wood selector swatches moved below the description paragraph -->
       <div class="wood-swatches">
         <div class="swatch active" data-variant="walnut-maple">
-          <img src="images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/walnut-maple-swatch.jpeg" alt="Walnut + Maple">
+          <img src="images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/walnut-maple-swatch.jpeg" alt="Walnut + Maple" width="919" height="517" loading="lazy">
           <div class="label">Walnut + Maple</div>
           <div class="desc">deep walnut with a bright maple line</div>
         </div>
         <div class="swatch" data-variant="cherry-walnut">
-          <img src="images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/cherry-walnut-swatch.jpeg" alt="Cherry + Walnut">
+          <img src="images/Shop/Products/Heritage Float Display Frame/Cherry-Walnut/cherry-walnut-swatch.jpeg" alt="Cherry + Walnut" width="1074" height="604" loading="lazy">
           <div class="label">Cherry + Walnut</div>
           <div class="desc">warm cherry with a dark walnut line</div>
         </div>
         <div class="swatch" data-variant="cherry-maple">
-          <img src="images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/cherry-maple-swatch.jpeg" alt="Cherry + Maple">
+          <img src="images/Shop/Products/Heritage Float Display Frame/Cherry-Maple/cherry-maple-swatch.jpeg" alt="Cherry + Maple" width="1034" height="582" loading="lazy">
           <div class="label">Cherry + Maple</div>
           <div class="desc">warm cherry with a pale maple line</div>
         </div>
         <div class="swatch" data-variant="white-oak-walnut">
-          <img src="images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/white-oak-walnut-swatch.jpeg" alt="White Oak + Walnut">
+          <img src="images/Shop/Products/Heritage Float Display Frame/White-Oak-Walnut/white-oak-walnut-swatch.jpeg" alt="White Oak + Walnut" width="1128" height="634" loading="lazy">
           <div class="label">White Oak + Walnut</div>
           <div class="desc">pale oak with a dark walnut line</div>
         </div>
@@ -646,7 +783,7 @@
   <!-- CRAFTED TO HONOR THE MOMENT -->
   <section style="padding: 2rem 6% 2rem;">
     <div class="container" style="max-width: 820px; text-align: left; padding: 0;">
-      <h2 style="font-size: 1.45rem; margin-bottom: 1rem; text-align: center;">Crafted to Honor the Moment</h2>
+      <h2 style="font-size: 1.85rem; margin-bottom: 1rem; text-align: center;">Crafted to Honor the Moment</h2>
       <p class="product-intro" style="color: var(--text-secondary); text-align: left;">
         The solid hardwood base provides a grounded, heirloom foundation while the frameless acrylic lets your photograph take center stage with remarkable depth and presence. Whether it holds a family legacy or a quiet milestone, this piece gives your memory the foundation it deserves.
       </p>
@@ -658,7 +795,7 @@
   <!-- KEY FEATURES -->
   <section style="padding: 2rem 6% 1.5rem;">
     <div class="container" style="max-width: 780px; padding: 0;">
-      <h2 style="text-align:center; font-size:1.35rem; margin-bottom: 0.5rem;">Key Features</h2>
+      <h2 style="text-align:center; font-size:1.75rem; margin-bottom: 0.5rem;">Key Features</h2>
       <ul class="features">
         <li>Two 10mm premium acrylic panels, secured with magnets for easy photo swapping</li>
         <li>Designed for a 4″×6″ photo to achieve the floating effect; also accommodates a 5″×7″</li>
@@ -673,7 +810,7 @@
   <!-- SPECIFICATIONS + PRICING -->
   <section style="padding: 0 6% 2.5rem;">
     <div class="container" style="max-width: 780px; padding: 0;">
-      <h2 style="text-align:center; font-size:1.35rem; margin-bottom: 0.5rem;">Specifications</h2>
+      <h2 style="text-align:center; font-size:1.75rem; margin-bottom: 0.5rem;">Specifications</h2>
       <div class="specs">
         <dl>
           <dt>Base</dt>
@@ -702,24 +839,29 @@
 
   <!-- CONNECT / FORM -->
   <section id="connect" class="cta">
-    <div class="container">
-      <h2 style="font-size:2.5rem; margin-bottom:1rem; color:white;">Ready to purchase or inquire?</h2>
+    <div class="container" data-reveal>
+      <span class="eyebrow">Get in Touch</span>
+      <h2 style="font-size:2.6rem; margin-bottom:1rem; color:white;">Ready to purchase or inquire?</h2>
       <p style="max-width:620px; margin:0 auto 2rem; font-size:1.1rem; color:#EDE8E0;">
         Use the form below or contact us directly.
       </p>
 
       <form id="contact-form" class="form" action="https://formspree.io/f/mzdqejng" method="POST">
-        <input type="text" name="name" placeholder="Your Name" data-fs-field autocomplete="name" required>
-        <input type="email" name="email" placeholder="Email Address" data-fs-field autocomplete="email" required>
-        <select name="project" data-fs-field autocomplete="off" required>
-          <option value="">Interest</option>
+        <label for="field-name">Name</label>
+        <input type="text" id="field-name" name="name" placeholder="Your Name" data-fs-field autocomplete="name" required>
+        <label for="field-email">Email</label>
+        <input type="email" id="field-email" name="email" placeholder="Email Address" data-fs-field autocomplete="email" required>
+        <label for="field-project">Interest</label>
+        <select id="field-project" name="project" data-fs-field autocomplete="off" required>
+          <option value="">Select an interest</option>
           <option value="Walnut-Base-Maple">Walnut + Maple</option>
           <option value="Cherry-Base-Walnut">Cherry + Walnut</option>
           <option value="Cherry-Base-Maple">Cherry + Maple</option>
           <option value="White-Oak-Base-Walnut">White Oak + Walnut</option>
           <option value="Other">Other question</option>
         </select>
-        <textarea name="message" rows="4" placeholder="Tell us about your interest or custom request..." data-fs-field autocomplete="off" required></textarea>
+        <label for="field-message">Message</label>
+        <textarea id="field-message" name="message" rows="4" placeholder="Tell us about your interest or custom request..." data-fs-field autocomplete="off" required></textarea>
         <input type="hidden" name="_subject" value="Heritage Float inquiry from stocktonandrogers.com">
         <button type="submit" id="form-submit-btn" data-fs-submit-btn>Send Inquiry</button>
       </form>
@@ -734,13 +876,20 @@
   </section>
 
   <footer>
-    <img src="logo.svg" alt="Stockton &amp; Rogers" style="height: 72px; margin-bottom: 12px;">
-    <p style="margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--text-secondary); font-style: italic;">Handcrafted. Timeless Design. Heirloom Quality.</p>
+    <img src="logo-master.svg" alt="Stockton &amp; Rogers" style="height: 72px; margin-bottom: 10px;">
+    <p style="margin-bottom: 0.25rem; font-size: 0.95rem; color: var(--text-secondary); font-style: italic;">Handcrafted. Timeless Design. Heirloom Quality.</p>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/gallery">Gallery</a>
+      <a href="/shop">Shop</a>
+      <a href="/contact">Contact</a>
+    </nav>
     <p>
-      © 2026 • All pieces handcrafted in Northwest Arkansas<br>
-      P.O. Box 10068 | Fayetteville, AR 72703<br>
-      <a href="tel:4793963935" style="color:inherit; text-decoration:underline;">(479) 396-3935</a> | 
-      <a href="mailto:contact@stocktonandrogers.com" style="color:inherit; text-decoration:underline;">contact@stocktonandrogers.com</a>
+      P.O. Box 10068 &nbsp;•&nbsp; Fayetteville, AR 72703<br>
+      <a href="tel:4793963935" style="color:inherit; text-decoration:none;">(479) 396-3935</a> &nbsp;•&nbsp;
+      <a href="mailto:contact@stocktonandrogers.com" style="color:inherit; text-decoration:none;">contact@stocktonandrogers.com</a><br>
+      © 2026 Stockton &amp; Rogers • All pieces handcrafted in Northwest Arkansas
     </p>
   </footer>
 
@@ -790,7 +939,8 @@
         }
 
         if (captionEl && currentCaptions[index]) {
-          captionEl.textContent = currentCaptions[index];
+          const counter = currentImages.length > 1 ? '  ·  ' + (index + 1) + ' / ' + currentImages.length : '';
+          captionEl.textContent = currentCaptions[index] + counter;
         }
         arrows.style.display = currentImages.length > 1 ? 'flex' : 'none';
       }
@@ -996,6 +1146,22 @@
       gallery._show = show;
     }
 
+    // Stripe Payment Links (placeholders — owner swaps in the live links)
+    const STRIPE_LINKS = {
+      'walnut-maple': 'STRIPE_LINK_WALNUT_MAPLE',
+      'cherry-walnut': 'STRIPE_LINK_CHERRY_WALNUT',
+      'cherry-maple': 'STRIPE_LINK_CHERRY_MAPLE',
+      'white-oak-walnut': 'STRIPE_LINK_WHITE_OAK_WALNUT'
+    };
+
+    // Interest dropdown values matching each wood variant
+    const INTEREST_VALUES = {
+      'walnut-maple': 'Walnut-Base-Maple',
+      'cherry-walnut': 'Cherry-Base-Walnut',
+      'cherry-maple': 'Cherry-Base-Maple',
+      'white-oak-walnut': 'White-Oak-Base-Walnut'
+    };
+
     function setActiveVariant(key) {
       if (!VARIANTS[key]) key = 'walnut-maple';
 
@@ -1003,6 +1169,12 @@
       document.querySelectorAll('.wood-swatches .swatch').forEach(s => {
         s.classList.toggle('active', s.getAttribute('data-variant') === key);
       });
+
+      // Keep Buy Now + Interest dropdown in sync with the selection
+      const buyBtn = document.getElementById('buy-now-btn');
+      if (buyBtn && STRIPE_LINKS[key]) buyBtn.href = STRIPE_LINKS[key];
+      const interest = document.getElementById('field-project');
+      if (interest && INTEREST_VALUES[key]) interest.value = INTEREST_VALUES[key];
 
       const gallery = document.querySelector('.gallery.carousel');
       if (!gallery) return;
@@ -1018,6 +1190,8 @@
         img.alt = d.alt;
         img.setAttribute('data-multi', d.multi);
         img.loading = 'lazy';
+        img.width = 1200;  // all carousel photos are 3:2 — reserves space, prevents layout shift
+        img.height = 800;
         img.style.cursor = 'pointer';
         if (i === 0) img.classList.add('active');
         gallery.appendChild(img);
@@ -1032,14 +1206,15 @@
       // Deep link support
       try {
         const url = new URL(window.location.href);
-        url.searchParams.set('variant', key);
+        url.searchParams.set('wood', key);
+        url.searchParams.delete('variant');
         history.replaceState({}, '', url);
       } catch (e) {}
     }
 
     function initVariantSelector() {
       const params = new URLSearchParams(window.location.search);
-      let start = params.get('variant');
+      let start = params.get('wood') || params.get('variant');
       if (!start || !VARIANTS[start]) start = 'walnut-maple';
       setActiveVariant(start);
 
@@ -1180,6 +1355,22 @@
         img.style.animationDelay = `${80 + (index * 45)}ms`;
         img.classList.add('gallery-animated');
       });
+
+      // Gentle scroll-reveal for content sections (skipped for reduced-motion users)
+      if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('[data-reveal]').forEach(el => {
+          el.classList.add('reveal');
+          io.observe(el);
+        });
+      }
     });
 
     document.addEventListener('keydown', e => {
