@@ -42,10 +42,9 @@
     .nav .inquire-btn:hover { background: var(--walnut-light); }
     .nav-toggle { display: none; flex-direction: column; justify-content: space-between; width: 28px; height: 20px; background: transparent; border: none; padding: 0; cursor: pointer; z-index: 110; }
     .nav-toggle span { display: block; height: 2px; width: 100%; background: var(--text-primary); transition: all 0.3s ease; }
-    .nav-mobile { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(248,245,240,0.98); backdrop-filter: blur(10px); padding: 1rem 6%; flex-direction: column; gap: 0.75rem; border-bottom: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+    .nav-mobile { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--bg); padding: 1rem 6%; flex-direction: column; gap: 0.75rem; border-bottom: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
     .nav-mobile a { padding: 0.6rem 0; border-bottom: 1px solid var(--border); }
     .nav-mobile a:last-child { border-bottom: none; }
-    .nav-mobile .inquire-btn.mobile { background: var(--walnut); color: white; padding: 0.7rem 1.2rem; border-radius: 50px; margin-top: 0.5rem; text-align: center; border-bottom: none; }
     .nav.open .nav-mobile { display: flex; }
     .nav.open .nav-toggle span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
     .nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
@@ -83,7 +82,7 @@
       <a href="/">Home</a>
       <a href="/about">About</a>
       <a href="/gallery">Gallery</a>
-      <a href="/shop" class="inquire-btn mobile">Shop</a>
+      <a href="/shop">Shop</a>
       <a href="#connect">Inquire</a>
     </div>
   </nav>
