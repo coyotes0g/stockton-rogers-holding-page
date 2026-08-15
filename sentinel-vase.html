@@ -687,9 +687,9 @@
       <a href="/">Home</a>
       <a href="/about">About</a>
       <a href="/gallery">Gallery</a>
-      <a href="/shop" class="active">Shop</a>
+      <a href="/shop" class="active inquire-btn">Shop</a>
       <a href="/contact">Contact</a>
-      <a href="#connect" class="inquire-btn">Inquire</a>
+      <a href="#connect">Inquire</a>
     </div>
 
     <!-- Mobile hamburger -->
@@ -704,9 +704,9 @@
       <a href="/">Home</a>
       <a href="/about">About</a>
       <a href="/gallery">Gallery</a>
-      <a href="/shop" class="active">Shop</a>
+      <a href="/shop" class="active inquire-btn mobile">Shop</a>
       <a href="/contact">Contact</a>
-      <a href="#connect" class="inquire-btn mobile">Inquire</a>
+      <a href="#connect">Inquire</a>
     </div>
   </nav>
 
@@ -769,6 +769,11 @@
           <div class="desc">grounded, rooted profile</div>
         </div>
       </div>
+
+      <div class="product-buy" style="text-align:center; margin: 0.25rem 0 0;">
+        <div class="price" id="product-price">$699</div>
+        <p style="margin: 0;"><a id="buy-now-btn" class="btn-buy" href="https://buy.stripe.com/bJeaER4i1cGR8vmdUgc3m06" target="_blank" rel="noopener">Buy Pair — $699</a></p>
+      </div>
     </div>
   </section>
 
@@ -821,11 +826,6 @@
       </div>
 
       <div style="text-align:center; margin-top: 1.5rem;">
-        <div style="text-align: left; display: inline-block; margin-bottom: 0.75rem;">
-          <div class="price" style="margin-bottom:0.25rem;">Sentinel Vase Pair — $699</div>
-          <div class="price" style="margin-bottom:0.5rem;">Sentinel Vase I or II (single) — $399</div>
-        </div>
-        <p style="margin: 0 0 0.75rem;"><a id="buy-now-btn" class="btn-buy" href="https://buy.stripe.com/bJeaER4i1cGR8vmdUgc3m06" target="_blank" rel="noopener">Buy Now</a></p>
         <p style="font-size:0.95rem; color:var(--text-secondary); margin: 1rem auto 0.5rem; font-weight:600; text-align: center;">Handcrafted in Northwest Arkansas</p>
         <p class="made-to-order">
           Each Sentinel Vase is made to order in our shop using responsibly sourced premium hardwoods. Ships in 10-14 business days.
@@ -841,7 +841,7 @@
   <section id="connect" class="cta">
     <div class="container" data-reveal>
       <span class="eyebrow">Get in Touch</span>
-      <h2 style="font-size:2.6rem; margin-bottom:1rem; color:white;">Ready to purchase or inquire?</h2>
+      <h2 style="font-size:2.6rem; margin-bottom:1rem; color:white;">Questions or a custom request?</h2>
       <p style="max-width:620px; margin:0 auto 2rem; font-size:1.1rem; color:#EDE8E0;">
         Use the form below or contact us directly.
       </p>
@@ -1145,6 +1145,12 @@
       'sentinel-ii': 'Sentinel-II'
     };
 
+    const BUY_COPY = {
+      'pair': { price: '$699', label: 'Buy Pair — $699' },
+      'sentinel-i': { price: '$399', label: 'Buy Vase I — $399' },
+      'sentinel-ii': { price: '$399', label: 'Buy Vase II — $399' }
+    };
+
     // Public ?config= values <-> internal variant keys
     const CONFIG_PARAM = { 'pair': 'pair', 'sentinel-i': 'vase-1', 'sentinel-ii': 'vase-2' };
     const CONFIG_KEYS = { 'pair': 'pair', 'vase-1': 'sentinel-i', 'vase-2': 'sentinel-ii' };
@@ -1160,6 +1166,12 @@
       // Keep Buy Now + Interest dropdown in sync with the selection
       const buyBtn = document.getElementById('buy-now-btn');
       if (buyBtn && STRIPE_LINKS[key]) buyBtn.href = STRIPE_LINKS[key];
+      const buyCopy = BUY_COPY[key];
+      if (buyCopy) {
+        const priceEl = document.getElementById('product-price');
+        if (priceEl) priceEl.textContent = buyCopy.price;
+        if (buyBtn) buyBtn.textContent = buyCopy.label;
+      }
       const interest = document.getElementById('field-project');
       if (interest && INTEREST_VALUES[key]) interest.value = INTEREST_VALUES[key];
 
