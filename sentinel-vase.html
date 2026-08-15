@@ -206,8 +206,7 @@
       top: 100%;
       left: 0;
       right: 0;
-      background: rgba(248,245,240,0.98);
-      backdrop-filter: blur(10px);
+      background: var(--bg);
       padding: 1rem 6%;
       flex-direction: column;
       gap: 0.75rem;
@@ -219,16 +218,6 @@
       border-bottom: 1px solid var(--border);
     }
     .nav-mobile a:last-child { border-bottom: none; }
-    .nav-mobile .inquire-btn.mobile {
-      background: var(--walnut);
-      color: white;
-      padding: 0.7rem 1.2rem;
-      border-radius: 50px;
-      margin-top: 0.5rem;
-      text-align: center;
-      border-bottom: none;
-      transition: background 0.2s ease;
-    }
 
     /* Mobile nav active states */
     .nav.open .nav-mobile { display: flex; }
@@ -710,7 +699,7 @@
       <a href="/">Home</a>
       <a href="/about">About</a>
       <a href="/gallery">Gallery</a>
-      <a href="/shop" class="active inquire-btn mobile">Shop</a>
+      <a href="/shop" class="active">Shop</a>
       <a href="/contact">Contact</a>
       <a href="#connect">Inquire</a>
     </div>
