@@ -408,19 +408,6 @@
       .lightbox-arrows { padding: 0 15px; }
       .arrow { width: 40px; height: 40px; font-size: 28px; }
       #lightbox-caption { font-size: 0.95rem; bottom: 18px; }
-      .about-family-photos {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        align-items: stretch;
-        gap: 1rem;
-        width: 100%;
-      }
-      .about-family-photos img {
-        width: 100%;
-        height: auto;
-        max-width: 100%;
-      }
     }
 
     /* Desktop-specific adjustments - higher logo on larger screens */
@@ -470,6 +457,21 @@
       object-fit: cover;
       border-radius: 4px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    @media (max-width: 600px) {
+      .about-family-photos {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        gap: 1rem;
+        width: 100%;
+      }
+      .about-family-photos img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+      }
     }
 
     /* Professional polish: improved readability for long content sections */
