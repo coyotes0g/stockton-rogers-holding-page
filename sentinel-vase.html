@@ -11,12 +11,15 @@
   <meta property="og:description" content="Standing watch, in wood. Tall architectural vase with hand-cut box joints and sculptural walnut fins. Available as single or paired set. Handcrafted in Northwest Arkansas.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.stocktonandrogers.com/sentinel-vase">
-  <!-- <meta property="og:image" content="https://www.stocktonandrogers.com/images/og-image.jpg"> -->
+  <meta property="og:image" content="https://www.stocktonandrogers.com/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 
   <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Sentinel Vase | Stockton &amp; Rogers">
   <meta name="twitter:description" content="Tall architectural vessel in oak, walnut and cherry. Handcrafted heirloom vase for single stems or dried arrangements. Northwest Arkansas.">
+  <meta name="twitter:image" content="https://www.stocktonandrogers.com/images/og-image.jpg">
 
   <!-- Product structured data -->
   <script type="application/ld+json">
@@ -511,6 +514,8 @@
     .close { 
       position: absolute; top: 25px; right: 35px; color: #fff; 
       font-size: 42px; font-weight: bold; cursor: pointer; z-index: 1001;
+      background: transparent; border: none; padding: 0; line-height: 1;
+      font-family: inherit;
     }
     .close:hover { color: #ccc; }
 
@@ -542,6 +547,9 @@
       transition: background 0.2s, transform 0.1s, border-color 0.2s;
       border: 1px solid rgba(255,255,255,0.35);
       backdrop-filter: blur(4px);
+      padding: 0;
+      font-family: inherit;
+      line-height: 1;
     }
     .arrow:hover {
       background: rgba(255,255,255,0.22);
@@ -720,22 +728,22 @@
       <div class="carousel-wrapper" style="margin: 2rem 0 2.5rem;">
         <div class="gallery carousel">
         <img src="images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-lifestyle.jpeg" 
-             alt="Sentinel Vase Pair" 
+             alt="Sentinel Vase pair on a marble counter with roses and orchids" 
              data-multi="images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-lifestyle.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-main.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-1.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-2.jpeg"
              style="cursor: pointer;" 
              loading="lazy">
         <img src="images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-main.jpeg" 
-             alt="Sentinel Vase Pair" 
+             alt="Sentinel Vase pair, studio view on a white background" 
              data-multi="images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-lifestyle.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-main.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-1.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-2.jpeg"
              style="cursor: pointer;" 
              loading="lazy">
         <img src="images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-1.jpeg" 
-             alt="Sentinel Vase Pair" 
+             alt="Sentinel Vase pair, three-quarter view showing box-jointed oak columns and walnut fins" 
              data-multi="images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-lifestyle.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-main.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-1.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-2.jpeg"
              style="cursor: pointer;" 
              loading="lazy">
         <img src="images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-2.jpeg" 
-             alt="Sentinel Vase Pair" 
+             alt="Sentinel Vase pair from the front showing walnut fins and cherry bases" 
              data-multi="images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-lifestyle.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-main.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-1.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-2.jpeg"
              style="cursor: pointer;" 
              loading="lazy">
@@ -889,14 +897,14 @@
 
   <!-- Lightbox -->
   <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-    <span class="close" onclick="closeLightbox(); event.stopImmediatePropagation();">&times;</span>
-    <img class="lightbox-content" id="lightbox-img" onclick="event.stopImmediatePropagation();">
+    <button type="button" class="close" aria-label="Close" onclick="closeLightbox(); event.stopImmediatePropagation();">&times;</button>
+    <img class="lightbox-content" id="lightbox-img" alt="" aria-hidden="true" onclick="event.stopImmediatePropagation();">
     <video class="lightbox-content" id="lightbox-video" controls onclick="event.stopImmediatePropagation();"></video>
     <div id="lightbox-caption"></div>
     <div id="lightbox-multi" style="display: none;"></div>
     <div class="lightbox-arrows" id="lightbox-arrows" style="display: none;">
-      <span class="arrow prev" onclick="prevImage(); event.stopImmediatePropagation();">&#10094;</span>
-      <span class="arrow next" onclick="nextImage(); event.stopImmediatePropagation();">&#10095;</span>
+      <button type="button" class="arrow prev" aria-label="Previous image" onclick="prevImage(); event.stopImmediatePropagation();">&#10094;</button>
+      <button type="button" class="arrow next" aria-label="Next image" onclick="nextImage(); event.stopImmediatePropagation();">&#10095;</button>
     </div>
   </div>
 
@@ -1025,10 +1033,10 @@
       'pair': {
         name: 'Sentinel Vase Pair',
         imgs: [
-          { src: 'images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-lifestyle.jpeg', multi: 'images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-lifestyle.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-main.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-1.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-2.jpeg', alt: 'Sentinel Vase Pair' },
-          { src: 'images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-main.jpeg', multi: 'images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-lifestyle.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-main.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-1.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-2.jpeg', alt: 'Sentinel Vase Pair' },
-          { src: 'images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-1.jpeg', multi: 'images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-lifestyle.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-main.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-1.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-2.jpeg', alt: 'Sentinel Vase Pair' },
-          { src: 'images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-2.jpeg', multi: 'images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-lifestyle.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-main.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-1.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-2.jpeg', alt: 'Sentinel Vase Pair' }
+          { src: 'images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-lifestyle.jpeg', multi: 'images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-lifestyle.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-main.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-1.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-2.jpeg', alt: 'Sentinel Vase pair on a marble counter with roses and orchids' },
+          { src: 'images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-main.jpeg', multi: 'images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-lifestyle.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-main.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-1.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-2.jpeg', alt: 'Sentinel Vase pair, studio view on a white background' },
+          { src: 'images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-1.jpeg', multi: 'images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-lifestyle.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-main.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-1.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-2.jpeg', alt: 'Sentinel Vase pair, three-quarter view showing box-jointed oak columns and walnut fins' },
+          { src: 'images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-2.jpeg', multi: 'images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-lifestyle.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-main.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-1.jpeg,images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-2.jpeg', alt: 'Sentinel Vase pair from the front showing walnut fins and cherry bases' }
         ]
       }
     };

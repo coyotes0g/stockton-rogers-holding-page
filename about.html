@@ -11,15 +11,15 @@
   <meta property="og:description" content="A high-end custom woodworking studio rooted in Northwest Arkansas. Heirloom-quality pieces that fuse beauty and functionality.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.stocktonandrogers.com/about">
-  <!-- Recommended: Upload a beautiful 1200x630 image (use one of your best product shots) as images/og-image.jpg -->
-  <!-- <meta property="og:image" content="https://www.stocktonandrogers.com/images/og-image.jpg"> -->
-  <!-- <meta property="og:image:width" content="1200"> -->
-  <!-- <meta property="og:image:height" content="630"> -->
+  <meta property="og:image" content="https://www.stocktonandrogers.com/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 
   <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="About | Stockton & Rogers | Functional Art">
   <meta name="twitter:description" content="Handcrafted heirloom pieces from Northwest Arkansas hardwoods.">
+  <meta name="twitter:image" content="https://www.stocktonandrogers.com/images/og-image.jpg">
 
   <!-- Favicon -->
   <link rel="icon" href="logo-master.svg" type="image/svg+xml">
@@ -328,6 +328,8 @@
     .close { 
       position: absolute; top: 25px; right: 35px; color: #fff; 
       font-size: 42px; font-weight: bold; cursor: pointer; z-index: 1001;
+      background: transparent; border: none; padding: 0; line-height: 1;
+      font-family: inherit;
     }
     .close:hover { color: #ccc; }
 
@@ -359,6 +361,9 @@
       transition: background 0.2s, transform 0.1s, border-color 0.2s;
       border: 1px solid rgba(255,255,255,0.35);
       backdrop-filter: blur(4px);
+      padding: 0;
+      font-family: inherit;
+      line-height: 1;
     }
     .arrow:hover {
       background: rgba(255,255,255,0.22);
@@ -556,7 +561,6 @@
       <label for="field-project">Project Type</label>
       <select id="field-project" name="project" data-fs-field autocomplete="off" required>
         <option value="">Select a project type</option>
-        <option value="Table">Custom Table</option>
         <option value="Frame">Picture Frame / Triptych</option>
         <option value="Box">Heirloom Box or Keepsake</option>
         <option value="Clock">Sculptural Clock</option>
@@ -597,14 +601,14 @@
 
   <!-- Lightbox -->
   <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-    <span class="close" onclick="closeLightbox(); event.stopImmediatePropagation();">&times;</span>
-    <img class="lightbox-content" id="lightbox-img" onclick="event.stopImmediatePropagation();">
+    <button type="button" class="close" aria-label="Close" onclick="closeLightbox(); event.stopImmediatePropagation();">&times;</button>
+    <img class="lightbox-content" id="lightbox-img" alt="" aria-hidden="true" onclick="event.stopImmediatePropagation();">
     <video class="lightbox-content" id="lightbox-video" controls onclick="event.stopImmediatePropagation();"></video>
     <div id="lightbox-caption"></div>
     <div id="lightbox-multi" style="display: none;"></div>
     <div class="lightbox-arrows" id="lightbox-arrows" style="display: none;">
-      <span class="arrow prev" onclick="prevImage(); event.stopImmediatePropagation();">&#10094;</span>
-      <span class="arrow next" onclick="nextImage(); event.stopImmediatePropagation();">&#10095;</span>
+      <button type="button" class="arrow prev" aria-label="Previous image" onclick="prevImage(); event.stopImmediatePropagation();">&#10094;</button>
+      <button type="button" class="arrow next" aria-label="Next image" onclick="nextImage(); event.stopImmediatePropagation();">&#10095;</button>
     </div>
   </div>
 
