@@ -141,7 +141,7 @@
     }
     .nav .nav-links a:not(.inquire-btn):hover::after,
     .nav .nav-links a.active:not(.inquire-btn)::after { transform: scaleX(1); }
-    .nav .nav-links a.active { color: var(--walnut); }
+    .nav .nav-links a.active:not(.inquire-btn) { color: var(--walnut); }
     .nav-mobile a.active { color: var(--walnut); font-weight: 600; }
     .nav .inquire-btn {
       background: var(--walnut); color: white; padding: 0.5rem 1.35rem; border-radius: 50px;
@@ -150,6 +150,7 @@
     }
     .nav .inquire-btn:hover {
       background: var(--walnut-light);
+      color: white;
     }
 
     /* Mobile hamburger */

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page not found | Stockton &amp; Rogers</title>
+  <meta name="description" content="This page was not found.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/logo-master.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F8F5F0;
+      --bg-alt: #F0EBE3;
+      --text-primary: #1F1F1F;
+      --text-secondary: #4A4540;
+      --text-muted: #6B665F;
+      --walnut: #5C4033;
+      --walnut-light: #8B6F47;
+      --border: #D4CFC6;
+      --deep: #2C2823;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    html, body { width: 100%; overflow-x: hidden; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.7;
+      color: var(--text-primary);
+      background: var(--bg);
+      letter-spacing: -0.005em;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--walnut);
+      outline-offset: 2px;
+    }
+    h1, h2, h3 {
+      font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+      font-weight: 600;
+      letter-spacing: 0.005em;
+      line-height: 1.2;
+      color: var(--text-primary);
+      text-align: center;
+    }
+
+    .page-hero {
+      margin-top: 60px;
+      background: linear-gradient(135deg, #262119 0%, #3A322B 50%, #262119 100%);
+      border-bottom: 3px solid var(--walnut);
+      padding: 2.9rem 6% 2.6rem;
+      text-align: center;
+    }
+    .page-hero h1 { color: #F5F2EC; font-size: 2.7rem; margin: 0; }
+    .page-hero .sub { color: #CFC8BD; margin: 0.45rem auto 0; font-size: 0.98rem; max-width: 60ch; }
+
+    .nav {
+      position: fixed; top: 0; width: 100%;
+      background: rgba(248,245,240,0.96);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+      padding: 0.5rem 6%;
+      display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav .logo img {
+      height: 46px;
+      shape-rendering: geometricPrecision;
+    }
+    .nav a { margin-left: 2.25rem; text-decoration: none; color: var(--text-primary); font-weight: 500; font-size: 0.95rem; transition: color 0.2s ease; }
+    .nav .nav-links a:not(.inquire-btn) { position: relative; padding-bottom: 3px; }
+    .nav .nav-links a:not(.inquire-btn)::after {
+      content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px;
+      background: var(--walnut); transform: scaleX(0); transform-origin: center;
+      transition: transform 0.25s ease;
+    }
+    .nav .nav-links a:not(.inquire-btn):hover::after,
+    .nav .nav-links a.active:not(.inquire-btn)::after { transform: scaleX(1); }
+    .nav .nav-links a.active:not(.inquire-btn) { color: var(--walnut); }
+    .nav-mobile a.active { color: var(--walnut); font-weight: 600; }
+    .nav .inquire-btn {
+      background: var(--walnut); color: white; padding: 0.5rem 1.35rem; border-radius: 50px;
+      text-decoration: none; font-weight: 600; font-size: 0.9rem; margin-left: 1.5rem;
+      transition: background 0.2s ease;
+    }
+    .nav .inquire-btn:hover {
+      background: var(--walnut-light);
+      color: white;
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 20px;
+      background: transparent;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      z-index: 110;
+    }
+    .nav-toggle span {
+      display: block;
+      height: 2px;
+      width: 100%;
+      background: var(--text-primary);
+      transition: all 0.3s ease;
+    }
+    .nav-mobile {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--bg);
+      padding: 1rem 6%;
+      flex-direction: column;
+      gap: 0.75rem;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    .nav-mobile a {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-mobile a:last-child { border-bottom: none; }
+
+    .nav.open .nav-mobile { display: flex; }
+    .nav.open .nav-toggle span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
+    .nav.open .nav-toggle span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    .container {
+      padding: 5.75rem 6%;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .recover-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .recover-links a {
+      display: inline-block;
+      background: var(--walnut);
+      color: white;
+      padding: 0.55rem 1.4rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .recover-links a:hover {
+      background: var(--walnut-light);
+      color: white;
+    }
+
+    footer {
+      background: var(--bg-alt); padding: 3.25rem 6% 2.5rem; text-align: center;
+      font-size: 0.92rem; color: var(--text-muted); border-top: 1px solid var(--border);
+    }
+    .footer-nav { display: flex; gap: 1.9rem; justify-content: center; flex-wrap: wrap; margin: 0.9rem 0 1.3rem; }
+    .footer-nav a { color: var(--text-secondary); text-decoration: none; font-size: 0.93rem; font-weight: 500; transition: color 0.2s ease; }
+    .footer-nav a:hover { color: var(--walnut); }
+
+    @media (max-width: 600px) {
+      .nav { padding: 0.5rem 4%; }
+      .nav .nav-links { display: none !important; }
+      .nav-toggle { display: flex; }
+      .container { padding: 5rem 4%; }
+      .page-hero h1 { font-size: 2.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="logo"><a href="/"><img src="/logo-master.svg" alt="Stockton &amp; Rogers"></a></div>
+
+    <div class="nav-links" style="display: flex; align-items: center;">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/gallery">Gallery</a>
+      <a href="/shop" class="inquire-btn">Shop</a>
+      <a href="/contact">Contact</a>
+    </div>
+
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="nav-mobile">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/gallery">Gallery</a>
+      <a href="/shop">Shop</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <h1>Page not found</h1>
+    <p class="sub">This page was not found.</p>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="recover-links">
+        <a href="/">Home</a>
+        <a href="/shop">Shop</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <img src="/logo-master.svg" alt="Stockton &amp; Rogers" style="height: 72px; margin-bottom: 10px;">
+    <p style="margin-bottom: 0.25rem; font-size: 0.95rem; color: var(--text-secondary); font-style: italic;">Handcrafted. Timeless Design. Heirloom Quality.</p>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/gallery">Gallery</a>
+      <a href="/shop">Shop</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <p>
+      P.O. Box 10068 &nbsp;•&nbsp; Fayetteville, AR 72703<br>
+      <a href="tel:4793963935" style="color:inherit; text-decoration:none;">(479) 396-3935</a> &nbsp;&bull;&nbsp;
+      <a href="mailto:contact@stocktonandrogers.com" style="color:inherit; text-decoration:none;">contact@stocktonandrogers.com</a><br>
+      &copy; 2026 Stockton &amp; Rogers &bull; All pieces handcrafted in Northwest Arkansas
+    </p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const nav = document.querySelector('.nav');
+      const toggle = document.querySelector('.nav-toggle');
+      if (toggle) {
+        toggle.addEventListener('click', () => {
+          const isOpen = nav.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', isOpen);
+        });
+      }
+
+      document.querySelectorAll('.nav-mobile a').forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('open');
+          if (toggle) toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
