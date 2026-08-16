@@ -5,7 +5,8 @@
     { "source": "/shop", "destination": "/shop.html" },
     { "source": "/heritage-float-display-frame", "destination": "/heritage-float-display-frame.html" },
     { "source": "/sentinel-vase", "destination": "/sentinel-vase.html" },
-    { "source": "/contact", "destination": "/contact.html" }
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/shipping", "destination": "/shipping.html" }
   ],
   "redirects": [
     { "source": "/about/", "destination": "/about", "statusCode": 301 },
@@ -14,6 +15,7 @@
     { "source": "/heritage-float-display-frame/", "destination": "/heritage-float-display-frame", "statusCode": 301 },
     { "source": "/sentinel-vase/", "destination": "/sentinel-vase", "statusCode": 301 },
     { "source": "/contact/", "destination": "/contact", "statusCode": 301 },
+    { "source": "/shipping/", "destination": "/shipping", "statusCode": 301 },
     { "source": "/index.html", "destination": "/", "statusCode": 301 },
     { "source": "/about.html", "destination": "/about", "statusCode": 301 },
     { "source": "/gallery.html", "destination": "/gallery", "statusCode": 301 },
@@ -21,6 +23,7 @@
     { "source": "/heritage-float-display-frame.html", "destination": "/heritage-float-display-frame", "statusCode": 301 },
     { "source": "/sentinel-vase.html", "destination": "/sentinel-vase", "statusCode": 301 },
     { "source": "/contact.html", "destination": "/contact", "statusCode": 301 },
+    { "source": "/shipping.html", "destination": "/shipping", "statusCode": 301 },
     {
       "source": "/heritage-float-walnut-maple.html",
       "destination": "/heritage-float-display-frame.html?variant=walnut-maple",

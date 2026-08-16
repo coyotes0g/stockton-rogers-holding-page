@@ -3,11 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page not found | Stockton &amp; Rogers</title>
-  <meta name="description" content="This page was not found.">
-  <meta name="robots" content="noindex">
-  <link rel="icon" href="/logo-master.svg" type="image/svg+xml">
+  <title>Shipping &amp; Returns | Stockton &amp; Rogers | Functional Art</title>
 
+  <!-- Professional metadata + Social sharing -->
+  <meta name="description" content="Shipping and returns for Stockton &amp; Rogers. Free shipping in the continental United States. Made-to-order pieces; no returns except damage in transit.">
+  <meta property="og:title" content="Shipping &amp; Returns | Stockton &amp; Rogers | Functional Art">
+  <meta property="og:description" content="Free shipping in the continental United States. Made-to-order pieces; no returns except damage in transit.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.stocktonandrogers.com/shipping">
+  <meta property="og:image" content="https://www.stocktonandrogers.com/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Shipping &amp; Returns | Stockton &amp; Rogers">
+  <meta name="twitter:description" content="Free shipping in the continental United States. Made-to-order pieces; no returns except damage in transit.">
+  <meta name="twitter:image" content="https://www.stocktonandrogers.com/images/og-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="logo-master.svg" type="image/svg+xml">
+
+  <!-- Typography: elegant serif for headings, refined sans for body -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -51,6 +68,18 @@
       text-align: center;
     }
 
+    .eyebrow {
+      display: block;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--walnut-light);
+      text-align: center;
+      margin-bottom: 0.6rem;
+    }
+
     .page-hero {
       margin-top: 60px;
       background: linear-gradient(135deg, #262119 0%, #3A322B 50%, #262119 100%);
@@ -59,6 +88,7 @@
       text-align: center;
     }
     .page-hero h1 { color: #F5F2EC; font-size: 2.7rem; margin: 0; }
+    .page-hero .eyebrow { color: #C9B393; margin-bottom: 0.35rem; }
     .page-hero .sub { color: #CFC8BD; margin: 0.45rem auto 0; font-size: 0.98rem; max-width: 60ch; }
 
     .nav {
@@ -139,30 +169,54 @@
     .nav.open .nav-toggle span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
     .container {
-      padding: 5.75rem 6%;
-      max-width: 1280px;
+      padding: 4.5rem 6%;
+      max-width: 820px;
       margin: 0 auto;
     }
 
-    .recover-links {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
+    .policy-card {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 2rem 2.1rem 2.1rem;
+      margin-bottom: 1.5rem;
     }
-    .recover-links a {
+    .policy-card h2 {
+      text-align: left;
+      font-size: 1.85rem;
+      margin-bottom: 0.85rem;
+    }
+    .policy-card p {
+      color: var(--text-secondary);
+      margin-bottom: 0.9rem;
+    }
+    .policy-card p:last-child { margin-bottom: 0; }
+
+    .policy-card a {
+      color: var(--walnut);
+      font-weight: 500;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s ease;
+    }
+    .policy-card a:hover { color: var(--walnut-light); }
+
+    .policy-card a.btn-walnut {
       display: inline-block;
       background: var(--walnut);
-      color: white;
-      padding: 0.55rem 1.4rem;
+      color: #fff;
+      padding: 0.75rem 1.8rem;
       border-radius: 50px;
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
+      margin-top: 0.35rem;
+      transition: background 0.2s ease, transform 0.2s ease;
     }
-    .recover-links a:hover {
+    .policy-card a.btn-walnut:hover {
       background: var(--walnut-light);
-      color: white;
+      color: #fff;
+      transform: translateY(-1px);
     }
 
     footer {
@@ -177,16 +231,19 @@
       .nav { padding: 0.5rem 4%; }
       .nav .nav-links { display: none !important; }
       .nav-toggle { display: flex; }
-      .container { padding: 5rem 4%; }
+      .container { padding: 3.5rem 4%; }
       .page-hero h1 { font-size: 2.1rem; }
+      .policy-card { padding: 1.5rem 1.35rem 1.6rem; }
     }
   </style>
 </head>
 <body>
 
+  <!-- NAV (consistent with site) -->
   <nav class="nav">
-    <div class="logo"><a href="/"><img src="/logo-master.svg" alt="Stockton &amp; Rogers"></a></div>
+    <div class="logo"><a href="/"><img src="logo-master.svg" alt="Stockton &amp; Rogers"></a></div>
 
+    <!-- Desktop nav -->
     <div class="nav-links" style="display: flex; align-items: center;">
       <a href="/">Home</a>
       <a href="/about">About</a>
@@ -195,12 +252,14 @@
       <a href="/contact">Contact</a>
     </div>
 
+    <!-- Mobile hamburger -->
     <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
     </button>
 
+    <!-- Mobile menu -->
     <div class="nav-mobile">
       <a href="/">Home</a>
       <a href="/about">About</a>
@@ -210,22 +269,38 @@
     </div>
   </nav>
 
+  <!-- PAGE INTRO -->
   <section class="page-hero">
-    <h1>Page not found</h1>
-    <p class="sub">This page was not found.</p>
+    <span class="eyebrow">Policy</span>
+    <h1>Shipping &amp; Returns</h1>
+    <p class="sub">How we ship made-to-order pieces, and what to do if one arrives damaged.</p>
   </section>
 
   <section>
     <div class="container">
-      <div class="recover-links">
-        <a href="/">Home</a>
-        <a href="/shop">Shop</a>
-      </div>
+      <article class="policy-card">
+        <h2>Shipping</h2>
+        <p>We ship in the continental United States. Shipping is free. We do not ship to Alaska, Hawaii, or outside the U.S.</p>
+        <p>Made-to-order pieces ship in the window already stated on the product page.</p>
+      </article>
+
+      <article class="policy-card">
+        <h2>Returns</h2>
+        <p>Each piece is made to order. We do not accept returns or exchanges except for damage in transit.</p>
+        <p>If your piece arrives damaged, contact us within 7 days of delivery with photos. We will repair or replace it.</p>
+        <p>
+          Contact for damage:
+          <a href="mailto:grogers@stocktonandrogers.com">grogers@stocktonandrogers.com</a>,
+          the <a href="/contact">Contact page</a>, or
+          <a href="tel:4793963935">(479) 396-3935</a>.
+        </p>
+        <p><a class="btn-walnut" href="/contact">Contact page</a></p>
+      </article>
     </div>
   </section>
 
   <footer>
-    <img src="/logo-master.svg" alt="Stockton &amp; Rogers" style="height: 72px; margin-bottom: 10px;">
+    <img src="logo-master.svg" alt="Stockton &amp; Rogers" style="height: 72px; margin-bottom: 10px;">
     <p style="margin-bottom: 0.25rem; font-size: 0.95rem; color: var(--text-secondary); font-style: italic;">Handcrafted. Timeless Design. Heirloom Quality.</p>
     <nav class="footer-nav" aria-label="Footer">
       <a href="/">Home</a>
@@ -237,9 +312,9 @@
     </nav>
     <p>
       P.O. Box 10068 &nbsp;•&nbsp; Fayetteville, AR 72703<br>
-      <a href="tel:4793963935" style="color:inherit; text-decoration:none;">(479) 396-3935</a> &nbsp;&bull;&nbsp;
+      <a href="tel:4793963935" style="color:inherit; text-decoration:none;">(479) 396-3935</a> &nbsp;•&nbsp;
       <a href="mailto:contact@stocktonandrogers.com" style="color:inherit; text-decoration:none;">contact@stocktonandrogers.com</a><br>
-      &copy; 2026 Stockton &amp; Rogers &bull; All pieces handcrafted in Northwest Arkansas
+      © 2026 Stockton &amp; Rogers • All pieces handcrafted in Northwest Arkansas
     </p>
   </footer>
 
