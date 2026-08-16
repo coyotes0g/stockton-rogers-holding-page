@@ -664,6 +664,21 @@
     .product-buy {
       margin: 0.25rem 0 0;
     }
+    .shipping-policy-note {
+      margin: 0.9rem auto 0;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      max-width: 42ch;
+      line-height: 1.5;
+      text-align: center;
+    }
+    .shipping-policy-note a {
+      color: var(--text-muted);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s ease;
+    }
+    .shipping-policy-note a:hover { color: var(--walnut); }
     .made-to-order {
       font-size: 0.98rem;
       color: var(--text-secondary);
@@ -775,6 +790,7 @@
       <div class="product-buy">
         <div class="price" id="product-price">$699</div>
         <a id="buy-now-btn" class="btn-buy" href="https://buy.stripe.com/bJeaER4i1cGR8vmdUgc3m06" target="_blank" rel="noopener">Buy Pair — $699</a>
+        <p class="shipping-policy-note"><a href="/shipping">Free shipping in the continental U.S. Made to order. No returns except damage in transit.</a></p>
       </div>
     </div>
   </section>
@@ -886,6 +902,7 @@
       <a href="/gallery">Gallery</a>
       <a href="/shop">Shop</a>
       <a href="/contact">Contact</a>
+      <a href="/shipping">Shipping &amp; Returns</a>
     </nav>
     <p>
       P.O. Box 10068 &nbsp;•&nbsp; Fayetteville, AR 72703<br>
