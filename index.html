@@ -6,20 +6,20 @@
   <title>Stockton & Rogers | Functional Art</title>
 
   <!-- Professional metadata + Social sharing -->
-  <meta name="description" content="Handcrafted functional art from premium Northwest Arkansas hardwoods. Custom tables, picture frames, heirloom boxes, and sculptural clocks by Stockton & Rogers.">
+  <meta name="description" content="Handcrafted functional art from premium Northwest Arkansas hardwoods. Picture frames, heirloom boxes, and sculptural clocks by Stockton & Rogers.">
   <meta property="og:title" content="Stockton & Rogers | Functional Art">
   <meta property="og:description" content="Exceptional pieces handcrafted from responsibly sourced hardwoods in Northwest Arkansas. Custom commissions welcome.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.stocktonandrogers.com">
-  <!-- Recommended: Upload a beautiful 1200x630 image (use one of your best product shots) as images/og-image.jpg -->
-  <!-- <meta property="og:image" content="https://www.stocktonandrogers.com/images/og-image.jpg"> -->
-  <!-- <meta property="og:image:width" content="1200"> -->
-  <!-- <meta property="og:image:height" content="630"> -->
+  <meta property="og:image" content="https://www.stocktonandrogers.com/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 
   <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Stockton & Rogers | Functional Art">
   <meta name="twitter:description" content="Handcrafted heirloom pieces from Northwest Arkansas hardwoods.">
+  <meta name="twitter:image" content="https://www.stocktonandrogers.com/images/og-image.jpg">
 
   <!-- LocalBusiness structured data -->
   <script type="application/ld+json">
@@ -257,12 +257,14 @@
       background: linear-gradient(135deg, #262119 0%, #3A322B 50%, #262119 100%);
       padding: 2.25rem 2rem 2.5rem;
     }
-    .hero .tagline {
+    .hero .tagline,
+    .hero h1.tagline {
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: 1.75rem;
       font-style: italic;
       font-weight: 600;
       letter-spacing: 0.01em;
+      line-height: 1.3;
       margin-bottom: 1.4rem;
       max-width: 620px;
       margin-left: auto;
@@ -313,6 +315,62 @@
       background: #fff;
       color: var(--text-primary);
       border-color: var(--border);
+    }
+
+    /* Home “Available now” — shop-card layout, cream + walnut */
+    #available .container {
+      max-width: 980px;
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+    .available-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+    .product-card {
+      background: var(--bg-alt);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      max-width: 460px;
+      flex: 1 1 300px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+    }
+    .product-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+    .product-card .card-body { padding: 1rem 1.1rem; }
+    .product-card h3 {
+      margin: 0 0 0.4rem;
+      text-align: left;
+      font-size: 1.5rem;
+    }
+    .card-price {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--walnut);
+      letter-spacing: 0.01em;
+      margin: 0 0 0.75rem;
+    }
+    .product-card .btn-details {
+      display: inline-block;
+      background: var(--walnut);
+      color: white;
+      padding: 0.55rem 1.4rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
     }
 
     /* Subtle contained background for the featured work grid */
@@ -417,6 +475,8 @@
     .close { 
       position: absolute; top: 25px; right: 35px; color: #fff; 
       font-size: 42px; font-weight: bold; cursor: pointer; z-index: 1001;
+      background: transparent; border: none; padding: 0; line-height: 1;
+      font-family: inherit;
     }
     .close:hover { color: #ccc; }
 
@@ -448,6 +508,9 @@
       transition: background 0.2s, transform 0.1s, border-color 0.2s;
       border: 1px solid rgba(255,255,255,0.35);
       backdrop-filter: blur(4px);
+      padding: 0;
+      font-family: inherit;
+      line-height: 1;
     }
     .arrow:hover {
       background: rgba(255,255,255,0.22);
@@ -544,7 +607,7 @@
            width="3072" height="2048">
     </div>
     <div class="hero-content">
-      <p class="tagline">Fusing beauty with functionality to create timeless art.</p>
+      <h1 class="tagline">Fusing beauty with functionality to create timeless art.</h1>
       <div class="hero-buttons">
         <a href="/shop" class="btn-primary">Shop available pieces</a>
         <a href="#connect" class="btn-secondary">Start a custom commission</a>
@@ -560,6 +623,36 @@
       <p style="max-width:780px; margin:0 auto; font-size:1.18rem; text-align:left; line-height:1.75;">
         Exceptional pieces begin with a deep understanding of purpose: what a space needs and what a moment deserves. We fuse beauty with functionality to create graceful, elegantly designed pieces, handcrafted to be loved by generations.
       </p>
+    </div>
+  </section>
+
+  <!-- AVAILABLE NOW -->
+  <section id="available">
+    <div class="container" data-reveal>
+      <span class="eyebrow">Shop</span>
+      <h2 style="text-align:center; margin-bottom:3.25rem; font-size:2.6rem;">Available now</h2>
+      <div class="available-grid">
+        <div class="product-card">
+          <a href="/heritage-float-display-frame">
+            <img src="images/Shop/Products/Heritage Float Display Frame/Walnut-Maple/heritage-float-display-frame-walnut-4.jpeg" alt="Heritage Float™ Display Frame — walnut base with maple inlay" width="3840" height="2560" loading="lazy">
+          </a>
+          <div class="card-body">
+            <h3>Heritage Float<sup style="font-size:0.55em;">™</sup> Display Frame</h3>
+            <p class="card-price">$195</p>
+            <a href="/heritage-float-display-frame" class="btn-details">View details</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <a href="/sentinel-vase">
+            <img src="images/Shop/Products/Form%20%26%20Fin%20Collection/Vases/Sentinel%20Vase/sentinel-vase-pair-lifestyle.jpeg" alt="Sentinel Vase™ pair — box-jointed oak columns with walnut fins on cherry bases" width="1728" height="1152" loading="lazy">
+          </a>
+          <div class="card-body">
+            <h3>Sentinel Vase<sup style="font-size:0.55em;">™</sup></h3>
+            <p class="card-price">From $399</p>
+            <a href="/sentinel-vase" class="btn-details">View details</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -630,7 +723,6 @@
       <label for="field-project">Project Type</label>
       <select id="field-project" name="project" data-fs-field autocomplete="off" required>
         <option value="">Select a project type</option>
-        <option value="Table">Custom Table</option>
         <option value="Frame">Picture Frame / Triptych</option>
         <option value="Box">Heirloom Box or Keepsake</option>
         <option value="Clock">Sculptural Clock</option>
@@ -671,14 +763,14 @@
 
   <!-- Lightbox -->
   <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-    <span class="close" onclick="closeLightbox(); event.stopImmediatePropagation();">&times;</span>
-    <img class="lightbox-content" id="lightbox-img" onclick="event.stopImmediatePropagation();">
+    <button type="button" class="close" aria-label="Close" onclick="closeLightbox(); event.stopImmediatePropagation();">&times;</button>
+    <img class="lightbox-content" id="lightbox-img" alt="" aria-hidden="true" onclick="event.stopImmediatePropagation();">
     <video class="lightbox-content" id="lightbox-video" controls onclick="event.stopImmediatePropagation();"></video>
     <div id="lightbox-caption"></div>
     <div id="lightbox-multi" style="display: none;"></div>
     <div class="lightbox-arrows" id="lightbox-arrows" style="display: none;">
-      <span class="arrow prev" onclick="prevImage(); event.stopImmediatePropagation();">&#10094;</span>
-      <span class="arrow next" onclick="nextImage(); event.stopImmediatePropagation();">&#10095;</span>
+      <button type="button" class="arrow prev" aria-label="Previous image" onclick="prevImage(); event.stopImmediatePropagation();">&#10094;</button>
+      <button type="button" class="arrow next" aria-label="Next image" onclick="nextImage(); event.stopImmediatePropagation();">&#10095;</button>
     </div>
   </div>
 
