@@ -600,50 +600,18 @@
     </div>
   </section>
 
-  <!-- CONTACT / FORM -->
+  <!-- CONTACT -->
   <section id="connect" class="cta">
     <div class="container" data-reveal>
       <span class="eyebrow">Get in Touch</span>
       <h2 style="font-size:2.6rem; margin-bottom:1rem; color:white;">Questions or a custom request?</h2>
       <p style="max-width:620px; margin:0 auto 2rem; font-size:1.1rem; color:#EDE8E0;">
-        Use the form below or contact us directly.
+        We’d love to hear from you.
       </p>
-
-    <!-- 
-      Formspree integration using @formspree/ajax (Vanilla JS).
-      Real endpoint: https://formspree.io/f/mzdqejng
-    -->
-    <form id="contact-form" class="form" action="https://formspree.io/f/mzdqejng" method="POST">
-      <label for="field-name">Name</label>
-      <input type="text" id="field-name" name="name" placeholder="Your Name" data-fs-field autocomplete="name" required>
-      <label for="field-email">Email</label>
-      <input type="email" id="field-email" name="email" placeholder="Email Address" data-fs-field autocomplete="email" required>
-      <label for="field-project">Interest</label>
-      <select id="field-project" name="project" data-fs-field autocomplete="off" required>
-        <option value="">Select an interest</option>
-        <option value="Walnut+Maple">Walnut + Maple Frame</option>
-        <option value="Cherry+Walnut">Cherry + Walnut Frame</option>
-        <option value="Cherry+Maple">Cherry + Maple Frame</option>
-        <option value="WhiteOak+Walnut">White Oak + Walnut Frame</option>
-        <option value="Sentinel-Vase-Pair">Sentinel Vase Pair</option>
-        <option value="Sentinel-Vase-I">Sentinel Vase I</option>
-        <option value="Sentinel-Vase-II">Sentinel Vase II</option>
-        <option value="Custom">Custom Commission</option>
-        <option value="Other">Other</option>
-      </select>
-      <label for="field-message">Message</label>
-      <textarea id="field-message" name="message" rows="4" placeholder="Tell us about your interest or custom request..." data-fs-field autocomplete="off" required></textarea>
-      <input type="hidden" name="_subject" value="Shop inquiry from stocktonandrogers.com">
-      <button type="submit" id="form-submit-btn" data-fs-submit-btn>Send Inquiry</button>
-    </form>
-
-    <!-- Form success message -->
-    <div id="form-success" data-fs-success style="display:none; text-align:center; padding:2rem; background: var(--bg-alt); border-radius:12px; margin-top:1.5rem;">
-      <p style="font-size:1.15rem; color: var(--text-primary); margin-bottom:0.5rem;">Thank you — your message has been sent.</p>
-      <p style="font-size:0.95rem; color: var(--text-muted);">We’ll get back to you within 1–2 business days.</p>
+      <p style="text-align:center; margin-top:1rem;">
+        <a href="/contact" class="btn-primary">Contact us</a>
+      </p>
     </div>
-
-  </div>
   </section>
 
   <footer>
@@ -857,13 +825,6 @@
       }
     });
   </script>
-
-  <!-- Formspree AJAX integration (Vanilla JS) -->
-  <script>
-    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-    formspree('initForm', { formElement: '#contact-form', formId: 'mzdqejng' });
-  </script>
-  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
   <!-- Vercel Web Analytics -->
   <script>
